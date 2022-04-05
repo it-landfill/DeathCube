@@ -1,0 +1,313 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12749,        305]
+NotebookOptionsPosition[     11027,        268]
+NotebookOutlinePosition[     11422,        284]
+CellTagsIndexPosition[     11379,        281]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Quit", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.858145809608409*^9, 3.8581458426915407`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"9585f51a-d2cc-4209-b1a1-1a0fc75708ca"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.858137480104897*^9, 3.858137536905615*^9}, {
+   3.8581415379546957`*^9, 3.858141539757514*^9}, 3.858145399250944*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"0313ed82-4a6b-4eb3-b4ed-344a9ea6991c"],
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<CubeAcquire.wl\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeVisualize.wl\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeCore.wl\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.858137294870892*^9, 3.858137324484416*^9}, {
+  3.858142463878751*^9, 3.858142491899535*^9}, {3.858145364364112*^9, 
+  3.8581453911510878`*^9}, {3.858145599997469*^9, 3.858145604418551*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-3f82de39c32d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cubeString", " ", "=", " ", 
+  RowBox[{"sampleStrings", "[", "\"\<solved\>\"", "]"}]}]], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
+
+Cell[BoxData["\<\"WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYYYYYYY\"\>"]\
+, "Output",
+ CellChangeTimes->{
+  3.858145970937204*^9, 3.8581464833442297`*^9, {3.858146524853136*^9, 
+   3.858146526273203*^9}, 3.8581465590983973`*^9, 3.85814665161903*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"2be49713-8402-4fd3-9f34-8a0840473003"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2D Cube", "Section",
+ CellChangeTimes->{{3.858145606425721*^9, 
+  3.8581456082410803`*^9}},ExpressionUUID->"e8c07327-689e-4829-8886-\
+9bbe6750ba3a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cube2D", " ", "=", " ", 
+   RowBox[{"Generate2DCube", "[", "cubeString", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858142523012336*^9, 3.858142530274385*^9}, 
+   3.8581430578121653`*^9, {3.8581454711761627`*^9, 3.858145476240322*^9}, {
+   3.858145588461281*^9, 3.858145592531073*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"315b7f47-5fad-4e91-9eb5-6a2ecd686724"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Visualize2DCube", "[", "cube2D", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.858142851866658*^9, 3.858142856544345*^9}, 
+   3.858143079115411*^9, 3.858145479096171*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"05778e33-9a41-49b5-af45-a81fab0b9282"],
+
+Cell[BoxData[
+ GraphicsBox[{{
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 8}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 8}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 8}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 7}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 7}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 7}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 6}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 6}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 6}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{0, 5}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{1, 5}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{2, 5}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 5}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 5}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 5}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{6, 5}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{7, 5}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{8, 5}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{9, 5}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{10, 5}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{11, 5}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{0, 4}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{1, 4}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{2, 4}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 4}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 4}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 4}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{6, 4}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{7, 4}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{8, 4}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{9, 4}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{10, 4}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{11, 4}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{0, 3}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{1, 3}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{2, 3}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 3}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 3}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 3}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{6, 3}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{7, 3}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{8, 3}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{9, 3}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{10, 3}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{11, 3}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 2}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 2}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 2}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 1}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 1}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 1}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 0}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 0}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 0}]}}, 
+   StyleBox[{InsetBox["\<\"F\"\>", {4.5, 4.5}], 
+     InsetBox["\<\"L\"\>", {1.5, 4.5}], InsetBox["\<\"R\"\>", {7.5, 4.5}], 
+     InsetBox["\<\"U\"\>", {4.5, 7.5}], InsetBox["\<\"D\"\>", {4.5, 1.5}], 
+     InsetBox["\<\"B\"\>", {10.5, 4.5}]},
+    StripOnInput->False,
+    FontSize->15]}]], "Print",
+ CellChangeTimes->{3.858146562191218*^9},
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"69ac679c-08ad-47a7-8a12-c658a8265529"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3D Cube", "Section",
+ CellChangeTimes->{{3.858145610153839*^9, 
+  3.858145611786112*^9}},ExpressionUUID->"ef57a50b-2577-4825-9c57-\
+603fa94ba1b5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cube3DPieces", " ", "=", " ", 
+   RowBox[{"GetPieces", "[", "cubeString", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8581456344099483`*^9, 3.8581456594728327`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cube3D", " ", "=", " ", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"Generate3DCube", "[", "cube3DPieces", "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8581456611850433`*^9, 3.858145672042139*^9}, {
+  3.85814571927878*^9, 3.858145719974935*^9}, {3.8581465756830187`*^9, 
+  3.8581465791272182`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Visualize3DCube", "[", "cube3D", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.85814572610541*^9, 3.85814573160635*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"0d69eb88-b666-49cb-bcd3-ff3428b441fa"],
+
+Cell[BoxData[
+ Graphics3DBox[
+  DynamicBox[Typeset`ToBoxes[
+    CubeVisualize`Generate3DCube[$CellContext`cube3DPieces], StandardForm, 
+    Graphics3D],
+   ImageSizeCache->{{22.782777416908694`, 
+    333.3268633583799}, {-173.1600790174981, 170.6150436494754}}],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"x\"", TraditionalForm], 
+    FormBox["\"y\"", TraditionalForm], 
+    FormBox["\"z\"", TraditionalForm]},
+  ImageSize->{340.0161667001993, 376.3844593115426},
+  ImageSizeRaw->Automatic,
+  Lighting->{{"Ambient", 
+     GrayLevel[1]}},
+  Ticks->Automatic,
+  ViewPoint->{1.2063833547084692`, -2.3282357688262647`, 2.138681230627957},
+  ViewVertical->{-0.08125012413180449, 0.014333161187980822`, 
+   0.9965906771683778}]], "Print",
+ CellChangeTimes->{
+  3.8581459821256723`*^9, {3.85814656721316*^9, 3.8581465889142036`*^9}, 
+   3.858146658648004*^9},
+ CellLabel->
+  "During evaluation of \
+In[8]:=",ExpressionUUID->"323065b7-cda8-4f0f-a389-4a61a0346e28"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{960, 1061},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"79533421-8528-43bd-a1a0-14b9feab23a3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 198, 3, 30, "Input",ExpressionUUID->"9585f51a-d2cc-4209-b1a1-1a0fc75708ca"],
+Cell[759, 25, 371, 7, 30, "Input",ExpressionUUID->"0313ed82-4a6b-4eb3-b4ed-344a9ea6991c"],
+Cell[1133, 34, 524, 7, 73, "Input",ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-3f82de39c32d"],
+Cell[CellGroupData[{
+Cell[1682, 45, 199, 3, 30, "Input",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
+Cell[1884, 50, 333, 5, 34, "Output",ExpressionUUID->"2be49713-8402-4fd3-9f34-8a0840473003"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2254, 60, 154, 3, 67, "Section",ExpressionUUID->"e8c07327-689e-4829-8886-9bbe6750ba3a"],
+Cell[2411, 65, 403, 7, 30, "Input",ExpressionUUID->"315b7f47-5fad-4e91-9eb5-6a2ecd686724"],
+Cell[CellGroupData[{
+Cell[2839, 76, 283, 5, 30, "Input",ExpressionUUID->"05778e33-9a41-49b5-af45-a81fab0b9282"],
+Cell[3125, 83, 5746, 119, 281, "Print",ExpressionUUID->"69ac679c-08ad-47a7-8a12-c658a8265529"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8920, 208, 152, 3, 67, "Section",ExpressionUUID->"ef57a50b-2577-4825-9c57-603fa94ba1b5"],
+Cell[9075, 213, 282, 5, 30, "Input",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
+Cell[9360, 220, 421, 9, 30, "Input",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
+Cell[CellGroupData[{
+Cell[9806, 233, 233, 4, 30, "Input",ExpressionUUID->"0d69eb88-b666-49cb-bcd3-ff3428b441fa"],
+Cell[10042, 239, 957, 25, 384, "Print",ExpressionUUID->"323065b7-cda8-4f0f-a389-4a61a0346e28"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
