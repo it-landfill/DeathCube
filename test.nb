@@ -10,19 +10,14 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12749,        305]
-NotebookOptionsPosition[     11027,        268]
-NotebookOutlinePosition[     11422,        284]
-CellTagsIndexPosition[     11379,        281]
+NotebookDataLength[     24706,        642]
+NotebookOptionsPosition[     21872,        582]
+NotebookOutlinePosition[     22267,        598]
+CellTagsIndexPosition[     22224,        595]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[
- RowBox[{"Quit", "[", "]"}]], "Input",
- CellChangeTimes->{{3.858145809608409*^9, 3.8581458426915407`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"9585f51a-d2cc-4209-b1a1-1a0fc75708ca"],
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"AppendTo", "[", 
@@ -52,8 +47,9 @@ Cell[BoxData["\<\"WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYYYYYYY\"\>"]\
 , "Output",
  CellChangeTimes->{
   3.858145970937204*^9, 3.8581464833442297`*^9, {3.858146524853136*^9, 
-   3.858146526273203*^9}, 3.8581465590983973`*^9, 3.85814665161903*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"2be49713-8402-4fd3-9f34-8a0840473003"]
+   3.858146526273203*^9}, 3.8581465590983973`*^9, 3.85814665161903*^9, 
+   3.8586549522396393`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"4cf60da1-dda3-4f04-8b1a-54bebe8ada98"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -197,10 +193,10 @@ Cell[BoxData[
      InsetBox["\<\"B\"\>", {10.5, 4.5}]},
     StripOnInput->False,
     FontSize->15]}]], "Print",
- CellChangeTimes->{3.858146562191218*^9},
+ CellChangeTimes->{3.858146562191218*^9, 3.858654955033309*^9},
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"69ac679c-08ad-47a7-8a12-c658a8265529"]
+In[7]:=",ExpressionUUID->"1f31c702-51dd-4385-90ec-e3b1c2ef1ca5"]
 }, Open  ]]
 }, Open  ]],
 
@@ -216,7 +212,7 @@ Cell[BoxData[
   RowBox[{"cube3DPieces", " ", "=", " ", 
    RowBox[{"GetPieces", "[", "cubeString", "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.8581456344099483`*^9, 3.8581456594728327`*^9}},
- CellLabel->"In[9]:=",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
+ CellLabel->"In[8]:=",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
 
 Cell[BoxData[
  RowBox[{
@@ -227,7 +223,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.8581456611850433`*^9, 3.858145672042139*^9}, {
   3.85814571927878*^9, 3.858145719974935*^9}, {3.8581465756830187`*^9, 
   3.8581465791272182`*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
+ CellLabel->"In[9]:=",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
 
 Cell[CellGroupData[{
 
@@ -263,11 +259,329 @@ Cell[BoxData[
  CellLabel->
   "During evaluation of \
 In[8]:=",ExpressionUUID->"323065b7-cda8-4f0f-a389-4a61a0346e28"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Controlli", "Subsection",
+ CellChangeTimes->{{3.858136449182974*^9, 
+  3.858136452242155*^9}},ExpressionUUID->"32f0b443-ffa6-404c-8446-\
+4f028d235236"],
+
+Cell[CellGroupData[{
+
+Cell["Generale", "Subsubsection",
+ CellChangeTimes->{{3.858132895751388*^9, 3.858132903971262*^9}, {
+  3.858136687578467*^9, 
+  3.8581366890400457`*^9}},ExpressionUUID->"c643c8c0-0e9a-497b-8dd2-\
+6450d64069a6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"List", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Load solved\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"GetPieces", "[", 
+        RowBox[{"sampleStrings", "[", "\"\<solved\>\"", "]"}], "]"}]}], 
+      ";"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Load start\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"GetPieces", "[", 
+        RowBox[{"sampleStrings", "[", "\"\<start\>\"", "]"}], "]"}]}], 
+      ";"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.85813291227271*^9, 3.8581329182583847`*^9}, {
+  3.858136478679347*^9, 3.858136555598707*^9}, {3.858656069233163*^9, 
+  3.858656076268976*^9}, {3.858656169907217*^9, 3.858656195556756*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"07336970-c2a7-470a-8ba1-920430f4e201"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   ButtonBox["\<\"Load solved\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = CubeCore`GetPieces[
+        CubeAcquire`sampleStrings["solved"]]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Load start\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = CubeCore`GetPieces[
+        CubeAcquire`sampleStrings["start"]]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.858656173111229*^9, 3.858656196075904*^9}},
+ CellLabel->"Out[28]=",ExpressionUUID->"023d2f97-e300-4e36-9242-13074e272af4"]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Mosse standard cubo", "Subsubsection",
+ CellChangeTimes->{{3.858132925771842*^9, 3.8581329293094177`*^9}, {
+  3.858136691529854*^9, 
+  3.858136694781385*^9}},ExpressionUUID->"7ea7cc74-e9e1-4068-beea-\
+75ce888b6871"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"List", "[", 
+  RowBox[{
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<L\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateL", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<L'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateLi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<R\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateR", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<R'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateRi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<U\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateU", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<U'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateUi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<D\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateD", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<D'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateDi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<F\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateF", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<F'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateFi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<B\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateB", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<B'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateBi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.858132698560207*^9, 3.858132822592474*^9}, 
+   3.858132872522488*^9, {3.858132935578004*^9, 3.858132943028689*^9}, 
+   3.858136598708551*^9, {3.85865608386452*^9, 3.858656132239443*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"20e06c50-6bda-45e0-84fb-131a3b5f8841"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   ButtonBox["\<\"L\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateL[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"L'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateLi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"R\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateR[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"R'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateRi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"U\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateU[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"U'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateUi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"D\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateD[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"D'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateDi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"F\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateF[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"F'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateFi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"B\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateB[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"B'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateBi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"]}], "}"}]], "Output",
+ CellChangeTimes->{3.858656136273773*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"d9390b3d-a577-4ba6-9777-93cd67f0f2ce"]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rotazione cubo", "Subsubsection",
+ CellChangeTimes->{{3.858132952248643*^9, 3.858132955830885*^9}, {
+  3.858136697181369*^9, 
+  3.858136704333454*^9}},ExpressionUUID->"7a2f0e7a-8b7d-4747-a480-\
+e738d240adf7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"List", "[", 
+  RowBox[{
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<X\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateX", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<X'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateXi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Y\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateY", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Y'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateYi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Z\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateZ", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Z'\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"RotateZi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.858136620997137*^9, 3.858136621004178*^9}, {
+  3.858656090180126*^9, 3.858656122322294*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"f15fde06-53b2-4be6-a8bf-63ddaeac3ecb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   ButtonBox["\<\"X\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateX[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"X'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateXi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Y\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateY[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Y'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateYi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Z\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateZ[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Z'\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`cube3DPieces = 
+      CubeCore`RotateZi[$CellContext`cube3DPieces]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"]}], "}"}]], "Output",
+ CellChangeTimes->{3.858656141023697*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"0c3f2c7a-49b9-4d3d-a30e-6ab8ffe110ab"]
+}, {2}]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{960, 1061},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"79533421-8528-43bd-a1a0-14b9feab23a3"
@@ -283,28 +597,51 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 198, 3, 30, "Input",ExpressionUUID->"9585f51a-d2cc-4209-b1a1-1a0fc75708ca"],
-Cell[759, 25, 371, 7, 30, "Input",ExpressionUUID->"0313ed82-4a6b-4eb3-b4ed-344a9ea6991c"],
-Cell[1133, 34, 524, 7, 73, "Input",ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-3f82de39c32d"],
+Cell[558, 20, 371, 7, 30, "Input",ExpressionUUID->"0313ed82-4a6b-4eb3-b4ed-344a9ea6991c"],
+Cell[932, 29, 524, 7, 73, "Input",ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-3f82de39c32d"],
 Cell[CellGroupData[{
-Cell[1682, 45, 199, 3, 30, "Input",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
-Cell[1884, 50, 333, 5, 34, "Output",ExpressionUUID->"2be49713-8402-4fd3-9f34-8a0840473003"]
+Cell[1481, 40, 199, 3, 30, "Input",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
+Cell[1683, 45, 361, 6, 34, "Output",ExpressionUUID->"4cf60da1-dda3-4f04-8b1a-54bebe8ada98"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2254, 60, 154, 3, 67, "Section",ExpressionUUID->"e8c07327-689e-4829-8886-9bbe6750ba3a"],
-Cell[2411, 65, 403, 7, 30, "Input",ExpressionUUID->"315b7f47-5fad-4e91-9eb5-6a2ecd686724"],
+Cell[2081, 56, 154, 3, 67, "Section",ExpressionUUID->"e8c07327-689e-4829-8886-9bbe6750ba3a"],
+Cell[2238, 61, 403, 7, 30, "Input",ExpressionUUID->"315b7f47-5fad-4e91-9eb5-6a2ecd686724"],
 Cell[CellGroupData[{
-Cell[2839, 76, 283, 5, 30, "Input",ExpressionUUID->"05778e33-9a41-49b5-af45-a81fab0b9282"],
-Cell[3125, 83, 5746, 119, 281, "Print",ExpressionUUID->"69ac679c-08ad-47a7-8a12-c658a8265529"]
+Cell[2666, 72, 283, 5, 30, "Input",ExpressionUUID->"05778e33-9a41-49b5-af45-a81fab0b9282"],
+Cell[2952, 79, 5768, 119, 281, "Print",ExpressionUUID->"1f31c702-51dd-4385-90ec-e3b1c2ef1ca5"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8920, 208, 152, 3, 67, "Section",ExpressionUUID->"ef57a50b-2577-4825-9c57-603fa94ba1b5"],
-Cell[9075, 213, 282, 5, 30, "Input",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
-Cell[9360, 220, 421, 9, 30, "Input",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
+Cell[8769, 204, 152, 3, 67, "Section",ExpressionUUID->"ef57a50b-2577-4825-9c57-603fa94ba1b5"],
+Cell[8924, 209, 282, 5, 30, "Input",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
+Cell[9209, 216, 421, 9, 30, "Input",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
 Cell[CellGroupData[{
-Cell[9806, 233, 233, 4, 30, "Input",ExpressionUUID->"0d69eb88-b666-49cb-bcd3-ff3428b441fa"],
-Cell[10042, 239, 957, 25, 384, "Print",ExpressionUUID->"323065b7-cda8-4f0f-a389-4a61a0346e28"]
+Cell[9655, 229, 233, 4, 30, "Input",ExpressionUUID->"0d69eb88-b666-49cb-bcd3-ff3428b441fa"],
+Cell[9891, 235, 957, 25, 384, "Print",ExpressionUUID->"323065b7-cda8-4f0f-a389-4a61a0346e28"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10885, 265, 157, 3, 54, "Subsection",ExpressionUUID->"32f0b443-ffa6-404c-8446-4f028d235236"],
+Cell[CellGroupData[{
+Cell[11067, 272, 210, 4, 45, "Subsubsection",ExpressionUUID->"c643c8c0-0e9a-497b-8dd2-6450d64069a6"],
+Cell[CellGroupData[{
+Cell[11302, 280, 923, 20, 94, "Input",ExpressionUUID->"07336970-c2a7-470a-8ba1-920430f4e201"],
+Cell[12228, 302, 684, 16, 46, "Output",ExpressionUUID->"023d2f97-e300-4e36-9242-13074e272af4"]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12958, 324, 221, 4, 45, "Subsubsection",ExpressionUUID->"7ea7cc74-e9e1-4068-beea-75ce888b6871"],
+Cell[CellGroupData[{
+Cell[13204, 332, 2615, 72, 157, "Input",ExpressionUUID->"20e06c50-6bda-45e0-84fb-131a3b5f8841"],
+Cell[15822, 406, 2826, 76, 80, "Output",ExpressionUUID->"d9390b3d-a577-4ba6-9777-93cd67f0f2ce"]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18694, 488, 214, 4, 45, "Subsubsection",ExpressionUUID->"7a2f0e7a-8b7d-4747-a480-e738d240adf7"],
+Cell[CellGroupData[{
+Cell[18933, 496, 1387, 38, 94, "Input",ExpressionUUID->"f15fde06-53b2-4be6-a8bf-63ddaeac3ecb"],
+Cell[20323, 536, 1500, 40, 46, "Output",ExpressionUUID->"0c3f2c7a-49b9-4d3d-a30e-6ab8ffe110ab"]
+}, {2}]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
