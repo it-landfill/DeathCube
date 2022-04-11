@@ -1,0 +1,236 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8433,        226]
+NotebookOptionsPosition[      6737,        191]
+NotebookOutlinePosition[      7132,        207]
+CellTagsIndexPosition[      7089,        204]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Str1", "[", "lang_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{"Switch", "[", 
+     RowBox[{
+     "lang", ",", "\"\<ita\>\"", ",", "\"\<Stringa di prova\>\"", ",", 
+      "\"\<eng\>\"", ",", "\"\<Test String\>\""}], "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.858651441519472*^9, 3.8586515058089037`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"3106c681-3dff-4c4d-8f34-e28cf0722313"],
+
+Cell[BoxData[
+ RowBox[{"lang", " ", "=", " ", "\"\<eng\>\""}]], "Input",
+ CellChangeTimes->{{3.858651508345098*^9, 3.858651540742943*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"95f16218-0465-4290-a68c-6ebbdd6e0873"],
+
+Cell[BoxData["\"\<eng\>\""], "Input",
+ CellChangeTimes->{{3.858651597509643*^9, 
+  3.858651599808959*^9}},ExpressionUUID->"311e3d64-25e0-4be0-a421-\
+1bf8c98ab0b9"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.858651601394122*^9, 
+  3.858651603029142*^9}},ExpressionUUID->"4a5c05b5-9aaf-4a36-8909-\
+4c114f345b82"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"Str1", "[", "lang", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.858651531824563*^9, 3.858651538145125*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"ee9fcbcb-6cfa-4d89-b6c2-676d070f50ac"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`Str1[$CellContext`lang], StandardForm],
+  ImageSizeCache->{126., {3., 10.}}]], "Output",
+ CellChangeTimes->{3.858651538712596*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"4ebcd290-4a46-43f5-86d7-2704061c322c"]
+}, {2}]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.85865160484219*^9, 
+  3.858651606252553*^9}},ExpressionUUID->"afa9b372-a54d-4322-8d89-\
+3e55b3321085"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"List", "[", 
+  RowBox[{
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Italiano\>\"", ",", " ", 
+     RowBox[{"lang", "=", "\"\<ita\>\""}]}], "]"}], ",", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<English\>\"", ",", " ", 
+     RowBox[{"lang", "=", "\"\<eng\>\""}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.858651545039411*^9, 3.858651574118719*^9}, {
+  3.858651666516118*^9, 3.858651668060055*^9}, {3.858653295379064*^9, 
+  3.8586533647915897`*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"bf559f7d-5e26-4a46-9e0a-0a8f9c1cca3f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   ButtonBox["\<\"Italiano\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`lang = "ita"),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"English\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>($CellContext`lang = "eng"),
+    Evaluator->Automatic,
+    Method->"Preemptive"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.858653349464938*^9, 3.858653365144649*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"c15f1b51-5ab9-4cc9-b94b-e3fccc791979"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.858651574647901*^9, 
+  3.858651575976451*^9}},ExpressionUUID->"4a87757f-6568-42e0-84d8-\
+3ba69eba9ea8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PopupMenu", "[", 
+  RowBox[{
+   RowBox[{"Dynamic", "[", "lang", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<ita\>\"", ",", "\"\<eng\>\""}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.858651680412472*^9, 3.8586516807707243`*^9}, {
+  3.858651711649838*^9, 3.858651727057521*^9}, {3.858651761289288*^9, 
+  3.85865176429617*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"176bdf03-0660-4ecf-b9a9-3dbdfb84c7c5"],
+
+Cell[BoxData[
+ PopupMenuBox[Dynamic[$CellContext`lang], {"ita"->"\<\"ita\"\>", 
+  "eng"->"\<\"eng\"\>"}]], "Output",
+ CellChangeTimes->{{3.85865172995118*^9, 3.858651733352713*^9}, 
+   3.858651764943028*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"a3ac9ca1-8c1e-4d10-a5d8-c8150a16f209"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RadioButtonBar", "[", 
+  RowBox[{
+   RowBox[{"Dynamic", "[", "lang", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<ita\>\"", ",", "\"\<eng\>\""}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.858653217789111*^9, 3.858653234260071*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"f7ac0310-48ce-442f-b869-4f71a89c5d79"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{GridBox[{
+      {
+       RadioButtonBox[Dynamic[$CellContext`lang], {"ita"},
+        DefaultBaseStyle->"RadioButtonBar"], 
+       StyleBox["\<\"ita\"\>", "RadioButtonBarLabel",
+        StripOnInput->False]}
+     },
+     AutoDelete->False,
+     BaselinePosition->{1, 2},
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.21]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}], "  ", GridBox[{
+      {
+       RadioButtonBox[Dynamic[$CellContext`lang], {"eng"},
+        DefaultBaseStyle->"RadioButtonBar"], 
+       StyleBox["\<\"eng\"\>", "RadioButtonBarLabel",
+        StripOnInput->False]}
+     },
+     AutoDelete->False,
+     BaselinePosition->{1, 2},
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.21]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}]}], "Deploy"],
+  RadioButtonBar[
+   Dynamic[$CellContext`lang], {"ita", "eng"}]]], "Output",
+ CellChangeTimes->{3.858653234787589*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"14e12675-28fd-4240-9065-dc9b1c5b8277"]
+}, Open  ]]
+},
+WindowSize->{960, 1061},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d2115d7c-88e6-4398-9ce8-8730d8c75a0a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 542, 12, 73, "Input",ExpressionUUID->"3106c681-3dff-4c4d-8f34-e28cf0722313"],
+Cell[1103, 34, 216, 3, 30, "Input",ExpressionUUID->"95f16218-0465-4290-a68c-6ebbdd6e0873"],
+Cell[1322, 39, 163, 3, 30, InheritFromParent,ExpressionUUID->"311e3d64-25e0-4be0-a421-1bf8c98ab0b9"],
+Cell[1488, 44, 327, 6, 178, "Input",ExpressionUUID->"4a5c05b5-9aaf-4a36-8909-4c114f345b82"],
+Cell[CellGroupData[{
+Cell[1840, 54, 238, 4, 30, "Input",ExpressionUUID->"ee9fcbcb-6cfa-4d89-b6c2-676d070f50ac"],
+Cell[2081, 60, 259, 5, 34, "Output",ExpressionUUID->"4ebcd290-4a46-43f5-86d7-2704061c322c"]
+}, {2}]],
+Cell[2352, 68, 375, 7, 220, "Input",ExpressionUUID->"afa9b372-a54d-4322-8d89-3e55b3321085"],
+Cell[CellGroupData[{
+Cell[2752, 79, 560, 12, 30, "Input",ExpressionUUID->"bf559f7d-5e26-4a46-9e0a-0a8f9c1cca3f"],
+Cell[3315, 93, 533, 14, 46, "Output",ExpressionUUID->"c15f1b51-5ab9-4cc9-b94b-e3fccc791979"]
+}, Open  ]],
+Cell[3863, 110, 152, 3, 30, "Input",ExpressionUUID->"4a87757f-6568-42e0-84d8-3ba69eba9ea8"],
+Cell[CellGroupData[{
+Cell[4040, 117, 436, 9, 30, "Input",ExpressionUUID->"176bdf03-0660-4ecf-b9a9-3dbdfb84c7c5"],
+Cell[4479, 128, 286, 5, 42, "Output",ExpressionUUID->"a3ac9ca1-8c1e-4d10-a5d8-c8150a16f209"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4802, 138, 342, 7, 30, "Input",ExpressionUUID->"f7ac0310-48ce-442f-b869-4f71a89c5d79"],
+Cell[5147, 147, 1574, 41, 37, "Output",ExpressionUUID->"14e12675-28fd-4240-9065-dc9b1c5b8277"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

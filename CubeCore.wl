@@ -204,52 +204,49 @@ ExtractFace[cube_, face_] :=
 (*Rotazione singolo sotto cubo*)
 
 
-(* ::Input:: *)
-(*RotatePiece[piece_,matrix_] := Module[{},*)
-(*	before = piece["pos"];*)
-(*	col = piece["colors"];*)
-(*	(* Eseguo prodotto scalare *)*)
-(*	pos = Dot[matrix,before];*)
-(*	rot = pos-before;*)
-(*	(*Gesisco caso nessuna rotazione (before == pos) (si ha nei blocchi centrali) *)*)
-(*	If[SameQ[before,pos],Return[piece]];*)
-(*	If[Count[rot,0]==2,rot +=Dot[matrix,rot]];*)
-(*	(* A questo punto dovrei essere sicuro che in rot vi sia SOLO 1 elemento uguale a 0 *)*)
-(*	(* Calcolo quale asse \[EGrave] 0 e swappo i colori negli altri 2 assi *)*)
-(*	emptyAxe = Position[rot,0][[1]][[1]];*)
-(*	swapIndex = Switch[emptyAxe,1,{2,3},2,{1,3},3,{1,2}];*)
-(*	tmp =  col[[swapIndex[[1]]]];*)
-(*	col[[swapIndex[[1]]]] = col[[swapIndex[[2]]]];*)
-(*	col[[swapIndex[[2]]]] = tmp;*)
-(**)
-(*	(* Ricreo il piece e lo ritorno*)*)
-(*	<|"pos"->pos,"colors" ->col|>*)
-(*];*)
+RotatePiece[piece_,matrix_] := Module[{},
+	before = piece["pos"];
+	col = piece["colors"];
+	(* Eseguo prodotto scalare *)
+	pos = Dot[matrix,before];
+	rot = pos-before;
+	(*Gesisco caso nessuna rotazione (before == pos) (si ha nei blocchi centrali) *)
+	If[SameQ[before,pos],Return[piece]];
+	If[Count[rot,0]==2,rot +=Dot[matrix,rot]];
+	(* A questo punto dovrei essere sicuro che in rot vi sia SOLO 1 elemento uguale a 0 *)
+	(* Calcolo quale asse \[EGrave] 0 e swappo i colori negli altri 2 assi *)
+	emptyAxe = Position[rot,0][[1]][[1]];
+	swapIndex = Switch[emptyAxe,1,{2,3},2,{1,3},3,{1,2}];
+	tmp =  col[[swapIndex[[1]]]];
+	col[[swapIndex[[1]]]] = col[[swapIndex[[2]]]];
+	col[[swapIndex[[2]]]] = tmp;
+
+	(* Ricreo il piece e lo ritorno*)
+	<|"pos"->pos,"colors" ->col|>
+];
 
 
 (* ::Subsubsection:: *)
 (*Rotazione faccia*)
 
 
-(* ::Input:: *)
-(*RotateFace[cube_, face_, matrix_] :=*)
-(*	Map[*)
-(*		If[Dot[#["pos"], face] > 0,*)
-(*			RotatePiece[#, matrix]*)
-(*			,*)
-(*			#*)
-(*		]&*)
-(*		,*)
-(*		cube*)
-(*	];*)
+RotateFace[cube_, face_, matrix_] :=
+	Map[
+		If[Dot[#["pos"], face] > 0,
+			RotatePiece[#, matrix]
+			,
+			#
+		]&
+		,
+		cube
+	];
 
 
 (* ::Subsubsection:: *)
 (*Rotazione tutti sotto cubi*)
 
 
-(* ::Input:: *)
-(*RotateAllPieces[cube_,matrix_] := Map[RotatePiece[#,matrix]&,cube];*)
+RotateAllPieces[cube_,matrix_] := Map[RotatePiece[#,matrix]&,cube];
 
 
 (* ::Subsection:: *)
@@ -260,55 +257,53 @@ ExtractFace[cube_, face_] :=
 (*Rotazioni intero cubo*)
 
 
-(* ::Input:: *)
-(*RotateX[cube_]:=RotateAllPieces[cube,ROTYZCW];*)
-(*RotateXi[cube_]:=RotateAllPieces[cube,ROTYZCC];*)
-(*RotateY[cube_]:=RotateAllPieces[cube,ROTXZCW];*)
-(*RotateYi[cube_]:=RotateAllPieces[cube,ROTXZCC];*)
-(*RotateZ[cube_]:=RotateAllPieces[cube,ROTXYCW];*)
-(*RotateZi[cube_]:=RotateAllPieces[cube,ROTXYCC];*)
+RotateX[cube_]:=RotateAllPieces[cube,ROTYZCW];
+RotateXi[cube_]:=RotateAllPieces[cube,ROTYZCC];
+RotateY[cube_]:=RotateAllPieces[cube,ROTXZCW];
+RotateYi[cube_]:=RotateAllPieces[cube,ROTXZCC];
+RotateZ[cube_]:=RotateAllPieces[cube,ROTXYCW];
+RotateZi[cube_]:=RotateAllPieces[cube,ROTXYCC];
 
 
 (* ::Subsubsection:: *)
 (*Rotazioni facce*)
 
 
-(* ::Input:: *)
-(*RotateL[cube_] :=*)
-(*	RotateFace[cube, LEFT, ROTYZCC];*)
-(**)
-(*RotateLi[cube_] :=*)
-(*	RotateFace[cube, LEFT, ROTYZCW];*)
-(**)
-(*RotateR[cube_] :=*)
-(*	RotateFace[cube, RIGHT, ROTYZCC];*)
-(**)
-(*RotateRi[cube_] :=*)
-(*	RotateFace[cube, RIGHT, ROTYZCW];*)
-(**)
-(*RotateU[cube_] :=*)
-(*	RotateFace[cube, UP, ROTXZCC];*)
-(**)
-(*RotateUi[cube_] :=*)
-(*	RotateFace[cube, UP, ROTXZCW];*)
-(**)
-(*RotateD[cube_] :=*)
-(*	RotateFace[cube, DOWN, ROTXZCC];*)
-(**)
-(*RotateDi[cube_] :=*)
-(*	RotateFace[cube, DOWN, ROTXZCW];*)
-(**)
-(*RotateF[cube_] :=*)
-(*	RotateFace[cube, FRONT, ROTXYCC];*)
-(**)
-(*RotateFi[cube_] :=*)
-(*	RotateFace[cube, FRONT, ROTXYCW];*)
-(**)
-(*RotateB[cube_] :=*)
-(*	RotateFace[cube, BACK, ROTXYCC];*)
-(**)
-(*RotateBi[cube_] :=*)
-(*	RotateFace[cube, BACK, ROTXYCW];*)
+RotateL[cube_] :=
+	RotateFace[cube, LEFT, ROTYZCC];
+
+RotateLi[cube_] :=
+	RotateFace[cube, LEFT, ROTYZCW];
+
+RotateR[cube_] :=
+	RotateFace[cube, RIGHT, ROTYZCC];
+
+RotateRi[cube_] :=
+	RotateFace[cube, RIGHT, ROTYZCW];
+
+RotateU[cube_] :=
+	RotateFace[cube, UP, ROTXZCC];
+
+RotateUi[cube_] :=
+	RotateFace[cube, UP, ROTXZCW];
+
+RotateD[cube_] :=
+	RotateFace[cube, DOWN, ROTXZCC];
+
+RotateDi[cube_] :=
+	RotateFace[cube, DOWN, ROTXZCW];
+
+RotateF[cube_] :=
+	RotateFace[cube, FRONT, ROTXYCC];
+
+RotateFi[cube_] :=
+	RotateFace[cube, FRONT, ROTXYCW];
+
+RotateB[cube_] :=
+	RotateFace[cube, BACK, ROTXYCC];
+
+RotateBi[cube_] :=
+	RotateFace[cube, BACK, ROTXYCW];
 
 
 (* ::Subsubsection:: *)
