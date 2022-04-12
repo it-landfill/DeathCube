@@ -8,6 +8,14 @@ BeginPackage["CubeCore`"]
 
 
 GetPieces::usage = ""
+GetFaces::usage = ""
+GetEdges::usage = ""
+GetCorners::usage = ""
+
+
+RotatePiece::usage = ""
+RotateFace::usage = ""
+RotateAllPieces::usage = ""
 
 
 RotateX::usage = ""
@@ -30,6 +38,17 @@ RotateF::usage = ""
 RotateFi::usage = ""
 RotateB::usage = ""
 RotateBi::usage = ""
+
+
+XAXIS::usage = ""
+YAXIS::usage = ""
+ZAXIS::usage = ""
+RIGHT::usage = ""
+LEFT::usage = ""
+UP::usage = ""
+DOWN::usage = ""
+FRONT::usage = ""
+BACK::usage = ""
 
 
 (* ::Section:: *)
@@ -240,6 +259,10 @@ RotateFace[cube_, face_, matrix_] :=
 		,
 		cube
 	];
+
+
+(* ::Subsubsection:: *)
+(*TODO: RotateFace con angolo custom*)
 
 
 (* ::Subsubsection:: *)
