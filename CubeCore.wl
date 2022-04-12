@@ -233,12 +233,14 @@ RotatePiece[piece_,matrix_] := Module[{},
 	If[SameQ[before,pos],Return[piece]];
 	If[Count[rot,0]==2,rot +=Dot[matrix,rot]];
 	(* A questo punto dovrei essere sicuro che in rot vi sia SOLO 1 elemento uguale a 0 *)
-	(* Calcolo quale asse \[EGrave] 0 e swappo i colori negli altri 2 assi *)
-	emptyAxe = Position[rot,0][[1]][[1]];
-	swapIndex = Switch[emptyAxe,1,{2,3},2,{1,3},3,{1,2}];
-	tmp =  col[[swapIndex[[1]]]];
-	col[[swapIndex[[1]]]] = col[[swapIndex[[2]]]];
-	col[[swapIndex[[2]]]] = tmp;
+	If[Total[Mod[pos,1]]==0,
+		(* Calcolo quale asse \[EGrave] 0 e swappo i colori negli altri 2 assi *)
+		emptyAxe = Position[rot,0][[1]][[1]];
+		swapIndex = Switch[emptyAxe,1,{2,3},2,{1,3},3,{1,2}];
+		tmp =  col[[swapIndex[[1]]]];
+		col[[swapIndex[[1]]]] = col[[swapIndex[[2]]]];
+		col[[swapIndex[[2]]]] = tmp;
+	,Null(*Non faccio nulla*)];
 
 	(* Ricreo il piece e lo ritorno*)
 	<|"pos"->pos,"colors" ->col|>
