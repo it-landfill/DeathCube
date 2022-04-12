@@ -28,6 +28,9 @@ ControlsRotation::usage = ""
 ControlsMoves::usage = ""
 
 
+GetGraphicPiece::usage = ""
+
+
 (* ::Section:: *)
 (*Inizio package*)
 
