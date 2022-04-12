@@ -299,16 +299,16 @@ RotateLi[cube_] :=
 	RotateFace[cube, LEFT, ROTYZCW];
 
 RotateR[cube_] :=
-	RotateFace[cube, RIGHT, ROTYZCC];
-
-RotateRi[cube_] :=
 	RotateFace[cube, RIGHT, ROTYZCW];
 
+RotateRi[cube_] :=
+	RotateFace[cube, RIGHT, ROTYZCC];
+
 RotateU[cube_] :=
-	RotateFace[cube, UP, ROTXZCC];
+	RotateFace[cube, UP, ROTXZCW];
 
 RotateUi[cube_] :=
-	RotateFace[cube, UP, ROTXZCW];
+	RotateFace[cube, UP, ROTXZCC];
 
 RotateD[cube_] :=
 	RotateFace[cube, DOWN, ROTXZCC];
@@ -317,10 +317,10 @@ RotateDi[cube_] :=
 	RotateFace[cube, DOWN, ROTXZCW];
 
 RotateF[cube_] :=
-	RotateFace[cube, FRONT, ROTXYCC];
+	RotateFace[cube, FRONT, ROTXYCW];
 
 RotateFi[cube_] :=
-	RotateFace[cube, FRONT, ROTXYCW];
+	RotateFace[cube, FRONT, ROTXYCC];
 
 RotateB[cube_] :=
 	RotateFace[cube, BACK, ROTXYCC];
