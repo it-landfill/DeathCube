@@ -51,6 +51,10 @@ FRONT::usage = ""
 BACK::usage = ""
 
 
+ExtractFace::usage = ""
+ExtractNotFace::usage = ""
+
+
 (* ::Section:: *)
 (*Inizio package*)
 
@@ -200,6 +204,12 @@ GetPieces[cubeStr_] :=
 ExtractFace[cube_, face_] :=
 	Module[{},
 		Select[cube, Dot[#["pos"], face] > 0&]
+	];
+
+
+ExtractNotFace[cube_, face_] :=
+	Module[{},
+		Select[cube, Dot[#["pos"], face] <= 0&]
 	];
 
 
