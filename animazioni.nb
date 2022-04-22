@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     45338,        947]
-NotebookOptionsPosition[     43712,        914]
-NotebookOutlinePosition[     44149,        931]
-CellTagsIndexPosition[     44106,        928]
+NotebookDataLength[     88915,       1766]
+NotebookOptionsPosition[     86017,       1710]
+NotebookOutlinePosition[     86459,       1727]
+CellTagsIndexPosition[     86416,       1724]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,8 +24,10 @@ Cell[BoxData[
    RowBox[{"$Path", ",", " ", 
     RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.858137480104897*^9, 3.858137536905615*^9}, {
-   3.8581415379546957`*^9, 3.858141539757514*^9}, 3.858145399250944*^9},
- CellLabel->"In[3]:=",ExpressionUUID->"bccdf893-a45e-42af-a6eb-59829ee5d3f0"],
+   3.8581415379546957`*^9, 3.858141539757514*^9}, 3.858145399250944*^9, {
+   3.859600393667893*^9, 3.859600395383945*^9}},
+ CellLabel->
+  "In[228]:=",ExpressionUUID->"bccdf893-a45e-42af-a6eb-59829ee5d3f0"],
 
 Cell[BoxData[{
  RowBox[{"Get", "[", "\"\<CubeAcquire.wl\>\"", "]"}], "\[IndentingNewLine]", 
@@ -36,7 +38,8 @@ Cell[BoxData[{
   3.858142463878751*^9, 3.858142491899535*^9}, {3.858145364364112*^9, 
   3.8581453911510878`*^9}, {3.858145599997469*^9, 3.858145604418551*^9}, {
   3.858748060715214*^9, 3.858748068287333*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"a5ac633f-11e5-44b2-b97c-05b9b38e3225"],
+ CellLabel->
+  "In[229]:=",ExpressionUUID->"a5ac633f-11e5-44b2-b97c-05b9b38e3225"],
 
 Cell[BoxData[
  RowBox[{
@@ -47,7 +50,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.8587525172855043`*^9, 3.8587525185071383`*^9}, {
   3.858752559955579*^9, 3.858752564731414*^9}, {3.8587529078427362`*^9, 
   3.858752910605247*^9}},
- CellLabel->"In[38]:=",ExpressionUUID->"5a8efa53-95e8-464c-9a2e-d6c6ed2465a6"],
+ CellLabel->
+  "In[233]:=",ExpressionUUID->"5a8efa53-95e8-464c-9a2e-d6c6ed2465a6"],
 
 Cell[CellGroupData[{
 
@@ -71,7 +75,7 @@ Cell[BoxData[
       RowBox[{"col", " ", "=", " ", 
        RowBox[{"piece", "[", "\"\<colors\>\"", "]"}]}], ";", "\n", "\t", 
       RowBox[{"polygons", " ", "=", " ", 
-       RowBox[{"{", "}"}]}], ";", "\n", "\[IndentingNewLine]", "\n", "\t", 
+       RowBox[{"{", "}"}]}], ";", "\n", "\n", "\t", 
       RowBox[{"(*", " ", 
        RowBox[{"Facce", " ", "in", " ", "YZ"}], " ", "*)"}], "\n", "\t", 
       RowBox[{"If", "[", 
@@ -306,8 +310,9 @@ Cell[BoxData[
    3.85875042911022*^9}, {3.8587504704167852`*^9, 3.8587504819085217`*^9}, {
    3.85875063582308*^9, 3.858750729676573*^9}, {3.858750889691588*^9, 
    3.8587508967792673`*^9}, {3.858751157699787*^9, 3.858751201226982*^9}, {
-   3.858751298487714*^9, 3.85875130533987*^9}},
- CellLabel->"In[10]:=",ExpressionUUID->"fa436f44-1680-4790-aeb2-19498f9641d7"],
+   3.858751298487714*^9, 3.85875130533987*^9}, 3.859600312613907*^9},
+ CellLabel->
+  "In[234]:=",ExpressionUUID->"fa436f44-1680-4790-aeb2-19498f9641d7"],
 
 Cell[BoxData[
  RowBox[{
@@ -345,13 +350,14 @@ Cell[BoxData[
   3.8587522714799137`*^9, 3.858752294439514*^9}, {3.858752605081359*^9, 
   3.858752606396254*^9}, {3.858752652337068*^9, 3.858752652753879*^9}, {
   3.858752828622979*^9, 3.858752849145192*^9}},
- CellLabel->"In[35]:=",ExpressionUUID->"40fcc2ac-109a-4b2a-9035-69027e782e4c"],
+ CellLabel->
+  "In[235]:=",ExpressionUUID->"40fcc2ac-109a-4b2a-9035-69027e782e4c"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"Visualize3DCubeCresp", "[", "cube_", "]"}], " ", ":=", "\n", "\t", 
-   RowBox[{"Module", "[", 
+   RowBox[{"DynamicModule", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{"graphichOptions", " ", "=", " ", 
@@ -375,9 +381,12 @@ Cell[BoxData[
         RowBox[{"cube", ",", " ", "graphichOptions"}], "]"}], "]"}], ";"}]}], 
     "\n", "\t", "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.8587479465213203`*^9, 3.858747950943203*^9}, {
-  3.8587493029546537`*^9, 3.85874930533254*^9}, {3.858751353658085*^9, 
-  3.858751355516222*^9}},
- CellLabel->"In[12]:=",ExpressionUUID->"8047bcfe-7bd0-4233-a4bc-4553996c4597"]
+   3.8587493029546537`*^9, 3.85874930533254*^9}, {3.858751353658085*^9, 
+   3.858751355516222*^9}, {3.859601195883415*^9, 3.859601199919005*^9}, 
+   3.859601260536158*^9, {3.859603783635984*^9, 3.8596037881428003`*^9}, {
+   3.859604669851918*^9, 3.8596046743400183`*^9}},
+ CellLabel->
+  "In[236]:=",ExpressionUUID->"8047bcfe-7bd0-4233-a4bc-4553996c4597"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -387,33 +396,296 @@ Cell["Visualizzatore", "Section",
   3.858751363212376*^9}},ExpressionUUID->"2384ceb0-3272-4564-84f5-\
 de8ace556966"],
 
-Cell[BoxData[
+Cell[CellGroupData[{
+
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"matr", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"matriceRotazione", "[", "angolo_", "]"}], " ", "=", " ", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
        RowBox[{"Cos", "[", 
-        RowBox[{
-         RowBox[{"-", "Pi"}], "/", "4"}], "]"}], ",", "0", ",", 
+        RowBox[{"-", "angolo"}], "]"}], ",", "0", ",", 
        RowBox[{"Sin", "[", 
-        RowBox[{
-         RowBox[{"-", "Pi"}], "/", "4"}], "]"}]}], "}"}], ",", 
+        RowBox[{"-", "angolo"}], "]"}]}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"Sin", "[", 
-        RowBox[{"Pi", "/", "4"}], "]"}], ",", "0", ",", 
+       RowBox[{"Sin", "[", "angolo", "]"}], ",", "0", ",", 
        RowBox[{"Cos", "[", 
-        RowBox[{
-         RowBox[{"-", "Pi"}], "/", "4"}], "]"}]}], "}"}]}], "}"}]}], 
-  ";"}]], "Input",
+        RowBox[{"-", "angolo"}], "]"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"matr", " ", "=", " ", 
+  RowBox[{"Animate", "[", 
+   RowBox[{
+    RowBox[{"matriceRotazione", "[", "angolo", "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"angolo", ",", " ", "0", " ", ",", " ", 
+      RowBox[{"Pi", "/", "2"}]}], "}"}]}], "]"}]}]}], "Input",
  CellChangeTimes->{{3.858747996815247*^9, 3.858747999125428*^9}, 
    3.8587482483013*^9, 3.85874895647375*^9, {3.858751172539526*^9, 
-   3.858751180349861*^9}, {3.858752236856938*^9, 3.858752237827586*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"14a10425-f985-4d15-ae1f-aaca4d3cb453"],
+   3.858751180349861*^9}, {3.858752236856938*^9, 3.858752237827586*^9}, {
+   3.859600367730373*^9, 3.8596003774659243`*^9}, {3.859600572122703*^9, 
+   3.859600575525237*^9}, {3.859600638939497*^9, 3.8596006423057413`*^9}, {
+   3.8596006794099693`*^9, 3.859600858390306*^9}, {3.859604526473105*^9, 
+   3.859604546331609*^9}, {3.85960460540302*^9, 3.859604627379353*^9}, 
+   3.859605309851671*^9, {3.8596065220542088`*^9, 3.859606523331913*^9}},
+ CellLabel->
+  "In[243]:=",ExpressionUUID->"14a10425-f985-4d15-ae1f-aaca4d3cb453"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`angolo$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`angolo$$], 0, Rational[1, 2] Pi}}, Typeset`size$$ = {
+    272., {3., 9.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`angolo$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`matriceRotazione[$CellContext`angolo$$], 
+      "Specifications" :> {{$CellContext`angolo$$, 0, Rational[1, 2] Pi, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{348., {43., 48.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.859606334527382*^9, 3.859606524167715*^9},
+ CellLabel->
+  "Out[244]=",ExpressionUUID->"bd8054bb-9999-42bb-9143-786accb99764"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"matr", "=", 
+  RowBox[{"matriceRotazione", "[", 
+   RowBox[{"Dynamic", "[", "a", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8596068666433287`*^9, 3.85960691761127*^9}},
+ CellLabel->
+  "In[253]:=",ExpressionUUID->"017f7b4d-f103-4bfe-81d4-6f0b1f68fbb1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      DynamicBox[ToBoxes[$CellContext`a, StandardForm],
+       ImageSizeCache->{55., {1., 9.}}], "]"}], ",", "0", ",", 
+     RowBox[{"-", 
+      RowBox[{"Sin", "[", 
+       DynamicBox[ToBoxes[$CellContext`a, StandardForm],
+        ImageSizeCache->{55., {1., 9.}}], "]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      DynamicBox[ToBoxes[$CellContext`a, StandardForm],
+       ImageSizeCache->{55., {1., 9.}}], "]"}], ",", "0", ",", 
+     RowBox[{"Cos", "[", 
+      DynamicBox[ToBoxes[$CellContext`a, StandardForm],
+       ImageSizeCache->{55., {1., 9.}}], "]"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8596068973872347`*^9, 3.859606925432173*^9}},
+ CellLabel->
+  "Out[253]=",ExpressionUUID->"0594c158-24e8-4e1a-b93e-a67bb6416860"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Animate", "[", 
+  RowBox[{"a", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", " ", "0", ",", " ", 
+     RowBox[{"Pi", "/", "2"}]}], "}"}], ",", 
+   RowBox[{"AnimationRepetitions", "\[Rule]", "1"}], ",", " ", 
+   RowBox[{"LocalizeVariables", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.859606919985256*^9, 3.8596070015339518`*^9}, {
+  3.859607035898808*^9, 3.8596070402681503`*^9}, {3.859607124499198*^9, 
+  3.859607126194002*^9}, {3.859607194136091*^9, 3.8596071995456533`*^9}, {
+  3.859607521701536*^9, 3.859607547852137*^9}},
+ CellLabel->
+  "In[272]:=",ExpressionUUID->"5a6bd22f-a858-47b3-9301-4b05986f1660"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a], 0, Rational[1, 2] Pi}}, Typeset`size$$ = {
+    55., {1., 9.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> $CellContext`a, 
+      "Specifications" :> {{$CellContext`a, 0, Rational[1, 2] Pi, 
+         AnimationRepetitions -> 1, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       LocalizeVariables -> False, ControlType -> Animator, 
+        AppearanceElements -> None, DefaultBaseStyle -> "Animate", 
+        DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> True, 
+        ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{323., {43., 48.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8596075483036823`*^9},
+ CellLabel->
+  "Out[272]=",ExpressionUUID->"2b76bb3d-0381-4e4a-981b-eae97b985135"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Animator", "[", 
+  RowBox[{
+   RowBox[{"Dynamic", "[", "a", "]"}], ",", " ", 
+   RowBox[{"{", " ", 
+    RowBox[{"0", ",", " ", 
+     RowBox[{"Pi", "/", "2"}]}], "}"}], ",", "  ", 
+   RowBox[{"Dynamic", "[", "fps", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.859607617941495*^9, 3.859607672195633*^9}, {
+  3.859607709514991*^9, 3.859607720674129*^9}, {3.859607765390793*^9, 
+  3.859607774599413*^9}, {3.859607862384009*^9, 3.859607879941399*^9}, {
+  3.859607966443811*^9, 3.859607983095598*^9}, {3.859608370518931*^9, 
+  3.859608374432024*^9}, {3.8596086163670683`*^9, 3.8596086247081003`*^9}},
+ CellLabel->
+  "In[301]:=",ExpressionUUID->"b7bd87e5-9569-4366-9143-5efc24c9251d"],
+
+Cell[BoxData[
+ AnimatorBox[Dynamic[
+   BoxForm`RemapVariable[$CellContext`a, {0, Rational[1, 2] Pi}], 
+   BoxForm`RemapValue[#, $CellContext`a, {0, Rational[1, 2] Pi}]& ], {0, 1},
+  AnimationRate->Dynamic[$CellContext`fps],
+  AnimationRunTime->88.17342281341553,
+  AnimationRunning->False,
+  AnimationTimeIndex->3.201767484617335]], "Output",
+ CellChangeTimes->{{3.859607632007428*^9, 3.859607637887454*^9}, 
+   3.8596076733706284`*^9, 3.859607721302622*^9, {3.859607867175901*^9, 
+   3.8596078806171417`*^9}, {3.859607972352427*^9, 3.859607983850143*^9}, 
+   3.859608061716382*^9, 3.8596086324227467`*^9},
+ CellLabel->
+  "Out[301]=",ExpressionUUID->"988d24d1-4051-4358-9700-cdc12634a9d9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Animator", "[", 
+   RowBox[{
+    RowBox[{"Dynamic", "[", "a", "]"}], ",", " ", 
+    RowBox[{"{", " ", 
+     RowBox[{"0", ",", " ", 
+      RowBox[{"Pi", "/", "2"}], ",", " ", 
+      RowBox[{"Pi", "/", "120"}]}], "}"}], ",", "  ", 
+    RowBox[{"Dynamic", "[", "fps", "]"}]}], "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.859607617941495*^9, 3.859607672195633*^9}, {
+  3.859607709514991*^9, 3.859607720674129*^9}, {3.859607765390793*^9, 
+  3.859607774599413*^9}, {3.859607862384009*^9, 3.859607879941399*^9}, {
+  3.859607966443811*^9, 3.859607983095598*^9}, {3.859608327846591*^9, 
+  3.859608328080298*^9}, {3.859608360816041*^9, 3.859608365311412*^9}, {
+  3.8596084094102497`*^9, 3.8596084308147697`*^9}, {3.85960849385013*^9, 
+  3.8596084939903193`*^9}, {3.8596086077488337`*^9, 
+  3.8596086131251497`*^9}},ExpressionUUID->"705d1518-91f5-4bbb-947b-\
+13942c527d95"],
+
+Cell[BoxData[
+ AnimatorBox[Dynamic[
+   BoxForm`RemapVariable[$CellContext`a, {
+    0, Rational[1, 2] Pi, Rational[1, 120] Pi}], 
+   BoxForm`RemapValue[#, $CellContext`a, {
+    0, Rational[1, 2] Pi, Rational[1, 120] Pi}]& ], {0, 60, 1},
+  AnimationRate->Dynamic[$CellContext`fps],
+  AnimationRunTime->127.42930793762207`,
+  AnimationRunning->False,
+  AnimationTimeIndex->1.6742058968057307`]], "Output",
+ CellChangeTimes->{{3.859607632007428*^9, 3.859607637887454*^9}, 
+   3.8596076733706284`*^9, 3.859607721302622*^9, {3.859607867175901*^9, 
+   3.8596078806171417`*^9}, {3.859607972352427*^9, 3.859607983850143*^9}, 
+   3.859608061716382*^9, 3.8596083780984983`*^9, 3.859608413097432*^9, 
+   3.859608494959619*^9},
+ CellLabel->
+  "Out[300]=",ExpressionUUID->"b11a1c64-69e1-4d21-b9b2-ad130f7d1558"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Slider", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", "fps", "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", " ", "100", ",", " ", "0.1"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Dynamic", "[", "fps", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859607902279306*^9, 3.859607957447671*^9}, {
+  3.8596080194143267`*^9, 3.859608052762908*^9}, {3.859608451544908*^9, 
+  3.859608472338985*^9}},
+ CellLabel->
+  "In[298]:=",ExpressionUUID->"9494e2ef-38e4-48f9-9220-5b89a91de5c9"],
+
+Cell[BoxData[
+ SliderBox[Dynamic[$CellContext`fps], {0, 100, 0.1}]], "Output",
+ CellChangeTimes->{{3.8596079269345903`*^9, 3.859607958147214*^9}, {
+   3.859608030176612*^9, 3.85960805338908*^9}, 3.859608380095257*^9, 
+   3.8596084149456253`*^9, {3.859608453671462*^9, 3.85960847296867*^9}},
+ CellLabel->
+  "Out[298]=",ExpressionUUID->"023aad1f-3233-45af-96bd-898a51f85b01"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`fps, StandardForm],
+  ImageSizeCache->{16., {1., 9.}}]], "Output",
+ CellChangeTimes->{{3.8596079269345903`*^9, 3.859607958147214*^9}, {
+   3.859608030176612*^9, 3.85960805338908*^9}, 3.859608380095257*^9, 
+   3.8596084149456253`*^9, {3.859608453671462*^9, 3.859608472979516*^9}},
+ CellLabel->
+  "Out[299]=",ExpressionUUID->"201ffc6e-5a14-470e-a18d-ea1173ab36a7"]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
@@ -422,21 +694,27 @@ Cell[BoxData[
     RowBox[{"cube3DPieces", ",", "UP", ",", "matr"}], "]"}]}], ";"}]], "Input",\
 
  CellChangeTimes->{
-  3.858752344262542*^9, {3.858752588152866*^9, 3.858752629994697*^9}},
- CellLabel->"In[39]:=",ExpressionUUID->"b55080a4-d425-4a6e-a6f1-ab6842b57aa4"],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.8587526552751217`*^9, 
-  3.858752656404209*^9}},ExpressionUUID->"04da995a-ebc3-4b16-a16b-\
-e5195150e769"],
+  3.858752344262542*^9, {3.858752588152866*^9, 3.858752629994697*^9}, 
+   3.859600976354054*^9, 3.8596012958231897`*^9, 3.859601541459373*^9, 
+   3.85960157259406*^9, {3.859604467152334*^9, 3.859604513925755*^9}, {
+   3.859604549456414*^9, 3.859604557086544*^9}, {3.859604632265121*^9, 
+   3.8596046492311163`*^9}, {3.859606543964429*^9, 3.8596065590615377`*^9}},
+ CellLabel->
+  "In[270]:=",ExpressionUUID->"b55080a4-d425-4a6e-a6f1-ab6842b57aa4"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"Visualize3DCubeCresp", "[", "cube3D", "]"}], ";"}]], "Input",
- CellChangeTimes->{{3.858748009057076*^9, 3.8587480160083838`*^9}},
- CellLabel->"In[40]:=",ExpressionUUID->"6fcca4c4-10af-4a0c-b3f3-44ccd48080e9"],
+ CellChangeTimes->{{3.858748009057076*^9, 3.8587480160083838`*^9}, {
+   3.859601019680131*^9, 3.8596010290723963`*^9}, {3.859601519529999*^9, 
+   3.8596015245636663`*^9}, {3.859601773157323*^9, 3.859601810681818*^9}, {
+   3.859602052547868*^9, 3.859602072473366*^9}, {3.85960315842527*^9, 
+   3.859603167047657*^9}, {3.859603806971464*^9, 3.8596038085392113`*^9}, 
+   3.859604030401587*^9, {3.859604657071776*^9, 3.859604657793095*^9}},
+ CellLabel->
+  "In[271]:=",ExpressionUUID->"6fcca4c4-10af-4a0c-b3f3-44ccd48080e9"],
 
 Cell[BoxData[
  Graphics3DBox[{
@@ -696,224 +974,742 @@ Cell[BoxData[
 {-0.5, -1.5, -1.5}}]]}}, 
    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
     Polygon3DBox[
-     NCache[{{0, Rational[3, 2], -2^Rational[-1, 2]}, {-2^Rational[-1, 2], 
-        Rational[3, 2], 0}, {0, Rational[3, 2], 2^Rational[-1, 2]}, {
-       2^Rational[-1, 2], Rational[3, 2], 0}}, {{
-       0, 1.5, -0.7071067811865475}, {-0.7071067811865475, 1.5, 0}, {
-       0, 1.5, 0.7071067811865475}, {0.7071067811865475, 1.5, 0}}]]}, {
+     NCache[{{Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+       Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+       Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+       Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+       Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+       Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+       Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+       Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+        Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}]]}, {
     {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{2^Rational[1, 2], Rational[1, 2], 2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[1, 2], 2^Rational[1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], 2^Rational[1, 2]}, {
-        2^Rational[1, 2], Rational[3, 2], 2^Rational[-1, 2]}}, {{
-       1.4142135623730951`, 0.5, 0.7071067811865475}, {0.7071067811865475, 
-       0.5, 1.4142135623730951`}, {0.7071067811865475, 1.5, 
-       1.4142135623730951`}, {1.4142135623730951`, 1.5, 
-       0.7071067811865475}}]]}, 
+      NCache[{{Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{2^Rational[-1, 2], Rational[3, 2], 0}, {
-        0, Rational[3, 2], 2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], 2^Rational[1, 2]}, {
-        2^Rational[1, 2], Rational[3, 2], 2^Rational[-1, 2]}}, {{
-        0.7071067811865475, 1.5, 0}, {0, 1.5, 0.7071067811865475}, {
-        0.7071067811865475, 1.5, 1.4142135623730951`}, {1.4142135623730951`, 
-        1.5, 0.7071067811865475}}]]}}, {
+      NCache[{{Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}}, {
     {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{-2^Rational[-1, 2], Rational[
-         1, 2], -2^Rational[1, 2]}, {-2^Rational[1, 2], Rational[
-         1, 2], -2^Rational[-1, 2]}, {-2^Rational[1, 2], Rational[
-         3, 2], -2^Rational[-1, 2]}, {-2^Rational[-1, 2], Rational[
-         3, 2], -2^Rational[1, 2]}}, {{-0.7071067811865475, 
-       0.5, -1.4142135623730951`}, {-1.4142135623730951`, 
-       0.5, -0.7071067811865475}, {-1.4142135623730951`, 
-       1.5, -0.7071067811865475}, {-0.7071067811865475, 
-       1.5, -1.4142135623730951`}}]]}, 
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{-2^Rational[-1, 2], Rational[
-         3, 2], -2^Rational[1, 2]}, {-2^Rational[1, 2], Rational[
-         3, 2], -2^Rational[-1, 2]}, {-2^Rational[-1, 2], Rational[3, 2], 
-         0}, {0, Rational[3, 2], -2^Rational[-1, 2]}}, {{-0.7071067811865475, 
-        1.5, -1.4142135623730951`}, {-1.4142135623730951`, 
-        1.5, -0.7071067811865475}, {-0.7071067811865475, 1.5, 0}, {
-        0, 1.5, -0.7071067811865475}}]]}}, {
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}]]}}, {
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{-2^Rational[-1, 2], Rational[3, 2], 0}, {-2^Rational[1, 2], 
-         Rational[3, 2], 2^Rational[-1, 2]}, {-2^Rational[-1, 2], Rational[
-         3, 2], 2^Rational[1, 2]}, {
-        0, Rational[3, 2], 2^Rational[-1, 2]}}, {{-0.7071067811865475, 1.5, 
-         0}, {-1.4142135623730951`, 1.5, 
-        0.7071067811865475}, {-0.7071067811865475, 1.5, 
-        1.4142135623730951`}, {0, 1.5, 0.7071067811865475}}]]}, 
+      NCache[{{Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{-2^Rational[1, 2], Rational[1, 2], 2^
-         Rational[-1, 2]}, {-2^Rational[1, 2], Rational[3, 2], 2^
-         Rational[-1, 2]}, {-2^Rational[-1, 2], Rational[3, 2], 2^
-         Rational[1, 2]}, {-2^Rational[-1, 2], Rational[1, 2], 2^
-         Rational[1, 2]}}, {{-1.4142135623730951`, 0.5, 
-       0.7071067811865475}, {-1.4142135623730951`, 1.5, 
-       0.7071067811865475}, {-0.7071067811865475, 1.5, 
-       1.4142135623730951`}, {-0.7071067811865475, 0.5, 
-       1.4142135623730951`}}]]}}, {
+      NCache[{{Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}]]}}, {
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{2^Rational[-1, 2], Rational[3, 2], -2^Rational[1, 2]}, {
-        0, Rational[3, 2], -2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], 0}, {
-        2^Rational[1, 2], Rational[3, 2], -2^Rational[-1, 2]}}, {{
-        0.7071067811865475, 1.5, -1.4142135623730951`}, {
-        0, 1.5, -0.7071067811865475}, {0.7071067811865475, 1.5, 0}, {
-        1.4142135623730951`, 1.5, -0.7071067811865475}}]]}, 
+      NCache[{{Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{2^Rational[-1, 2], Rational[1, 2], -2^Rational[1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], -2^Rational[1, 2]}, {
-        2^Rational[1, 2], Rational[3, 2], -2^Rational[-1, 2]}, {
-        2^Rational[1, 2], Rational[1, 2], -2^Rational[-1, 2]}}, {{
-       0.7071067811865475, 0.5, -1.4142135623730951`}, {0.7071067811865475, 
-       1.5, -1.4142135623730951`}, {1.4142135623730951`, 
-       1.5, -0.7071067811865475}, {1.4142135623730951`, 
-       0.5, -0.7071067811865475}}]]}}, {
+      NCache[{{Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}}]]}}, {
     {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{2^Rational[-1, 2], Rational[1, 2], 2^Rational[1, 2]}, {
-        0, Rational[1, 2], 3 2^Rational[-1, 2]}, {
-        0, Rational[3, 2], 3 2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], 2^Rational[1, 2]}}, {{
-        0.7071067811865475, 0.5, 1.4142135623730951`}, {
-        0, 0.5, 2.1213203435596424`}, {0, 1.5, 2.1213203435596424`}, {
-        0.7071067811865475, 1.5, 1.4142135623730951`}}]]}, 
+      NCache[{{Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{0, Rational[3, 2], 2^Rational[-1, 2]}, {-2^Rational[-1, 2], 
-         Rational[3, 2], 2^Rational[1, 2]}, {
-        0, Rational[3, 2], 3 2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], 2^Rational[1, 2]}}, {{
-        0, 1.5, 0.7071067811865475}, {-0.7071067811865475, 1.5, 
-        1.4142135623730951`}, {0, 1.5, 2.1213203435596424`}, {
-        0.7071067811865475, 1.5, 1.4142135623730951`}}]]}, 
+      NCache[{{Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{-2^Rational[-1, 2], Rational[1, 2], 2^
-         Rational[1, 2]}, {-2^Rational[-1, 2], Rational[3, 2], 2^
-         Rational[1, 2]}, {0, Rational[3, 2], 3 2^Rational[-1, 2]}, {
-        0, Rational[1, 2], 3 2^Rational[-1, 2]}}, {{-0.7071067811865475, 0.5, 
-        1.4142135623730951`}, {-0.7071067811865475, 1.5, 
-        1.4142135623730951`}, {0, 1.5, 2.1213203435596424`}, {
-        0, 0.5, 2.1213203435596424`}}]]}}, {
+      NCache[{{Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}}, {
     {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{3 2^Rational[-1, 2], Rational[1, 2], 0}, {
-        2^Rational[1, 2], Rational[1, 2], 2^Rational[-1, 2]}, {
-        2^Rational[1, 2], Rational[3, 2], 2^Rational[-1, 2]}, {
-        3 2^Rational[-1, 2], Rational[3, 2], 0}}, {{
-        2.1213203435596424`, 0.5, 0}, {1.4142135623730951`, 0.5, 
-        0.7071067811865475}, {1.4142135623730951`, 1.5, 0.7071067811865475}, {
-        2.1213203435596424`, 1.5, 0}}]]}, 
+      NCache[{{Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{2^Rational[1, 2], Rational[3, 2], -2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], 0}, {
-        2^Rational[1, 2], Rational[3, 2], 2^Rational[-1, 2]}, {
-        3 2^Rational[-1, 2], Rational[3, 2], 0}}, {{1.4142135623730951`, 
-        1.5, -0.7071067811865475}, {0.7071067811865475, 1.5, 0}, {
-        1.4142135623730951`, 1.5, 0.7071067811865475}, {
-        2.1213203435596424`, 1.5, 0}}]]}, 
+      NCache[{{Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{2^Rational[1, 2], Rational[1, 2], -2^Rational[-1, 2]}, {
-        2^Rational[1, 2], Rational[3, 2], -2^Rational[-1, 2]}, {
-        3 2^Rational[-1, 2], Rational[3, 2], 0}, {
-        3 2^Rational[-1, 2], Rational[1, 2], 0}}, {{1.4142135623730951`, 
-        0.5, -0.7071067811865475}, {1.4142135623730951`, 
-        1.5, -0.7071067811865475}, {2.1213203435596424`, 1.5, 0}, {
-        2.1213203435596424`, 0.5, 0}}]]}}, {
+      NCache[{{Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]]}}]]}}, {
     {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{-2^Rational[1, 2], Rational[1, 2], -2^Rational[-1, 2]}, {(-3) 
-         2^Rational[-1, 2], Rational[1, 2], 0}, {(-3) 2^Rational[-1, 2], 
-         Rational[3, 2], 0}, {-2^Rational[1, 2], Rational[
-         3, 2], -2^Rational[-1, 2]}}, {{-1.4142135623730951`, 
-        0.5, -0.7071067811865475}, {-2.1213203435596424`, 0.5, 
-         0}, {-2.1213203435596424`, 1.5, 0}, {-1.4142135623730951`, 
-        1.5, -0.7071067811865475}}]]}, 
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{-2^Rational[1, 2], Rational[3, 2], -2^Rational[-1, 2]}, {(-3) 
-         2^Rational[-1, 2], Rational[3, 2], 0}, {-2^Rational[1, 2], Rational[
-         3, 2], 2^Rational[-1, 2]}, {-2^Rational[-1, 2], Rational[3, 2], 
-         0}}, {{-1.4142135623730951`, 
-        1.5, -0.7071067811865475}, {-2.1213203435596424`, 1.5, 
-         0}, {-1.4142135623730951`, 1.5, 
-        0.7071067811865475}, {-0.7071067811865475, 1.5, 0}}]]}, 
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{(-3) 2^Rational[-1, 2], Rational[1, 2], 0}, {(-3) 
-         2^Rational[-1, 2], Rational[3, 2], 0}, {-2^Rational[1, 2], Rational[
-         3, 2], 2^Rational[-1, 2]}, {-2^Rational[1, 2], Rational[1, 2], 2^
-         Rational[-1, 2]}}, {{-2.1213203435596424`, 0.5, 
-         0}, {-2.1213203435596424`, 1.5, 0}, {-1.4142135623730951`, 1.5, 
-        0.7071067811865475}, {-1.4142135623730951`, 0.5, 
-        0.7071067811865475}}]]}}, {
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}]]}}, {
     {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{0, Rational[1, 2], (-3) 
-         2^Rational[-1, 2]}, {-2^Rational[-1, 2], Rational[
-         1, 2], -2^Rational[1, 2]}, {-2^Rational[-1, 2], Rational[
-         3, 2], -2^Rational[1, 2]}, {
-        0, Rational[3, 2], (-3) 2^Rational[-1, 2]}}, {{
-        0, 0.5, -2.1213203435596424`}, {-0.7071067811865475, 
-        0.5, -1.4142135623730951`}, {-0.7071067811865475, 
-        1.5, -1.4142135623730951`}, {0, 1.5, -2.1213203435596424`}}]]}, 
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{0, Rational[3, 2], (-3) 
-         2^Rational[-1, 2]}, {-2^Rational[-1, 2], Rational[
-         3, 2], -2^Rational[1, 2]}, {0, Rational[3, 2], -2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], -2^Rational[1, 2]}}, {{
-        0, 1.5, -2.1213203435596424`}, {-0.7071067811865475, 
-        1.5, -1.4142135623730951`}, {0, 1.5, -0.7071067811865475}, {
-        0.7071067811865475, 1.5, -1.4142135623730951`}}]]}, 
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[1, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}]]}, 
     {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
      Polygon3DBox[
-      NCache[{{0, Rational[1, 2], (-3) 2^Rational[-1, 2]}, {
-        0, Rational[3, 2], (-3) 2^Rational[-1, 2]}, {
-        2^Rational[-1, 2], Rational[3, 2], -2^Rational[1, 2]}, {
-        2^Rational[-1, 2], Rational[1, 2], -2^Rational[1, 2]}}, {{
-        0, 0.5, -2.1213203435596424`}, {0, 1.5, -2.1213203435596424`}, {
-        0.7071067811865475, 1.5, -1.4142135623730951`}, {0.7071067811865475, 
-        0.5, -1.4142135623730951`}}]]}}},
+      NCache[{{Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[3, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], Rational[1, 2], 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}, {{
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-3, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 1.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}, {
+        Rational[-1, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[3, 2] Sin[Dynamic[$CellContext`a]], 0.5, 
+         Rational[-3, 2] Cos[Dynamic[$CellContext`a]] + 
+         Rational[-1, 2] Sin[Dynamic[$CellContext`a]]}}]]}}},
   Axes->True,
   AxesLabel->{
     FormBox["\"x\"", TraditionalForm], 
     FormBox["\"y\"", TraditionalForm], 
     FormBox["\"z\"", TraditionalForm]},
-  ImageSize->{384.1718601775142, 392.7109116026581},
+  ImageSize->{399.7029815554251, 415.88341563418453`},
   ImageSizeRaw->Automatic,
   Lighting->{{"Ambient", 
      GrayLevel[1]}},
   Ticks->Automatic,
-  ViewPoint->{-0.026533637147312796`, -3.3825744465479275`, \
--0.0865221339352944},
-  ViewVertical->{-0.3780809486637798, -0.4267519510748474, \
--0.8215458407851062}]], "Print",
- CellChangeTimes->{
-  3.858752359888557*^9, {3.8587525763290253`*^9, 3.858752577992873*^9}, 
-   3.858752632065854*^9, {3.858752825339172*^9, 3.858752852598906*^9}, 
-   3.858752917221442*^9},
+  ViewPoint->{0.9035625789484818, -2.3103128539809346`, 2.301310318634678},
+  ViewVertical->{0.7795832005456284, -0.5410544763993106, 
+   0.31545219446899153`}]], "Print",
+ CellChangeTimes->{{3.859606392036454*^9, 3.859606402899661*^9}, 
+   3.8596065290360928`*^9, 3.859607025773198*^9, {3.859607527475593*^9, 
+   3.859607546166361*^9}},
  CellLabel->
   "During evaluation of \
-In[40]:=",ExpressionUUID->"c99475a1-cb69-4ad5-8d55-7251fa1b4cd7"]
+In[271]:=",ExpressionUUID->"4cabe9ad-b2b0-484f-8bcd-cde52b7398db"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1680, 997},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1280, 1387},
+WindowMargins->{{-1280, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
 StyleDefinitions->"Default.nb",
@@ -930,23 +1726,46 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 371, 7, 30, "Input",ExpressionUUID->"bccdf893-a45e-42af-a6eb-59829ee5d3f0"],
-Cell[932, 29, 650, 9, 94, "Input",ExpressionUUID->"a5ac633f-11e5-44b2-b97c-05b9b38e3225"],
-Cell[1585, 40, 432, 9, 30, "Input",ExpressionUUID->"5a8efa53-95e8-464c-9a2e-d6c6ed2465a6"],
+Cell[558, 20, 426, 9, 30, "Input",ExpressionUUID->"bccdf893-a45e-42af-a6eb-59829ee5d3f0"],
+Cell[987, 31, 655, 10, 94, "Input",ExpressionUUID->"a5ac633f-11e5-44b2-b97c-05b9b38e3225"],
+Cell[1645, 43, 436, 10, 30, "Input",ExpressionUUID->"5a8efa53-95e8-464c-9a2e-d6c6ed2465a6"],
 Cell[CellGroupData[{
-Cell[2042, 53, 162, 3, 67, "Section",ExpressionUUID->"470257af-0940-41f1-87da-f6b37834b1f0"],
-Cell[2207, 58, 10435, 251, 913, "Input",ExpressionUUID->"fa436f44-1680-4790-aeb2-19498f9641d7"],
-Cell[12645, 311, 1604, 36, 157, "Input",ExpressionUUID->"40fcc2ac-109a-4b2a-9035-69027e782e4c"],
-Cell[14252, 349, 1292, 30, 115, "Input",ExpressionUUID->"8047bcfe-7bd0-4233-a4bc-4553996c4597"]
+Cell[2106, 57, 162, 3, 67, "Section",ExpressionUUID->"470257af-0940-41f1-87da-f6b37834b1f0"],
+Cell[2271, 62, 10438, 252, 892, "Input",ExpressionUUID->"fa436f44-1680-4790-aeb2-19498f9641d7"],
+Cell[12712, 316, 1608, 37, 157, "Input",ExpressionUUID->"40fcc2ac-109a-4b2a-9035-69027e782e4c"],
+Cell[14323, 355, 1477, 33, 115, "Input",ExpressionUUID->"8047bcfe-7bd0-4233-a4bc-4553996c4597"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15581, 384, 161, 3, 67, "Section",ExpressionUUID->"2384ceb0-3272-4564-84f5-de8ace556966"],
-Cell[15745, 389, 952, 26, 30, "Input",ExpressionUUID->"14a10425-f985-4d15-ae1f-aaca4d3cb453"],
-Cell[16700, 417, 351, 8, 30, "Input",ExpressionUUID->"b55080a4-d425-4a6e-a6f1-ab6842b57aa4"],
-Cell[17054, 427, 154, 3, 30, "Input",ExpressionUUID->"04da995a-ebc3-4b16-a16b-e5195150e769"],
+Cell[15837, 393, 161, 3, 67, "Section",ExpressionUUID->"2384ceb0-3272-4564-84f5-de8ace556966"],
 Cell[CellGroupData[{
-Cell[17233, 434, 243, 4, 30, "Input",ExpressionUUID->"6fcca4c4-10af-4a0c-b3f3-44ccd48080e9"],
-Cell[17479, 440, 26205, 470, 401, "Print",ExpressionUUID->"c99475a1-cb69-4ad5-8d55-7251fa1b4cd7"]
+Cell[16023, 400, 1558, 36, 52, "Input",ExpressionUUID->"14a10425-f985-4d15-ae1f-aaca4d3cb453"],
+Cell[17584, 438, 1982, 40, 110, "Output",ExpressionUUID->"bd8054bb-9999-42bb-9143-786accb99764"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19603, 483, 280, 6, 30, "Input",ExpressionUUID->"017f7b4d-f103-4bfe-81d4-6f0b1f68fbb1"],
+Cell[19886, 491, 939, 24, 34, "Output",ExpressionUUID->"0594c158-24e8-4e1a-b93e-a67bb6416860"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20862, 520, 656, 13, 30, InheritFromParent,ExpressionUUID->"5a6bd22f-a858-47b3-9301-4b05986f1660"],
+Cell[21521, 535, 1936, 40, 110, "Output",ExpressionUUID->"2b76bb3d-0381-4e4a-981b-eae97b985135"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23494, 580, 704, 14, 30, "Input",ExpressionUUID->"b7bd87e5-9569-4366-9143-5efc24c9251d"],
+Cell[24201, 596, 689, 13, 43, "Output",ExpressionUUID->"988d24d1-4051-4358-9700-cdc12634a9d9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24927, 614, 906, 18, 33, "Input",ExpressionUUID->"705d1518-91f5-4bbb-947b-13942c527d95"],
+Cell[25836, 634, 797, 16, 43, "Output",ExpressionUUID->"b11a1c64-69e1-4d21-b9b2-ad130f7d1558"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26670, 655, 573, 14, 73, "Input",ExpressionUUID->"9494e2ef-38e4-48f9-9220-5b89a91de5c9"],
+Cell[27246, 671, 373, 6, 42, "Output",ExpressionUUID->"023aad1f-3233-45af-96bd-898a51f85b01"],
+Cell[27622, 679, 409, 7, 34, "Output",ExpressionUUID->"201ffc6e-5a14-470e-a18d-ea1173ab36a7"]
+}, Open  ]],
+Cell[28046, 689, 648, 13, 30, "Input",ExpressionUUID->"b55080a4-d425-4a6e-a6f1-ab6842b57aa4"],
+Cell[CellGroupData[{
+Cell[28719, 706, 616, 10, 30, "Input",ExpressionUUID->"6fcca4c4-10af-4a0c-b3f3-44ccd48080e9"],
+Cell[29338, 718, 56651, 988, 424, "Print",ExpressionUUID->"4cabe9ad-b2b0-484f-8bcd-cde52b7398db"]
 }, Open  ]]
 }, Open  ]]
 }
