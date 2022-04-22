@@ -1,0 +1,724 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28158,        716]
+NotebookOptionsPosition[     26247,        679]
+NotebookOutlinePosition[     26642,        695]
+CellTagsIndexPosition[     26599,        692]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Color Picker", "Section",
+ CellChangeTimes->{{3.858738983581418*^9, 
+  3.8587389858204393`*^9}},ExpressionUUID->"3de0b189-94e3-4ea2-8ff9-\
+bfdf3dfa3edd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"colors", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "White", ",", " ", "Green", ",", " ", "Orange", ",", " ", "Red", ",", " ",
+      "Blue", ",", " ", "Yellow"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"currentColor", " ", "=", " ", "Transparent"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.858738952654542*^9, 3.85873897091996*^9}, {
+  3.858740039902267*^9, 3.858740046698106*^9}, {3.858740237727824*^9, 
+  3.858740239831468*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"88c00f3a-a116-436f-888d-c358900b7caa"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetColorPickerCol", "[", "color_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"currentColor", " ", "=", " ", "color"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858739236770671*^9, 3.85873927828759*^9}, {
+   3.858740119279593*^9, 3.858740124181881*^9}, 3.85874058666988*^9},
+ CellLabel->"In[17]:=",ExpressionUUID->"f9ba6eb9-bceb-43bd-a8cd-a1bd9c096c87"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GenColorPickerColBox", "[", 
+     RowBox[{"coord_", ",", "color_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "r", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"r", " ", "=", " ", 
+        RowBox[{"Rectangle", "[", "coord", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"r", " ", "=", " ", 
+        RowBox[{"Style", "[", 
+         RowBox[{"r", ",", 
+          RowBox[{"{", 
+           RowBox[{"color", ",", 
+            RowBox[{"EdgeForm", "[", "Thick", "]"}]}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Button", "[", 
+        RowBox[{"r", ",", 
+         RowBox[{"SetColorPickerCol", "[", "color", "]"}]}], "]"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.858739435323124*^9, 3.858739444165657*^9}, {
+  3.858740632784244*^9, 3.8587406358623*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"a95c227e-eb08-4b5f-a2ff-04cb33e3f166"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GenColorPickerBox", "[", "colors", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"colorBox", " ", "=", " ", 
+       RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"colorBox", ",", 
+        RowBox[{"GenColorPickerColBox", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}], ",", 
+          RowBox[{"colors", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"colorBox", ",", 
+        RowBox[{"GenColorPickerColBox", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0"}], "}"}], ",", 
+          RowBox[{"colors", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"colorBox", ",", 
+        RowBox[{"GenColorPickerColBox", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"2", ",", "0"}], "}"}], ",", 
+          RowBox[{"colors", "[", 
+           RowBox[{"[", "3", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"colorBox", ",", 
+        RowBox[{"GenColorPickerColBox", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1"}], "}"}], ",", 
+          RowBox[{"colors", "[", 
+           RowBox[{"[", "4", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"colorBox", ",", 
+        RowBox[{"GenColorPickerColBox", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "1"}], "}"}], ",", 
+          RowBox[{"colors", "[", 
+           RowBox[{"[", "5", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"colorBox", ",", 
+        RowBox[{"GenColorPickerColBox", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"2", ",", "1"}], "}"}], ",", 
+          RowBox[{"colors", "[", 
+           RowBox[{"[", "6", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "colorBox"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.85873963316645*^9, 3.858739705496607*^9}, {
+  3.858740643047312*^9, 3.858740649230174*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"730099e4-eca8-4628-8538-64b0be4770a0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"VisualizeColorPickerBox", "[", "colors", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "picker", ",", " ", "pickerTitle", ",", " ", "current", ",", " ", 
+       "currentTitle", ",", " ", "col1", ",", " ", "col2"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"currentColor", " ", "=", " ", "Transparent"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"pickerTitle", " ", "=", " ", "\"\<Color Picker\>\""}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"picker", " ", "=", " ", 
+       RowBox[{"GenColorPickerBox", "[", "colors", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"col1", " ", "=", " ", 
+       RowBox[{"Column", "[", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"pickerTitle", ",", 
+            RowBox[{"{", 
+             RowBox[{"25", ",", "Red", ",", " ", "Bold"}], "}"}]}], "]"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"Graphics", "[", 
+           RowBox[{"picker", ",", 
+            RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"currentTitle", " ", "=", " ", "\"\<Current Color\>\""}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"current", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Dynamic", "[", "currentColor", "]"}], ",", 
+         RowBox[{"EdgeForm", "[", "Thick", "]"}], ",", " ", 
+         RowBox[{"Rectangle", "[", "]"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"col2", " ", "=", " ", 
+       RowBox[{"Column", "[", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"currentTitle", ",", 
+            RowBox[{"{", 
+             RowBox[{"25", ",", "Red", ",", "Bold"}], "}"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Graphics", "[", 
+           RowBox[{"current", ",", " ", 
+            RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"Panel", "[", 
+        RowBox[{"Row", "[", 
+         RowBox[{"{", 
+          RowBox[{"col1", ",", "col2"}], "}"}], "]"}], "]"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858740272046321*^9, 3.858740575717084*^9}, {
+  3.858740606544574*^9, 3.8587406189522467`*^9}, {3.858740656287065*^9, 
+  3.8587406677584476`*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"3f390465-1d72-465e-8284-7c122ecc482b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"VisualizeColorPickerBox", "[", "colors", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.8587404775196857`*^9, 3.858740485957643*^9}, 
+   3.858740578126377*^9},
+ CellLabel->"In[21]:=",ExpressionUUID->"221bb96e-c1de-4aa7-874c-56c1c3796d38"],
+
+Cell[BoxData[
+ PanelBox[
+  TemplateBox[{
+    TagBox[
+     GridBox[{{
+        StyleBox["\"Color Picker\"", {25, 
+          RGBColor[1, 0, 0], Bold}, StripOnInput -> False]}, {
+        GraphicsBox[{
+          TagBox[
+           StyleBox[
+            RectangleBox[{0, 0}], {{
+              GrayLevel[1], 
+              EdgeForm[
+               Thickness[Large]]}}, StripOnInput -> False], 
+           EventHandlerTag[{"MouseClicked" :> $CellContext`SetColorPickerCol[
+               GrayLevel[1]], Method -> "Preemptive", PassEventsDown -> 
+             Automatic, PassEventsUp -> True}]], 
+          TagBox[
+           StyleBox[
+            RectangleBox[{1, 0}], {{
+              RGBColor[0, 1, 0], 
+              EdgeForm[
+               Thickness[Large]]}}, StripOnInput -> False], 
+           EventHandlerTag[{"MouseClicked" :> $CellContext`SetColorPickerCol[
+               RGBColor[0, 1, 0]], Method -> "Preemptive", PassEventsDown -> 
+             Automatic, PassEventsUp -> True}]], 
+          TagBox[
+           StyleBox[
+            RectangleBox[{2, 0}], {{
+              RGBColor[1, 0.5, 0], 
+              EdgeForm[
+               Thickness[Large]]}}, StripOnInput -> False], 
+           EventHandlerTag[{"MouseClicked" :> $CellContext`SetColorPickerCol[
+               RGBColor[1, 0.5, 0]], Method -> "Preemptive", PassEventsDown -> 
+             Automatic, PassEventsUp -> True}]], 
+          TagBox[
+           StyleBox[
+            RectangleBox[{0, 1}], {{
+              RGBColor[1, 0, 0], 
+              EdgeForm[
+               Thickness[Large]]}}, StripOnInput -> False], 
+           EventHandlerTag[{"MouseClicked" :> $CellContext`SetColorPickerCol[
+               RGBColor[1, 0, 0]], Method -> "Preemptive", PassEventsDown -> 
+             Automatic, PassEventsUp -> True}]], 
+          TagBox[
+           StyleBox[
+            RectangleBox[{1, 1}], {{
+              RGBColor[0, 0, 1], 
+              EdgeForm[
+               Thickness[Large]]}}, StripOnInput -> False], 
+           EventHandlerTag[{"MouseClicked" :> $CellContext`SetColorPickerCol[
+               RGBColor[0, 0, 1]], Method -> "Preemptive", PassEventsDown -> 
+             Automatic, PassEventsUp -> True}]], 
+          TagBox[
+           StyleBox[
+            RectangleBox[{2, 1}], {{
+              RGBColor[1, 1, 0], 
+              EdgeForm[
+               Thickness[Large]]}}, StripOnInput -> False], 
+           EventHandlerTag[{"MouseClicked" :> $CellContext`SetColorPickerCol[
+               RGBColor[1, 1, 0]], Method -> "Preemptive", PassEventsDown -> 
+             Automatic, PassEventsUp -> True}]]}, ImageSize -> Medium]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+      "Column", 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
+    TagBox[
+     GridBox[{{
+        StyleBox["\"Current Color\"", {25, 
+          RGBColor[1, 0, 0], Bold}, StripOnInput -> False]}, {
+        GraphicsBox[{
+          DynamicBox[
+           
+           Typeset`ToBoxes[$CellContext`currentColor, StandardForm, 
+            Graphics]], 
+          EdgeForm[
+           Thickness[Large]], 
+          RectangleBox[{0, 0}]}, ImageSize -> Tiny]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+      "Column", 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]},
+   "RowDefault"]]], "Print",
+ CellChangeTimes->{3.858740578826317*^9, 3.8587406148536263`*^9, 
+  3.8587407117376337`*^9, 3.858742309318467*^9, 3.8587425166487513`*^9, 
+  3.858746846136519*^9},
+ CellLabel->
+  "During evaluation of \
+In[21]:=",ExpressionUUID->"bca71c60-e99a-4a71-b20b-beda5ee22215"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Canvas", "Section",
+ CellChangeTimes->{{3.858740739893505*^9, 
+  3.858740740853717*^9}},ExpressionUUID->"60895449-eabb-432e-8715-\
+8de1ada42ed5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ClickHandler", "[", "coord_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", " ", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ind", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Position", "[", 
+          RowBox[{"c", ",", "coord"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ContainsAny", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "5", ",", "23", ",", "26", ",", "29", ",", "32", ",", "50"}], 
+            "}"}], ",", 
+           RowBox[{"{", "ind", "}"}]}], "]"}], "==", "False"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"c", "[", 
+            RowBox[{"[", "ind", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}], " ", "=", " ", "currentColor"}], 
+         ";"}]}], "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858740871791081*^9, 3.85874089982969*^9}, {
+   3.858741592129404*^9, 3.858741593919426*^9}, {3.858741637185421*^9, 
+   3.858741721433249*^9}, {3.858741776744135*^9, 3.8587417813076077`*^9}, {
+   3.858742229321587*^9, 3.858742282592107*^9}, {3.858742344826379*^9, 
+   3.858742365047744*^9}, {3.85874239719975*^9, 3.858742398303816*^9}, 
+   3.858742492034576*^9},
+ CellLabel->"In[22]:=",ExpressionUUID->"8757119b-e4a3-43a2-998f-86c4f8ea064f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Genero", " ", "un", " ", "rettangolo", " ", "di", " ", "lato", " ", "1", 
+    " ", "con", " ", "angolo", " ", "in", " ", "posizione", " ", "coord", " ",
+     "e", " ", "colore", " ", "col"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"GenRect", "[", 
+     RowBox[{"rect_", ",", " ", "col_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Style", "[", 
+       RowBox[{
+        RowBox[{"Rectangle", "[", "rect", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"col", ",", 
+          RowBox[{"EdgeForm", "[", "Thick", "]"}]}], "}"}]}], "]"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.858657970439775*^9, 3.858658043776925*^9}, {
+  3.858658146314252*^9, 3.8586581828224277`*^9}, {3.8586582332005377`*^9, 
+  3.858658240256199*^9}, {3.858658299322016*^9, 3.8586583029417686`*^9}, {
+  3.858658484727406*^9, 3.858658521680427*^9}, {3.858736579677174*^9, 
+  3.858736661173698*^9}, {3.858736697591282*^9, 3.858736704660152*^9}, {
+  3.8587367355731363`*^9, 3.85873677079601*^9}, {3.858737093703957*^9, 
+  3.858737119782806*^9}, {3.8587371802942533`*^9, 3.8587371838378687`*^9}, {
+  3.858737621971983*^9, 3.8587376226692333`*^9}, {3.8587380357065563`*^9, 
+  3.858738049006497*^9}, {3.8587411951210957`*^9, 3.858741206879184*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"de44e7a4-210c-4308-9aa3-839b0cfe2414"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GenBtn", "[", "rectStr_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"coord", ",", " ", "col"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"coord", " ", "=", " ", 
+       RowBox[{"rectStr", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"col", " ", "=", " ", 
+       RowBox[{"rectStr", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"r", " ", "=", " ", 
+       RowBox[{"GenRect", "[", 
+        RowBox[{"coord", ",", "col"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Button", "[", 
+       RowBox[{"r", ",", 
+        RowBox[{"ClickHandler", "[", "coord", "]"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858738123720315*^9, 3.858738125148691*^9}, {
+   3.85874100803865*^9, 3.858741028392726*^9}, 3.8587411201190567`*^9, {
+   3.858741170717147*^9, 3.858741233349176*^9}, {3.858741549513914*^9, 
+   3.85874157649583*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"3ea3a236-af43-4192-b6bd-3354dca4df00"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GenerateBaseCubeStruct", "[", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"points", " ", "=", " ", 
+        RowBox[{"{", "}"}]}], ",", " ", 
+       RowBox[{"defaultColor", " ", "=", " ", "Transparent"}]}], "}"}], ",", 
+     "\n", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Genero", " ", "i", " ", "rettangoli", " ", "del", " ", "mio", " ", 
+       "cubo", " ", "aperto"}], " ", "*)"}], "\n", "\t", 
+     RowBox[{
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "8"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "3", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], ";",
+       "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "7"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "3", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], ";",
+       "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "6"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "3", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], ";",
+       "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "5"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "0", ",", "11"}], "}"}]}], "]"}]}], "]"}]}], 
+      ";", "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "4"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "0", ",", "11"}], "}"}]}], "]"}]}], "]"}]}], 
+      ";", "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "3"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "0", ",", "11"}], "}"}]}], "]"}]}], "]"}]}], 
+      ";", "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "2"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "3", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], ";",
+       "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "1"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "3", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], ";",
+       "\n", "\t", 
+      RowBox[{"points", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"points", ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "0"}], "}"}], ",", "defaultColor"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "3", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], ";",
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "Imposto", " ", "manualmente", " ", "i", " ", "colori", " ", "dei", 
+          " ", 
+          RowBox[{"centri", ":", "\[IndentingNewLine]", " ", "F"}]}], " ", 
+         "=", " ", "26"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"B", "=", " ", "32"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"U", " ", "=", " ", "5"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"D", " ", "=", " ", "50"}], ",", "\[IndentingNewLine]", "\t", 
+        
+        RowBox[{"L", " ", "=", " ", "23"}], ",", "\[IndentingNewLine]", "\t", 
+        
+        RowBox[{"R", " ", "=", " ", "29"}]}], "\t", "\[IndentingNewLine]", 
+       " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", "5", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], " ", "=", 
+       RowBox[{"colors", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", " ", 
+      RowBox[{"(*", " ", "Up", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", "26", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], " ", "=", 
+       RowBox[{"colors", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", " ", 
+      RowBox[{"(*", " ", "Front", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", "23", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], " ", "=", 
+       RowBox[{"colors", "[", 
+        RowBox[{"[", "3", "]"}], "]"}]}], ";", " ", 
+      RowBox[{"(*", " ", "Left", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", "29", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], " ", "=", 
+       RowBox[{"colors", "[", 
+        RowBox[{"[", "4", "]"}], "]"}]}], ";", " ", 
+      RowBox[{"(*", " ", "Right", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", "32", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], " ", "=", 
+       RowBox[{"colors", "[", 
+        RowBox[{"[", "5", "]"}], "]"}]}], ";", " ", 
+      RowBox[{"(*", " ", "Back", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"points", "[", 
+         RowBox[{"[", "50", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], " ", "=", 
+       RowBox[{"colors", "[", 
+        RowBox[{"[", "6", "]"}], "]"}]}], ";", 
+      RowBox[{"(*", " ", "Down", " ", "*)"}], "\[IndentingNewLine]", 
+      "points"}]}], "\n", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858740801920327*^9, 3.858740840991827*^9}, {
+  3.8587409136954403`*^9, 3.858741005251711*^9}, {3.858741039593195*^9, 
+  3.858741088577153*^9}, {3.8587413079544163`*^9, 3.858741431176963*^9}, {
+  3.858741757026661*^9, 3.858741770244029*^9}, {3.8587418207022867`*^9, 
+  3.858742073559493*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"bb735c1c-c152-4312-a005-f885171520d9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", " ", "=", " ", 
+   RowBox[{"GenerateBaseCubeStruct", "[", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858741362009035*^9, 3.8587413635514803`*^9}, {
+  3.858741433839237*^9, 3.858741440567004*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"0c27c15c-774c-4b31-ab01-099d3f802fea"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{"Dynamic", "[", 
+      RowBox[{"Map", "[", 
+       RowBox[{"GenBtn", ",", "c"}], "]"}], "]"}], "]"}], ",", " ", 
+    RowBox[{"Background", "\[Rule]", "Gray"}], ",", " ", 
+    RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "\[IndentingNewLine]", "]"}],
+   "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.858737990882172*^9, 3.858737991771944*^9}, {
+   3.8587409450458*^9, 3.858740948534871*^9}, {3.8587414433346643`*^9, 
+   3.8587414644726667`*^9}, 3.8587416219687653`*^9, {3.858742084380911*^9, 
+   3.85874211202358*^9}, {3.858746865044635*^9, 3.858746879708256*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"3892fcc2-bdd3-467e-abbf-3754c2f94051"],
+
+Cell[BoxData[
+ PanelBox[
+  GraphicsBox[
+   DynamicBox[Typeset`ToBoxes[
+     Map[$CellContext`GenBtn, $CellContext`c], StandardForm, Graphics],
+    ImageSizeCache->{{0., 0.}, {0., 0.}}]],
+  Background->GrayLevel[0.5],
+  ImageSize->Large]], "Output",
+ CellChangeTimes->{{3.858740949717905*^9, 3.858740960567333*^9}, {
+   3.858741097071706*^9, 3.8587410985139923`*^9}, {3.858741237227319*^9, 
+   3.8587412497630873`*^9}, {3.858741447001532*^9, 3.858741464927698*^9}, 
+   3.8587415207889223`*^9, 3.858741583795662*^9, 3.8587416225198603`*^9, {
+   3.8587420879227552`*^9, 3.858742112635377*^9}, {3.858742500302095*^9, 
+   3.858742506891262*^9}, {3.858746846207408*^9, 3.858746880069035*^9}},
+ CellLabel->"Out[30]=",ExpressionUUID->"3cc42efe-6c89-4dfc-a93e-2e6b63bf0fcf"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{960, 1061},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ae2b2340-3444-4e65-a014-110ecc77d149"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 159, 3, 67, "Section",ExpressionUUID->"3de0b189-94e3-4ea2-8ff9-bfdf3dfa3edd"],
+Cell[742, 27, 573, 12, 52, "Input",ExpressionUUID->"88c00f3a-a116-436f-888d-c358900b7caa"],
+Cell[1318, 41, 547, 12, 252, "Input",ExpressionUUID->"f9ba6eb9-bceb-43bd-a8cd-a1bd9c096c87"],
+Cell[1868, 55, 1041, 26, 115, "Input",ExpressionUUID->"a95c227e-eb08-4b5f-a2ff-04cb33e3f166"],
+Cell[2912, 83, 2513, 66, 199, "Input",ExpressionUUID->"730099e4-eca8-4628-8538-64b0be4770a0"],
+Cell[5428, 151, 2806, 65, 409, "Input",ExpressionUUID->"3f390465-1d72-465e-8284-7c122ecc482b"],
+Cell[CellGroupData[{
+Cell[8259, 220, 272, 5, 30, "Input",ExpressionUUID->"221bb96e-c1de-4aa7-874c-56c1c3796d38"],
+Cell[8534, 227, 3691, 88, 299, "Print",ExpressionUUID->"bca71c60-e99a-4a71-b20b-beda5ee22215"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12274, 321, 151, 3, 67, "Section",ExpressionUUID->"60895449-eabb-432e-8715-8de1ada42ed5"],
+Cell[12428, 326, 1634, 40, 378, "Input",ExpressionUUID->"8757119b-e4a3-43a2-998f-86c4f8ea064f"],
+Cell[14065, 368, 1523, 30, 294, "Input",ExpressionUUID->"de44e7a4-210c-4308-9aa3-839b0cfe2414"],
+Cell[15591, 400, 1166, 26, 136, "Input",ExpressionUUID->"3ea3a236-af43-4192-b6bd-3354dca4df00"],
+Cell[16760, 428, 7565, 204, 598, "Input",ExpressionUUID->"bb735c1c-c152-4312-a005-f885171520d9"],
+Cell[24328, 634, 318, 6, 30, "Input",ExpressionUUID->"0c27c15c-774c-4b31-ab01-099d3f802fea"],
+Cell[CellGroupData[{
+Cell[24671, 644, 780, 15, 94, "Input",ExpressionUUID->"3892fcc2-bdd3-467e-abbf-3754c2f94051"],
+Cell[25454, 661, 765, 14, 396, "Output",ExpressionUUID->"3cc42efe-6c89-4dfc-a93e-2e6b63bf0fcf"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
