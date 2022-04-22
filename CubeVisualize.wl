@@ -40,6 +40,7 @@ Begin["`Private`"]
 
 AppendTo[$Path, NotebookDirectory[]];
 Get["CubeColors.wl"]
+Get["CubeCore.wl"]
 
 
 (* ::Section:: *)
@@ -102,7 +103,7 @@ Print[Graphics[{cube,cubeLabels}]];
 (*Generazione singoli sotto cubi*)
 
 
-GetGraphicPiece[piece_, mat_] := Module[{pos, col},
+GetGraphicPiece[piece_, mat_:None] := Module[{pos, col},
 	pos = piece["pos"];
 	col = piece["colors"];
 	polygons = {};
@@ -150,12 +151,8 @@ GetGraphicPiece[piece_, mat_] := Module[{pos, col},
 		tmp = Style[tmp,CharToColor[col[[3]]]];
 		AppendTo[polygons,Style[tmp,{CharToColor[col[[3]]],EdgeForm[{Thick,Black}]}]];
 	];
+	
 	polygons
-];
-
-
-GetGraphicPiece[piece_] := Module[{},
-	GetGraphicPiece[piece, None]
 ];
 
 
@@ -163,7 +160,17 @@ GetGraphicPiece[piece_] := Module[{},
 (*Generazione componenti grafiche*)
 
 
-Generate3DCube[cube_] := Map[GetGraphicPiece[#, None]&,cube];
+Generate3DCube[cube_,face_:None,matrix_:None] := Module[{f,nF,fC,nFC, ret},
+	If[SameQ[face,None],
+	ret = Map[GetGraphicPiece,cube];,
+	f = ExtractFace[cube,face];
+	nF = ExtractNotFace[cube, face];
+	fC = Map[GetGraphicPiece[#,matrix]&,f];
+	nFC = Map[GetGraphicPiece,nF];
+	ret = Join[nFC,fC];
+	];
+	Return[ret];
+];
 
 
 (* ::Subsubsection:: *)
