@@ -179,7 +179,7 @@ Generate3DCube[cube_,face_:None,matrix_:None] := Module[{f,nF,fC,nFC, ret},
 
 Visualize3DCube[cube_] :=
 	Module[{graphichOptions = {Lighting -> {{"Ambient", GrayLevel[1]}}, Axes
-		 -> True, Ticks -> Automatic, AxesLabel -> {"x", "y", "z"}}},
+		 -> True, Ticks -> Automatic, AxesLabel -> {"x", "y", "z"},PlotRange->{{-2.2,2.2},{-2.2,2.2},{-2.2,2.2}}}},
 		Print[Graphics3D[cube, graphichOptions]];
 	];
 
