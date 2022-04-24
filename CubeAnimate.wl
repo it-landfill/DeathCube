@@ -61,7 +61,13 @@ MatriceRotazioneXYCC[ang_] =
 	];
 
 
-AnimateMove[move_,fps_] := DynamicModule[{ang = 0},
+(* 
+	La funzione AnimateMove rivcevendo una mossa permette di visualizzare la rotazione di una delle facce del cubo di Rubik. La
+	faccia che viene ruotata dipende dalla mossa indicata.
+*)
+AnimateMove[move_,fps_ : 1.5] := DynamicModule[
+	(* Ad ogni richiamo della funzione la variabile ang viene reimpostata a valore di default 0 *)
+	{ang = 0},
 	(* 
 		Attraverso l'Animator viene modificato il valore dell'angolo da applicare alla matrice di rotazione per la mossa. 
 		Il valore dell'angolo per ogni mossa parte da 0 ed aumenta fino a raggiugenre il valore di Pi/2 portando l'angolo compiere 
@@ -69,6 +75,8 @@ AnimateMove[move_,fps_] := DynamicModule[{ang = 0},
 		I parametri utilizzati nell'Animator:
 			- AnimationRate, permette di modificare la velocit\[AGrave] con cui varia la variabile oggetto di Animator.
 			- AnimationRepetitions, permette di indicare quante volte viene effettuata l'animazione prima di terminare.
+			  NOTE: Velocit\[AGrave] a mio avviso consigliata \[EGrave] 1.5 di Default e massimo 5.5 (Il valore deve essere mappato in un 
+			  "lingauggio comprensibile" per l'utente tipo [*1, *1.5, *2, *2.5, ...] )
 			- AppearanceElements, permette di modificare i controlli. Utilizzando "None" i controlli non vengono visualizzati.
 		TODO: Stampa necessaria per l'animazione (Non riesco a spiegarmi come mai)
 	 *)
