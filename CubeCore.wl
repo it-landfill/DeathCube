@@ -217,33 +217,35 @@ ExtractNotFace[cube_, face_] :=
 	];
 
 
-(* ::Subsection:: *)
-(*Estrazione slice (TODO)*)
-
-
-(* ::Text:: *)
-(*TODO*)
-
-
-(* ::Section:: *)
-(*Operazioni sul cubo*)
+(* ::Section::Closed:: *)
+(*Definizione delle funzioni per la gestione del cubo di Rubik*)
 
 
 (* ::Subsection:: *)
 (*Operazioni ausiliarie*)
 
 
-(* ::Subsubsection:: *)
+(* ::Text:: *)
+(*Operazioni utilizzate nei notebook per operare nel cubo di Rubik.*)
+
+
+(* ::Subsubsection::Closed:: *)
 (*Rotazione singolo sotto cubo*)
 
 
+(* 
+	La funzione RotatePiece dato un singolo blocco (piece_) e una matrice di rotazione (matrix_) la funzione 
+	applica la rotazione al blocco e ricalcola la posizione dei colori. 
+*)
 RotatePiece[piece_,matrix_] := Module[{},
+	(* Posizione iniziale e colore del blocco. *)
 	before = piece["pos"];
 	col = piece["colors"];
-	(* Eseguo prodotto scalare *)
-	pos = Dot[matrix,before];
+	(* Applicazione della matrice di rotazione alle coordinate del blocco. *)
+	pos = Dot[matrix, before];
+	(* Calcolo della rotazione compiuta dal blocco. *)
 	rot = pos-before;
-	(*Gesisco caso nessuna rotazione (before == pos) (si ha nei blocchi centrali) *)
+	(* Gestisco caso nessuna rotazione (before == pos) (si ha nei blocchi centrali) *)
 	If[SameQ[before,pos],Return[piece]];
 	If[Count[rot,0]==2,rot +=Dot[matrix,rot]];
 	(* A questo punto dovrei essere sicuro che in rot vi sia SOLO 1 elemento uguale a 0 *)
@@ -261,12 +263,17 @@ RotatePiece[piece_,matrix_] := Module[{},
 ];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Rotazione faccia*)
 
 
+(* Applica la matrice di rotazione solo ai blocchi appartenenti alla faccia specificata. *)
 RotateFace[cube_, face_, matrix_] :=
 	Map[
+		(* 
+			Se il prodotto scalare tra le coordinate del blocco e il vettore faccia \[EGrave] maggiore di 0, allora il blocco 
+			appartiene alla faccia e vi applico la rotazione.
+		*)
 		If[Dot[#["pos"], face] > 0,
 			RotatePiece[#, matrix]
 			,
@@ -277,25 +284,30 @@ RotateFace[cube_, face_, matrix_] :=
 	];
 
 
-(* ::Subsubsection:: *)
-(*TODO: RotateFace con angolo custom*)
-
-
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Rotazione tutti sotto cubi*)
 
 
-RotateAllPieces[cube_,matrix_] := Map[RotatePiece[#,matrix]&,cube];
+(* Applica la matrice di rotazione specificata a tutti i componenti del cubo. *)
+RotateAllPieces[cube_, matrix_] :=
+    Map[RotatePiece[#, matrix]&, cube];
 
 
 (* ::Subsection:: *)
 (*Operazioni standard*)
 
 
-(* ::Subsubsection:: *)
-(*Rotazioni intero cubo*)
+(* ::Text:: *)
+(*Operazioni definite dalla guida del cubo di Rubik.*)
 
 
+(* ::Subsubsection::Closed:: *)
+(*Definizione delle funzioni di rotazioni per l'intero cubo di Rubik*)
+
+
+(* 
+	In base alla funzione richiamata, viene effettuata una rotazione completa del cubo lungo l'asse specificato.
+*)
 RotateX[cube_]:=RotateAllPieces[cube,ROTYZCW];
 RotateXi[cube_]:=RotateAllPieces[cube,ROTYZCC];
 RotateY[cube_]:=RotateAllPieces[cube,ROTXZCW];
@@ -304,10 +316,13 @@ RotateZ[cube_]:=RotateAllPieces[cube,ROTXYCW];
 RotateZi[cube_]:=RotateAllPieces[cube,ROTXYCC];
 
 
-(* ::Subsubsection:: *)
-(*Rotazioni facce*)
+(* ::Subsubsection::Closed:: *)
+(*Definizione delle funzioni di rotazioni per le facce del cubo di Rubik*)
 
 
+(* 
+	In base alla funzione richiamata, sul cubo viene applicata una differente rotazione ad una faccia 
+*)
 RotateL[cube_] :=
 	RotateFace[cube, LEFT, ROTYZCC];
 
@@ -345,15 +360,7 @@ RotateBi[cube_] :=
 	RotateFace[cube, BACK, ROTXYCW];
 
 
-(* ::Subsubsection:: *)
-(*Rotazioni slice (TODO)*)
-
-
-(* ::Text:: *)
-(*TODO*)
-
-
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Fine package*)
 
 

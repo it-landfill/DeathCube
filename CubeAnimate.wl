@@ -3,14 +3,14 @@
 BeginPackage["CubeVisualize`"]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Definizione usage*)
 
 
 AnimateMove::usage = ""
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Inizio package*)
 
 
@@ -27,8 +27,8 @@ Get["CubeVisualize.wl"]
 Get["CubeCore.wl"]
 
 
-(* ::Section:: *)
-(*Definizione delle matrici di rotazione del cubo di Rubik*)
+(* ::Section::Closed:: *)
+(*Definizione delle matrici di rotazione del cubo di Rubik (Grafiche)*)
 
 
 (* ::Subsection::Closed:: *)
@@ -82,8 +82,8 @@ MatriceRotazioneXYCC[ang_] =
 	];
 
 
-(* ::Section::Closed:: *)
-(*Definizione delle funzione di rotazione del cubo di Rubik*)
+(* ::Section:: *)
+(*Definizione delle funzione di rotazione del cubo di Rubik (Grafiche)*)
 
 
 (* 
