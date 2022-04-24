@@ -19,7 +19,7 @@ Get["CubeVisualize.wl"]
 Get["CubeCore.wl"]
 
 
-(* Piano XZ *)
+(* Rotazioni rispetto il piano XZ *)
 (* Matrice di rotazione da applicare quando viene letto il comando "U" -> RotateU o "Di" -> RotateDi *)
 MatriceRotazioneXZCW[ang_] =
 	Module[{},
@@ -32,8 +32,7 @@ MatriceRotazioneXZCC[ang_] =
 	];
 
 
-(* Piano YZ *)
-	
+(* Rotazioni rispetto il piano YZ *)
 (* Matrice di rotazione da applicare quando viene letto il comando "Li" -> RotateLi o "R" -> RotateR *)
 MatriceRotazioneYZCW[ang_] =
 	Module[{},
@@ -48,8 +47,7 @@ MatriceRotazioneYZCC[ang_] =
 
 
 
-(* Piano XY *)
-
+(* Rotazioni rispetto il piano XY *)
 (* Matrice di rotazione da applicare quando viene letto il comando "F" -> RotateF o "Bi" -> RotateBi *)
 MatriceRotazioneXYCW[ang_] =
 	Module[{},
@@ -64,7 +62,18 @@ MatriceRotazioneXYCC[ang_] =
 
 
 AnimateMove[move_,fps_] := DynamicModule[{ang = 0},
-	Print[Animator[Dynamic[ang], {0, Pi/2}, fps, AnimationRepetitions->1]];
+	(* 
+		Attraverso l'Animator viene modificato il valore dell'angolo da applicare alla matrice di rotazione per la mossa. 
+		Il valore dell'angolo per ogni mossa parte da 0 ed aumenta fino a raggiugenre il valore di Pi/2 portando l'angolo compiere 
+		un'angolo di 90\[Degree]. 
+		I parametri utilizzati nell'Animator:
+			- AnimationRate, permette di modificare la velocit\[AGrave] con cui varia la variabile oggetto di Animator.
+			- AnimationRepetitions, permette di indicare quante volte viene effettuata l'animazione prima di terminare.
+			- AppearanceElements, permette di modificare i controlli. Utilizzando "None" i controlli non vengono visualizzati.
+		TODO: Stampa necessaria per l'animazione (Non riesco a spiegarmi come mai)
+	 *)
+	Print[Animator[Dynamic[ang], {0, Pi/2}, AnimationRate -> fps, AnimationRepetitions -> 1, AppearanceElements -> None]];
+	(* In base alla mossa da eseguire viene applicata una differente matrice di rotazione *)
 	cube3D = Switch[move, 
 		"U",  Generate3DCube[cube3DPieces, UP,    MatriceRotazioneXZCW[Dynamic[ang]]],
 		"Ui", Generate3DCube[cube3DPieces, UP,    MatriceRotazioneXZCC[Dynamic[ang]]],
