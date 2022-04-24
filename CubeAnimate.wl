@@ -3,14 +3,22 @@
 BeginPackage["CubeVisualize`"]
 
 
+(* ::Section:: *)
+(*Definizione usage*)
+
+
 AnimateMove::usage = ""
 
 
-cube3DPieces = ""
-cube3D = ""
+(* ::Section:: *)
+(*Inizio package*)
 
 
 Begin["`Private`"]
+
+
+(* ::Section::Closed:: *)
+(*Import dei package utilizzati*)
 
 
 AppendTo[$Path, NotebookDirectory[]];
@@ -19,7 +27,14 @@ Get["CubeVisualize.wl"]
 Get["CubeCore.wl"]
 
 
-(* Rotazioni rispetto il piano XZ *)
+(* ::Section:: *)
+(*Definizione delle matrici di rotazione del cubo di Rubik*)
+
+
+(* ::Subsection::Closed:: *)
+(*Rotazioni rispetto il piano XZ*)
+
+
 (* Matrice di rotazione da applicare quando viene letto il comando "U" -> RotateU o "Di" -> RotateDi *)
 MatriceRotazioneXZCW[ang_] =
 	Module[{},
@@ -32,7 +47,10 @@ MatriceRotazioneXZCC[ang_] =
 	];
 
 
-(* Rotazioni rispetto il piano YZ *)
+(* ::Subsection::Closed:: *)
+(*Rotazioni rispetto il piano YZ*)
+
+
 (* Matrice di rotazione da applicare quando viene letto il comando "Li" -> RotateLi o "R" -> RotateR *)
 MatriceRotazioneYZCW[ang_] =
 	Module[{},
@@ -47,7 +65,10 @@ MatriceRotazioneYZCC[ang_] =
 
 
 
-(* Rotazioni rispetto il piano XY *)
+(* ::Subsection::Closed:: *)
+(*Rotazioni rispetto il piano XY*)
+
+
 (* Matrice di rotazione da applicare quando viene letto il comando "F" -> RotateF o "Bi" -> RotateBi *)
 MatriceRotazioneXYCW[ang_] =
 	Module[{},
@@ -61,11 +82,15 @@ MatriceRotazioneXYCC[ang_] =
 	];
 
 
+(* ::Section::Closed:: *)
+(*Definizione delle funzione di rotazione del cubo di Rubik*)
+
+
 (* 
 	La funzione AnimateMove rivcevendo una mossa permette di visualizzare la rotazione di una delle facce del cubo di Rubik. La
 	faccia che viene ruotata dipende dalla mossa indicata.
 *)
-AnimateMove[move_,fps_ : 1.5] := DynamicModule[
+AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 	(* Ad ogni richiamo della funzione la variabile ang viene reimpostata a valore di default 0 *)
 	{ang = 0},
 	(* 
@@ -74,9 +99,9 @@ AnimateMove[move_,fps_ : 1.5] := DynamicModule[
 		un'angolo di 90\[Degree]. 
 		I parametri utilizzati nell'Animator:
 			- AnimationRate, permette di modificare la velocit\[AGrave] con cui varia la variabile oggetto di Animator.
-			- AnimationRepetitions, permette di indicare quante volte viene effettuata l'animazione prima di terminare.
 			  NOTE: Velocit\[AGrave] a mio avviso consigliata \[EGrave] 1.5 di Default e massimo 5.5 (Il valore deve essere mappato in un 
 			  "lingauggio comprensibile" per l'utente tipo [*1, *1.5, *2, *2.5, ...] )
+			- AnimationRepetitions, permette di indicare quante volte viene effettuata l'animazione prima di terminare.
 			- AppearanceElements, permette di modificare i controlli. Utilizzando "None" i controlli non vengono visualizzati.
 		TODO: Stampa necessaria per l'animazione (Non riesco a spiegarmi come mai)
 	 *)
@@ -96,6 +121,10 @@ AnimateMove[move_,fps_ : 1.5] := DynamicModule[
 		"B",  Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCC[Dynamic[ang]]],
 		"Bi", Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCW[Dynamic[ang]]]];
 ];
+
+
+(* ::Section::Closed:: *)
+(*Fine package*)
 
 
 End[]

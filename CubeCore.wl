@@ -55,6 +55,10 @@ ExtractFace::usage = ""
 ExtractNotFace::usage = ""
 
 
+cube3DPieces = ""
+cube3D = ""
+
+
 (* ::Section:: *)
 (*Inizio package*)
 
