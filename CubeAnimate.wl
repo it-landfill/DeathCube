@@ -3,21 +3,23 @@
 BeginPackage["CubeVisualize`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definizione usage*)
 
 
-AnimateMove::usage = ""
+RubikMove::usage = ""
+GetResolutionMoves::usage = ""
+SetResolutionMoves::usage = ""
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Inizio package*)
 
 
 Begin["`Private`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Import dei package utilizzati*)
 
 
@@ -82,7 +84,7 @@ MatriceRotazioneXYCC[ang_] =
 	];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Definizione delle funzione di rotazione del cubo di Rubik (Grafiche)*)
 
 
@@ -120,6 +122,49 @@ AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 		"Fi", Generate3DCube[cube3DPieces, FRONT, MatriceRotazioneXYCC[Dynamic[ang]]],
 		"B",  Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCC[Dynamic[ang]]],
 		"Bi", Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCW[Dynamic[ang]]]];
+];
+
+
+(* ::Section:: *)
+(*Automatizzazione delle funzione di rotazione del cubo di Rubik*)
+
+
+RubikMove[move_, fps_ : 1.5] := Module[
+	{},
+	AnimateMove[move, fps];
+	cube3DPieces = Switch[move, 
+		"U",  RotateU[cube3DPieces],
+		"Ui", RotateUi[cube3DPieces],
+		"D",  RotateD[cube3DPieces],
+		"Di", RotateDi[cube3DPieces],
+		"L",  RotateL[cube3DPieces],
+		"Li", RotateLi[cube3DPieces],
+		"R",  RotateR[cube3DPieces],
+		"Ri", RotateRi[cube3DPieces],
+		"F",  RotateF[cube3DPieces],
+		"Fi", RotateFi[cube3DPieces],
+		"B",  RotateB[cube3DPieces],
+		"Bi", RotateBi[cube3DPieces]];
+];
+
+
+(* ::Section:: *)
+(*Funzioni utili a set e get*)
+
+
+resolutionMoves = "";
+
+
+SetResolutionMoves[str_ : ""] := Module[
+	{resolutionMoves = ""},
+	resolutionMoves = str;
+	Print[resolutionMoves];
+];
+
+(* TODO: Eliminare a fine test *)
+GetResolutionMoves[] := Module[
+	{},
+	resolutionMoves
 ];
 
 
