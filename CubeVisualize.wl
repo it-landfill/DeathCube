@@ -162,12 +162,15 @@ GetGraphicPiece[piece_, mat_:None] := Module[{pos, col},
 
 Generate3DCube[cube_,face_:None,matrix_:None] := Module[{f,nF,fC,nFC, ret},
 	If[SameQ[face,None],
-	ret = Map[GetGraphicPiece,cube];,
-	f = ExtractFace[cube,face];
-	nF = ExtractNotFace[cube, face];
-	fC = Map[GetGraphicPiece[#,matrix]&,f];
-	nFC = Map[GetGraphicPiece,nF];
-	ret = Join[nFC,fC];
+		If[SameQ[matrix, None],
+			ret = Map[GetGraphicPiece,cube];,
+			ret = Map[GetGraphicPiece[#,matrix]&,cube];
+		];
+		f = ExtractFace[cube,face];
+		nF = ExtractNotFace[cube, face];
+		fC = Map[GetGraphicPiece[#,matrix]&,f];
+		nFC = Map[GetGraphicPiece,nF];
+		ret = Join[nFC,fC];
 	];
 	Return[ret];
 ];
