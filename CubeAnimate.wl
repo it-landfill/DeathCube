@@ -121,7 +121,8 @@ AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 		"F",  Generate3DCube[cube3DPieces, FRONT, MatriceRotazioneXYCW[Dynamic[ang]]],
 		"Fi", Generate3DCube[cube3DPieces, FRONT, MatriceRotazioneXYCC[Dynamic[ang]]],
 		"B",  Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCC[Dynamic[ang]]],
-		"Bi", Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCW[Dynamic[ang]]]];
+		"Bi", Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCW[Dynamic[ang]]],
+		"X", Generate3DCube[cube3DPieces, None,  MatriceRotazioneYZCW[Dynamic[ang]]]];
 ];
 
 
@@ -129,8 +130,10 @@ AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 (*Automatizzazione delle funzione di rotazione del cubo di Rubik*)
 
 
-RubikMove[move_, fps_ : 1.5] := Module[
+RubikMove[fps_ : 1.5] := Module[
 	{},
+	nextMove = nextMove + 1;
+	move = resolutionMoves[[nextMove]];
 	AnimateMove[move, fps];
 	cube3DPieces = Switch[move, 
 		"U",  RotateU[cube3DPieces],
@@ -144,7 +147,8 @@ RubikMove[move_, fps_ : 1.5] := Module[
 		"F",  RotateF[cube3DPieces],
 		"Fi", RotateFi[cube3DPieces],
 		"B",  RotateB[cube3DPieces],
-		"Bi", RotateBi[cube3DPieces]];
+		"Bi", RotateBi[cube3DPieces],
+		"X", RotateX[cube3DPieces]];
 ];
 
 
@@ -152,23 +156,19 @@ RubikMove[move_, fps_ : 1.5] := Module[
 (*Funzioni utili a set e get*)
 
 
-resolutionMoves = "";
+resolutionMoves = {};
+nextMove = 0;
 
 
-SetResolutionMoves[str_ : ""] := Module[
-	{resolutionMoves = ""},
-	resolutionMoves = str;
-	Print[resolutionMoves];
-];
-
-(* TODO: Eliminare a fine test *)
-GetResolutionMoves[] := Module[
+SetResolutionMoves[list_ : {}] := Module[
 	{},
-	resolutionMoves
+	resolutionMoves = {};
+	nextMove = 0;
+	resolutionMoves = list;
 ];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Fine package*)
 
 

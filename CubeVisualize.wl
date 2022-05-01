@@ -166,7 +166,6 @@ Generate3DCube[cube_,face_:None,matrix_:None] := Module[{f,nF,fC,nFC},
 			Return[Map[GetGraphicPiece,cube]];,
 			Return[Map[GetGraphicPiece[#,matrix]&,cube]];
 		];,
-		Print["c"];
 		f = ExtractFace[cube,face];
 		nF = ExtractNotFace[cube, face];
 		fC = Map[GetGraphicPiece[#,matrix]&,f];
