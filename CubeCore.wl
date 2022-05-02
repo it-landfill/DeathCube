@@ -7,6 +7,11 @@ BeginPackage["CubeCore`"]
 (*Definizione usage*)
 
 
+GetSolutionMoves::usage = ""
+SetSolutionMoves::usage = ""
+ResetSolutionMoves::usage = ""
+
+
 GetPieces::usage = ""
 GetFaces::usage = ""
 GetEdges::usage = ""
@@ -51,11 +56,37 @@ FRONT::usage = ""
 BACK::usage = ""
 
 
+ExtractFace::usage = ""
+ExtractNotFace::usage = ""
+
+
+cube3DPieces = ""
+cube3D = ""
+
+
 (* ::Section:: *)
 (*Inizio package*)
 
 
 Begin["`Private`"]
+
+
+(* ::Section:: *)
+(*Variabili private*)
+
+
+solutionMoves = {};
+
+
+(* ::Section:: *)
+(*Getter e Setter*)
+
+
+GetSolutionMoves[] := solutionMoves;
+SetSolutionMoves[solMoves_] := Module[{},
+	solutionMoves = solMoves;
+];
+ResetSolutionMoves[] := solutionMoves = {};
 
 
 (* ::Section:: *)
@@ -203,42 +234,52 @@ ExtractFace[cube_, face_] :=
 	];
 
 
-(* ::Subsection:: *)
-(*Estrazione slice (TODO)*)
-
-
-(* ::Text:: *)
-(*TODO*)
+ExtractNotFace[cube_, face_] :=
+	Module[{},
+		Select[cube, Dot[#["pos"], face] <= 0&]
+	];
 
 
 (* ::Section:: *)
-(*Operazioni sul cubo*)
+(*Definizione delle funzioni per la gestione del cubo di Rubik*)
 
 
 (* ::Subsection:: *)
 (*Operazioni ausiliarie*)
 
 
+(* ::Text:: *)
+(*Operazioni utilizzate nei notebook per operare nel cubo di Rubik.*)
+
+
 (* ::Subsubsection:: *)
 (*Rotazione singolo sotto cubo*)
 
 
+(* 
+	La funzione RotatePiece dato un singolo blocco (piece_) e una matrice di rotazione (matrix_) la funzione 
+	applica la rotazione al blocco e ricalcola la posizione dei colori. 
+*)
 RotatePiece[piece_,matrix_] := Module[{},
+	(* Posizione iniziale e colore del blocco. *)
 	before = piece["pos"];
 	col = piece["colors"];
-	(* Eseguo prodotto scalare *)
-	pos = Dot[matrix,before];
+	(* Applicazione della matrice di rotazione alle coordinate del blocco. *)
+	pos = Dot[matrix, before];
+	(* Calcolo della rotazione compiuta dal blocco. *)
 	rot = pos-before;
-	(*Gesisco caso nessuna rotazione (before == pos) (si ha nei blocchi centrali) *)
+	(* Gestisco caso nessuna rotazione (before == pos) (si ha nei blocchi centrali) *)
 	If[SameQ[before,pos],Return[piece]];
 	If[Count[rot,0]==2,rot +=Dot[matrix,rot]];
 	(* A questo punto dovrei essere sicuro che in rot vi sia SOLO 1 elemento uguale a 0 *)
-	(* Calcolo quale asse \[EGrave] 0 e swappo i colori negli altri 2 assi *)
-	emptyAxe = Position[rot,0][[1]][[1]];
-	swapIndex = Switch[emptyAxe,1,{2,3},2,{1,3},3,{1,2}];
-	tmp =  col[[swapIndex[[1]]]];
-	col[[swapIndex[[1]]]] = col[[swapIndex[[2]]]];
-	col[[swapIndex[[2]]]] = tmp;
+	If[Total[Mod[pos,1]]==0,
+		(* Calcolo quale asse \[EGrave] 0 e swappo i colori negli altri 2 assi *)
+		emptyAxe = Position[rot,0][[1]][[1]];
+		swapIndex = Switch[emptyAxe,1,{2,3},2,{1,3},3,{1,2}];
+		tmp =  col[[swapIndex[[1]]]];
+		col[[swapIndex[[1]]]] = col[[swapIndex[[2]]]];
+		col[[swapIndex[[2]]]] = tmp;
+	,Null(*Non faccio nulla*)];
 
 	(* Ricreo il piece e lo ritorno*)
 	<|"pos"->pos,"colors" ->col|>
@@ -249,8 +290,13 @@ RotatePiece[piece_,matrix_] := Module[{},
 (*Rotazione faccia*)
 
 
+(* Applica la matrice di rotazione solo ai blocchi appartenenti alla faccia specificata. *)
 RotateFace[cube_, face_, matrix_] :=
 	Map[
+		(* 
+			Se il prodotto scalare tra le coordinate del blocco e il vettore faccia \[EGrave] maggiore di 0, allora il blocco 
+			appartiene alla faccia e vi applico la rotazione.
+		*)
 		If[Dot[#["pos"], face] > 0,
 			RotatePiece[#, matrix]
 			,
@@ -262,82 +308,125 @@ RotateFace[cube_, face_, matrix_] :=
 
 
 (* ::Subsubsection:: *)
-(*TODO: RotateFace con angolo custom*)
-
-
-(* ::Subsubsection:: *)
 (*Rotazione tutti sotto cubi*)
 
 
-RotateAllPieces[cube_,matrix_] := Map[RotatePiece[#,matrix]&,cube];
+(* Applica la matrice di rotazione specificata a tutti i componenti del cubo. *)
+RotateAllPieces[cube_, matrix_] :=
+    Map[RotatePiece[#, matrix]&, cube];
 
 
 (* ::Subsection:: *)
 (*Operazioni standard*)
 
 
-(* ::Subsubsection:: *)
-(*Rotazioni intero cubo*)
-
-
-RotateX[cube_]:=RotateAllPieces[cube,ROTYZCW];
-RotateXi[cube_]:=RotateAllPieces[cube,ROTYZCC];
-RotateY[cube_]:=RotateAllPieces[cube,ROTXZCW];
-RotateYi[cube_]:=RotateAllPieces[cube,ROTXZCC];
-RotateZ[cube_]:=RotateAllPieces[cube,ROTXYCW];
-RotateZi[cube_]:=RotateAllPieces[cube,ROTXYCC];
-
-
-(* ::Subsubsection:: *)
-(*Rotazioni facce*)
-
-
-RotateL[cube_] :=
-	RotateFace[cube, LEFT, ROTYZCC];
-
-RotateLi[cube_] :=
-	RotateFace[cube, LEFT, ROTYZCW];
-
-RotateR[cube_] :=
-	RotateFace[cube, RIGHT, ROTYZCW];
-
-RotateRi[cube_] :=
-	RotateFace[cube, RIGHT, ROTYZCC];
-
-RotateU[cube_] :=
-	RotateFace[cube, UP, ROTXZCW];
-
-RotateUi[cube_] :=
-	RotateFace[cube, UP, ROTXZCC];
-
-RotateD[cube_] :=
-	RotateFace[cube, DOWN, ROTXZCC];
-
-RotateDi[cube_] :=
-	RotateFace[cube, DOWN, ROTXZCW];
-
-RotateF[cube_] :=
-	RotateFace[cube, FRONT, ROTXYCW];
-
-RotateFi[cube_] :=
-	RotateFace[cube, FRONT, ROTXYCC];
-
-RotateB[cube_] :=
-	RotateFace[cube, BACK, ROTXYCC];
-
-RotateBi[cube_] :=
-	RotateFace[cube, BACK, ROTXYCW];
-
-
-(* ::Subsubsection:: *)
-(*Rotazioni slice (TODO)*)
-
-
 (* ::Text:: *)
-(*TODO*)
+(*Operazioni definite dalla guida del cubo di Rubik.*)
 
 
-(* ::Section:: *)
+(* ::Subsubsection:: *)
+(*Definizione delle funzioni di rotazioni per l'intero cubo di Rubik*)
+
+
+(* 
+	In base alla funzione richiamata, viene effettuata una rotazione completa del cubo lungo l'asse specificato.
+*)
+RotateX[cube_]:=Module[{},
+	AppendTo[solutionMoves,"X"];
+	RotateAllPieces[cube,ROTYZCW]
+];
+RotateXi[cube_]:=Module[{},
+	AppendTo[solutionMoves,"Xi"];
+	RotateAllPieces[cube,ROTYZCC]
+];
+RotateY[cube_]:=Module[{},
+	AppendTo[solutionMoves,"Y"];
+	RotateAllPieces[cube,ROTXZCW]
+];
+RotateYi[cube_]:=Module[{},
+	AppendTo[solutionMoves,"Yi"];
+	RotateAllPieces[cube,ROTXZCC]
+];
+RotateZ[cube_]:=Module[{},
+	AppendTo[solutionMoves,"Z"];
+	RotateAllPieces[cube,ROTXYCW]
+];
+RotateZi[cube_]:=Module[{},
+	AppendTo[solutionMoves,"Zi"];
+	RotateAllPieces[cube,ROTXYCC]
+];
+
+
+(* ::Subsubsection:: *)
+(*Definizione delle funzioni di rotazioni per le facce del cubo di Rubik*)
+
+
+(* 
+	In base alla funzione richiamata, sul cubo viene applicata una differente rotazione ad una faccia 
+*)
+
+RotateL[cube_] := Module[{},
+	AppendTo[solutionMoves,"L"];
+	RotateFace[cube, LEFT, ROTYZCC]
+];
+
+RotateLi[cube_] := Module[{},
+	AppendTo[solutionMoves,"Li"];
+	RotateFace[cube, LEFT, ROTYZCW]
+];
+
+RotateR[cube_] := Module[{},
+	AppendTo[solutionMoves,"R"];
+	RotateFace[cube, RIGHT, ROTYZCW]
+];
+
+RotateRi[cube_] := Module[{},
+	AppendTo[solutionMoves,"Ri"];
+	RotateFace[cube, RIGHT, ROTYZCC]
+];
+
+RotateU[cube_] := Module[{},
+	AppendTo[solutionMoves,"U"];
+	RotateFace[cube, UP, ROTXZCW]
+];
+
+RotateUi[cube_] := Module[{},
+	AppendTo[solutionMoves,"Ui"];
+	RotateFace[cube, UP, ROTXZCC]
+];
+
+RotateD[cube_] := Module[{},
+	AppendTo[solutionMoves,"D"];
+	RotateFace[cube, DOWN, ROTXZCC]
+];
+
+RotateDi[cube_] := Module[{},
+	AppendTo[solutionMoves,"Di"];
+	RotateFace[cube, DOWN, ROTXZCW]
+];
+
+RotateF[cube_] := Module[{},
+	AppendTo[solutionMoves,"F"];
+	RotateFace[cube, FRONT, ROTXYCW]
+];
+
+RotateFi[cube_] := Module[{},
+	AppendTo[solutionMoves,"Fi"];
+	RotateFace[cube, FRONT, ROTXYCC]
+];
+
+RotateB[cube_] := Module[{},
+	AppendTo[solutionMoves,"B"];
+	RotateFace[cube, BACK, ROTXYCC]
+];
+
+RotateBi[cube_] := Module[{},
+	AppendTo[solutionMoves,"Bi"];
+	RotateFace[cube, BACK, ROTXYCW]
+];
+
+
+(* ::Section::Closed:: *)
 (*Fine package*)
 
 
