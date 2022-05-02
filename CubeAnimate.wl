@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["CubeVisualize`"]
+BeginPackage["CubeAnimate`"]
 
 
 (* ::Section:: *)
@@ -8,7 +8,6 @@ BeginPackage["CubeVisualize`"]
 
 
 RubikMove::usage = ""
-GetResolutionMoves::usage = ""
 SetResolutionMoves::usage = ""
 
 
@@ -84,7 +83,7 @@ MatriceRotazioneXYCC[ang_] =
 	];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definizione delle funzione di rotazione del cubo di Rubik (Grafiche)*)
 
 
@@ -122,7 +121,13 @@ AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 		"Fi", Generate3DCube[cube3DPieces, FRONT, MatriceRotazioneXYCC[Dynamic[ang]]],
 		"B",  Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCC[Dynamic[ang]]],
 		"Bi", Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCW[Dynamic[ang]]],
-		"X", Generate3DCube[cube3DPieces, None,  MatriceRotazioneYZCW[Dynamic[ang]]]];
+		"X", Generate3DCube[cube3DPieces, None,  MatriceRotazioneYZCW[Dynamic[ang]]],
+		"Xi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneYZCC[Dynamic[ang]]],
+		"Y", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXZCW[Dynamic[ang]]],
+		"Yi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXZCC[Dynamic[ang]]],
+		"Z", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXYCW[Dynamic[ang]]],
+		"Zi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXYCC[Dynamic[ang]]]];
+	Animator[Dynamic[ang], {0, Pi/2}, AnimationRate -> fps, AnimationRepetitions -> 1, AppearanceElements -> None];
 ];
 
 
@@ -148,7 +153,12 @@ RubikMove[fps_ : 1.5] := Module[
 		"Fi", RotateFi[cube3DPieces],
 		"B",  RotateB[cube3DPieces],
 		"Bi", RotateBi[cube3DPieces],
-		"X", RotateX[cube3DPieces]];
+		"X", RotateX[cube3DPieces],
+		"Xi", RotateXi[cube3DPieces],
+		"Y", RotateY[cube3DPieces],
+		"Yi", RotateYi[cube3DPieces],
+		"Z", RotateZ[cube3DPieces],
+		"Zi", RotateZi[cube3DPieces]];
 ];
 
 
