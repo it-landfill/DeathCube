@@ -14,6 +14,7 @@ NotebookDataLength[     11898,        321]
 NotebookOptionsPosition[      9924,        280]
 NotebookOutlinePosition[     10321,        296]
 CellTagsIndexPosition[     10278,        293]
+
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,10 +34,13 @@ Cell[BoxData[{
    3.860065876286563*^9}},
  CellLabel->"In[9]:=",ExpressionUUID->"0313ed82-4a6b-4eb3-b4ed-344a9ea6991c"],
 
+
 Cell[BoxData[
  RowBox[{"cubeString", " ", "=", " ", 
   RowBox[{"sampleStrings", "[", "\"\<solved\>\"", "]"}]}]], "Input",
+
  CellLabel->"In[13]:=",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
+
 
 Cell[CellGroupData[{
 
@@ -52,6 +56,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.858142523012336*^9, 3.858142530274385*^9}, 
    3.8581430578121653`*^9, {3.8581454711761627`*^9, 3.858145476240322*^9}, {
    3.858145588461281*^9, 3.858145592531073*^9}},
+
  CellLabel->"In[25]:=",ExpressionUUID->"315b7f47-5fad-4e91-9eb5-6a2ecd686724"],
 
 Cell[BoxData[
@@ -59,7 +64,9 @@ Cell[BoxData[
   RowBox[{"Visualize2DCube", "[", "cube2D", "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.858142851866658*^9, 3.858142856544345*^9}, 
    3.858143079115411*^9, 3.858145479096171*^9},
+
  CellLabel->"In[26]:=",ExpressionUUID->"05778e33-9a41-49b5-af45-a81fab0b9282"]
+
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -73,10 +80,12 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"cube3DPieces", " ", "=", " ", 
    RowBox[{"GetPieces", "[", "cubeString", "]"}]}], ";"}]], "Input",
+
  CellChangeTimes->{{3.8581456344099483`*^9, 3.8581456594728327`*^9}, {
   3.860065300023295*^9, 3.8600653028870792`*^9}, {3.860065384518886*^9, 
   3.8600653865504436`*^9}},
  CellLabel->"In[27]:=",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
+
 
 Cell[BoxData[
  RowBox[{
@@ -87,10 +96,13 @@ Cell[BoxData[
  CellChangeTimes->{{3.8581456611850433`*^9, 3.858145672042139*^9}, {
   3.85814571927878*^9, 3.858145719974935*^9}, {3.8581465756830187`*^9, 
   3.8581465791272182`*^9}},
+
  CellLabel->"In[28]:=",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
+
 
 Cell[BoxData[{
  RowBox[{
+
   RowBox[{"Visualize3DCube", "[", "cube3D", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Dynamic", "[", 
@@ -138,10 +150,12 @@ Cell[BoxData[
   "\[IndentingNewLine]", "]"}]], "Input",
  CellChangeTimes->{{3.85813291227271*^9, 3.8581329182583847`*^9}, {
   3.858136478679347*^9, 3.858136555598707*^9}, {3.858656069233163*^9, 
+
   3.858656076268976*^9}, {3.858656169907217*^9, 3.858656195556756*^9}, {
   3.8600656456574373`*^9, 3.860065675164853*^9}, {3.8600659113072023`*^9, 
   3.860065919659542*^9}},
  CellLabel->"In[17]:=",ExpressionUUID->"07336970-c2a7-470a-8ba1-920430f4e201"]
+
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -165,7 +179,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"cube3DPieces", "=", 
        RowBox[{"RotateLi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
-   
    RowBox[{"Button", "[", 
     RowBox[{"\"\<R\>\"", ",", 
      RowBox[{
@@ -176,7 +189,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"cube3DPieces", "=", 
        RowBox[{"RotateRi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
-   
    RowBox[{"Button", "[", 
     RowBox[{"\"\<U\>\"", ",", 
      RowBox[{
@@ -187,7 +199,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"cube3DPieces", "=", 
        RowBox[{"RotateUi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
-   
    RowBox[{"Button", "[", 
     RowBox[{"\"\<D\>\"", ",", 
      RowBox[{
@@ -198,7 +209,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"cube3DPieces", "=", 
        RowBox[{"RotateDi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
-   
    RowBox[{"Button", "[", 
     RowBox[{"\"\<F\>\"", ",", 
      RowBox[{
@@ -209,7 +219,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"cube3DPieces", "=", 
        RowBox[{"RotateFi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
-   
    RowBox[{"Button", "[", 
     RowBox[{"\"\<B\>\"", ",", 
      RowBox[{
@@ -224,7 +233,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.858132698560207*^9, 3.858132822592474*^9}, 
    3.858132872522488*^9, {3.858132935578004*^9, 3.858132943028689*^9}, 
    3.858136598708551*^9, {3.85865608386452*^9, 3.858656132239443*^9}},
+
  CellLabel->"In[18]:=",ExpressionUUID->"20e06c50-6bda-45e0-84fb-131a3b5f8841"]
+
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -248,7 +259,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"cube3DPieces", "=", 
        RowBox[{"RotateXi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
-   
    RowBox[{"Button", "[", 
     RowBox[{"\"\<Y\>\"", ",", 
      RowBox[{
@@ -259,7 +269,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"cube3DPieces", "=", 
        RowBox[{"RotateYi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}], ",", 
-   
    RowBox[{"Button", "[", 
     RowBox[{"\"\<Z\>\"", ",", 
      RowBox[{
@@ -272,15 +281,21 @@ Cell[BoxData[
        RowBox[{"RotateZi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}]}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.858136620997137*^9, 3.858136621004178*^9}, {
+
+
   3.858656090180126*^9, 3.858656122322294*^9}},
  CellLabel->"In[15]:=",ExpressionUUID->"f15fde06-53b2-4be6-a8bf-63ddaeac3ecb"]
+
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
+
+
 WindowSize->{960, 1061},
 WindowMargins->{{Automatic, 312}, {Automatic, 0}},
 FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"79533421-8528-43bd-a1a0-14b9feab23a3"
 ]
@@ -295,6 +310,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+
 Cell[558, 20, 709, 13, 94, "Input",ExpressionUUID->"0313ed82-4a6b-4eb3-b4ed-344a9ea6991c"],
 Cell[1270, 35, 200, 3, 30, "Input",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
 Cell[CellGroupData[{
@@ -320,6 +336,7 @@ Cell[5628, 154, 2615, 72, 157, "Input",ExpressionUUID->"20e06c50-6bda-45e0-84fb-
 Cell[CellGroupData[{
 Cell[8280, 231, 214, 4, 45, "Subsubsection",ExpressionUUID->"7a2f0e7a-8b7d-4747-a480-e738d240adf7"],
 Cell[8497, 237, 1387, 38, 94, "Input",ExpressionUUID->"f15fde06-53b2-4be6-a8bf-63ddaeac3ecb"]
+
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
