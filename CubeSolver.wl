@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["CubeSolver`"];
-WhiteCross::usage="";
+SolveCube::usage="";
 
 
 (* ::Section:: *)
@@ -196,9 +196,7 @@ setSFDaisy[SFWhiteEdge_]:=(
 	 quante UP servono e faccio la mossa giusta per portarlo in alto con setSFDaisy
 *)
 WhiteCross[] := Module[{},
-	Print[cube3DPieces]; 
 	While[Length[leftEdges] != 0,
-		Print["SONO VIVO - WHILE"]; 
 		{col1,col2,col3}= First[cube3DPieces[[getCube[cube3DPieces,First[leftEdges]]]]]["colors"];
 		edge:= First[cube3DPieces[[getColSort[cube3DPieces,cube3DPieces,col1,col2,col3]]]];
 		While[Intersection[List[edge],rightPetali] == {},
@@ -207,7 +205,6 @@ WhiteCross[] := Module[{},
 			setSFDaisy[edge];
 		];
 	];
-	Print["SONO VIVO"];
 	(* Ottengo gli id dei centri su tutte le facce che non sono sopra e sotto *)
 	idxCenters = Flatten[Position[numberOfNone,2]];
 	centers = cube3DPieces[[idxCenters]];
@@ -506,6 +503,21 @@ YellowCornersOrientation[] := Module[{},
 		];
 		cube3DPieces = RotateU[cube3DPieces]
 	]
+];
+
+
+(* ::Section:: *)
+(*Main call del solver*)
+
+
+SolveCube[] := Module[{},
+	WhiteCross[];
+	PlaceWhiteCorner[];
+	SecondLayer[];
+	YellowCross[];
+	YellowEdges[];
+	YellowCorners[];
+	YellowCornersOrientation[];
 ];
 
 
