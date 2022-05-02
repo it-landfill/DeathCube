@@ -1,6 +1,7 @@
 (* ::Package:: *)
 
-BeginPackage["CubeSolver`"]
+BeginPackage["CubeSolver`"];
+WhiteCross::usage="";
 
 
 (* ::Section:: *)
@@ -65,12 +66,12 @@ getColSort[total_, elements_,col1_, col2_, col3_] := (
 (*Restituzione degli indici dei cubi che soddisfano un pattern di colori in qualsiasi ordine*)
 
 
-getColSort[total_, elements_,col1_, col2_, col3_] := (
+(*getColSort[total_, elements_,col1_, col2_, col3_] := (
 	Flatten[{
 		getCol[total,elements,{col1,col2, col3}],getCol[total,elements,{col1,col3, col2}],getCol[total,elements,{col2,col1, col3}],
 		getCol[total,elements,{col3,col1, col2}],getCol[total,elements,{col3,col2, col1}],getCol[total,elements,{col2,col3, col1}]}
 	]
-);
+);*)
 
 
 (* ::Section:: *)
@@ -194,8 +195,10 @@ setSFDaisy[SFWhiteEdge_]:=(
 	 Poi, finch\[EAcute] questo cubetto non fa parte dei rightPetali, lo rendo un second floor, libero il cubo in alto da una faccia bianca facendo 
 	 quante UP servono e faccio la mossa giusta per portarlo in alto con setSFDaisy
 *)
-WhiteCross[] := Module[{}, 
+WhiteCross[] := Module[{},
+	Print[cube3DPieces]; 
 	While[Length[leftEdges] != 0,
+		Print["SONO VIVO - WHILE"]; 
 		{col1,col2,col3}= First[cube3DPieces[[getCube[cube3DPieces,First[leftEdges]]]]]["colors"];
 		edge:= First[cube3DPieces[[getColSort[cube3DPieces,cube3DPieces,col1,col2,col3]]]];
 		While[Intersection[List[edge],rightPetali] == {},
@@ -204,6 +207,7 @@ WhiteCross[] := Module[{},
 			setSFDaisy[edge];
 		];
 	];
+	Print["SONO VIVO"];
 	(* Ottengo gli id dei centri su tutte le facce che non sono sopra e sotto *)
 	idxCenters = Flatten[Position[numberOfNone,2]];
 	centers = cube3DPieces[[idxCenters]];
@@ -228,6 +232,9 @@ WhiteCross[] := Module[{},
 	(* Visualizzazione della faccia bianca come top *)
 	cube3DPieces=RotateZ[RotateZ[cube3DPieces]];
 ];
+
+
+
 
 
 (* ::Subsection:: *)

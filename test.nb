@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    126402,       2932]
-NotebookOptionsPosition[    122171,       2856]
-NotebookOutlinePosition[    122658,       2875]
-CellTagsIndexPosition[    122615,       2872]
+NotebookDataLength[     45084,        958]
+NotebookOptionsPosition[     42133,        896]
+NotebookOutlinePosition[     42584,        914]
+CellTagsIndexPosition[     42541,        911]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -31,12 +31,14 @@ Cell[BoxData[
 Cell[BoxData[{
  RowBox[{"Get", "[", "\"\<CubeAcquire.wl\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"Get", "[", "\"\<CubeVisualize.wl\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{"Get", "[", "\"\<CubeCore.wl\>\"", "]"}]}], "Input",
+ RowBox[{"Get", "[", "\"\<CubeCore.wl\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeSolver.wl\>\"", "]"}]}], "Input",
  CellChangeTimes->{{3.858137294870892*^9, 3.858137324484416*^9}, {
   3.858142463878751*^9, 3.858142491899535*^9}, {3.858145364364112*^9, 
-  3.8581453911510878`*^9}, {3.858145599997469*^9, 3.858145604418551*^9}},
- CellLabel->
-  "In[746]:=",ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-3f82de39c32d"],
+  3.8581453911510878`*^9}, {3.858145599997469*^9, 3.858145604418551*^9}, {
+  3.8604849158381987`*^9, 
+  3.8604849212666864`*^9}},ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-\
+3f82de39c32d"],
 
 Cell[CellGroupData[{
 
@@ -291,8 +293,7 @@ Cell[BoxData[
   DynamicBox[Typeset`ToBoxes[
     CubeVisualize`Generate3DCube[$CellContext`cube3DPieces], StandardForm, 
     Graphics3D],
-   ImageSizeCache->{{27.767835245866692`, 
-    336.034953262742}, {-142.28497496768819`, 160.72818311878638`}}],
+   ImageSizeCache->{{0., 0.}, {0., 0.}}],
   Axes->True,
   AxesLabel->{
     FormBox["\"x\"", TraditionalForm], 
@@ -332,7 +333,179 @@ Cell[BoxData[
    3.8595221027767286`*^9, 3.8595222132800455`*^9, 3.859522284416185*^9},
  CellLabel->
   "During evaluation of \
-In[754]:=",ExpressionUUID->"75a90caf-f0fd-40bb-915a-7a3118425827"]
+In[754]:=",ImageCache->GraphicsData["CompressedBitmap", "\<\
+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\
+\>", "ImageResolution" -> \
+96.],ExpressionUUID->"75a90caf-f0fd-40bb-915a-7a3118425827"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -647,47 +820,48 @@ Cell[BoxData[
        RowBox[{"RotateZi", "[", "cube3DPieces", "]"}]}], ";"}]}], "]"}]}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.858136620997137*^9, 3.858136621004178*^9}, {
-  3.858656090180126*^9, 3.858656122322294*^9}},
- CellLabel->
-  "In[757]:=",ExpressionUUID->"f15fde06-53b2-4be6-a8bf-63ddaeac3ecb"],
+  3.858656090180126*^9, 3.858656122322294*^9}, {3.860484935526312*^9, 
+  3.8604849358784313`*^9}, {3.8604861557533736`*^9, 
+  3.860486156055826*^9}},ExpressionUUID->"f15fde06-53b2-4be6-a8bf-\
+63ddaeac3ecb"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    ButtonBox["\<\"X\"\>",
     Appearance->Automatic,
-    ButtonFunction:>($CellContext`cube3DPieces = 
-      CubeCore`RotateX[$CellContext`cube3DPieces]; Null),
+    ButtonFunction:>($CellContext`cube3DPieces = \
+$CellContext`RotateX[$CellContext`cube3DPieces]; Null),
     Evaluator->Automatic,
     Method->"Preemptive"], ",", 
    ButtonBox["\<\"X'\"\>",
     Appearance->Automatic,
-    ButtonFunction:>($CellContext`cube3DPieces = 
-      CubeCore`RotateXi[$CellContext`cube3DPieces]; Null),
+    ButtonFunction:>($CellContext`cube3DPieces = \
+$CellContext`RotateXi[$CellContext`cube3DPieces]; Null),
     Evaluator->Automatic,
     Method->"Preemptive"], ",", 
    ButtonBox["\<\"Y\"\>",
     Appearance->Automatic,
-    ButtonFunction:>($CellContext`cube3DPieces = 
-      CubeCore`RotateY[$CellContext`cube3DPieces]; Null),
+    ButtonFunction:>($CellContext`cube3DPieces = \
+$CellContext`RotateY[$CellContext`cube3DPieces]; Null),
     Evaluator->Automatic,
     Method->"Preemptive"], ",", 
    ButtonBox["\<\"Y'\"\>",
     Appearance->Automatic,
-    ButtonFunction:>($CellContext`cube3DPieces = 
-      CubeCore`RotateYi[$CellContext`cube3DPieces]; Null),
+    ButtonFunction:>($CellContext`cube3DPieces = \
+$CellContext`RotateYi[$CellContext`cube3DPieces]; Null),
     Evaluator->Automatic,
     Method->"Preemptive"], ",", 
    ButtonBox["\<\"Z\"\>",
     Appearance->Automatic,
-    ButtonFunction:>($CellContext`cube3DPieces = 
-      CubeCore`RotateZ[$CellContext`cube3DPieces]; Null),
+    ButtonFunction:>($CellContext`cube3DPieces = \
+$CellContext`RotateZ[$CellContext`cube3DPieces]; Null),
     Evaluator->Automatic,
     Method->"Preemptive"], ",", 
    ButtonBox["\<\"Z'\"\>",
     Appearance->Automatic,
-    ButtonFunction:>($CellContext`cube3DPieces = 
-      CubeCore`RotateZi[$CellContext`cube3DPieces]; Null),
+    ButtonFunction:>($CellContext`cube3DPieces = \
+$CellContext`RotateZi[$CellContext`cube3DPieces]; Null),
     Evaluator->Automatic,
     Method->"Preemptive"]}], "}"}]], "Output",
  CellChangeTimes->{
@@ -713,2150 +887,15 @@ Cell[BoxData[
    3.8595142639722853`*^9, 3.859514778929734*^9, 3.8595153692105513`*^9, 
    3.859515633075317*^9, 3.8595157687840137`*^9, 3.859519669051242*^9, 
    3.859521253310439*^9, 3.8595221029046917`*^9, 3.8595222138793774`*^9, 
-   3.8595222845638294`*^9},
- CellLabel->
-  "Out[757]=",ExpressionUUID->"a9e64e79-a467-4bbc-80aa-4ed2cd0e559d"]
-}, Open  ]],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"cube3DPieces", " ", "=", " ", 
-    RowBox[{"GetPieces", "[", 
-     RowBox[{"sampleStrings", "[", "\"\<start\>\"", "]"}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"Restituisce", " ", "un", " ", "cubo", " ", 
-     RowBox[{"nell", "'"}], "insieme", " ", "totale"}], ",", 
-    RowBox[{"a", " ", "partire", " ", 
-     RowBox[{"dall", "'"}], "elemento"}]}], "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"getCube", "[", 
-     RowBox[{"total_", ",", "element_"}], "]"}], ":=", 
-    RowBox[{"(", 
-     RowBox[{"First", "[", 
-      RowBox[{"Position", "[", 
-       RowBox[{"total", ",", "element"}], "]"}], "]"}], ")"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-   "Restituisce", " ", "gli", " ", "indici", " ", "dei", " ", "cubi", " ", 
-    RowBox[{"nell", "'"}], "insieme", " ", "totale", " ", "a", " ", "partire",
-     " ", "da", " ", "un", " ", "pattern", " ", "in", " ", "un", " ", "certo",
-     " ", "set", " ", "di", " ", "elementi", " ", "riguardante", " ", "la", 
-    " ", "posizione"}], "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"getPos", "[", 
-     RowBox[{"total_", ",", "elements_", ",", "pattern_"}], "]"}], ":=", 
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{"idxs", "=", 
-       RowBox[{"Flatten", "[", 
-        RowBox[{"Position", "[", 
-         RowBox[{
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"Flatten", "[", 
-             RowBox[{"Cases", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"elements", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}], "[", "\"\<pos\>\"", "]"}], 
-                "}"}], ",", "pattern"}], "]"}], "]"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "1", ",", 
-              RowBox[{"Length", "[", "elements", "]"}]}], "}"}]}], "]"}], ",",
-           "pattern"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Return", "[", 
-       RowBox[{"Flatten", "[", 
-        RowBox[{"Table", "[", 
-         RowBox[{
-          RowBox[{"getCube", "[", 
-           RowBox[{"total", ",", 
-            RowBox[{"elements", "[", 
-             RowBox[{"[", 
-              RowBox[{"idxs", "[", 
-               RowBox[{"[", "t", "]"}], "]"}], "]"}], "]"}]}], "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"t", ",", "1", ",", 
-            RowBox[{"Length", "[", "idxs", "]"}]}], "}"}]}], "]"}], "]"}], 
-       "]"}]}], ")"}]}], ";"}], "\n", "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-   "Restituisce", " ", "gli", " ", "indici", " ", "dei", " ", "cubi", " ", 
-    RowBox[{"nell", "'"}], "insieme", " ", "totale", " ", "a", " ", "partire",
-     " ", "da", " ", "un", " ", "pattern", " ", "in", " ", "un", " ", "certo",
-     " ", "set", " ", "di", " ", "elementi", " ", "riguardante", " ", "i", 
-    " ", "colori"}], "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"getCol", "[", 
-     RowBox[{"total_", ",", "elements_", ",", "pattern_"}], "]"}], ":=", 
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{"idxs", "=", 
-       RowBox[{"Flatten", "[", 
-        RowBox[{"Position", "[", 
-         RowBox[{
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"Flatten", "[", 
-             RowBox[{"Cases", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"elements", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}], "[", "\"\<colors\>\"", 
-                 "]"}], "}"}], ",", "pattern"}], "]"}], "]"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "1", ",", 
-              RowBox[{"Length", "[", "elements", "]"}]}], "}"}]}], "]"}], ",",
-           "pattern"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Return", "[", 
-       RowBox[{"Flatten", "[", 
-        RowBox[{"Table", "[", 
-         RowBox[{
-          RowBox[{"getCube", "[", 
-           RowBox[{"total", ",", 
-            RowBox[{"elements", "[", 
-             RowBox[{"[", 
-              RowBox[{"idxs", "[", 
-               RowBox[{"[", "t", "]"}], "]"}], "]"}], "]"}]}], "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"t", ",", "1", ",", 
-            RowBox[{"Length", "[", "idxs", "]"}]}], "}"}]}], "]"}], "]"}], 
-       "]"}]}], ")"}]}], ";"}], "\n", "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{"Restituisce", " ", 
-    RowBox[{"l", "'"}], "indice", " ", "di", " ", "un", " ", "cubo", " ", 
-    "che", " ", "soddisfa", " ", "un", " ", "certo", " ", "pattern", " ", 
-    "di", " ", "colori", " ", "permutati"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"getColSort", "[", 
-    RowBox[{
-    "total_", ",", " ", "elements_", ",", "col1_", ",", " ", "col2_", ",", 
-     " ", "col3_"}], "]"}], " ", ":=", " ", 
-   RowBox[{"(", 
-    RowBox[{"Flatten", "[", 
-     RowBox[{"{", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"getCol", "[", 
-        RowBox[{"total", ",", "elements", ",", 
-         RowBox[{"{", 
-          RowBox[{"col1", ",", "col2", ",", " ", "col3"}], "}"}]}], "]"}], 
-       ",", 
-       RowBox[{"getCol", "[", 
-        RowBox[{"total", ",", "elements", ",", 
-         RowBox[{"{", 
-          RowBox[{"col1", ",", "col3", ",", " ", "col2"}], "}"}]}], "]"}], 
-       ",", 
-       RowBox[{"getCol", "[", 
-        RowBox[{"total", ",", "elements", ",", 
-         RowBox[{"{", 
-          RowBox[{"col2", ",", "col1", ",", " ", "col3"}], "}"}]}], "]"}], 
-       ",", "\[IndentingNewLine]", 
-       RowBox[{"getCol", "[", 
-        RowBox[{"total", ",", "elements", ",", 
-         RowBox[{"{", 
-          RowBox[{"col3", ",", "col1", ",", " ", "col2"}], "}"}]}], "]"}], 
-       ",", 
-       RowBox[{"getCol", "[", 
-        RowBox[{"total", ",", "elements", ",", 
-         RowBox[{"{", 
-          RowBox[{"col3", ",", "col2", ",", " ", "col1"}], "}"}]}], "]"}], 
-       ",", 
-       RowBox[{"getCol", "[", 
-        RowBox[{"total", ",", "elements", ",", 
-         RowBox[{"{", 
-          RowBox[{"col2", ",", "col3", ",", " ", "col1"}], "}"}]}], "]"}]}], 
-      "}"}], "]"}], ")"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-   "Inserisce", " ", "un", " ", "white", " ", "edge", " ", "al", " ", 
-    "second", " ", "floor", " ", "nella", " ", "faccia", " ", "superiore"}], 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"setSFDaisy", "[", "SFWhiteEdge_", "]"}], ":=", 
-   RowBox[{"(", 
-    RowBox[{
-     RowBox[{"checkW", "=", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"SFWhiteEdge", "[", "\"\<colors\>\"", "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "==", "\"\<W\>\""}]}], ";", " ", 
-     RowBox[{"Switch", "[", 
-      RowBox[{
-       RowBox[{"SFWhiteEdge", "[", "\"\<pos\>\"", "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
-       RowBox[{"(", 
-        RowBox[{"If", "[", 
-         RowBox[{"checkW", ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateFi", "[", "cube3DPieces", "]"}]}], ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateR", "[", "cube3DPieces", "]"}]}]}], "]"}], ")"}], 
-       ",", "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "0", ",", 
-         RowBox[{"-", "1"}]}], "}"}], ",", 
-       RowBox[{"(", 
-        RowBox[{"If", "[", 
-         RowBox[{"checkW", ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateB", "[", "cube3DPieces", "]"}]}], ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateRi", "[", "cube3DPieces", "]"}]}]}], "]"}], ")"}], 
-       ",", "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}], ",", 
-       RowBox[{"(", 
-        RowBox[{"If", "[", 
-         RowBox[{"checkW", ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateF", "[", "cube3DPieces", "]"}]}], ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateLi", "[", "cube3DPieces", "]"}]}]}], "]"}], ")"}], 
-       ",", "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"-", "1"}], ",", "0", ",", 
-         RowBox[{"-", "1"}]}], "}"}], ",", 
-       RowBox[{"(", 
-        RowBox[{"If", "[", 
-         RowBox[{"checkW", ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateBi", "[", "cube3DPieces", "]"}]}], ",", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateL", "[", "cube3DPieces", "]"}]}]}], "]"}], ")"}]}], 
-      "]"}]}], ")"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"getSingleColor", "[", 
-   RowBox[{"element_", ",", " ", "color1_", ",", " ", "color2_"}], "]"}], ":=", 
-  RowBox[{"Intersection", "[", 
-   RowBox[{
-    RowBox[{"Cases", "[", 
-     RowBox[{
-      RowBox[{"element", "[", "\"\<colors\>\"", "]"}], ",", 
-      RowBox[{"Except", "[", "color1", "]"}]}], "]"}], ",", " ", 
-    RowBox[{"Cases", "[", 
-     RowBox[{
-      RowBox[{"element", "[", "\"\<colors\>\"", "]"}], ",", " ", 
-      RowBox[{"Except", "[", "color2", "]"}]}], "]"}]}], "]"}]}]}], "Input",
- CellChangeTimes->{{3.8589222582438884`*^9, 3.8589222582438884`*^9}, {
-   3.8589590087016354`*^9, 3.858959018715989*^9}, {3.8589912418196173`*^9, 
-   3.858991247586688*^9}, 3.858999420426939*^9, {3.859000149655064*^9, 
-   3.859000152972974*^9}, {3.859000531669318*^9, 3.859000537026216*^9}, {
-   3.8590005847683177`*^9, 3.859000613283124*^9}, {3.8590006434790363`*^9, 
-   3.859000711573595*^9}, {3.859017869951882*^9, 3.859017903653759*^9}, {
-   3.8590179529472833`*^9, 3.859017956867288*^9}, {3.859027673954877*^9, 
-   3.8590276944049053`*^9}, {3.8590278206147304`*^9, 
-   3.8590278367451153`*^9}, {3.8590288109042273`*^9, 
-   3.8590288510427656`*^9}, {3.859030043733794*^9, 3.859030056612129*^9}, {
-   3.8590300930434027`*^9, 3.859030129126766*^9}, {3.8590869811949563`*^9, 
-   3.859087115237235*^9}, {3.859087843669859*^9, 3.859087853387488*^9}, {
-   3.859088094816529*^9, 3.859088096963092*^9}, {3.859088822444222*^9, 
-   3.8590888438575706`*^9}, {3.859088913805915*^9, 3.8590889192071457`*^9}, {
-   3.8594610843267326`*^9, 3.859461097630834*^9}},
- CellLabel->
-  "In[758]:=",ExpressionUUID->"14594989-75f6-49a8-96ba-c32c1edf7bfd"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{
-    "Specifica", " ", "dei", " ", "numeri", " ", "di", " ", "facce", " ", 
-     "none", " ", "per", " ", "ogni", " ", "cubo", " ", 
-     RowBox[{"nell", "'"}], "insieme", " ", "cube3DPieces"}], ",", 
-    RowBox[{"per", " ", "riconoscere", " ", "corner"}], ",", 
-    RowBox[{"edges", " ", "e", " ", "centers"}]}], "*)"}], 
-  RowBox[{
-   RowBox[{
-    RowBox[{"numberOfNone", ":=", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Count", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"cube3DPieces", "[", 
-           RowBox[{"[", "t", "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], ",", 
-         "None"}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"t", ",", "1", ",", 
-         RowBox[{"Length", "[", "cube3DPieces", "]"}]}], "}"}]}], "]"}]}], 
-    ";"}], "\[IndentingNewLine]", "\n", 
-   RowBox[{"(*", 
-    RowBox[{"Ricerca", " ", "degli", " ", "edges", " ", "bianchi"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"idxOfEdges", ":=", 
-     RowBox[{"Flatten", "[", 
-      RowBox[{"Position", "[", 
-       RowBox[{"numberOfNone", ",", "1"}], "]"}], "]"}]}], ";"}], "\n", 
-   RowBox[{
-    RowBox[{"idxWhiteEdges", ":=", 
-     RowBox[{"getCol", "[", 
-      RowBox[{"cube3DPieces", ",", 
-       RowBox[{"cube3DPieces", "[", 
-        RowBox[{"[", "idxOfEdges", "]"}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"___", ",", "\"\<W\>\"", ",", "___"}], "}"}]}], "]"}]}], 
-    ";"}], "\n", 
-   RowBox[{"whiteEdges", ":=", 
-    RowBox[{"cube3DPieces", "[", 
-     RowBox[{"[", "idxWhiteEdges", "]"}], "]"}]}], "\[IndentingNewLine]", 
-   "\n", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Ricerca", " ", "dei", " ", "petali", " ", "che", " ", "devono", " ", 
-     "diventare", " ", "bianchi"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"idxPetali", ":=", 
-     RowBox[{"Flatten", "[", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"Flatten", "[", 
-         RowBox[{"getPos", "[", 
-          RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"1", "|", 
-              RowBox[{"-", "1"}]}], ",", "1", ",", "0"}], "}"}]}], "]"}], 
-         "]"}], ",", 
-        RowBox[{"Flatten", "[", 
-         RowBox[{"getPos", "[", 
-          RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-           RowBox[{"{", 
-            RowBox[{"0", ",", "1", ",", 
-             RowBox[{"1", "|", 
-              RowBox[{"-", "1"}]}]}], "}"}]}], "]"}], "]"}]}], "}"}], "]"}]}],
-     ";"}], "\n", 
-   RowBox[{"petali", " ", ":=", " ", 
-    RowBox[{"cube3DPieces", "[", 
-     RowBox[{"[", "idxPetali", "]"}], "]"}]}], "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Specifica", " ", "dei", " ", "petali", " ", "che", " ", "hanno", " ", 
-     "gi\[AGrave]", " ", "una", " ", "faccia", " ", "superiore", " ", 
-     "bianca"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"rightPetali", " ", ":=", " ", 
-    RowBox[{"cube3DPieces", "[", 
-     RowBox[{"[", 
-      RowBox[{"getCol", "[", 
-       RowBox[{"cube3DPieces", ",", "petali", ",", 
-        RowBox[{"{", 
-         RowBox[{"_", ",", "\"\<W\>\"", ",", "_"}], "}"}]}], "]"}], "]"}], 
-     "]"}]}]}]}]], "Input",
- CellChangeTimes->{{3.8589222664372597`*^9, 3.8589222664382496`*^9}, {
-   3.858922377721034*^9, 3.8589224300636764`*^9}, {3.8589225186952925`*^9, 
-   3.8589225217076197`*^9}, {3.858922569942458*^9, 3.858922609818551*^9}, {
-   3.8589229355445037`*^9, 3.858923047987237*^9}, {3.8589231070175295`*^9, 
-   3.8589231246940823`*^9}, {3.8589231664140673`*^9, 3.858923168278792*^9}, {
-   3.858923226711053*^9, 3.8589232700175858`*^9}, {3.8589588651012325`*^9, 
-   3.858958887630305*^9}, {3.8589592394172373`*^9, 3.858959292687438*^9}, {
-   3.8589593295007963`*^9, 3.8589593475991077`*^9}, 3.858959392641134*^9, {
-   3.8589595499539356`*^9, 3.858959633437277*^9}, {3.8589613067655234`*^9, 
-   3.8589613123693485`*^9}, {3.858991066890921*^9, 3.8589910837385263`*^9}, {
-   3.85899114799282*^9, 3.858991151418708*^9}, {3.8589911842650957`*^9, 
-   3.858991224061391*^9}, {3.8589913221956987`*^9, 3.8589913250823526`*^9}, {
-   3.8590002868749847`*^9, 3.859000287736103*^9}, {3.8590010232818933`*^9, 
-   3.859001072120534*^9}, 3.85900237622471*^9, {3.859004333768111*^9, 
-   3.8590043367229033`*^9}, 3.859017657080559*^9, {3.8590297781672487`*^9, 
-   3.8590297791802316`*^9}, {3.859030250611002*^9, 3.859030274316945*^9}},
- CellLabel->
-  "In[765]:=",ExpressionUUID->"fe193dc4-724e-4bce-ab5e-5b7cde7e006d"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", " ", 
-   RowBox[{
-   "Controlla", " ", "il", " ", "cubo", " ", "nella", " ", "faccia", " ", 
-    "superiore", " ", "rispetto", " ", "ad", " ", "una", " ", "faccia", " ", 
-    "bianca"}], " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"getWTop", "[", "element_", "]"}], " ", ":=", " ", 
-    RowBox[{"Switch", "[", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-       RowBox[{"[", "2", "]"}], "]"}], ",", "\[IndentingNewLine]", "1", ",", 
-      "  ", "element", ",", " ", 
-      RowBox[{"(*", 
-       RowBox[{
-       "devo", " ", "trasformarlo", " ", "in", " ", "un", " ", "2", "F", " ", 
-        "ma", " ", "il", " ", "top", " ", "\[EGrave]", " ", "lui"}], " ", 
-       "*)"}], "\[IndentingNewLine]", "0", ",", " ", 
-      RowBox[{"If", "[", " ", 
-       RowBox[{
-        RowBox[{"MatchQ", "[", 
-         RowBox[{
-          RowBox[{"element", "[", "\"\<colors\>\"", "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"_", ",", "_", ",", "\"\<W\>\""}], "}"}]}], "]"}], ",", 
-        " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-          RowBox[{
-          "Faccia", " ", "bianca", " ", "o", " ", "su", " ", "Front"}], "-", 
-          RowBox[{"Back", " ", "o", " ", "su", " ", "Left"}], "-", "Right"}], 
-         " ", "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"First", "[", 
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", " ", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}], ",", "1", ",", "0"}], "}"}]}],
-             "]"}], "]"}], "]"}], "]"}], " ", ",", 
-        RowBox[{"(*", 
-         RowBox[{"FB", " ", "mantengo", " ", "X"}], "*)"}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"First", "[", 
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", " ", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "1", ",", 
-               RowBox[{
-                RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-                RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], "]"}], "]"}], 
-          "]"}], " ", "]"}]}], 
-       RowBox[{"(*", 
-        RowBox[{"LR", " ", "mantengo", " ", "Z"}], "*)"}], 
-       "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"-", "1"}], ",", " ", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"MatchQ", "[", 
-         RowBox[{
-          RowBox[{"element", "[", "\"\<colors\>\"", "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"_", ",", "\"\<W\>\"", ",", "_"}], "}"}]}], "]"}], ",", 
-        " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-          RowBox[{"Faccia", " ", "bianca", " ", "o", " ", "su", " ", "Up"}], 
-          "-", 
-          RowBox[{"Down", " ", "o", " ", "su", " ", "Front"}], "-", "Back"}], 
-         " ", "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"First", "[", 
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", " ", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}], ",", "1", ",", 
-               RowBox[{
-                RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-                RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], "]"}], "]"}], 
-          "]"}], " ", "]"}], ",", " ", 
-        RowBox[{"(*", 
-         RowBox[{"UD", " ", "mantengo", " ", "Z", " ", "e", " ", "X"}], 
-         "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"First", "[", 
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", " ", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}], ",", "1", ",", 
-               RowBox[{
-                RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-                RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], "]"}], "]"}], 
-          "]"}], "]"}]}], "  ", 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{
-         "FB", " ", "devo", " ", "trasformarlo", " ", "in", " ", "un", " ", 
-          "2", "F", " ", "prima"}], ",", " ", 
-         RowBox[{
-         "quindi", " ", "controllo", " ", "solo", " ", "quella", " ", 
-          "sopra"}], ",", " ", 
-         RowBox[{
-         "ma", " ", "andr\[AGrave]", " ", "fatto", " ", "un", " ", "doppio", 
-          " ", "controllo"}]}], "*)"}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-     RowBox[{
-     "Da", " ", "chiamare", " ", "dopo", " ", "aver", " ", "fatto", " ", "i", 
-      " ", "giusti", " ", "check", " ", "con", " ", "getWTop"}], ",", " ", 
-     RowBox[{
-     "rende", " ", "un", " ", "edge", " ", "con", " ", "una", " ", "faccia", 
-      " ", "bianca", " ", "un", " ", "edge", " ", "da", " ", "2", "o", " ", 
-      "piano"}]}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"makeSF", "[", "element_", "]"}], " ", ":=", " ", 
-    "\[IndentingNewLine]", 
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{
-          RowBox[{
-           RowBox[{"getWTop", "[", "element", "]"}], "[", "\"\<colors\>\"", 
-           "]"}], "[", 
-          RowBox[{"[", "2", "]"}], "]"}], " ", "==", " ", "\"\<W\>\""}], ",", 
-        " ", 
-        RowBox[{"cube3DPieces", " ", "=", " ", 
-         RowBox[{"RotateU", "[", "cube3DPieces", "]"}]}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Switch", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-         RowBox[{"[", "1", "]"}], "]"}], ",", "\[IndentingNewLine]", "   ", 
-        "0", ",", " ", 
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{"element", "[", "\"\<pos\>\"", "]"}], "[", 
-            RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", 
-           RowBox[{"-", "1"}]}], ",", " ", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateB", "[", "cube3DPieces", "]"}]}], ",", " ", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateF", "[", "cube3DPieces", "]"}]}]}], "]"}], ",", " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-          RowBox[{"Se", " ", "dietro"}], ",", " ", "B", ",", " ", 
-          RowBox[{"se", " ", "davanti"}], ",", " ", "F"}], "*)"}], 
-        "\[IndentingNewLine]", "   ", "1", ",", " ", 
-        RowBox[{"cube3DPieces", " ", "=", " ", 
-         RowBox[{"RotateR", "[", "cube3DPieces", "]"}]}], ",", " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-          RowBox[{"se", " ", "a", " ", "dx"}], ",", " ", "R"}], " ", "*)"}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"-", "1"}], ",", " ", 
-        RowBox[{"cube3DPieces", " ", "=", " ", 
-         RowBox[{"RotateL", "[", "cube3DPieces", "]"}]}]}], " ", 
-       RowBox[{"(*", " ", 
-        RowBox[{
-         RowBox[{"se", " ", "a", " ", "sx"}], ",", " ", "L"}], " ", "*)"}], 
-       "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", ")"}]}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Gli", " ", "edges", " ", "da", " ", "inserire", " ", "sono", " ", 
-     "quelli", " ", "che", " ", "non", " ", "fanno", " ", "ancora", " ", 
-     "parte", " ", "dei", " ", "petali", " ", "al", " ", "posto", " ", 
-     "giusto"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"leftEdges", " ", ":=", " ", 
-    RowBox[{"Complement", "[", 
-     RowBox[{"whiteEdges", ",", " ", "rightPetali"}], "]"}]}]}]}]], "Input",
- CellChangeTimes->{{3.8589917557439103`*^9, 3.858991773062354*^9}, {
-   3.8589918055843844`*^9, 3.858991843377043*^9}, {3.8589918752027445`*^9, 
-   3.85899189840219*^9}, {3.85899194807279*^9, 3.858992079077509*^9}, {
-   3.8589922505739746`*^9, 3.8589922558940372`*^9}, {3.8589923240035505`*^9, 
-   3.85899232483228*^9}, {3.8589923803121524`*^9, 3.858992395795266*^9}, {
-   3.8589924277935295`*^9, 3.8589925074334536`*^9}, {3.8589925522426004`*^9, 
-   3.858992595862022*^9}, {3.8589926393123956`*^9, 3.858992810832855*^9}, {
-   3.8589928490039425`*^9, 3.8589930491519666`*^9}, {3.858993091918247*^9, 
-   3.858993124412407*^9}, {3.8589933503664026`*^9, 3.8589934539521513`*^9}, {
-   3.858993491512206*^9, 3.8589935239350395`*^9}, {3.858993769537593*^9, 
-   3.8589937702175665`*^9}, {3.858993819040781*^9, 3.8589938755874863`*^9}, {
-   3.858993917837738*^9, 3.8589939232399445`*^9}, {3.8589939689373426`*^9, 
-   3.858994140867772*^9}, {3.858994216218172*^9, 3.858994319477503*^9}, {
-   3.858994706007419*^9, 3.8589947738225393`*^9}, {3.8589950054473395`*^9, 
-   3.858995020268338*^9}, 3.8590020475934944`*^9, {3.8590022421782975`*^9, 
-   3.859002271589961*^9}, {3.8590162245752172`*^9, 3.859016248375169*^9}, {
-   3.859016371717697*^9, 3.859016387084875*^9}, {3.8590181193895397`*^9, 
-   3.859018124539929*^9}, 3.859018239261241*^9, {3.8590301494939375`*^9, 
-   3.8590302445807333`*^9}, {3.859085946414773*^9, 3.859085947785883*^9}, 
-   3.860465295995696*^9},ExpressionUUID->"16b6c1b3-1219-4566-ba7c-\
-0ee9698ee163"],
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", 
-  RowBox[{"(*", " ", "\[IndentingNewLine]", "\t ", 
-   RowBox[{
-    RowBox[{
-    "Finch\[EAcute]", " ", "ci", " ", "sono", " ", "dei", " ", "leftEdges"}], 
-    ",", " ", 
-    RowBox[{
-    "mi", " ", "salvo", " ", "i", " ", "colori", " ", "del", " ", "cubetto", 
-     " ", "che", " ", "sto", " ", "considerando", " ", "cos\[IGrave]", " ", 
-     "gli", " ", "assegno", " ", "un", " ", "cubetto", " ", "senza", " ", 
-     "che", " ", "cambi", " ", "in", " ", 
-     RowBox[{"continuazione", ".", " ", "Poi"}]}], ",", " ", 
-    RowBox[{
-    "finch\[EAcute]", " ", "questo", " ", "cubetto", "\[IndentingNewLine]", 
-     "\t", "non", " ", "fa", " ", "parte", " ", "dei", " ", "rightPetali"}], 
-    ",", " ", 
-    RowBox[{"lo", " ", "rendo", " ", "un", " ", "second", " ", "floor"}], ",",
-     " ", 
-    RowBox[{
-    "libero", " ", "il", " ", "cubo", " ", "in", " ", "alto", " ", "da", " ", 
-     "una", " ", "faccia", " ", "bianca", " ", "facendo", " ", "quante", " ", 
-     "UP", " ", "servono", " ", "e", " ", "faccio", " ", "la", " ", "mossa", 
-     " ", "giusta", " ", "per", " ", "portarlo", " ", "in", " ", "alto", 
-     "\[IndentingNewLine]", "\t", "con", " ", "setSFDaisy"}]}], 
-   "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"While", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"Length", "[", "leftEdges", "]"}], " ", "!=", " ", "0"}], ",", 
-     "\[IndentingNewLine]", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"col1", ",", "col2", ",", "col3"}], "}"}], "=", " ", 
-       RowBox[{
-        RowBox[{"First", "[", 
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", 
-           RowBox[{"getCube", "[", 
-            RowBox[{"cube3DPieces", ",", 
-             RowBox[{"First", "[", "leftEdges", "]"}]}], "]"}], "]"}], "]"}], 
-         "]"}], "[", "\"\<colors\>\"", "]"}]}], ";", "\[IndentingNewLine]", 
-      " ", 
-      RowBox[{"edge", ":=", " ", 
-       RowBox[{"First", "[", 
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"getColSort", "[", 
-           RowBox[{
-           "cube3DPieces", ",", "cube3DPieces", ",", "col1", ",", "col2", ",",
-             "col3"}], "]"}], "]"}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"Intersection", "[", 
-          RowBox[{
-           RowBox[{"List", "[", "edge", "]"}], ",", "rightPetali"}], "]"}], 
-         " ", "==", " ", 
-         RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{"edge", "[", "\"\<pos\>\"", "]"}], "[", 
-             RowBox[{"[", "2", "]"}], "]"}], " ", "!=", " ", "0"}], ",", 
-           RowBox[{"makeSF", "[", "edge", "]"}]}], "]"}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"While", "[", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"getWTop", "[", "edge", "]"}], "[", "\"\<colors\>\"", 
-              "]"}], "[", 
-             RowBox[{"[", "2", "]"}], "]"}], " ", "==", " ", "\"\<W\>\""}], 
-           ",", " ", 
-           RowBox[{"cube3DPieces", " ", "=", " ", 
-            RowBox[{"RotateU", "[", "cube3DPieces", "]"}]}]}], "]"}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"setSFDaisy", "[", "edge", "]"}], ";"}]}], 
-       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Ottengo", " ", "gli", " ", "id", " ", "dei", " ", "centri", " ", "su", 
-     " ", "tutte", " ", "le", " ", "facce", " ", "che", " ", "non", " ", 
-     "sono", " ", "sopra", " ", "e", " ", "sotto"}], " ", "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"idxCenters", " ", "=", " ", 
-     RowBox[{"Flatten", "[", 
-      RowBox[{"Position", "[", 
-       RowBox[{"numberOfNone", ",", "2"}], "]"}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"centers", " ", "=", " ", 
-     RowBox[{"cube3DPieces", "[", 
-      RowBox[{"[", "idxCenters", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"lateralCenters", " ", "=", " ", 
-     RowBox[{"Complement", "[", 
-      RowBox[{"centers", " ", ",", 
-       RowBox[{"cube3DPieces", "[", 
-        RowBox[{"[", 
-         RowBox[{"getColSort", "[", 
-          RowBox[{
-          "cube3DPieces", ",", "centers", ",", "None", ",", "None", ",", 
-           RowBox[{"\"\<W\>\"", "|", "\"\<Y\>\""}]}], "]"}], "]"}], "]"}]}], 
-      "]"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-     RowBox[{"Per", " ", "ogni", " ", "elemento", " ", "del", " ", "petalo"}],
-      "..."}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"For", "[", 
-    RowBox[{
-     RowBox[{"i", "=", "1"}], ",", " ", 
-     RowBox[{"i", "<", "5"}], ",", " ", 
-     RowBox[{"i", "++"}], ",", " ", 
-     RowBox[{"(", "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{
-       "Trova", " ", "il", " ", "centro", " ", "di", " ", "riferimento"}], 
-       " ", "*)"}], "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"currentCenter", " ", ":=", " ", 
-        RowBox[{"lateralCenters", "[", 
-         RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{"Trova", " ", "il", " ", "cubo", " ", "da", " ", "operare"}], 
-        " ", "*)"}], "\[IndentingNewLine]", 
-       RowBox[{"cubeAboveId", " ", ":=", " ", 
-        RowBox[{"First", "[", 
-         RowBox[{"getPos", "[", 
-          RowBox[{"cube3DPieces", ",", " ", "cube3DPieces", ",", " ", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"currentCenter", "[", "\"\<pos\>\"", "]"}], "[", 
-              RowBox[{"[", "1", "]"}], "]"}], ",", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"currentCenter", "[", "\"\<pos\>\"", "]"}], "[", 
-               RowBox[{"[", "2", "]"}], "]"}], "+", "1"}], ",", 
-             RowBox[{
-              RowBox[{"currentCenter", "[", "\"\<pos\>\"", "]"}], "[", 
-              RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], "]"}], "]"}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{
-        "Finch\[EGrave]", " ", "il", " ", "colore", " ", "del", " ", "cubo", 
-         " ", "non", " ", "combacia", " ", "con", " ", "quello", " ", "di", 
-         " ", "centro", " ", "faccia", " ", "ruota", " ", "in", " ", "senso", 
-         " ", "orario", " ", "il", " ", "top", " ", "layer"}], " ", "*)"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{"While", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"getSingleColor", "[", 
-           RowBox[{
-            RowBox[{"cube3DPieces", "[", 
-             RowBox[{"[", "cubeAboveId", "]"}], "]"}], ",", "\"\<W\>\"", ",", 
-            "None"}], "]"}], "!=", 
-          RowBox[{"getSingleColor", "[", 
-           RowBox[{"currentCenter", ",", " ", "None", ",", " ", "None"}], 
-           "]"}]}], ",", 
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{"cube3DPieces", " ", "=", " ", 
-            RowBox[{"RotateU", "[", "cube3DPieces", "]"}]}], ";"}], ")"}]}], 
-        "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{"Scaravolta", " ", "la", " ", "croce"}], " ", "*)"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{"Switch", "[", 
-        RowBox[{
-         RowBox[{"First", "[", 
-          RowBox[{"getSingleColor", "[", 
-           RowBox[{
-            RowBox[{"cube3DPieces", "[", 
-             RowBox[{"[", "cubeAboveId", "]"}], "]"}], ",", "\"\<W\>\"", ",", 
-            "None"}], "]"}], "]"}], ",", " ", "\[IndentingNewLine]", 
-         "\"\<O\>\"", ",", 
-         RowBox[{"(", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateL", "[", 
-            RowBox[{"RotateL", "[", "cube3DPieces", "]"}], "]"}]}], ")"}], 
-         ",", "\[IndentingNewLine]", "\"\<B\>\"", ",", 
-         RowBox[{"(", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateF", "[", 
-            RowBox[{"RotateF", "[", "cube3DPieces", "]"}], "]"}]}], ")"}], 
-         ",", "\[IndentingNewLine]", "\"\<G\>\"", ",", 
-         RowBox[{"(", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateB", "[", 
-            RowBox[{"RotateB", "[", "cube3DPieces", "]"}], "]"}]}], ")"}], 
-         ",", "\[IndentingNewLine]", "\"\<R\>\"", ",", 
-         RowBox[{"(", 
-          RowBox[{"cube3DPieces", "=", 
-           RowBox[{"RotateR", "[", 
-            RowBox[{"RotateR", "[", "cube3DPieces", "]"}], "]"}]}], ")"}]}], 
-        "]"}]}], "\[IndentingNewLine]", ")"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"cube3DPieces", "=", 
-     RowBox[{"RotateZ", "[", 
-      RowBox[{"RotateZ", "[", "cube3DPieces", "]"}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Se", " ", "tutto", " ", "\[EGrave]", " ", "andato", " ", "come", " ", 
-     "doveva", " ", "ora", " ", "la", " ", "croce", " ", "\[EGrave]", " ", 
-     "comparsa", " ", "sulla", " ", "faccia", " ", 
-     RowBox[{"bianca", "."}]}], "  ", "*)"}]}]}]], "Input",
- CellChangeTimes->{{3.858995144637559*^9, 3.8589952080473876`*^9}, {
-   3.8589954774085307`*^9, 3.858995532274351*^9}, {3.8589955654619017`*^9, 
-   3.8589955831615086`*^9}, {3.858995617462036*^9, 3.8589956778116865`*^9}, {
-   3.858996458543222*^9, 3.8589965584457645`*^9}, {3.85899914859548*^9, 
-   3.858999148830363*^9}, {3.859000344888585*^9, 3.859000348193201*^9}, {
-   3.8590004113688135`*^9, 3.859000423357299*^9}, {3.859000943761145*^9, 
-   3.8590009795337234`*^9}, {3.8590011624960365`*^9, 
-   3.8590012009553227`*^9}, {3.8590015581519136`*^9, 
-   3.8590015615288334`*^9}, {3.85900164490667*^9, 3.859001777983717*^9}, 
-   3.8590018922310057`*^9, {3.8590040059650755`*^9, 3.8590040579159145`*^9}, {
-   3.8590162277898855`*^9, 3.859016235357436*^9}, {3.859018129176265*^9, 
-   3.859018133649517*^9}, {3.859018172247184*^9, 3.8590182344343653`*^9}, {
-   3.8590182722226887`*^9, 3.8590182889144335`*^9}, {3.859018392028239*^9, 
-   3.859018395324244*^9}, {3.8590289292555103`*^9, 3.8590289495552645`*^9}, {
-   3.859029502578484*^9, 3.8590295962150664`*^9}, {3.8590302802598224`*^9, 
-   3.85903042926941*^9}, 3.8590817099872*^9, {3.8590832370090594`*^9, 
-   3.8590832458734975`*^9}, {3.8590838281855245`*^9, 
-   3.8590839001052694`*^9}, {3.859083948220426*^9, 3.859084003117202*^9}, {
-   3.8590841340159416`*^9, 3.859084245734251*^9}, 3.8590861059068365`*^9, {
-   3.859086368238038*^9, 3.859086602367773*^9}, {3.8590871668757267`*^9, 
-   3.8590873363900423`*^9}, {3.8590873685236998`*^9, 3.859087439411498*^9}, {
-   3.8590875200524073`*^9, 3.8590877508844624`*^9}, {3.8590881524163847`*^9, 
-   3.8590882854791613`*^9}, {3.8590883444927793`*^9, 3.859088392607116*^9}, {
-   3.859088446623104*^9, 3.8590887034889393`*^9}, {3.8590889687078238`*^9, 
-   3.85908899779095*^9}, 3.8595222664717445`*^9, {3.8604653109062443`*^9, 
-   3.860465339994096*^9}},ExpressionUUID->"518b6384-3d48-4302-8c11-\
-f34d0216b73f"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"idxCorners", " ", ":=", " ", 
-   RowBox[{"Flatten", "[", 
-    RowBox[{"Position", "[", 
-     RowBox[{"numberOfNone", ",", "0"}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"corners", " ", ":=", " ", 
-  RowBox[{"cube3DPieces", "[", 
-   RowBox[{"[", "idxCorners", "]"}], "]"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"whiteCorners", " ", ":=", " ", 
-   RowBox[{"cube3DPieces", "[", 
-    RowBox[{"[", 
-     RowBox[{"getCol", "[", 
-      RowBox[{"cube3DPieces", ",", " ", 
-       RowBox[{"cube3DPieces", "[", 
-        RowBox[{"[", "idxCorners", "]"}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"___", ",", "\"\<W\>\"", ",", "___"}], "}"}]}], "]"}], "]"}], 
-    "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"frontFaceColor", " ", ":=", " ", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"First", "[", 
-     RowBox[{"cube3DPieces", "[", 
-      RowBox[{"[", 
-       RowBox[{"getPos", "[", 
-        RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-         RowBox[{"{", 
-          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}], 
-     "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-   RowBox[{"[", "3", "]"}], "]"}]}], "\[IndentingNewLine]", 
- RowBox[{"rightFaceColor", ":=", " ", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"First", "[", 
-     RowBox[{"cube3DPieces", "[", 
-      RowBox[{"[", 
-       RowBox[{"getPos", "[", 
-        RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-         RowBox[{"{", 
-          RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}], "]"}], "]"}], 
-     "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
- RowBox[{"leftFaceColor", ":=", " ", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"First", "[", 
-     RowBox[{"cube3DPieces", "[", 
-      RowBox[{"[", 
-       RowBox[{"getPos", "[", 
-        RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], "]"}], "]"}], 
-      "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"topFaceColor", " ", ":=", " ", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"First", "[", 
-      RowBox[{"cube3DPieces", "[", 
-       RowBox[{"[", 
-        RowBox[{"getPos", "[", 
-         RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-          RowBox[{"{", 
-           RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], "]"}], "]"}], 
-      "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-    RowBox[{"[", "2", "]"}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"rightTopCorner", " ", ":=", " ", 
-  RowBox[{"cube3DPieces", "[", 
-   RowBox[{"[", 
-    RowBox[{"First", "[", 
-     RowBox[{"getPos", "[", 
-      RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}], 
-   "]"}]}], "\[IndentingNewLine]", 
- RowBox[{"rightBottomCorner", " ", ":=", " ", 
-  RowBox[{"cube3DPieces", "[", 
-   RowBox[{"[", 
-    RowBox[{"First", "[", 
-     RowBox[{"getPos", "[", 
-      RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", 
-         RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}], "]"}], "]"}], 
-   "]"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"topCorners", " ", ":=", " ", 
-   RowBox[{"cube3DPieces", "[", 
-    RowBox[{"[", 
-     RowBox[{"getPos", "[", 
-      RowBox[{"cube3DPieces", ",", "corners", ",", 
-       RowBox[{"{", 
-        RowBox[{"_", ",", "1", ",", "_"}], "}"}]}], "]"}], "]"}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"cornerToPlace", " ", ":=", " ", 
-  RowBox[{"cube3DPieces", "[", 
-   RowBox[{"[", 
-    RowBox[{"First", "[", 
-     RowBox[{"getColSort", "[", 
-      RowBox[{
-      "cube3DPieces", ",", "corners", ",", "frontFaceColor", ",", 
-       "rightFaceColor", ",", "topFaceColor"}], "]"}], "]"}], "]"}], 
-   "]"}]}]}], "Input",
- CellChangeTimes->{{3.859099881009755*^9, 3.859099881803656*^9}, {
-   3.859100064554998*^9, 3.8591001485656404`*^9}, {3.8591001875563507`*^9, 
-   3.8591002108275547`*^9}, {3.8591002621949415`*^9, 3.859100262298786*^9}, 
-   3.859100333550223*^9, {3.859100366240199*^9, 3.859100400274196*^9}, {
-   3.859100446547658*^9, 3.8591005293209*^9}, {3.8591005663119073`*^9, 
-   3.859100569920129*^9}, 3.859100766351204*^9, {3.8591008097885914`*^9, 
-   3.859101072101508*^9}, {3.8591012104794464`*^9, 3.859101263539059*^9}, {
-   3.8591060178891115`*^9, 3.859106027427439*^9}, {3.859106076700762*^9, 
-   3.859106245187359*^9}, {3.8591068513347225`*^9, 3.859106891924633*^9}, {
-   3.85910692330777*^9, 3.859106934544003*^9}, {3.8591074582224646`*^9, 
-   3.8591075971291075`*^9}, {3.8592774615237584`*^9, 3.85927747211193*^9}, 
-   3.859277566738397*^9, {3.8593661556752357`*^9, 3.8593661588031826`*^9}, {
-   3.859366272307473*^9, 3.859366276164322*^9}, {3.8593668350994673`*^9, 
-   3.8593668352677917`*^9}, 3.859367234764429*^9, 3.859367545876028*^9, {
-   3.8593678848927593`*^9, 3.8593679033267307`*^9}, {3.8593685382658825`*^9, 
-   3.859368560254173*^9}},
- CellLabel->
-  "In[781]:=",ExpressionUUID->"ba21ffc7-34c7-4aa4-98c2-32c8eac6fef5"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"R", "'"}], 
-    RowBox[{"D", "'"}], "RD"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"For", "[", 
-   RowBox[{
-    RowBox[{"i", "=", "1"}], ",", " ", 
-    RowBox[{"i", "<", "5"}], ",", " ", 
-    RowBox[{"i", "++"}], ",", " ", 
-    RowBox[{"(", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{
-          RowBox[{"cornerToPlace", "[", "\"\<pos\>\"", "]"}], "[", 
-          RowBox[{"[", "2", "]"}], "]"}], "==", "1"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Switch", "[", 
-         RowBox[{
-          RowBox[{"cornerToPlace", "[", "\"\<pos\>\"", "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"1", ",", "1", ",", 
-            RowBox[{"-", "1"}]}], "}"}], ",", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateB", "[", 
-            RowBox[{"RotateDi", "[", 
-             RowBox[{"RotateBi", "[", "cube3DPieces", "]"}], "]"}], "]"}]}], 
-          ",", "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateFi", "[", 
-            RowBox[{"RotateDi", "[", 
-             RowBox[{"RotateF", "[", "cube3DPieces", "]"}], "]"}], "]"}]}], 
-          ",", "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}], ",", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateF", "[", 
-            RowBox[{"RotateDi", "[", 
-             RowBox[{"RotateFi", "[", "cube3DPieces", "]"}], "]"}], "]"}]}], 
-          ",", "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"-", "1"}], ",", "1", ",", 
-            RowBox[{"-", "1"}]}], "}"}], ",", " ", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateBi", "[", 
-            RowBox[{"RotateDi", "[", 
-             RowBox[{"RotateB", "[", "cube3DPieces", "]"}], "]"}], "]"}]}]}], 
-         "\[IndentingNewLine]", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{"cornerToPlace", " ", "!=", " ", "rightBottomCorner"}], ",", 
-        " ", 
-        RowBox[{"cube3DPieces", " ", "=", " ", 
-         RowBox[{"RotateD", "[", "cube3DPieces", "]"}]}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"cornerToPlace", " ", "!=", " ", "rightTopCorner"}], " ", "||",
-          " ", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"rightTopCorner", "[", "\"\<colors\>\"", "]"}], "[", 
-           RowBox[{"[", "2", "]"}], "]"}], "!=", "\"\<W\>\""}]}], ",", " ", 
-        RowBox[{"cube3DPieces", " ", "=", " ", 
-         RowBox[{"RotateD", "[", 
-          RowBox[{"RotateR", "[", 
-           RowBox[{"RotateDi", "[", 
-            RowBox[{"RotateRi", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-          "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"cube3DPieces", "=", 
-       RowBox[{"RotateY", "[", "cube3DPieces", "]"}]}]}], " ", 
-     "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
- CellChangeTimes->{{3.8593668131264534`*^9, 3.859367069299303*^9}, {
-   3.8593671653483577`*^9, 3.859367239700127*^9}, {3.859367271196207*^9, 
-   3.8593673666434097`*^9}, {3.859367411692814*^9, 3.859367435732562*^9}, {
-   3.859367590830058*^9, 3.8593676669728136`*^9}, {3.859367801861827*^9, 
-   3.8593678073932595`*^9}, 3.859368500838162*^9},
- CellLabel->
-  "In[792]:=",ExpressionUUID->"a353bb26-515e-43fa-bb0e-487d80f109a1"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"cube3DPieces", "=", 
-   RowBox[{"RotateZ", "[", 
-    RowBox[{"RotateZ", "[", "cube3DPieces", "]"}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{3.8593684934701405`*^9},
- CellLabel->
-  "In[793]:=",ExpressionUUID->"9e4e4531-c7cb-4d03-874c-187c99c2c6a3"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"edges", " ", ":=", " ", 
-   RowBox[{"cube3DPieces", "[", 
-    RowBox[{"[", "idxOfEdges", "]"}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"prova", "[", "colors_", "]"}], " ", ":=", " ", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"colors", "[", 
-       RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", "None"}], ",", " ", 
-     RowBox[{"colors", "[", 
-      RowBox[{"[", "3", "]"}], "]"}], ",", 
-     RowBox[{"colors", "[", 
-      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"leftEdge", " ", ":=", " ", 
-   RowBox[{"cube3DPieces", "[", 
-    RowBox[{"[", 
-     RowBox[{"First", "[", 
-      RowBox[{"getColSort", "[", 
-       RowBox[{
-       "cube3DPieces", ",", "edges", ",", "frontFaceColor", ",", 
-        "leftFaceColor", ",", "None"}], "]"}], "]"}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"rightEdge", " ", ":=", " ", 
-    RowBox[{"cube3DPieces", "[", 
-     RowBox[{"[", 
-      RowBox[{"First", "[", 
-       RowBox[{"getColSort", "[", 
-        RowBox[{
-        "cube3DPieces", ",", "edges", ",", "frontFaceColor", ",", 
-         "rightFaceColor", ",", "None"}], "]"}], "]"}], "]"}], "]"}]}], ";"}],
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-    RowBox[{"Deve", " ", "andare", " ", "a", " ", "destra"}], "   ", "->", 
-    "  ", 
-    RowBox[{
-     RowBox[{"U", " ", "R", " ", 
-      RowBox[{"U", "'"}], " ", 
-      RowBox[{"R", "'"}], " ", 
-      RowBox[{"U", "'"}], " ", 
-      RowBox[{"F", "'"}], " ", "U", " ", "F", " ", "\[IndentingNewLine]", 
-      "Deve", " ", "andare", " ", "a", " ", "sinistra"}], " ", "->", "  ", 
-     RowBox[{
-      RowBox[{"U", "'"}], " ", 
-      RowBox[{"L", "'"}], " ", "U", " ", "L", " ", "U", " ", "F", " ", 
-      RowBox[{"U", "'"}], " ", 
-      RowBox[{"F", "'"}]}]}]}], "*)"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"checkSF", " ", ":=", " ", 
-   RowBox[{"{", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}]}], "]"}], 
-           "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0", ",", 
-               RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-        "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "1"}], ",", "0", ",", 
-               RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-        "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "0", ",", 
-               RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-        "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "1"}], ",", "0", ",", 
-               RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-        "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], "]"}], 
-           "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}]}], "]"}], 
-           "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "0", ",", 
-               RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-        "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", "}"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"While", "[", "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"Total", "[", 
-     RowBox[{"Boole", "[", "checkSF", "]"}], "]"}], " ", "!=", " ", "4"}], 
-   ",", "\[IndentingNewLine]", 
-   RowBox[{"(", "\[IndentingNewLine]", 
-    RowBox[{"(*", " ", 
-     RowBox[{
-     "Proviamo", " ", "a", " ", "controllare", " ", "se", " ", "per", " ", 
-      "ogni", " ", "lato", " ", "abbiamo", " ", "nel", " ", "layer", " ", 
-      "pi\[UGrave]", " ", "in", " ", "alto", " ", "un", " ", "edge", " ", 
-      "da", " ", "inserire"}], "*)"}], "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"For", "[", 
-      RowBox[{
-       RowBox[{"i", "=", "1"}], ",", " ", 
-       RowBox[{"i", "<", "5"}], ",", " ", 
-       RowBox[{"i", "++"}], ",", " ", 
-       RowBox[{"(", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"leftEdge", "[", "\"\<pos\>\"", "]"}], "[", 
-              RowBox[{"[", "2", "]"}], "]"}], "!=", "1"}], " ", "&&", " ", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"rightEdge", "[", "\"\<pos\>\"", "]"}], "[", 
-              RowBox[{"[", "2", "]"}], "]"}], "!=", "1"}]}], " ", ",", 
-           RowBox[{"cube3DPieces", "=", 
-            RowBox[{"RotateY", "[", "cube3DPieces", "]"}]}]}], "]"}], ";"}], 
-        "\[IndentingNewLine]", ")"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     "\[IndentingNewLine]", 
-     RowBox[{"topCube", " ", ":=", " ", 
-      RowBox[{"cube3DPieces", "[", 
-       RowBox[{"[", 
-        RowBox[{"First", "[", 
-         RowBox[{"getPos", "[", 
-          RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-           RowBox[{"{", 
-            RowBox[{"0", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}], 
-       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"(*", " ", 
-      RowBox[{
-       RowBox[{
-       "Se", " ", "non", " ", "ci", " ", "sono", " ", "edge", " ", "da", " ", 
-        "inserire"}], ",", " ", 
-       RowBox[{
-       "facciamo", " ", "una", " ", "mossa", " ", "a", " ", "vuoto", " ", 
-        "per", " ", "liberarne", " ", "uno"}]}], " ", "*)"}], 
-     "\[IndentingNewLine]", 
-     RowBox[{"If", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{
-          RowBox[{"leftEdge", "[", "\"\<pos\>\"", "]"}], "[", 
-          RowBox[{"[", "2", "]"}], "]"}], "!=", "1"}], " ", "&&", " ", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"rightEdge", "[", "\"\<pos\>\"", "]"}], "[", 
-          RowBox[{"[", "2", "]"}], "]"}], "!=", "1"}]}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"cube3DPieces", " ", "=", " ", 
-        RowBox[{"RotateFi", "[", 
-         RowBox[{"RotateUi", "[", 
-          RowBox[{"RotateF", "[", 
-           RowBox[{"RotateU", "[", 
-            RowBox[{"RotateL", "[", 
-             RowBox[{"RotateU", "[", 
-              RowBox[{"RotateLi", "[", 
-               RowBox[{"RotateUi", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-             "]"}], "]"}], "]"}], "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{
-         RowBox[{"altrimenti", " ", "o", " ", 
-          RowBox[{"c", "'"}], "\[EGrave]", " ", "un", " ", "leftEdge"}], ",", 
-         " ", 
-         RowBox[{
-         "e", " ", "salviamo", " ", "i", " ", "suoi", " ", "colori"}]}], " ", 
-        "*)"}], "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{"leftEdge", "[", "\"\<pos\>\"", "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}], "==", "1"}], " ", ",", " ", 
-          "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"prova2", " ", "=", " ", 
-            RowBox[{"prova", "[", 
-             RowBox[{"leftEdge", "[", "\"\<colors\>\"", "]"}], "]"}]}], ";", 
-           " ", 
-           RowBox[{"(*", " ", 
-            RowBox[{
-             RowBox[{
-             "colore", " ", "della", " ", "faccia", " ", "che", " ", 
-              "gestir\[AGrave]", " ", 
-              RowBox[{"l", "'"}], "edge", " ", "sinistro", " ", "da", " ", 
-              "inserire"}], "..."}], " ", "*)"}], "\[IndentingNewLine]", 
-           RowBox[{"altroColore", " ", "=", " ", 
-            RowBox[{
-             RowBox[{"leftEdge", "[", "\"\<colors\>\"", "]"}], "[", 
-             RowBox[{"[", "2", "]"}], "]"}]}]}], ",", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{
-           "...", "e", " ", "quello", " ", "che", " ", "sta", " ", "invece", 
-            " ", "sopra"}], "*)"}], "\[IndentingNewLine]", 
-          RowBox[{"(*", " ", 
-           RowBox[{
-           "o", " ", "un", " ", "rightEdge", " ", "e", " ", "salviamo", " ", 
-            "i", " ", "suoi"}], " ", "*)"}], "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"prova2", " ", "=", " ", 
-            RowBox[{"prova", "[", 
-             RowBox[{"rightEdge", "[", "\"\<colors\>\"", "]"}], "]"}]}], ";", 
-           " ", 
-           RowBox[{"(*", " ", 
-            RowBox[{
-             RowBox[{
-             "colore", " ", "della", " ", "faccia", " ", "che", " ", 
-              "gestir\[AGrave]", " ", 
-              RowBox[{"l", "'"}], "edge", " ", "destro", " ", "da", " ", 
-              "inserire"}], "..."}], " ", "*)"}], "\[IndentingNewLine]", 
-           RowBox[{"altroColore", " ", "=", " ", 
-            RowBox[{
-             RowBox[{"rightEdge", "[", "\"\<colors\>\"", "]"}], "[", 
-             RowBox[{"[", "2", "]"}], "]"}]}]}]}], " ", 
-         RowBox[{"(*", " ", 
-          RowBox[{
-          "...", "e", " ", "quello", " ", "che", " ", "sta", " ", "invece", 
-           " ", "sopra"}], "*)"}], "\[IndentingNewLine]", "]"}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"While", " ", "[", 
-         RowBox[{
-          RowBox[{"frontFaceColor", " ", "!=", " ", "prova2"}], ",", " ", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateY", "[", "cube3DPieces", "]"}]}]}], "]"}], ";", " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-         "Mettiamo", " ", "di", " ", "fronta", " ", "la", " ", "faccia", " ", 
-          "su", " ", "cui", " ", "lavorare"}], " ", "*)"}], 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-         "Ruotiamo", " ", "il", " ", "layer", " ", "superiore", " ", 
-          "finch\[EAcute]", " ", 
-          RowBox[{"l", "'"}], "edge", " ", "da", " ", "inserire", " ", "non", 
-          " ", "\[EGrave]", " ", "sopra", " ", "il", " ", "centro", " ", 
-          "considerato"}], " ", "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"While", "[", " ", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{"topCube", "[", "\"\<colors\>\"", "]"}], "[", 
-             RowBox[{"[", "3", "]"}], "]"}], "!=", "frontFaceColor"}], "||", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"topCube", "[", "\"\<colors\>\"", "]"}], "[", 
-             RowBox[{"[", "2", "]"}], "]"}], "!=", "altroColore"}]}], ",", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateU", "[", "cube3DPieces", "]"}]}]}], "]"}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-          RowBox[{"Ora", " ", "se", " ", 
-           RowBox[{"l", "'"}], "edge", " ", "considerato", " ", "\[EGrave]", 
-           " ", "un", " ", "left"}], ",", " ", 
-          RowBox[{"facciamo", " ", "le", " ", "relative", " ", "mosse"}], ",",
-           " ", 
-          RowBox[{"altrimenti", " ", "quelle", " ", "dei", " ", "right"}]}], 
-         "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{"altroColore", " ", "==", " ", "leftFaceColor"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateFi", "[", 
-            RowBox[{"RotateUi", "[", 
-             RowBox[{"RotateF", "[", 
-              RowBox[{"RotateU", "[", 
-               RowBox[{"RotateL", "[", 
-                RowBox[{"RotateU", "[", 
-                 RowBox[{"RotateLi", "[", 
-                  RowBox[{"RotateUi", "[", "cube3DPieces", "]"}], "]"}], 
-                 "]"}], "]"}], "]"}], "]"}], "]"}], "]"}]}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateF", "[", 
-            RowBox[{"RotateU", "[", 
-             RowBox[{"RotateFi", "[", 
-              RowBox[{"RotateUi", "[", 
-               RowBox[{"RotateRi", "[", 
-                RowBox[{"RotateUi", "[", 
-                 RowBox[{"RotateR", "[", 
-                  RowBox[{"RotateU", "[", "cube3DPieces", "]"}], "]"}], "]"}],
-                 "]"}], "]"}], "]"}], "]"}], "]"}]}]}], "]"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", ")"}]}], 
-  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{
-  3.859368520525195*^9, {3.859368557710204*^9, 3.8593686466766768`*^9}, {
-   3.859368723173688*^9, 3.8593688440125637`*^9}, {3.859368924244775*^9, 
-   3.8593692709333067`*^9}, {3.8593693405359435`*^9, 3.859369345358281*^9}, {
-   3.859369383442953*^9, 3.8593694008213634`*^9}, {3.859369762770379*^9, 
-   3.859369785246826*^9}, {3.8593698215109487`*^9, 3.859370117212203*^9}, 
-   3.859370167790863*^9, {3.8593702215582037`*^9, 3.8593702237416153`*^9}, {
-   3.85937027859354*^9, 3.8593702806129847`*^9}, {3.859370320770364*^9, 
-   3.859370324285472*^9}, {3.8593703676173153`*^9, 3.859370368575576*^9}, {
-   3.859370562169566*^9, 3.8593706198703175`*^9}, {3.8593706500392017`*^9, 
-   3.8593706821419473`*^9}, {3.8593707164888744`*^9, 3.859370754541917*^9}, {
-   3.8593708383750696`*^9, 3.8593708971975203`*^9}, {3.8593714921427155`*^9, 
-   3.8593715504418697`*^9}, {3.8593717397501817`*^9, 
-   3.8593717432875624`*^9}, {3.85937185151818*^9, 3.8593718563751993`*^9}, {
-   3.859371921200712*^9, 3.859371934154944*^9}, {3.859371981951064*^9, 
-   3.859372055182171*^9}, {3.8593721365431128`*^9, 3.8593721607664156`*^9}, {
-   3.859372296023535*^9, 3.859372306176506*^9}, {3.859372395901822*^9, 
-   3.8593724227195015`*^9}, {3.8594524980156116`*^9, 
-   3.8594525076839666`*^9}, {3.8594542573153033`*^9, 3.8594542813059*^9}, {
-   3.8594549539833555`*^9, 3.8594549995433407`*^9}, {3.859455154149472*^9, 
-   3.859455177992031*^9}, {3.859455248175089*^9, 3.859455281054206*^9}, {
-   3.859455438078318*^9, 3.8594554621810007`*^9}, {3.8594557813876038`*^9, 
-   3.8594557880149302`*^9}, {3.8594590060140476`*^9, 3.859459011845312*^9}, {
-   3.8594590422788315`*^9, 3.8594590489338503`*^9}, {3.8594590965990944`*^9, 
-   3.8594591443033094`*^9}, {3.8594591868223343`*^9, 
-   3.8594591959738836`*^9}, {3.859459234511376*^9, 3.859459273454336*^9}, {
-   3.859459385255018*^9, 3.8594594118146973`*^9}, {3.8594594727863283`*^9, 
-   3.859459514973912*^9}, 3.859459554774519*^9, {3.859459621255234*^9, 
-   3.859459623205984*^9}, {3.8594596540871572`*^9, 3.8594596961497717`*^9}, {
-   3.859459775847331*^9, 3.859459777552138*^9}, {3.8594598524946923`*^9, 
-   3.8594598605577044`*^9}, {3.859459963511172*^9, 3.8594599860857773`*^9}, {
-   3.8594604505762205`*^9, 3.859460463519051*^9}, {3.859460573993987*^9, 
-   3.8594606547039733`*^9}, {3.8594607175987015`*^9, 3.859460718662146*^9}, {
-   3.8594607782792253`*^9, 3.859460779023016*^9}, 3.8594608204556985`*^9, 
-   3.8594608820392866`*^9, {3.859460959615061*^9, 3.859460959854969*^9}, {
-   3.859461035287444*^9, 3.859461055255001*^9}, 3.8594611485923605`*^9, {
-   3.8594611855602903`*^9, 3.859461269592269*^9}, {3.859461575583194*^9, 
-   3.85946157667895*^9}, {3.8594616542703094`*^9, 3.859461694863141*^9}, {
-   3.8594618559545774`*^9, 3.85946191260684*^9}, {3.859462254712634*^9, 
-   3.8594623488161187`*^9}, {3.859462380448245*^9, 3.8594624725827312`*^9}, {
-   3.8594625054477835`*^9, 3.859462515519375*^9}, {3.859462687291531*^9, 
-   3.8594627281039457`*^9}, {3.8595142771505566`*^9, 3.859514483938873*^9}, {
-   3.8595145192792873`*^9, 3.8595147728605843`*^9}, {3.8595149667059035`*^9, 
-   3.8595149930048137`*^9}, {3.859515076840602*^9, 3.8595153635403614`*^9}, {
-   3.859515528912815*^9, 3.859515626843727*^9}},
- CellLabel->
-  "In[794]:=",ExpressionUUID->"4cad6087-6fc6-4f03-ad41-99bd734bbba6"],
-
-Cell[BoxData[{
- RowBox[{"While", "[", 
-  RowBox[{
-   RowBox[{"frontFaceColor", " ", "!=", " ", "\"\<B\>\""}], ",", " ", 
-   RowBox[{"cube3DPieces", "=", 
-    RowBox[{"RotateY", "[", "cube3DPieces", "]"}]}]}], 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"topFace", " ", ":=", " ", 
-  RowBox[{"Union", "[", 
-   RowBox[{
-    RowBox[{"cube3DPieces", "[", 
-     RowBox[{"[", 
-      RowBox[{"getPos", "[", 
-       RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-        RowBox[{"{", 
-         RowBox[{"0", ",", "1", ",", "_"}], "}"}]}], "]"}], "]"}], "]"}], ",",
-     " ", 
-    RowBox[{"cube3DPieces", "[", 
-     RowBox[{"[", 
-      RowBox[{"getPos", "[", 
-       RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-        RowBox[{"{", 
-         RowBox[{"_", ",", "1", ",", "0"}], "}"}]}], "]"}], "]"}], "]"}]}], 
-   "]"}]}], "\[IndentingNewLine]", 
- RowBox[{"nYellow", " ", ":=", " ", 
-  RowBox[{"Length", "[", 
-   RowBox[{"cube3DPieces", "[", 
-    RowBox[{"[", 
-     RowBox[{"getCol", "[", 
-      RowBox[{"cube3DPieces", ",", "topFace", ",", 
-       RowBox[{"{", 
-        RowBox[{"_", ",", "\"\<Y\>\"", ",", "_"}], "}"}]}], "]"}], "]"}], 
-    "]"}], "]"}]}]}], "Input",
- CellChangeTimes->{{3.8593729746808167`*^9, 3.8593729980293055`*^9}, {
-  3.859373041118267*^9, 3.859373094865238*^9}, {3.859373131167267*^9, 
-  3.8593732381020145`*^9}, {3.859373308223123*^9, 3.8593733094469633`*^9}, {
-  3.8594525001472087`*^9, 3.859452505007242*^9}},
- CellLabel->
-  "In[800]:=",ExpressionUUID->"5e9581f4-d3e0-4682-af3b-c6261ccb1d0c"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", " ", 
-   RowBox[{"F", " ", "R", " ", "U", " ", 
-    RowBox[{"R", "'"}], " ", 
-    RowBox[{"U", "'"}], " ", 
-    RowBox[{"F", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-    RowBox[{"Cubi", " ", "da", " ", "sopra", " ", "in", " ", "senso", " ", 
-     RowBox[{"orario", ":", "\[IndentingNewLine]", "   ", "0"}]}], ",", " ", 
-    "1", ",", 
-    RowBox[{
-     RowBox[{"-", "1"}], "\[IndentingNewLine]", "    ", "1"}], ",", " ", "1", 
-    ",", " ", 
-    RowBox[{"0", "\t", "<", 
-     RowBox[{"3", "\[IndentingNewLine]", "   ", "0"}]}], ",", " ", "1", ",", 
-    " ", 
-    RowBox[{"1", "\[IndentingNewLine]", "   ", "-", "1"}], ",", " ", "1", ",",
-     " ", 
-    RowBox[{"0", "    ", "<", "3"}]}], "\[IndentingNewLine]", "*)"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"nYellow", "<", "3"}], ",", " ", 
-     RowBox[{"cube3DPieces", " ", "=", " ", 
-      RowBox[{"RotateFi", "[", 
-       RowBox[{"RotateUi", "[", 
-        RowBox[{"RotateRi", "[", 
-         RowBox[{"RotateU", "[", 
-          RowBox[{"RotateR", "[", 
-           RowBox[{"RotateF", "[", "cube3DPieces", "]"}], "]"}], "]"}], "]"}],
-         "]"}], "]"}]}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"nYellow", " ", "==", " ", "3"}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{"cube3DPieces", "[", 
-             RowBox[{"[", 
-              RowBox[{"First", "[", 
-               RowBox[{"getPos", "[", 
-                RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-                 RowBox[{"{", 
-                  RowBox[{"1", ",", "1", ",", "0"}], "}"}]}], "]"}], "]"}], 
-              "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-           RowBox[{"[", "2", "]"}], "]"}], " ", "!=", " ", "\"\<Y\>\""}], " ",
-          "||", " ", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{"cube3DPieces", "[", 
-             RowBox[{"[", 
-              RowBox[{"First", "[", 
-               RowBox[{"getPos", "[", 
-                RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}]}], "]"}], 
-               "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-           RowBox[{"[", "2", "]"}], "]"}], " ", "!=", " ", "\"\<Y\>\""}]}], 
-        " ", ",", "\[IndentingNewLine]", 
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"cube3DPieces", "[", 
-               RowBox[{"[", 
-                RowBox[{"First", "[", 
-                 RowBox[{"getPos", "[", 
-                  RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-                   RowBox[{"{", 
-                    RowBox[{"0", ",", "1", ",", 
-                    RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}],
-               "[", "\"\<colors\>\"", "]"}], "[", 
-             RowBox[{"[", "2", "]"}], "]"}], " ", "==", " ", "\"\<Y\>\""}], 
-           " ", "&&", " ", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"cube3DPieces", "[", 
-               RowBox[{"[", 
-                RowBox[{"First", "[", 
-                 RowBox[{"getPos", "[", 
-                  RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-                   RowBox[{"{", 
-                    RowBox[{"0", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], 
-                "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-             RowBox[{"[", "2", "]"}], "]"}], " ", "==", " ", "\"\<Y\>\""}]}], 
-          ",", " ", 
-          RowBox[{"cube3DPieces", " ", "=", " ", 
-           RowBox[{"RotateF", "[", "cube3DPieces", "]"}]}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"While", "[", 
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{
-                RowBox[{
-                 RowBox[{"cube3DPieces", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"First", "[", 
-                    RowBox[{"getPos", "[", 
-                    RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-                    RowBox[{"{", 
-                    RowBox[{"0", ",", "1", ",", 
-                    RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}],
-                  "[", "\"\<colors\>\"", "]"}], "[", 
-                RowBox[{"[", "2", "]"}], "]"}], " ", "!=", " ", "\"\<Y\>\""}],
-               " ", "||", " ", 
-              RowBox[{
-               RowBox[{
-                RowBox[{
-                 RowBox[{"cube3DPieces", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"First", "[", 
-                    RowBox[{"getPos", "[", 
-                    RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-                    RowBox[{"{", 
-                    RowBox[{
-                    RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}]}], "]"}], 
-                    "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-                RowBox[{"[", "2", "]"}], "]"}], " ", "!=", " ", 
-               "\"\<Y\>\""}]}], " ", ",", 
-             RowBox[{"cube3DPieces", " ", "=", " ", 
-              RowBox[{"RotateF", "[", "cube3DPieces", "]"}]}]}], " ", "]"}], 
-           ";", "\[IndentingNewLine]", 
-           RowBox[{"cube3DPieces", " ", "=", " ", 
-            RowBox[{"RotateFi", "[", 
-             RowBox[{"RotateUi", "[", 
-              RowBox[{"RotateRi", "[", 
-               RowBox[{"RotateU", "[", 
-                RowBox[{"RotateR", "[", 
-                 RowBox[{"RotateF", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-               "]"}], "]"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
-       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"cube3DPieces", " ", "=", " ", 
-       RowBox[{"RotateFi", "[", 
-        RowBox[{"RotateUi", "[", 
-         RowBox[{"RotateRi", "[", 
-          RowBox[{"RotateU", "[", 
-           RowBox[{"RotateR", "[", 
-            RowBox[{"RotateF", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-          "]"}], "]"}], "]"}]}], ";"}]}], "\[IndentingNewLine]", 
-    "]"}]}]}]], "Input",
- CellChangeTimes->{{3.859373274175192*^9, 3.8593733657726717`*^9}, {
-   3.859373415981286*^9, 3.8593735224214387`*^9}, {3.8593736158632936`*^9, 
-   3.8593736161103754`*^9}, {3.8593736549975553`*^9, 
-   3.8593736564072766`*^9}, {3.8593736872299657`*^9, 
-   3.8593737002308054`*^9}, {3.8593737315110383`*^9, 3.859373842374057*^9}, {
-   3.859373926245332*^9, 3.8593741814798284`*^9}, {3.8593742322968693`*^9, 
-   3.8593742405423546`*^9}, {3.859519292503187*^9, 3.8595193344308805`*^9}, 
-   3.8595202312887816`*^9},
- CellLabel->
-  "In[803]:=",ExpressionUUID->"7da1fc45-931c-4a70-9fd5-91f58a71e6f2"],
-
-Cell[BoxData[{
- RowBox[{"backFaceColor", " ", ":=", " ", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"First", "[", 
-     RowBox[{"cube3DPieces", "[", 
-      RowBox[{"[", 
-       RowBox[{"getPos", "[", 
-        RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-         RowBox[{"{", 
-          RowBox[{"0", ",", "0", ",", 
-           RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], "[", 
-    "\"\<colors\>\"", "]"}], "[", 
-   RowBox[{"[", "3", "]"}], "]"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"checkY", " ", ":=", " ", 
-   RowBox[{"{", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", "frontFaceColor"}], 
-     ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "1", ",", "0"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", "rightFaceColor"}], 
-     ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "1", ",", 
-               RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-        "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", "backFaceColor"}], ",",
-      "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}]}], "]"}], 
-           "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}], " ", "==", "leftFaceColor"}]}], 
-    "\[IndentingNewLine]", "}"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"While", "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"Total", "[", 
-     RowBox[{"Boole", "[", "checkY", "]"}], "]"}], " ", "!=", " ", "4"}], ",",
-    "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"While", "[", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"Total", "[", 
-        RowBox[{"Boole", "[", "checkY", "]"}], "]"}], " ", "!=", " ", "2"}], 
-      ",", "\[IndentingNewLine]", 
-      RowBox[{"cube3DPieces", " ", "=", " ", 
-       RowBox[{"RotateU", "[", "cube3DPieces", "]"}]}]}], 
-     "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{"While", "[", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", 
-           RowBox[{"First", "[", 
-            RowBox[{"getPos", "[", 
-             RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}]}], "]"}], 
-            "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", "leftFaceColor"}], 
-      ",", "\[IndentingNewLine]", 
-      RowBox[{"cube3DPieces", " ", "=", " ", 
-       RowBox[{"RotateY", "[", "cube3DPieces", "]"}]}]}], 
-     "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{"(*", " ", 
-     RowBox[{"R", " ", "U", " ", 
-      RowBox[{"R", "'"}], " ", "U", " ", "R", " ", "U", " ", "U", " ", 
-      RowBox[{"R", "'"}], " ", "U"}], " ", "*)"}], "\[IndentingNewLine]", 
-    RowBox[{"cube3DPieces", " ", "=", " ", 
-     RowBox[{"RotateU", "[", 
-      RowBox[{"RotateRi", "[", 
-       RowBox[{"RotateU", "[", 
-        RowBox[{"RotateU", "[", 
-         RowBox[{"RotateR", "[", 
-          RowBox[{"RotateU", "[", 
-           RowBox[{"RotateRi", "[", 
-            RowBox[{"RotateU", "[", 
-             RowBox[{"RotateR", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-           "]"}], "]"}], "]"}], "]"}], "]"}], "]"}]}], ";"}]}], 
-  "\[IndentingNewLine]", "]"}]}], "Input",
- CellChangeTimes->{{3.8595185254402103`*^9, 3.8595185420211864`*^9}, {
-  3.8595189410099297`*^9, 3.8595190076409254`*^9}, {3.8595191845844345`*^9, 
-  3.8595191984858646`*^9}, {3.8595192347926264`*^9, 3.8595192892231555`*^9}, {
-  3.859519324557808*^9, 3.8595193752622843`*^9}, {3.859519406230055*^9, 
-  3.8595194391030436`*^9}, {3.859519477462635*^9, 3.8595196187264214`*^9}, {
-  3.859519652279785*^9, 3.8595196587823706`*^9}, {3.859519706646659*^9, 
-  3.8595197304990206`*^9}, {3.8595198357114305`*^9, 3.859519911102626*^9}, {
-  3.8595199570381403`*^9, 3.8595200051031184`*^9}, {3.8595200393532596`*^9, 
-  3.859520039494933*^9}, {3.8595200810637646`*^9, 3.8595201910179715`*^9}, {
-  3.859520221887909*^9, 3.859520265527466*^9}, {3.8595212260316286`*^9, 
-  3.859521229846895*^9}},
- CellLabel->
-  "In[805]:=",ExpressionUUID->"7c5a0067-4ea6-45b4-8037-11637be87727"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", "\[IndentingNewLine]", "\t ", 
-   RowBox[{"1", ",", "1", ",", 
-    RowBox[{"1", " ", "<", 
-     RowBox[{
-      RowBox[{"3", " ", "davanti", " ", "a", " ", "destra"}], 
-      "\[IndentingNewLine]", "  ", "-", "1"}]}], ",", "1", ",", 
-    RowBox[{
-    "1", " ", "davanti", " ", "a", " ", "sinistra", "\[IndentingNewLine]", 
-     "\t", "1"}], ",", "1", ",", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"-", "1"}], " ", "dietro", " ", "a", " ", "destra"}], 
-     "\[IndentingNewLine]", "   ", "-", "1"}], ",", "1", ",", 
-    RowBox[{
-     RowBox[{"-", "1"}], " ", "dietro", " ", "a", " ", "sinistra"}]}], 
-   "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"checkCorners", " ", ":=", " ", 
-    RowBox[{"{", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"Sort", "[", 
-        RowBox[{
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", 
-           RowBox[{"First", "[", 
-            RowBox[{"getPos", "[", 
-             RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], 
-           "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "]"}], " ", "==", " ", 
-       RowBox[{"Sort", "[", 
-        RowBox[{"{", 
-         RowBox[{
-         "frontFaceColor", ",", " ", "rightFaceColor", ",", "\"\<Y\>\""}], 
-         "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Sort", "[", 
-        RowBox[{
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", 
-           RowBox[{"First", "[", 
-            RowBox[{"getPos", "[", 
-             RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}]}], "]"}], 
-            "]"}], "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], "]"}], " ", "==",
-        " ", 
-       RowBox[{"Sort", "[", 
-        RowBox[{"{", 
-         RowBox[{
-         "frontFaceColor", ",", " ", "leftFaceColor", ",", "\"\<Y\>\""}], 
-         "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Sort", "[", 
-        RowBox[{
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", 
-           RowBox[{"First", "[", 
-            RowBox[{"getPos", "[", 
-             RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1", ",", 
-                RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-         "[", "\"\<colors\>\"", "]"}], "]"}], " ", "==", " ", 
-       RowBox[{"Sort", "[", 
-        RowBox[{"{", 
-         RowBox[{
-         "backFaceColor", ",", " ", "rightFaceColor", ",", "\"\<Y\>\""}], 
-         "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Sort", "[", 
-        RowBox[{
-         RowBox[{"cube3DPieces", "[", 
-          RowBox[{"[", 
-           RowBox[{"First", "[", 
-            RowBox[{"getPos", "[", 
-             RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"-", "1"}], ",", "1", ",", 
-                RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], 
-         "[", "\"\<colors\>\"", "]"}], "]"}], " ", "==", " ", 
-       RowBox[{"Sort", "[", 
-        RowBox[{"{", 
-         RowBox[{
-         "backFaceColor", ",", " ", "leftFaceColor", ",", "\"\<Y\>\""}], 
-         "}"}], "]"}]}]}], "\[IndentingNewLine]", "}"}]}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{"U", " ", "R", " ", 
-     RowBox[{"U", "'"}], " ", 
-     RowBox[{"L", "'"}], " ", "U", " ", 
-     RowBox[{"R", "'"}], " ", 
-     RowBox[{"U", "'"}], " ", "L"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"While", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"Total", "[", 
-       RowBox[{"Boole", "[", "checkCorners", "]"}], "]"}], " ", "==", " ", 
-      "0"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"cube3DPieces", " ", "=", " ", 
-      RowBox[{"RotateL", "[", 
-       RowBox[{"RotateUi", "[", 
-        RowBox[{"RotateRi", "[", 
-         RowBox[{"RotateU", "[", 
-          RowBox[{"RotateLi", "[", 
-           RowBox[{"RotateUi", "[", 
-            RowBox[{"RotateR", "[", 
-             RowBox[{"RotateU", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-           "]"}], "]"}], "]"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", 
-    "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"While", "[", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"Sort", "[", 
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], "]"}], " ", "!=", " ", 
-      RowBox[{"Sort", "[", 
-       RowBox[{"{", 
-        RowBox[{
-        "frontFaceColor", ",", " ", "rightFaceColor", ",", "\"\<Y\>\""}], 
-        "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
-     RowBox[{"cube3DPieces", " ", "=", " ", 
-      RowBox[{"RotateY", "[", "cube3DPieces", "]"}]}]}], 
-    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"While", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"Total", "[", 
-       RowBox[{"Boole", "[", "checkCorners", "]"}], "]"}], " ", "==", " ", 
-      "1"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"cube3DPieces", " ", "=", " ", 
-      RowBox[{"RotateL", "[", 
-       RowBox[{"RotateUi", "[", 
-        RowBox[{"RotateRi", "[", 
-         RowBox[{"RotateU", "[", 
-          RowBox[{"RotateLi", "[", 
-           RowBox[{"RotateUi", "[", 
-            RowBox[{"RotateR", "[", 
-             RowBox[{"RotateU", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-           "]"}], "]"}], "]"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", 
-    "]"}]}]}]], "Input",
- CellChangeTimes->{{3.859520462976006*^9, 3.8595204681660805`*^9}, {
-   3.8595205398702354`*^9, 3.8595206571421556`*^9}, {3.859520696502533*^9, 
-   3.859520713038657*^9}, {3.8595207572222157`*^9, 3.859520883911876*^9}, {
-   3.8595209525026894`*^9, 3.859521167606844*^9}, {3.859521239751996*^9, 
-   3.85952125011047*^9}, {3.859521412111685*^9, 3.8595214162221613`*^9}, 
-   3.8595222541366153`*^9},
- CellLabel->
-  "In[808]:=",ExpressionUUID->"fd4170d5-6ada-4bfa-a28e-39b9eeb39e94"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"checkOrientation", " ", ":=", " ", 
-   RowBox[{"{", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{"cube3DPieces", "[", 
-        RowBox[{"[", 
-         RowBox[{"First", "[", 
-          RowBox[{"getPos", "[", 
-           RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-            RowBox[{"{", 
-             RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}], 
-        "]"}], "[", "\"\<colors\>\"", "]"}], " ", "==", " ", 
-      RowBox[{"{", 
-       RowBox[{
-       "rightFaceColor", ",", " ", "\"\<Y\>\"", ",", " ", "frontFaceColor"}], 
-       "}"}]}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"cube3DPieces", "[", 
-        RowBox[{"[", 
-         RowBox[{"First", "[", 
-          RowBox[{"getPos", "[", 
-           RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}],
-          "]"}], "]"}], "[", "\"\<colors\>\"", "]"}], " ", "==", " ", 
-      RowBox[{"{", 
-       RowBox[{
-       "leftFaceColor", ",", " ", "\"\<Y\>\"", ",", " ", "frontFaceColor"}], 
-       "}"}]}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"cube3DPieces", "[", 
-        RowBox[{"[", 
-         RowBox[{"First", "[", 
-          RowBox[{"getPos", "[", 
-           RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-            RowBox[{"{", 
-             RowBox[{"1", ",", "1", ",", 
-              RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], "[", 
-       "\"\<colors\>\"", "]"}], " ", "==", " ", 
-      RowBox[{"{", 
-       RowBox[{
-       "rightFaceColor", ",", " ", "\"\<Y\>\"", ",", " ", "backFaceColor"}], 
-       "}"}]}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"cube3DPieces", "[", 
-        RowBox[{"[", 
-         RowBox[{"First", "[", 
-          RowBox[{"getPos", "[", 
-           RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"-", "1"}], ",", "1", ",", 
-              RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}], "]"}], "]"}], "[", 
-       "\"\<colors\>\"", "]"}], " ", "==", " ", 
-      RowBox[{"{", 
-       RowBox[{
-       "leftFaceColor", ",", " ", "\"\<Y\>\"", ",", " ", "backFaceColor"}], 
-       "}"}]}]}], "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-    RowBox[{"R", "'"}], " ", 
-    RowBox[{"D", "'"}], " ", "R", " ", "D"}], " ", "*)"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"While", "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"Total", "[", 
-     RowBox[{"Boole", "[", "checkOrientation", "]"}], "]"}], " ", "!=", " ", 
-    "4"}], ",", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"While", "[", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"cube3DPieces", "[", 
-         RowBox[{"[", 
-          RowBox[{"First", "[", 
-           RowBox[{"getPos", "[", 
-            RowBox[{"cube3DPieces", ",", "cube3DPieces", ",", 
-             RowBox[{"{", 
-              RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}],
-          "]"}], "[", "\"\<colors\>\"", "]"}], " ", "!=", " ", 
-       RowBox[{"{", 
-        RowBox[{"_", ",", " ", "\"\<Y\>\"", ",", " ", "_"}], "}"}]}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{"cube3DPieces", " ", "=", " ", 
-       RowBox[{"RotateD", "[", 
-        RowBox[{"RotateR", "[", 
-         RowBox[{"RotateDi", "[", 
-          RowBox[{"RotateRi", "[", "cube3DPieces", "]"}], "]"}], "]"}], 
-        "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-    RowBox[{"cube3DPieces", " ", "=", " ", 
-     RowBox[{"RotateU", "[", "cube3DPieces", "]"}]}]}]}], 
-  "\[IndentingNewLine]", "]"}]}], "Input",
- CellChangeTimes->{{3.8595214259755516`*^9, 3.8595214392546377`*^9}, {
-   3.859521475830914*^9, 3.8595215523216686`*^9}, {3.8595215856560073`*^9, 
-   3.859521606623181*^9}, {3.8595217135038815`*^9, 3.8595217400061684`*^9}, {
-   3.8595217941195917`*^9, 3.859521878078211*^9}, {3.8595220993988867`*^9, 
-   3.859522132702687*^9}, {3.859522186358926*^9, 3.859522191271484*^9}, 
-   3.86047117133318*^9},
- CellLabel->
-  "In[812]:=",ExpressionUUID->"1dabc028-b4a8-4fc8-90d9-97cedabfed3b"]
+   3.8595222845638294`*^9, 3.8604849340843525`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"19623e97-ed9f-4d79-995a-d85f6eb997e5"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1152., 579.6},
-WindowMargins->{{
-  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+WindowSize->{1428., 741.75},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{},
 Magnification:>0.8 Inherited,
 FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
@@ -2875,62 +914,49 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 376, 8, 22, "Input",ExpressionUUID->"0313ed82-4a6b-4eb3-b4ed-344a9ea6991c"],
-Cell[937, 30, 529, 8, 54, "Input",ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-3f82de39c32d"],
+Cell[937, 30, 636, 10, 69, "Input",ExpressionUUID->"7bbb3c02-e70d-4a4a-872a-3f82de39c32d"],
 Cell[CellGroupData[{
-Cell[1491, 42, 204, 4, 22, "Input",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
-Cell[1698, 48, 1944, 28, 25, "Output",ExpressionUUID->"ea63f8e1-c8fa-4440-995c-e288037b35dd"]
+Cell[1598, 44, 204, 4, 22, "Input",ExpressionUUID->"fcff677e-9797-413c-ab02-f3876586fec4"],
+Cell[1805, 50, 1944, 28, 25, "Output",ExpressionUUID->"ea63f8e1-c8fa-4440-995c-e288037b35dd"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3679, 81, 154, 3, 54, "Section",ExpressionUUID->"e8c07327-689e-4829-8886-9bbe6750ba3a"],
-Cell[3836, 86, 408, 8, 22, "Input",ExpressionUUID->"315b7f47-5fad-4e91-9eb5-6a2ecd686724"],
+Cell[3786, 83, 154, 3, 54, "Section",ExpressionUUID->"e8c07327-689e-4829-8886-9bbe6750ba3a"],
+Cell[3943, 88, 408, 8, 22, "Input",ExpressionUUID->"315b7f47-5fad-4e91-9eb5-6a2ecd686724"],
 Cell[CellGroupData[{
-Cell[4269, 98, 288, 6, 22, "Input",ExpressionUUID->"05778e33-9a41-49b5-af45-a81fab0b9282"],
-Cell[4560, 106, 7355, 142, 224, "Print",ExpressionUUID->"0c819a72-b927-41a9-b6ef-315c5ecf15d9"]
+Cell[4376, 100, 288, 6, 22, "Input",ExpressionUUID->"05778e33-9a41-49b5-af45-a81fab0b9282"],
+Cell[4667, 108, 7355, 142, 224, "Print",ExpressionUUID->"0c819a72-b927-41a9-b6ef-315c5ecf15d9"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11964, 254, 152, 3, 54, "Section",ExpressionUUID->"ef57a50b-2577-4825-9c57-603fa94ba1b5"],
-Cell[12119, 259, 287, 6, 22, "Input",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
-Cell[12409, 267, 426, 10, 22, "Input",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
+Cell[12071, 256, 152, 3, 54, "Section",ExpressionUUID->"ef57a50b-2577-4825-9c57-603fa94ba1b5"],
+Cell[12226, 261, 287, 6, 22, "Input",ExpressionUUID->"71360bb8-1b97-4856-b9af-f2d9a233bec8"],
+Cell[12516, 269, 426, 10, 22, "Input",ExpressionUUID->"e335fe53-4dac-4442-b43f-79ca4d6d6d89"],
 Cell[CellGroupData[{
-Cell[12860, 281, 238, 5, 22, "Input",ExpressionUUID->"0d69eb88-b666-49cb-bcd3-ff3428b441fa"],
-Cell[13101, 288, 2564, 46, 282, "Print",ExpressionUUID->"75a90caf-f0fd-40bb-915a-7a3118425827"]
+Cell[12967, 283, 238, 5, 22, "Input",ExpressionUUID->"0d69eb88-b666-49cb-bcd3-ff3428b441fa"],
+Cell[13208, 290, 12931, 217, 282, 659, 18, "CachedBoxData", "BoxData", "Print",ExpressionUUID->"75a90caf-f0fd-40bb-915a-7a3118425827"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15702, 339, 157, 3, 43, "Subsection",ExpressionUUID->"32f0b443-ffa6-404c-8446-4f028d235236"],
+Cell[26176, 512, 157, 3, 43, "Subsection",ExpressionUUID->"32f0b443-ffa6-404c-8446-4f028d235236"],
 Cell[CellGroupData[{
-Cell[15884, 346, 210, 4, 36, "Subsubsection",ExpressionUUID->"c643c8c0-0e9a-497b-8dd2-6450d64069a6"],
+Cell[26358, 519, 210, 4, 36, "Subsubsection",ExpressionUUID->"c643c8c0-0e9a-497b-8dd2-6450d64069a6"],
 Cell[CellGroupData[{
-Cell[16119, 354, 927, 21, 69, "Input",ExpressionUUID->"07336970-c2a7-470a-8ba1-920430f4e201"],
-Cell[17049, 377, 2309, 39, 34, "Output",ExpressionUUID->"d616e38a-a864-4872-a871-60d7bc920dd0"]
+Cell[26593, 527, 927, 21, 69, "Input",ExpressionUUID->"07336970-c2a7-470a-8ba1-920430f4e201"],
+Cell[27523, 550, 2309, 39, 34, "Output",ExpressionUUID->"d616e38a-a864-4872-a871-60d7bc920dd0"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19407, 422, 221, 4, 36, "Subsubsection",ExpressionUUID->"7ea7cc74-e9e1-4068-beea-75ce888b6871"],
+Cell[29881, 595, 221, 4, 36, "Subsubsection",ExpressionUUID->"7ea7cc74-e9e1-4068-beea-75ce888b6871"],
 Cell[CellGroupData[{
-Cell[19653, 430, 2599, 68, 191, "Input",ExpressionUUID->"20e06c50-6bda-45e0-84fb-131a3b5f8841"],
-Cell[22255, 500, 4451, 100, 34, "Output",ExpressionUUID->"8569dd9a-6a02-45e7-a718-2952d91915a6"]
+Cell[30127, 603, 2599, 68, 54, "Input",ExpressionUUID->"20e06c50-6bda-45e0-84fb-131a3b5f8841"],
+Cell[32729, 673, 4451, 100, 34, "Output",ExpressionUUID->"8569dd9a-6a02-45e7-a718-2952d91915a6"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26755, 606, 214, 4, 36, "Subsubsection",ExpressionUUID->"7a2f0e7a-8b7d-4747-a480-e738d240adf7"],
+Cell[37229, 779, 214, 4, 36, "Subsubsection",ExpressionUUID->"7a2f0e7a-8b7d-4747-a480-e738d240adf7"],
 Cell[CellGroupData[{
-Cell[26994, 614, 1383, 37, 99, "Input",ExpressionUUID->"f15fde06-53b2-4be6-a8bf-63ddaeac3ecb"],
-Cell[28380, 653, 3138, 64, 34, "Output",ExpressionUUID->"a9e64e79-a467-4bbc-80aa-4ed2cd0e559d"]
-}, Open  ]],
-Cell[31533, 720, 10425, 253, 787, "Input",ExpressionUUID->"14594989-75f6-49a8-96ba-c32c1edf7bfd"],
-Cell[41961, 975, 4535, 104, 284, "Input",ExpressionUUID->"fe193dc4-724e-4bce-ab5e-5b7cde7e006d"],
-Cell[46499, 1081, 9666, 213, 634, "Input",ExpressionUUID->"16b6c1b3-1219-4566-ba7c-0ee9698ee163"],
-Cell[56168, 1296, 11135, 244, 830, "Input",ExpressionUUID->"518b6384-3d48-4302-8c11-f34d0216b73f"],
-Cell[67306, 1542, 5221, 126, 374, "Input",ExpressionUUID->"ba21ffc7-34c7-4aa4-98c2-32c8eac6fef5"],
-Cell[72530, 1670, 3716, 87, 251, "Input",ExpressionUUID->"a353bb26-515e-43fa-bb0e-487d80f109a1"],
-Cell[76249, 1759, 287, 7, 22, "Input",ExpressionUUID->"9e4e4531-c7cb-4d03-874c-187c99c2c6a3"],
-Cell[76539, 1768, 20475, 462, 983, "Input",ExpressionUUID->"4cad6087-6fc6-4f03-ad41-99bd734bbba6"],
-Cell[97017, 2232, 1519, 38, 54, "Input",ExpressionUUID->"5e9581f4-d3e0-4682-af3b-c6261ccb1d0c"],
-Cell[98539, 2272, 7008, 164, 343, "Input",ExpressionUUID->"7da1fc45-931c-4a70-9fd5-91f58a71e6f2"],
-Cell[105550, 2438, 5712, 138, 343, "Input",ExpressionUUID->"7c5a0067-4ea6-45b4-8037-11637be87727"],
-Cell[111265, 2578, 6509, 162, 419, "Input",ExpressionUUID->"fd4170d5-6ada-4bfa-a28e-39b9eeb39e94"],
-Cell[117777, 2742, 4354, 109, 252, "Input",ExpressionUUID->"1dabc028-b4a8-4fc8-90d9-97cedabfed3b"]
+Cell[37468, 787, 1459, 38, 38, "Input",ExpressionUUID->"f15fde06-53b2-4be6-a8bf-63ddaeac3ecb"],
+Cell[38930, 827, 3151, 63, 34, "Output",ExpressionUUID->"19623e97-ed9f-4d79-995a-d85f6eb997e5"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
