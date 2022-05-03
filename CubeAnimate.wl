@@ -195,6 +195,7 @@ SetResolutionMoves[list_ : {}] := Module[
 	{},
 	resolutionMoves = {};
 	nextMove = 0;
+	
 	resolutionMoves = list;
 ];
 

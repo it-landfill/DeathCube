@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     10791,        261]
-NotebookOptionsPosition[      9178,        228]
-NotebookOutlinePosition[      9615,        245]
-CellTagsIndexPosition[      9572,        242]
+NotebookDataLength[     10427,        248]
+NotebookOptionsPosition[      8908,        216]
+NotebookOutlinePosition[      9345,        233]
+CellTagsIndexPosition[      9302,        230]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -101,7 +101,7 @@ Cell[BoxData[{
   RowBox[{"GetSolutionMoves", "[", "]"}], "]"}]}], "Input",
  CellChangeTimes->{{3.85814572610541*^9, 3.85814573160635*^9}, {
   3.8600659470349627`*^9, 3.860065949587788*^9}, {3.860564537904633*^9, 
-  3.8605645561116734`*^9}},
+  3.8605645561116734`*^9}, {3.860565602539905*^9, 3.8605656033385572`*^9}},
  CellLabel->"In[12]:=",ExpressionUUID->"60a90caf-898c-4d8b-b7d5-9d943ae4de13"],
 
 Cell[CellGroupData[{
@@ -172,6 +172,7 @@ Cell[BoxData[
    RowBox[{"Button", "[", 
     RowBox[{"\"\<Prev\>\"", ",", "\[IndentingNewLine]", 
      RowBox[{
+      RowBox[{"DelOut", "[", "]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"RubikPrev", "[", "fps", "]"}], ";"}], "\[IndentingNewLine]", 
      ",", 
      RowBox[{"Enabled", "\[Rule]", 
@@ -181,6 +182,7 @@ Cell[BoxData[
    RowBox[{"Button", "[", 
     RowBox[{"\"\<Next\>\"", ",", " ", "\[IndentingNewLine]", 
      RowBox[{
+      RowBox[{"DelOut", "[", "]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"RubikNext", "[", "fps", "]"}], ";"}], "\[IndentingNewLine]", 
      ",", 
      RowBox[{"Enabled", "\[Rule]", 
@@ -205,24 +207,10 @@ Cell[BoxData[
    3.860559675630188*^9}, {3.86056028316884*^9, 3.8605602984492893`*^9}, {
    3.860563597032054*^9, 3.86056363027627*^9}, 3.860564088112197*^9, {
    3.860564473024156*^9, 3.8605644782757072`*^9}, {3.860564571846933*^9, 
-   3.860564581289426*^9}, {3.8605650557147703`*^9, 3.8605650581923447`*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"87d714e5-d864-4180-bdc6-d90c2505a5f9"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"DelOut", "[", "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"SelectionMove", "[", 
-       RowBox[{
-        RowBox[{"EvaluationCell", "[", "]"}], ",", "Next", ",", "Cell"}], 
-       "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"NotebookDelete", "[", "]"}], ";"}]}], "\[IndentingNewLine]", 
-    "]"}]}], ";"}]], "Input",
- CellLabel->"In[16]:=",ExpressionUUID->"25fb1646-99fc-480c-8aca-83ee5f3d7b06"]
+   3.860564581289426*^9}, {3.8605650557147703`*^9, 3.8605650581923447`*^9}, {
+   3.860565706743373*^9, 3.8605657107719793`*^9}, {3.860565777964116*^9, 
+   3.8605658062628183`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"87d714e5-d864-4180-bdc6-d90c2505a5f9"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -255,12 +243,11 @@ Cell[CellGroupData[{
 Cell[2580, 68, 201, 4, 67, "Section",ExpressionUUID->"e3f4d953-e9c6-41c7-bd8c-e732ef18042a"],
 Cell[2784, 74, 385, 7, 30, "Input",ExpressionUUID->"7fbf7ce0-3848-4146-b676-3420b77f3aa2"],
 Cell[3172, 83, 422, 9, 30, "Input",ExpressionUUID->"34a3679f-856e-4310-8731-dffc2458f4b3"],
-Cell[3597, 94, 475, 10, 52, "Input",ExpressionUUID->"60a90caf-898c-4d8b-b7d5-9d943ae4de13"],
+Cell[3597, 94, 523, 10, 52, "Input",ExpressionUUID->"60a90caf-898c-4d8b-b7d5-9d943ae4de13"],
 Cell[CellGroupData[{
-Cell[4097, 108, 206, 4, 54, "Subsection",ExpressionUUID->"5c454019-bbb8-4f4f-bf87-d3d60455a678"],
-Cell[4306, 114, 2217, 47, 220, "Input",ExpressionUUID->"d86ac22d-d0f5-4fc8-847f-405e1df0b77c"],
-Cell[6526, 163, 2072, 45, 283, "Input",ExpressionUUID->"87d714e5-d864-4180-bdc6-d90c2505a5f9"],
-Cell[8601, 210, 549, 14, 94, "Input",ExpressionUUID->"25fb1646-99fc-480c-8aca-83ee5f3d7b06"]
+Cell[4145, 108, 206, 4, 54, "Subsection",ExpressionUUID->"5c454019-bbb8-4f4f-bf87-d3d60455a678"],
+Cell[4354, 114, 2217, 47, 220, "Input",ExpressionUUID->"d86ac22d-d0f5-4fc8-847f-405e1df0b77c"],
+Cell[6574, 163, 2306, 49, 325, "Input",ExpressionUUID->"87d714e5-d864-4180-bdc6-d90c2505a5f9"]
 }, Open  ]]
 }, Open  ]]
 }
