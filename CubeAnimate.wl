@@ -1,23 +1,27 @@
 (* ::Package:: *)
 
-BeginPackage["CubeVisualize`"]
+BeginPackage["CubeAnimate`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definizione usage*)
 
 
-AnimateMove::usage = ""
+RubikNext::usage = ""
+RubikPrev::usage = ""
+SetResolutionMoves::usage = ""
+HasPrevMove::usage = ""
+HasNextMove::usage = ""
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Inizio package*)
 
 
 Begin["`Private`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Import dei package utilizzati*)
 
 
@@ -27,7 +31,7 @@ Get["CubeVisualize.wl"]
 Get["CubeCore.wl"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definizione delle matrici di rotazione del cubo di Rubik (Grafiche)*)
 
 
@@ -119,11 +123,95 @@ AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 		"F",  Generate3DCube[cube3DPieces, FRONT, MatriceRotazioneXYCW[Dynamic[ang]]],
 		"Fi", Generate3DCube[cube3DPieces, FRONT, MatriceRotazioneXYCC[Dynamic[ang]]],
 		"B",  Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCC[Dynamic[ang]]],
-		"Bi", Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCW[Dynamic[ang]]]];
+		"Bi", Generate3DCube[cube3DPieces, BACK,  MatriceRotazioneXYCW[Dynamic[ang]]],
+		"X", Generate3DCube[cube3DPieces, None,  MatriceRotazioneYZCW[Dynamic[ang]]],
+		"Xi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneYZCC[Dynamic[ang]]],
+		"Y", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXZCW[Dynamic[ang]]],
+		"Yi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXZCC[Dynamic[ang]]],
+		"Z", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXYCW[Dynamic[ang]]],
+		"Zi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXYCC[Dynamic[ang]]]];
 ];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
+(*Automatizzazione delle funzione di rotazione del cubo di Rubik*)
+
+
+RubikMove[move_, fps_ : 1.5] := Module[
+	{},
+	AnimateMove[move, fps];
+	cube3DPieces = Switch[move, 
+		"U",  RotateU[cube3DPieces],
+		"Ui", RotateUi[cube3DPieces],
+		"D",  RotateD[cube3DPieces],
+		"Di", RotateDi[cube3DPieces],
+		"L",  RotateL[cube3DPieces],
+		"Li", RotateLi[cube3DPieces],
+		"R",  RotateR[cube3DPieces],
+		"Ri", RotateRi[cube3DPieces],
+		"F",  RotateF[cube3DPieces],
+		"Fi", RotateFi[cube3DPieces],
+		"B",  RotateB[cube3DPieces],
+		"Bi", RotateBi[cube3DPieces],
+		"X", RotateX[cube3DPieces],
+		"Xi", RotateXi[cube3DPieces],
+		"Y", RotateY[cube3DPieces],
+		"Yi", RotateYi[cube3DPieces],
+		"Z", RotateZ[cube3DPieces],
+		"Zi", RotateZi[cube3DPieces]];
+];
+
+
+RubikNext[fps_ : 1.5] := Module[
+	{},
+	If[HasNextMove[],
+		nextMove = nextMove + 1;
+		move = resolutionMoves[[nextMove]];
+		RubikMove[move, fps];
+	, Print["Non ci sono mosse successive."]];
+];
+
+
+RubikPrev[fps_ : 1.5] := Module[
+	{},
+	If[HasPrevMove[],
+		move = resolutionMoves[[nextMove]];
+		If[StringLength[move] == 2, move = StringTake[move, 1];, move = StringInsert[move, "i", 2];];
+		nextMove = nextMove - 1;
+		RubikMove[move, fps];
+	, Print["Non ci sono mosse precedenti."]];
+];
+
+
+(* ::Section:: *)
+(*Funzioni utili a set e get*)
+
+
+resolutionMoves = {};
+nextMove = 0;
+
+
+SetResolutionMoves[list_ : {}] := Module[
+	{},
+	resolutionMoves = {};
+	nextMove = 0;
+	resolutionMoves = list;
+];
+
+
+HasNextMove[]:= Module[
+	{},
+	Return[nextMove < Length[resolutionMoves]]
+];
+
+
+HasPrevMove[]:= Module[
+	{},
+	Return[!Equal[nextMove, 0]]
+];
+
+
+(* ::Section:: *)
 (*Fine package*)
 
 
