@@ -1,0 +1,526 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21329,        518]
+NotebookOptionsPosition[     19010,        470]
+NotebookOutlinePosition[     19405,        486]
+CellTagsIndexPosition[     19362,        483]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeAcquire.wl\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeVisualize.wl\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeCore.wl\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeAnimate.wl\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<CubeSolver.wl\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.858137480104897*^9, 3.858137536905615*^9}, {
+   3.8581415379546957`*^9, 3.858141539757514*^9}, 3.858145399250944*^9, {
+   3.860065487813512*^9, 3.860065489318379*^9}, {3.860065874452251*^9, 
+   3.860065876286563*^9}, {3.860558580014801*^9, 3.8605586157139883`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"4772857d-1e76-4c70-85d4-1dcd42689f74"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cubeString", " ", "=", " ", 
+  RowBox[{"sampleStrings", "[", "\"\<solved\>\"", "]"}]}]], "Input",
+ CellLabel->"In[7]:=",ExpressionUUID->"39f92651-3c27-4d4f-b760-ca7c002886f3"],
+
+Cell[BoxData["\<\"WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYYYYYYY\"\>"]\
+, "Output",
+ CellChangeTimes->{3.860561675046912*^9, 3.860561742245638*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"512e1d3a-ddf6-441e-80a9-146ce2cea038"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2D Cube", "Section",
+ CellChangeTimes->{{3.858145606425721*^9, 
+  3.8581456082410803`*^9}},ExpressionUUID->"69f71425-34f4-45f2-a0e8-\
+af5e224c3c1d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cube2D", " ", "=", " ", 
+   RowBox[{"Generate2DCube", "[", "cubeString", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.858142523012336*^9, 3.858142530274385*^9}, 
+   3.8581430578121653`*^9, {3.8581454711761627`*^9, 3.858145476240322*^9}, {
+   3.858145588461281*^9, 3.858145592531073*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"e4693391-1177-410b-a1f5-0a6c3cdfdafd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Visualize2DCube", "[", "cube2D", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.858142851866658*^9, 3.858142856544345*^9}, 
+   3.858143079115411*^9, 3.858145479096171*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"d5587938-bac7-4ebd-9d28-af26451d4859"],
+
+Cell[BoxData[
+ GraphicsBox[{{
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 8}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 8}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 8}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 7}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 7}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 7}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 6}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 6}]}, 
+    {GrayLevel[1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 6}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{0, 5}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{1, 5}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{2, 5}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 5}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 5}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 5}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{6, 5}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{7, 5}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{8, 5}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{9, 5}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{10, 5}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{11, 5}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{0, 4}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{1, 4}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{2, 4}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 4}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 4}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 4}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{6, 4}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{7, 4}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{8, 4}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{9, 4}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{10, 4}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{11, 4}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{0, 3}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{1, 3}]}, 
+    {RGBColor[1, 0.5, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{2, 3}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 3}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 3}]}, 
+    {RGBColor[0, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 3}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{6, 3}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{7, 3}]}, 
+    {RGBColor[1, 0, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{8, 3}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{9, 3}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{10, 3}]}, 
+    {RGBColor[0, 0, 1], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{11, 3}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 2}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 2}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 2}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 1}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 1}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 1}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{3, 0}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{4, 0}]}, 
+    {RGBColor[1, 1, 0], EdgeForm[{GrayLevel[0], Thickness[Large]}], 
+     RectangleBox[{5, 0}]}}, 
+   StyleBox[{InsetBox["\<\"F\"\>", {4.5, 4.5}], 
+     InsetBox["\<\"L\"\>", {1.5, 4.5}], InsetBox["\<\"R\"\>", {7.5, 4.5}], 
+     InsetBox["\<\"U\"\>", {4.5, 7.5}], InsetBox["\<\"D\"\>", {4.5, 1.5}], 
+     InsetBox["\<\"B\"\>", {10.5, 4.5}]},
+    StripOnInput->False,
+    FontSize->15]}]], "Print",
+ CellChangeTimes->{3.860561675089375*^9, 3.860561742354121*^9},
+ CellLabel->
+  "During evaluation of \
+In[9]:=",ExpressionUUID->"0ea24976-fa2e-4790-ae71-c014e5821a02"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3D Cube", "Section",
+ CellChangeTimes->{{3.858145610153839*^9, 3.858145611786112*^9}, {
+  3.860558380759225*^9, 
+  3.860558382897666*^9}},ExpressionUUID->"e3f4d953-e9c6-41c7-bd8c-\
+e732ef18042a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cube3DPieces", " ", "=", " ", 
+   RowBox[{"GetPieces", "[", "cubeString", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8581456344099483`*^9, 3.8581456594728327`*^9}, {
+  3.860065300023295*^9, 3.8600653028870792`*^9}, {3.860065384518886*^9, 
+  3.8600653865504436`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"7fbf7ce0-3848-4146-b676-3420b77f3aa2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cube3D", " ", "=", " ", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"Generate3DCube", "[", "cube3DPieces", "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8581456611850433`*^9, 3.858145672042139*^9}, {
+  3.85814571927878*^9, 3.858145719974935*^9}, {3.8581465756830187`*^9, 
+  3.8581465791272182`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"34a3679f-856e-4310-8731-dffc2458f4b3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Visualize3DCube", "[", "cube3D", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"GetSolutionMoves", "[", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.85814572610541*^9, 3.85814573160635*^9}, {
+  3.8600659470349627`*^9, 3.860065949587788*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"60a90caf-898c-4d8b-b7d5-9d943ae4de13"],
+
+Cell[BoxData[
+ StyleBox[
+  Graphics3DBox[
+   DynamicBox[Typeset`ToBoxes[
+     CubeVisualize`Generate3DCube[CubeCore`cube3DPieces], StandardForm, 
+     Graphics3D],
+    ImageSizeCache->{{73.24380213302697, 
+     292.8622813817434}, {-130.521181756741, 112.08335054515109`}}],
+   Axes->True,
+   AxesLabel->{
+     FormBox["\"x\"", TraditionalForm], 
+     FormBox["\"y\"", TraditionalForm], 
+     FormBox["\"z\"", TraditionalForm]},
+   ImageSize->{348.8588375538866, 381.0855860996193},
+   ImageSizeRaw->Automatic,
+   Lighting->{{"Ambient", 
+      GrayLevel[1]}},
+   PlotRange->{{-2.2, 2.2}, {-2.2, 2.2}, {-2.2, 2.2}},
+   Ticks->Automatic,
+   ViewPoint->Dynamic[CubeVisualize`vp],
+   ViewVertical->{0.02706954337666141, 0.03769352268087064, 
+    0.998922638730991}],
+  StripOnInput->False,
+  RenderingOptions -> {"3DRenderingOptions" -> "Mesa"}]], "Print",
+ CellChangeTimes->{
+  3.860561675132471*^9, {3.8605617280392857`*^9, 3.860561742431347*^9}},
+ CellLabel->
+  "During evaluation of \
+In[12]:=",ExpressionUUID->"e026bc03-b3a1-4c7b-807b-abd703618fac"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   CubeCore`GetSolutionMoves[], StandardForm],
+  ImageSizeCache->{836., {87.54893493652344, 12.791915893554688`}}]], "Output",\
+
+ CellChangeTimes->{
+  3.860561675232633*^9, {3.860561728058502*^9, 3.860561742559093*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"60f62f91-708b-4ff3-b8ce-a11562c86473"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Controlli", "Subsection",
+ CellChangeTimes->{{3.858136449182974*^9, 
+  3.858136452242155*^9}},ExpressionUUID->"5c454019-bbb8-4f4f-bf87-\
+d3d60455a678"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"List", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Load solved\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"GetPieces", "[", 
+        RowBox[{"sampleStrings", "[", "\"\<solved\>\"", "]"}], "]"}]}], 
+      ";"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Load start\>\"", ",", 
+     RowBox[{
+      RowBox[{"cube3DPieces", "=", 
+       RowBox[{"GetPieces", "[", 
+        RowBox[{"sampleStrings", "[", "\"\<start\>\"", "]"}], "]"}]}], 
+      ";"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Reset moves string\>\"", ",", 
+     RowBox[{
+      RowBox[{"ResetSolutionMoves", "[", "]"}], ";"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Reset ViewPoint\>\"", ",", 
+     RowBox[{
+      RowBox[{"vp", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"1.1", ",", 
+         RowBox[{"-", "2.9"}], ",", "1.2"}], "}"}]}], ";"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Solve\>\"", ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ResetSolutionMoves", "[", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"SolveCube", "[", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"SetResolutionMoves", "[", "solutionMoves", "]"}], ";"}]}], 
+    "]"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.85813291227271*^9, 3.8581329182583847`*^9}, {
+  3.858136478679347*^9, 3.858136555598707*^9}, {3.858656069233163*^9, 
+  3.858656076268976*^9}, {3.858656169907217*^9, 3.858656195556756*^9}, {
+  3.8600656456574373`*^9, 3.860065675164853*^9}, {3.8600659113072023`*^9, 
+  3.860065919659542*^9}, {3.860488309102029*^9, 3.8604883287413797`*^9}, {
+  3.860488361160263*^9, 3.86048836937464*^9}, {3.860558537981721*^9, 
+  3.860558574163404*^9}, {3.860559579037376*^9, 3.8605595844869213`*^9}, {
+  3.8605625213304453`*^9, 3.860562550946144*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"d86ac22d-d0f5-4fc8-847f-405e1df0b77c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   ButtonBox["\<\"Load solved\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(CubeCore`cube3DPieces = CubeCore`GetPieces[
+        CubeAcquire`sampleStrings["solved"]]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Load start\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(CubeCore`cube3DPieces = CubeCore`GetPieces[
+        CubeAcquire`sampleStrings["start"]]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Reset moves string\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(CubeCore`ResetSolutionMoves[]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Reset ViewPoint\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(CubeVisualize`vp = {1.1, -2.9, 1.2}; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Solve\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(CubeCore`ResetSolutionMoves[]; 
+     CubeSolver`SolveCube[]; \
+$CellContext`SetResolutionMoves[$CellContext`solutionMoves]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"]}], "}"}]], "Output",
+ CellChangeTimes->{3.860561675476667*^9, 3.860561742567441*^9, 
+  3.860562553381859*^9},
+ CellLabel->"Out[58]=",ExpressionUUID->"5f01542e-3d30-467b-bec5-5f96a98c310e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"List", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Reset\>\"", ",", 
+     RowBox[{
+      RowBox[{"Print", "[", "\"\<Reset\>\"", "]"}], ";"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Prev\>\"", ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Print", "[", "\"\<Prev\>\"", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"RubikPrev", "[", "fps", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"DelOut", "[", "]"}], ";"}], "\[IndentingNewLine]", ",", 
+     RowBox[{"Enabled", "\[Rule]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"HasPrevMove", "[", "]"}], "]"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Next\>\"", ",", " ", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Print", "[", "\"\<Next\>\"", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"RubikNext", "[", "fps", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"DelOut", "[", "]"}], ";"}], "\[IndentingNewLine]", ",", 
+     RowBox[{"Enabled", "\[Rule]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"HasNextMove", "[", "]"}], "]"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", "\"\<Animation Rate: \>\"", ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"fps", " ", "=", " ", "1.5"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Slider", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "fps", "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0.1", ",", " ", "2", ",", " ", "0.1"}], "}"}]}], "]"}]}], ",",
+    "\[IndentingNewLine]", 
+   RowBox[{"Dynamic", "[", "fps", "]"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8605587243820953`*^9, 3.860558781932033*^9}, {
+  3.8605588168892517`*^9, 3.8605589195225286`*^9}, {3.860559019744747*^9, 
+  3.8605590317113333`*^9}, {3.860559064222436*^9, 3.860559166458889*^9}, {
+  3.860559453954815*^9, 3.860559471255447*^9}, {3.860559668411927*^9, 
+  3.860559675630188*^9}, {3.86056028316884*^9, 3.8605602984492893`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"87d714e5-d864-4180-bdc6-d90c2505a5f9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   ButtonBox["\<\"Reset\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(Print["Reset"]; Null),
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Prev\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(
+     Print["Prev"]; $CellContext`RubikPrev[$CellContext`fps]; \
+$CellContext`DelOut[]; Null),
+    Enabled->Dynamic[
+      $CellContext`HasPrevMove[]],
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", 
+   ButtonBox["\<\"Next\"\>",
+    Appearance->Automatic,
+    ButtonFunction:>(
+     Print["Next"]; $CellContext`RubikNext[$CellContext`fps]; \
+$CellContext`DelOut[]; Null),
+    Enabled->Dynamic[
+      $CellContext`HasNextMove[]],
+    Evaluator->Automatic,
+    Method->"Preemptive"], ",", "\<\"Animation Rate: \"\>", ",", 
+   SliderBox[Dynamic[$CellContext`fps], {0.1, 2, 0.1}], ",", 
+   DynamicBox[ToBoxes[$CellContext`fps, StandardForm],
+    ImageSizeCache->{23., {1., 9.}}]}], "}"}]], "Output",
+ CellChangeTimes->{3.860561675487917*^9, 3.860561742853057*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"e4cff608-77f0-45ac-b20f-359f3fb2f561"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DelOut", "[", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"SelectionMove", "[", 
+       RowBox[{
+        RowBox[{"EvaluationCell", "[", "]"}], ",", "Next", ",", "Cell"}], 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"NotebookDelete", "[", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ CellLabel->"In[16]:=",ExpressionUUID->"25fb1646-99fc-480c-8aca-83ee5f3d7b06"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{960, 1061},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"62d6c9d0-429e-4739-b4f3-e45605db8af3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 912, 15, 191, "Input",ExpressionUUID->"4772857d-1e76-4c70-85d4-1dcd42689f74"],
+Cell[CellGroupData[{
+Cell[1495, 39, 199, 3, 30, "Input",ExpressionUUID->"39f92651-3c27-4d4f-b760-ca7c002886f3"],
+Cell[1697, 44, 233, 3, 34, "Output",ExpressionUUID->"512e1d3a-ddf6-441e-80a9-146ce2cea038"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1967, 52, 154, 3, 67, "Section",ExpressionUUID->"69f71425-34f4-45f2-a0e8-af5e224c3c1d"],
+Cell[2124, 57, 403, 7, 30, "Input",ExpressionUUID->"e4693391-1177-410b-a1f5-0a6c3cdfdafd"],
+Cell[CellGroupData[{
+Cell[2552, 68, 283, 5, 30, "Input",ExpressionUUID->"d5587938-bac7-4ebd-9d28-af26451d4859"],
+Cell[2838, 75, 5768, 119, 281, "Print",ExpressionUUID->"0ea24976-fa2e-4790-ae71-c014e5821a02"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8655, 200, 201, 4, 67, "Section",ExpressionUUID->"e3f4d953-e9c6-41c7-bd8c-e732ef18042a"],
+Cell[8859, 206, 385, 7, 30, "Input",ExpressionUUID->"7fbf7ce0-3848-4146-b676-3420b77f3aa2"],
+Cell[9247, 215, 422, 9, 30, "Input",ExpressionUUID->"34a3679f-856e-4310-8731-dffc2458f4b3"],
+Cell[CellGroupData[{
+Cell[9694, 228, 389, 8, 52, "Input",ExpressionUUID->"60a90caf-898c-4d8b-b7d5-9d943ae4de13"],
+Cell[10086, 238, 1050, 28, 389, "Print",ExpressionUUID->"e026bc03-b3a1-4c7b-807b-abd703618fac"],
+Cell[11139, 268, 333, 7, 119, "Output",ExpressionUUID->"60f62f91-708b-4ff3-b8ce-a11562c86473"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11509, 280, 157, 3, 54, "Subsection",ExpressionUUID->"5c454019-bbb8-4f4f-bf87-d3d60455a678"],
+Cell[CellGroupData[{
+Cell[11691, 287, 2089, 45, 220, "Input",ExpressionUUID->"d86ac22d-d0f5-4fc8-847f-405e1df0b77c"],
+Cell[13783, 334, 1346, 34, 69, "Output",ExpressionUUID->"5f01542e-3d30-467b-bec5-5f96a98c310e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15166, 373, 2123, 44, 367, "Input",ExpressionUUID->"87d714e5-d864-4180-bdc6-d90c2505a5f9"],
+Cell[17292, 419, 1126, 30, 46, "Output",ExpressionUUID->"e4cff608-77f0-45ac-b20f-359f3fb2f561"]
+}, Open  ]],
+Cell[18433, 452, 549, 14, 94, "Input",ExpressionUUID->"25fb1646-99fc-480c-8aca-83ee5f3d7b06"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
