@@ -60,6 +60,9 @@ ExtractFace::usage = ""
 ExtractNotFace::usage = ""
 
 
+DelOut::usage = ""
+
+
 cube3DPieces = ""
 cube3D = ""
 
@@ -423,6 +426,16 @@ RotateB[cube_] := Module[{},
 RotateBi[cube_] := Module[{},
 	AppendTo[solutionMoves,"Bi"];
 	RotateFace[cube, BACK, ROTXYCW]
+];
+
+
+(* ::Section:: *)
+(*Utils*)
+
+
+DelOut[] := Module[{},
+	SelectionMove[EvaluationCell[],Next,GeneratedCell];
+	NotebookDelete[];
 ];
 
 
