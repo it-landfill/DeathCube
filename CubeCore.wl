@@ -434,7 +434,7 @@ RotateBi[cube_] := Module[{},
 
 
 DelOut[] := Module[{},
-	SelectionMove[EvaluationCell[],Next,Cell];
+	SelectionMove[EvaluationCell[],Next,GeneratedCell];
 	NotebookDelete[];
 ];
 
