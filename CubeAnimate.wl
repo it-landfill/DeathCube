@@ -7,8 +7,11 @@ BeginPackage["CubeAnimate`"]
 (*Definizione usage*)
 
 
-RubikMove::usage = ""
+RubikNext::usage = ""
+RubikPrev::usage = ""
 SetResolutionMoves::usage = ""
+HasPrevMove::usage = ""
+HasNextMove::usage = ""
 
 
 (* ::Section:: *)
@@ -28,7 +31,7 @@ Get["CubeVisualize.wl"]
 Get["CubeCore.wl"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definizione delle matrici di rotazione del cubo di Rubik (Grafiche)*)
 
 
@@ -127,7 +130,6 @@ AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 		"Yi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXZCC[Dynamic[ang]]],
 		"Z", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXYCW[Dynamic[ang]]],
 		"Zi", Generate3DCube[cube3DPieces, None,  MatriceRotazioneXYCC[Dynamic[ang]]]];
-	Animator[Dynamic[ang], {0, Pi/2}, AnimationRate -> fps, AnimationRepetitions -> 1, AppearanceElements -> None];
 ];
 
 
@@ -135,10 +137,8 @@ AnimateMove[move_, fps_ : 1.5] := DynamicModule[
 (*Automatizzazione delle funzione di rotazione del cubo di Rubik*)
 
 
-RubikMove[fps_ : 1.5] := Module[
+RubikMove[move_, fps_ : 1.5] := Module[
 	{},
-	nextMove = nextMove + 1;
-	move = resolutionMoves[[nextMove]];
 	AnimateMove[move, fps];
 	cube3DPieces = Switch[move, 
 		"U",  RotateU[cube3DPieces],
@@ -162,6 +162,27 @@ RubikMove[fps_ : 1.5] := Module[
 ];
 
 
+RubikNext[fps_ : 1.5] := Module[
+	{},
+	If[HasNextMove[],
+		nextMove = nextMove + 1;
+		move = resolutionMoves[[nextMove]];
+		RubikMove[move, fps];
+	, Print["Non ci sono mosse successive."]];
+];
+
+
+RubikPrev[fps_ : 1.5] := Module[
+	{},
+	If[HasPrevMove[],
+		move = resolutionMoves[[nextMove]];
+		If[StringLength[move] == 2, move = StringTake[move, 1];, move = StringInsert[move, "i", 2];];
+		nextMove = nextMove - 1;
+		RubikMove[move, fps];
+	, Print["Non ci sono mosse precedenti."]];
+];
+
+
 (* ::Section:: *)
 (*Funzioni utili a set e get*)
 
@@ -175,6 +196,18 @@ SetResolutionMoves[list_ : {}] := Module[
 	resolutionMoves = {};
 	nextMove = 0;
 	resolutionMoves = list;
+];
+
+
+HasNextMove[]:= Module[
+	{},
+	Return[nextMove < Length[resolutionMoves]]
+];
+
+
+HasPrevMove[]:= Module[
+	{},
+	Return[!Equal[nextMove, 0]]
 ];
 
 
