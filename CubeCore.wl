@@ -61,6 +61,7 @@ ExtractNotFace::usage = ""
 
 
 DelOut::usage = ""
+GenerateRandomMoves::usage = ""
 
 
 cube3DPieces = ""
@@ -247,7 +248,7 @@ ExtractNotFace[cube_, face_] :=
 (*Definizione delle funzioni per la gestione del cubo di Rubik*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Operazioni ausiliarie*)
 
 
@@ -319,7 +320,7 @@ RotateAllPieces[cube_, matrix_] :=
     Map[RotatePiece[#, matrix]&, cube];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Operazioni standard*)
 
 
@@ -472,6 +473,13 @@ RotateBi[cube_,isSolve_:True] := Module[{},
 DelOut[] := Module[{},
 	SelectionMove[EvaluationCell[],Next,GeneratedCell];
 	NotebookDelete[];
+];
+
+
+GenerateRandomMoves[nMoves_:25] := Module[{l},
+	 l = RandomChoice[{"L","R","U","D","F","B","Li","Ri","Ui","Di","Fi","Bi"},nMoves];
+	(* Ottimizzare la lista prodotta *)
+	Return[l]
 ];
 
 
