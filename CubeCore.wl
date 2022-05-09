@@ -62,6 +62,7 @@ ExtractNotFace::usage = ""
 
 DelOut::usage = ""
 GenerateRandomMoves::usage = ""
+OptimizeMoveString::usage = ""
 
 
 cube3DPieces = ""
@@ -484,6 +485,50 @@ GenerateRandomMoves[nMoves_:25] := Module[{l},
 
 
 (* ::Section:: *)
+(*Ottimizzazione delle mosse*)
+
+
+DeleteUseless[list_]:= Module[{},
+	If[Length[list]!=4,list,{}]
+];
+
+
+OptimizeMove[list_] :=
+	Module[{},
+		If[Length[list] == 3,
+			If[Length[First[Characters[list]]] == 1,
+				First[list] <> "i"
+				,
+				Characters[First[list]][[1]]
+			]
+			,
+			list
+		]
+	];
+
+
+OptimizeMoveString[codeString_] :=
+	Module[{tmp},
+		If[SameQ[codeString, None],
+			codeString = solutionMoves
+		];
+		(* Divido la lista in sottoliste di elementi uguali consecutivi *)
+		tmp = Split[codeString];
+		(* Divido ogni sottolista in sottoliste di lunghezza massima 4 *)
+		tmp = Map[Partition[#, UpTo[4]]&, tmp];
+		(* Appiattisco la lista di liste *)
+		tmp = Flatten[tmp, 1];
+		(* Applico DeleteUseless alle sottoliste *)
+		tmp = Map[DeleteUseless, tmp];
+		(* Applico Optimize alle sottoliste *)
+		tmp = Map[OptimizeMove, tmp];
+		(* Appiattisco la lista di liste *)
+		tmp = Flatten[tmp];
+		tmp
+	];
+
+
+(* ::Section::Closed:: *)
 (*Fine package*)
 
 

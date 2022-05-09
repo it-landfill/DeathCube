@@ -105,6 +105,20 @@ backFaceColor := First[cube3DPieces[[getPos[cube3DPieces,cube3DPieces,{0,0,-1}]]
 
 
 (* ::Subsubsection:: *)
+(*Orientazione corretta del cubo*)
+
+
+While[frontFaceColor != "G" && frontFaceColor != "Y", cube3DPieces = RotateY[cube3DPieces]];
+
+If[frontFaceColor == "G",
+	While[topFaceColor != "Y", cube3DPieces = RotateZ[cube3DPieces]],
+	While[topFaceColor != "Y", cube3DPieces = RotateX[cube3DPieces]]
+];
+
+While[frontFaceColor != "G", cube3DPieces = RotateY[cube3DPieces]];
+
+
+(* ::Subsubsection:: *)
 (*Calcolo del numero delle facce none di ogni cubo*)
 
 
