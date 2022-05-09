@@ -55,8 +55,7 @@ Get["CubeCore.wl"]
 
 
 ApplyStyle2D[rect_, col_] := Module[{constStyleStr = {EdgeForm[Directive[Thick,Black]]}, styleStr},
-	styleStr = Append[constStyleStr,col];
-	Style[rect,styleStr]
+	{SurfaceAppearance[col],Style[rect, constStyleStr]}
 ];
 
 
@@ -89,8 +88,9 @@ Generate2DCube[cubeString_] := Module[{points = {}, colorList},
 
 
 Visualize2DCube[cube_] := Module[
-{cubeLabels = Style[{Text["F",{4.5,4.5}],Text["L",{1.5,4.5}],Text["R",{7.5,4.5}],Text["U",{4.5,7.5}],Text["D",{4.5,1.5}],Text["B",{10.5,4.5}]},15]},
-Print[Graphics[{cube,cubeLabels}]];
+	{cubeLabels = Style[{Text["F",{4.5,4.5}],Text["L",{1.5,4.5}],Text["R",{7.5,4.5}],Text["U",{4.5,7.5}],Text["D",{4.5,1.5}],Text["B",{10.5,4.5}]},15]},
+	If[GetTextureRubik[] == 1, Print[Graphics[{cube, cubeLabels}]], Print[Graphics[{cube}]];];
+	
 ];
 
 
@@ -102,7 +102,7 @@ Print[Graphics[{cube,cubeLabels}]];
 (*Generazione componenti grafiche*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Generazione singoli sotto cubi*)
 
 
@@ -159,7 +159,7 @@ GetGraphicPiece[piece_, mat_:None] := Module[{pos, col},
 ];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Generazione componenti grafiche*)
 
 

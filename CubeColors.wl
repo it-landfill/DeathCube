@@ -4,9 +4,9 @@ BeginPackage["CubeColors`"]
 
 
 CharToColor::usage = ""
-
-
 CubeStringToColorList::usage = ""
+SetTextureRubik::usage = ""
+GetTextureRubik::usage = ""
 
 
 Begin["`Private`"]
@@ -27,11 +27,75 @@ cubeColors = <| "L" ->  Orange,"R" ->Red,"F"->Green, "B"-> Blue,"U"-> White, "D"
 (*Map da char a colore*)
 
 
-(* ::Text:: *)
-(*TODO: I colori devono essere parametrici (Opzione Daltonismo)*)
+textureDim = 100;
+selectedTexture = 1;
+
+colorScheme1 = {
+	Texture[Style[White, textureDim]], 
+	Texture[Style[Red, textureDim]],  
+	Texture[Style[Blue, textureDim]], 
+	Texture[Style[Orange, textureDim]], 
+	Texture[Style[Green, textureDim]], 
+	Texture[Style[Yellow, textureDim]], 
+	Texture[Style[Black, textureDim]]
+}
+colorScheme2 = {
+	Texture[Style["1", textureDim]], 
+	Texture[Style["2", textureDim]],  
+	Texture[Style["3", textureDim]], 
+	Texture[Style["4", textureDim]], 
+	Texture[Style["5", textureDim]], 
+	Texture[Style["6", textureDim]], 
+	Texture[Style["7", textureDim]]
+}
+colorScheme3 = {
+	Texture[Style["\:2726", textureDim]], 
+	Texture[Style["\[FivePointedStar]", textureDim]],  
+	Texture[Style["\[FilledDownTriangle]", textureDim]], 
+	Texture[Style["\:2665\:fe0e", textureDim]], 
+	Texture[Style["\:273f", textureDim]], 
+	Texture[Style["\[ClubSuit]", textureDim]], 
+	Texture[Style["\[FilledCircle]", textureDim]]
+}
+colorScheme4 = {
+	Texture[Style["\|01f60e",textureDim]], 
+	Texture[Style["\|01f60d", textureDim]],  
+	Texture[Style["\|01f602", textureDim]], 
+	Texture[Style["\|01f631", textureDim]], 
+	Texture[Style["\|01f621", textureDim]], 
+	Texture[Style["\|01f62a", textureDim]], 
+	Texture[Style["\|01f921", textureDim]]
+}
 
 
-CharToColor[char_] := Switch[char,"W",White,"R", Red, "B", Blue, "O", Orange, "G", Green, "Y", Yellow, _, Black];
+
+
+SetTextureRubik[selectTexture_ : "1"]:= Module[{},
+	currentColorScheme = Switch[selectTexture, 
+		1, colorScheme1,
+		2, colorScheme2,
+		3, colorScheme3,
+		4, colorScheme4
+	];
+	selectedTexture = selectTexture;
+];
+
+
+GetTextureRubik[]:= Module[
+	{},
+	Return[selectedTexture]
+];
+
+
+CharToColor[char_] := Switch[char,
+	"W",currentColorScheme[[1]],
+	"R", currentColorScheme[[2]], 
+	"B", currentColorScheme[[3]], 
+	"O", currentColorScheme[[4]], 
+	"G", currentColorScheme[[5]], 
+	"Y", currentColorScheme[[6]], 
+	_, currentColorScheme[[7]]
+];
 
 
 (* ::Subsubsection:: *)
@@ -43,5 +107,4 @@ CubeStringToColorList[cube_] :=
 
 
 End[]
-
 EndPackage[]
