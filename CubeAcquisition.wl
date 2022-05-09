@@ -9,6 +9,7 @@ BeginPackage["CubeAcquisition`"]
 
 VisualizeColorPickerBox::usage = ""
 VisualizeInput2DCube::usage = ""
+cube;
 
 
 (* ::Section:: *)
@@ -24,7 +25,7 @@ Begin["`Private`"]
 
 colors = {White, Green, Orange, Red, Blue, Yellow};
 currentColor = Transparent;
-cube;
+
 
 
 (* ::Section:: *)
@@ -135,6 +136,19 @@ VisualizeInput2DCube[] := Module[{},
 	cube = GenerateBaseCubeStruct[];
 	(* Stampo il cubo 2D *)
 	Graphics[Dynamic[Map[GenBtn,cube]], Background->LightGray]
+];
+
+
+(* ::Section:: *)
+(*Validazione del cube*)
+
+
+(*
+1. Controllo che ogni colore sia ripetuto esattamente 9 volte.
+2. Controllo che le combinazioni di colori abbiano senso
+*)
+ValidateCubeInput[] := Module[{},
+	Null
 ];
 
 
