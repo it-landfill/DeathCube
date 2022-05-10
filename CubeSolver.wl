@@ -2,7 +2,14 @@
 
 BeginPackage["CubeSolver`"];
 SolveCube::usage="";
-OrientCube::usage = "";
+WhiteCross::usage="";
+PlaceWhiteCorner::usage="";
+SecondLayer::usage="";
+YellowCross::usage="";
+YellowEdges::usage="";
+YellowCorners::usage="";
+YellowCornersOrientation::usage="";
+
 
 
 (* ::Section:: *)
