@@ -28,6 +28,12 @@ ControlsRotation::usage = ""
 ControlsMoves::usage = ""
 
 
+GetGraphicPiece::usage = ""
+
+
+vp = Options[Plot3D,ViewPoint][[1,2]];
+
+
 (* ::Section:: *)
 (*Inizio package*)
 
@@ -37,6 +43,7 @@ Begin["`Private`"]
 
 AppendTo[$Path, NotebookDirectory[]];
 Get["CubeColors.wl"]
+Get["CubeCore.wl"]
 
 
 (* ::Section:: *)
@@ -99,7 +106,7 @@ Print[Graphics[{cube,cubeLabels}]];
 (*Generazione singoli sotto cubi*)
 
 
-GetGraphicPiece[piece_] := Module[{pos, col},
+GetGraphicPiece[piece_, mat_:None] := Module[{pos, col},
 	pos = piece["pos"];
 	col = piece["colors"];
 	polygons = {};
@@ -110,6 +117,10 @@ GetGraphicPiece[piece_] := Module[{pos, col},
 		Null,
 		offset = pos[[1]]/2;
 		polyVert = {pos+{offset,-1/2,-1/2},pos+{offset,-1/2,1/2},pos+{offset,1/2,1/2},pos+{offset,1/2,-1/2}};
+		If[SameQ[mat,None],
+			Null,
+			polyVert=Map[mat . #&,polyVert];
+		];
 		tmp = Polygon[polyVert];
 		tmp = Style[tmp,{CharToColor[col[[1]]],EdgeForm[{Thick,Black}]}];
 		AppendTo[polygons,tmp];
@@ -121,6 +132,10 @@ GetGraphicPiece[piece_] := Module[{pos, col},
 		Null,
 		offset = pos[[2]]/2;
 		polyVert = {pos+{-1/2,offset,-1/2},pos+{-1/2,offset,1/2},pos+{1/2,offset,1/2},pos+{1/2,offset,-1/2}};
+		If[SameQ[mat,None],
+			Null,
+			polyVert=Map[mat . #&,polyVert];
+		];
 		tmp = Polygon[polyVert];
 		tmp = Style[tmp,{CharToColor[col[[2]]],EdgeForm[{Thick,Black}]}];
 		AppendTo[polygons,Style[tmp,CharToColor[col[[2]]]]];
@@ -131,10 +146,15 @@ GetGraphicPiece[piece_] := Module[{pos, col},
 		(*Se \[EGrave] null non faccio nulla*)
 		Null,
 		offset = pos[[3]]/2;polyVert = {pos+{-1/2,-1/2,offset},pos+{-1/2,1/2,offset},pos+{1/2,1/2,offset},pos+{1/2,-1/2,offset}};
+		If[SameQ[mat,None],
+			Null,
+			polyVert=Map[mat . #&,polyVert];
+		];
 		tmp = Polygon[polyVert];
 		tmp = Style[tmp,CharToColor[col[[3]]]];
 		AppendTo[polygons,Style[tmp,{CharToColor[col[[3]]],EdgeForm[{Thick,Black}]}]];
 	];
+	
 	polygons
 ];
 
@@ -143,7 +163,19 @@ GetGraphicPiece[piece_] := Module[{pos, col},
 (*Generazione componenti grafiche*)
 
 
-Generate3DCube[cube_] := Map[GetGraphicPiece,cube];
+Generate3DCube[cube_,face_:None,matrix_:None] := Module[{f,nF,fC,nFC},
+	If[SameQ[face,None],
+		If[SameQ[matrix, None],
+			Return[Map[GetGraphicPiece,cube]];,
+			Return[Map[GetGraphicPiece[#,matrix]&,cube]];
+		];,
+		f = ExtractFace[cube,face];
+		nF = ExtractNotFace[cube, face];
+		fC = Map[GetGraphicPiece[#,matrix]&,f];
+		nFC = Map[GetGraphicPiece,nF];
+		Return[Join[nFC,fC]];
+	];
+];
 
 
 (* ::Subsubsection:: *)
@@ -152,8 +184,8 @@ Generate3DCube[cube_] := Map[GetGraphicPiece,cube];
 
 Visualize3DCube[cube_] :=
 	Module[{graphichOptions = {Lighting -> {{"Ambient", GrayLevel[1]}}, Axes
-		 -> True, Ticks -> Automatic, AxesLabel -> {"x", "y", "z"}}},
-		Print[Graphics3D[cube, graphichOptions]];
+		 -> True, Ticks -> Automatic, AxesLabel -> {"x", "y", "z"},PlotRange->{{-2.2,2.2},{-2.2,2.2},{-2.2,2.2}},ViewPoint->Dynamic[vp]}},
+		Print[Style[Graphics3D[cube, graphichOptions],RenderingOptions->{"3DRenderingOptions"->"Mesa"}]];
 	];
 
 
