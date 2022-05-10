@@ -102,7 +102,7 @@ Visualize2DCube[cube_] := Module[
 (*Generazione componenti grafiche*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Generazione singoli sotto cubi*)
 
 
@@ -121,8 +121,7 @@ GetGraphicPiece[piece_, mat_:None] := Module[{pos, col},
 			Null,
 			polyVert=Map[mat . #&,polyVert];
 		];
-		tmp = Polygon[polyVert];
-		tmp = Style[tmp,{CharToColor[col[[1]]],EdgeForm[{Thick,Black}]}];
+		tmp = {CharToColor[col[[1]]],Polygon[polyVert, VertexTextureCoordinates->{polyVert[[1]][[-2;;-1]], polyVert[[2]][[-2;;-1]], polyVert[[3]][[-2;;-1]], polyVert[[4]][[-2;;-1]]} + 1/2]};
 		AppendTo[polygons,tmp];
 	];
 
@@ -136,9 +135,12 @@ GetGraphicPiece[piece_, mat_:None] := Module[{pos, col},
 			Null,
 			polyVert=Map[mat . #&,polyVert];
 		];
-		tmp = Polygon[polyVert];
-		tmp = Style[tmp,{CharToColor[col[[2]]],EdgeForm[{Thick,Black}]}];
-		AppendTo[polygons,Style[tmp,CharToColor[col[[2]]]]];
+		tmp = {CharToColor[col[[2]]],
+		Polygon[polyVert, VertexTextureCoordinates->{{polyVert[[1]][[1]],polyVert[[1]][[3]]},{polyVert[[2]][[1]],polyVert[[2]][[3]]},{polyVert[[3]][[1]],polyVert[[3]][[3]]},{polyVert[[4]][[1]],polyVert[[4]][[3]]}} + 1/2]};
+		(*tmp = Polygon[polyVert];*)
+		(*tmp = Style[tmp,{CharToColor[col[[2]]],EdgeForm[{Thick,Black}]}];*)
+		(*AppendTo[polygons,Style[tmp,CharToColor[col[[2]]]]];*)
+		AppendTo[polygons, tmp];
 	];
 
 	(* Facce in XY *)
@@ -150,16 +152,15 @@ GetGraphicPiece[piece_, mat_:None] := Module[{pos, col},
 			Null,
 			polyVert=Map[mat . #&,polyVert];
 		];
-		tmp = Polygon[polyVert];
-		tmp = Style[tmp,CharToColor[col[[3]]]];
-		AppendTo[polygons,Style[tmp,{CharToColor[col[[3]]],EdgeForm[{Thick,Black}]}]];
+		tmp = {CharToColor[col[[3]]],Polygon[polyVert, VertexTextureCoordinates->{polyVert[[1]][[1;;2]], polyVert[[2]][[1;;2]], polyVert[[3]][[1;;2]], polyVert[[4]][[1;;2]]} + 1/2]};
+		AppendTo[polygons,tmp];
 	];
 	
 	polygons
 ];
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Generazione componenti grafiche*)
 
 
