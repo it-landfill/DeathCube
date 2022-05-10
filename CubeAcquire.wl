@@ -10,7 +10,7 @@ FindMatchingCubeCode::usage = ""
 
 VisualizeColorPickerBox::usage = ""
 VisualizeInput2DCube::usage = ""
-cube;
+Cube2DToString::usage = ""
 
 
 (* ::Section:: *)
@@ -226,11 +226,48 @@ VisualizeInput2DCube[] := Module[{},
 
 
 (*
-1. Controllo che ogni colore sia ripetuto esattamente 9 volte.
-2. Controllo che le combinazioni di colori abbiano senso
+TODO:
 *)
-ValidateCubeInput[] := Module[{},
-	Null
+ValidateCubeInput[cubePieces] := Module[{},
+	tuttoOk = True;
+	For[i = 1, i < Length[cube3DPieces], i++,
+ If[Length[
+     DeleteDuplicates[
+      getColSort[ cube3DPieces, cube3DPieces, 
+       cubePieces[[i]]["colors"][[1]], 
+       cubePieces[[i]]["colors"][[2]], 
+       cubePieces[[i]]["colors"][[3]]
+      ]
+     ]
+    ] != 1, 
+  tuttoOk = False]
+ ];
+	Return[tuttoOk];
+];
+
+
+(* ::Subsubsection:: *)
+(*Conversione da Cubo 2D a stringa*)
+
+
+Cube2DToString[cube2D_] := Module[{cubeCols = {}, cubeString = "", cube},
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,8}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,7}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,6}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,5}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,4}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,3}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,2}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,1}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,0}][[1,1]],2]],{x,3,5}]];
+	cubeCols = Flatten[cubeCols];
+	cubeString = Map[ColorToChar, cubeCols];
+	cubeString = StringJoin[cubeString];
+	Return[cubeString];
+];
+(*TODO: Rimpiazzare con funzione texture*)
+ColorToChar[col_] := Module[{cols = <| "R" -> Red, "O" -> Orange, "G" -> Green, "B"-> Blue, "W" -> White, "Y" -> Yellow, "T" -> Transparent|>},
+	Return[Position[cols,col][[1,1,1]]]
 ];
 
 
