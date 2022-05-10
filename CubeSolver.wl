@@ -2,6 +2,7 @@
 
 BeginPackage["CubeSolver`"];
 SolveCube::usage="";
+OrientCube::usage = "";
 
 
 (* ::Section:: *)
@@ -108,14 +109,18 @@ backFaceColor := First[cube3DPieces[[getPos[cube3DPieces,cube3DPieces,{0,0,-1}]]
 (*Orientazione corretta del cubo*)
 
 
-While[frontFaceColor != "G" && frontFaceColor != "Y", cube3DPieces = RotateY[cube3DPieces]];
-
-If[frontFaceColor == "G",
-	While[topFaceColor != "Y", cube3DPieces = RotateZ[cube3DPieces]],
-	While[topFaceColor != "Y", cube3DPieces = RotateX[cube3DPieces]]
-];
-
-While[frontFaceColor != "G", cube3DPieces = RotateY[cube3DPieces]];
+OrientCube[] :=
+	Module[{},
+		While[frontFaceColor != "B" && frontFaceColor != "Y", cube3DPieces 
+			= RotateY[cube3DPieces]];
+		If[frontFaceColor == "B",
+			While[topFaceColor != "Y", cube3DPieces = RotateZ[cube3DPieces]]
+			,
+			While[topFaceColor != "Y", cube3DPieces = RotateX[cube3DPieces]]
+		];
+		While[frontFaceColor != "B", cube3DPieces = RotateY[cube3DPieces]];
+			
+	];
 
 
 (* ::Subsubsection:: *)
@@ -210,6 +215,7 @@ setSFDaisy[SFWhiteEdge_]:=(
 	 quante UP servono e faccio la mossa giusta per portarlo in alto con setSFDaisy
 *)
 WhiteCross[] := Module[{},
+	OrientCube[];
 	While[Length[leftEdges] != 0,
 		{col1,col2,col3}= First[cube3DPieces[[getCube[cube3DPieces,First[leftEdges]]]]]["colors"];
 		edge:= First[cube3DPieces[[getColSort[cube3DPieces,cube3DPieces,col1,col2,col3]]]];
