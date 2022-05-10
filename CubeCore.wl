@@ -61,6 +61,8 @@ ExtractNotFace::usage = ""
 
 
 DelOut::usage = ""
+GenerateRandomMoves::usage = ""
+OptimizeMoveString::usage = ""
 
 
 cube3DPieces = ""
@@ -247,7 +249,7 @@ ExtractNotFace[cube_, face_] :=
 (*Definizione delle funzioni per la gestione del cubo di Rubik*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Operazioni ausiliarie*)
 
 
@@ -319,7 +321,7 @@ RotateAllPieces[cube_, matrix_] :=
     Map[RotatePiece[#, matrix]&, cube];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Operazioni standard*)
 
 
@@ -334,28 +336,40 @@ RotateAllPieces[cube_, matrix_] :=
 (* 
 	In base alla funzione richiamata, viene effettuata una rotazione completa del cubo lungo l'asse specificato.
 *)
-RotateX[cube_]:=Module[{},
-	AppendTo[solutionMoves,"X"];
+RotateX[cube_, isSolve_:True]:=Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"X"];
+	];
 	RotateAllPieces[cube,ROTYZCW]
 ];
-RotateXi[cube_]:=Module[{},
-	AppendTo[solutionMoves,"Xi"];
+RotateXi[cube_,isSolve_:True]:=Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Xi"];
+		];
 	RotateAllPieces[cube,ROTYZCC]
 ];
-RotateY[cube_]:=Module[{},
-	AppendTo[solutionMoves,"Y"];
+RotateY[cube_,isSolve_:True]:=Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Y"];
+		];
 	RotateAllPieces[cube,ROTXZCW]
 ];
-RotateYi[cube_]:=Module[{},
-	AppendTo[solutionMoves,"Yi"];
+RotateYi[cube_,isSolve_:True]:=Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Yi"];
+		];
 	RotateAllPieces[cube,ROTXZCC]
 ];
-RotateZ[cube_]:=Module[{},
-	AppendTo[solutionMoves,"Z"];
+RotateZ[cube_,isSolve_:True]:=Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Z"];
+		];
 	RotateAllPieces[cube,ROTXYCW]
 ];
-RotateZi[cube_]:=Module[{},
-	AppendTo[solutionMoves,"Zi"];
+RotateZi[cube_,isSolve_:True]:=Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Zi"];
+		];
 	RotateAllPieces[cube,ROTXYCC]
 ];
 
@@ -368,63 +382,87 @@ RotateZi[cube_]:=Module[{},
 	In base alla funzione richiamata, sul cubo viene applicata una differente rotazione ad una faccia 
 *)
 
-RotateL[cube_] := Module[{},
-	AppendTo[solutionMoves,"L"];
+RotateL[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"L"];
+	];
 	RotateFace[cube, LEFT, ROTYZCC]
 ];
 
-RotateLi[cube_] := Module[{},
-	AppendTo[solutionMoves,"Li"];
+RotateLi[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Li"];
+	];
 	RotateFace[cube, LEFT, ROTYZCW]
 ];
 
-RotateR[cube_] := Module[{},
-	AppendTo[solutionMoves,"R"];
+RotateR[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"R"];
+	];
 	RotateFace[cube, RIGHT, ROTYZCW]
 ];
 
-RotateRi[cube_] := Module[{},
-	AppendTo[solutionMoves,"Ri"];
+RotateRi[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Ri"];
+	];
 	RotateFace[cube, RIGHT, ROTYZCC]
 ];
 
-RotateU[cube_] := Module[{},
-	AppendTo[solutionMoves,"U"];
+RotateU[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"U"];
+	];
 	RotateFace[cube, UP, ROTXZCW]
 ];
 
-RotateUi[cube_] := Module[{},
-	AppendTo[solutionMoves,"Ui"];
+RotateUi[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Ui"];
+	];
 	RotateFace[cube, UP, ROTXZCC]
 ];
 
-RotateD[cube_] := Module[{},
-	AppendTo[solutionMoves,"D"];
+RotateD[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"D"];
+	];
 	RotateFace[cube, DOWN, ROTXZCC]
 ];
 
-RotateDi[cube_] := Module[{},
-	AppendTo[solutionMoves,"Di"];
+RotateDi[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Di"];
+	];
 	RotateFace[cube, DOWN, ROTXZCW]
 ];
 
-RotateF[cube_] := Module[{},
-	AppendTo[solutionMoves,"F"];
+RotateF[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"F"];
+	];
 	RotateFace[cube, FRONT, ROTXYCW]
 ];
 
-RotateFi[cube_] := Module[{},
-	AppendTo[solutionMoves,"Fi"];
+RotateFi[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Fi"];
+	];
 	RotateFace[cube, FRONT, ROTXYCC]
 ];
 
-RotateB[cube_] := Module[{},
-	AppendTo[solutionMoves,"B"];
+RotateB[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"B"];
+	];
 	RotateFace[cube, BACK, ROTXYCC]
 ];
 
-RotateBi[cube_] := Module[{},
-	AppendTo[solutionMoves,"Bi"];
+RotateBi[cube_,isSolve_:True] := Module[{},
+	If[SameQ[isSolve, True],
+		AppendTo[solutionMoves,"Bi"];
+	];
 	RotateFace[cube, BACK, ROTXYCW]
 ];
 
@@ -437,6 +475,57 @@ DelOut[] := Module[{},
 	SelectionMove[EvaluationCell[],Next,GeneratedCell];
 	NotebookDelete[];
 ];
+
+
+GenerateRandomMoves[nMoves_:25] := Module[{l},
+	 l = RandomChoice[{"L","R","U","D","F","B","Li","Ri","Ui","Di","Fi","Bi"},nMoves];
+	(* Ottimizzare la lista prodotta *)
+	Return[l]
+];
+
+
+(* ::Section:: *)
+(*Ottimizzazione delle mosse*)
+
+
+DeleteUseless[list_]:= Module[{},
+	If[Length[list]!=4,list,{}]
+];
+
+
+OptimizeMove[list_] :=
+	Module[{},
+		If[Length[list] == 3,
+			If[Length[First[Characters[list]]] == 1,
+				First[list] <> "i"
+				,
+				Characters[First[list]][[1]]
+			]
+			,
+			list
+		]
+	];
+
+
+OptimizeMoveString[codeString_] :=
+	Module[{tmp},
+		If[SameQ[codeString, None],
+			codeString = solutionMoves
+		];
+		(* Divido la lista in sottoliste di elementi uguali consecutivi *)
+		tmp = Split[codeString];
+		(* Divido ogni sottolista in sottoliste di lunghezza massima 4 *)
+		tmp = Map[Partition[#, UpTo[4]]&, tmp];
+		(* Appiattisco la lista di liste *)
+		tmp = Flatten[tmp, 1];
+		(* Applico DeleteUseless alle sottoliste *)
+		tmp = Map[DeleteUseless, tmp];
+		(* Applico Optimize alle sottoliste *)
+		tmp = Map[OptimizeMove, tmp];
+		(* Appiattisco la lista di liste *)
+		tmp = Flatten[tmp];
+		tmp
+	];
 
 
 (* ::Section::Closed:: *)
