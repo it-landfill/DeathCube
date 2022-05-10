@@ -2,6 +2,7 @@
 
 BeginPackage["CubeSolver`"];
 SolveCube::usage="";
+OrientCube::usage = "";
 
 
 (* ::Section:: *)
@@ -110,14 +111,14 @@ backFaceColor := First[cube3DPieces[[getPos[cube3DPieces,cube3DPieces,{0,0,-1}]]
 
 OrientCube[] :=
 	Module[{},
-		While[frontFaceColor != "G" && frontFaceColor != "Y", cube3DPieces 
+		While[frontFaceColor != "B" && frontFaceColor != "Y", cube3DPieces 
 			= RotateY[cube3DPieces]];
-		If[frontFaceColor == "G",
+		If[frontFaceColor == "B",
 			While[topFaceColor != "Y", cube3DPieces = RotateZ[cube3DPieces]]
 			,
 			While[topFaceColor != "Y", cube3DPieces = RotateX[cube3DPieces]]
 		];
-		While[frontFaceColor != "G", cube3DPieces = RotateY[cube3DPieces]];
+		While[frontFaceColor != "B", cube3DPieces = RotateY[cube3DPieces]];
 			
 	];
 
