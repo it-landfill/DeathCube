@@ -4,16 +4,33 @@ BeginPackage["CubeColors`"]
 
 
 CharToColor::usage = ""
+ColorToChar::usage = ""
 
 
 CubeStringToColorList::usage = ""
+GetCurrentColorScheme::usage = ""
 
 
 Begin["`Private`"]
 
 
-(* ::Subsection:: *)
-(*Map da lettere a colori*)
+(* ::Section:: *)
+(*Definizione colori*)
+
+
+colorScheme1 = <| "R" -> Red, "O" -> Orange, "G" -> Green, "B"-> Blue, "W" -> White, "Y" -> Yellow, "T" -> Transparent|>;
+currentColorScheme = colorScheme1;
+
+
+(* ::Section:: *)
+(*Getter e Setter*)
+
+
+GetCurrentColorScheme[] := Return[currentColorScheme];
+
+
+(* ::Section:: *)
+(*Map tra lettere e colori*)
 
 
 (* ::Subsubsection:: *)
@@ -31,7 +48,14 @@ cubeColors = <| "L" ->  Orange,"R" ->Red,"F"->Green, "B"-> Blue,"U"-> White, "D"
 (*TODO: I colori devono essere parametrici (Opzione Daltonismo)*)
 
 
-CharToColor[char_] := Switch[char,"W",White,"R", Red, "B", Blue, "O", Orange, "G", Green, "Y", Yellow, _, Black];
+CharToColor[char_] := Module[{},
+	Return[currentColorScheme[[char]]]
+];
+
+
+ColorToChar[col_] := Module[{},
+	Return[Position[currentColorScheme,col][[1,1,1]]]
+];
 
 
 (* ::Subsubsection:: *)
@@ -40,6 +64,10 @@ CharToColor[char_] := Switch[char,"W",White,"R", Red, "B", Blue, "O", Orange, "G
 
 CubeStringToColorList[cube_] :=
 	Table[CharToColor[c], {c, Characters[cube]}];
+
+
+(* ::Section:: *)
+(*End Package*)
 
 
 End[]
