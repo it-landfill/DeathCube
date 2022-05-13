@@ -11,6 +11,7 @@ FindMatchingCubeCode::usage = ""
 VisualizeColorPickerBox::usage = ""
 VisualizeInput2DCube::usage = ""
 Cube2DToString::usage = ""
+ValidateCubeInput::usage = ""
 
 
 (* ::Section:: *)
@@ -18,6 +19,8 @@ Cube2DToString::usage = ""
 
 
 Begin["`Private`"]
+Get["CubeSolver.wl"]
+Get["CubeCore.wl"]
 
 
 (* ::Section:: *)
@@ -26,6 +29,7 @@ Begin["`Private`"]
 
 colors = {White, Green, Orange, Red, Blue, Yellow};
 currentColor = Transparent;
+cube;
 (* TODO: Replace con blind mode *)
 
 
@@ -225,24 +229,13 @@ VisualizeInput2DCube[] := Module[{},
 (*Validazione del cube*)
 
 
-(*
-TODO:
-*)
-ValidateCubeInput[cubePieces] := Module[{},
-	tuttoOk = True;
-	For[i = 1, i < Length[cube3DPieces], i++,
- If[Length[
-     DeleteDuplicates[
-      getColSort[ cube3DPieces, cube3DPieces, 
-       cubePieces[[i]]["colors"][[1]], 
-       cubePieces[[i]]["colors"][[2]], 
-       cubePieces[[i]]["colors"][[3]]
-      ]
-     ]
-    ] != 1, 
-  tuttoOk = False]
- ];
-	Return[tuttoOk];
+ValidateCubeInput[] := Module[{ solvedCube, solvedCubeSorted, cube, cubeSorted},
+	solvedCube = GetPieces[sampleStrings[["solved"]]];
+	solvedCubeSorted = Sort[Map[Sort[#[["colors"]]]&,solvedCube]];
+	cube = GetPieces[Cube2DToString[]];
+	cubeSorted = Sort[Map[Sort[#[["colors"]]]&,cube]];az
+
+	Return[SameQ[solvedCubeSorted,cubeSorted]];
 ];
 
 
@@ -250,16 +243,16 @@ ValidateCubeInput[cubePieces] := Module[{},
 (*Conversione da Cubo 2D a stringa*)
 
 
-Cube2DToString[cube2D_] := Module[{cubeCols = {}, cubeString = "", cube},
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,8}][[1,1]],2]],{x,3,5}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,7}][[1,1]],2]],{x,3,5}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,6}][[1,1]],2]],{x,3,5}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,5}][[1,1]],2]],{x,0,11}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,4}][[1,1]],2]],{x,0,11}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,3}][[1,1]],2]],{x,0,11}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,2}][[1,1]],2]],{x,3,5}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,1}][[1,1]],2]],{x,3,5}]];
-	AppendTo[cubeCols, Table[cube2D[[Position[cube2D,{x,0}][[1,1]],2]],{x,3,5}]];
+Cube2DToString[] := Module[{cubeCols = {}, cubeString = ""},
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,8}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,7}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,6}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,5}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,4}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,3}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,2}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,1}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,0}][[1,1]],2]],{x,3,5}]];
 	cubeCols = Flatten[cubeCols];
 	cubeString = Map[ColorToChar, cubeCols];
 	cubeString = StringJoin[cubeString];
