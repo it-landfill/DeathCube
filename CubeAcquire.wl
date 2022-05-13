@@ -4,14 +4,14 @@ BeginPackage["CubeAcquire`"]
 
 
 (* Metodi *)
-VerifyCubeColorNumber::usage = ""
-VisualizeColorPickerBox::usage = ""
-VisualizeInput2DCube::usage = ""
-Cube2DToString::usage = ""
-ValidateCubeInput::usage = ""
+VerifyStringColorNumber::usage = "Verifica che il numero di caratteri uguali nella stringa sia pari a 9, ovvero che nella stringa ogni colore sia riportato esattamente 9 volte."
+VisualizeColorPickerBox::usage = "Generazione del panel che contiene il selettore per il colore che l'utente vuole inserire."
+VisualizeInput2DCube::usage = "Visualizzazione del cubo 2D di input."
+ValidateCubeInput::usage = "Validazione del cubo salvato nella variabile cube."
+Cube2DToString::usage = "Conversione del cubo2D in una stringa."
 
 (* Variabili *)
-sampleStrings::usage = ""
+sampleStrings::usage = "Stringhe di esempio"
 
 
 (* ::Section:: *)
@@ -19,17 +19,22 @@ sampleStrings::usage = ""
 
 
 Begin["`Private`"]
+
+
+(* ::Subsection:: *)
+(*Import dei package utilizzati*)
+
+
 Get["CubeColors.wl"]
 Get["CubeCore.wl"]
 
 
 (* ::Section:: *)
-(*Variabili*)
+(*Definizione variabili*)
 
 
 (* Set di colori per il cubo *)
-(* TODO: Replace con blind mode *)
-colors = {White, Green, Orange, Red, Blue, Yellow};
+colors = GetCurrentColorScheme[];
 (* Colore attualmente selezionato tramite color picker *)
 currentColor = Transparent;
 (* Rappresentazione del cubo 2D *)
@@ -52,10 +57,11 @@ sampleStrings = <|"solved" -> "WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYY
 (*Verifica validit\[AGrave] della stringa*)
 
 
-VerifyCubeColorNumber[cube_] := Module[{characterList},
+(* Verifica che il numero di caratteri uguali nella stringa sia pari a 9, ovvero che nella stringa ogni colore sia riportato esattamente 9 volte. *)
+VerifyStringColorNumber[cube_] := Module[{characterList},
 		characterList = CharacterCounts[cube];
 		Max[characterList] == Min[characterList] == 9
-	];
+];
 
 
 (* ::Section:: *)
@@ -82,12 +88,12 @@ GenColorPickerColBox[coord_, color_] :=
 (* Genera il selettore di colori, ovvero il rettangolo contenente i colori tra cui scegliere *)
 GenColorPickerBox[colors] :=
 	Module[{colorBox = {}},
-		AppendTo[colorBox, GenColorPickerColBox[{0, 0}, colors[[1]]]];
-		AppendTo[colorBox, GenColorPickerColBox[{1, 0}, colors[[2]]]];
-		AppendTo[colorBox, GenColorPickerColBox[{2, 0}, colors[[3]]]];
-		AppendTo[colorBox, GenColorPickerColBox[{0, 1}, colors[[4]]]];
-		AppendTo[colorBox, GenColorPickerColBox[{1, 1}, colors[[5]]]];
-		AppendTo[colorBox, GenColorPickerColBox[{2, 1}, colors[[6]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{0, 0}, colors[["R"]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{1, 0}, colors[["O"]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{2, 0}, colors[["G"]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{0, 1}, colors[["B"]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{1, 1}, colors[["W"]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{2, 1}, colors[["Y"]]]];
 		Return[colorBox]
 	];
 
@@ -96,22 +102,22 @@ GenColorPickerBox[colors] :=
 (*Visualizzazione*)
 
 
-(* Genero il visualizzatore del selettore *)
+(* Generazione del panel che contiene il selettore per il colore che l'utente vuole inserire *)
 VisualizeColorPickerBox[] :=
 	Module[{picker, pickerTitle, current, currentTitle, col1, col2},
-		(* Genero la colonna del color picker *)
+		(* Generazione della colonna del color picker *)
 		pickerTitle = "Color Picker";
 		picker = GenColorPickerBox[colors];
 		col1 = Column[{Style[pickerTitle, {25, Red, Bold}], Graphics[picker,
 			 ImageSize -> Medium]}];
 			 
-		(* Genero la colonna del current color *)
+		(* Generazione della colonna del current color *)
 		currentTitle = "Current Color";
 		current = {Dynamic[currentColor], EdgeForm[Thick], Rectangle[]};
 		col2 = Column[{Style[currentTitle, {25, Red, Bold}], Graphics[current,
 			 ImageSize -> Tiny]}];
 			 
-		(* Stampo il panel composto dalle 2 colonne generate sopra *)
+		(* Stampa il panel composto dalle 2 colonne generate sopra *)
 		Print[Panel[Row[{col1, col2}]]]
 	];
 
@@ -124,7 +130,7 @@ VisualizeColorPickerBox[] :=
 (*Generazione*)
 
 
-(* Genero un rettangolo di lato 1 con angolo in posizione coord e colore col *)
+(* Generazione di un rettangolo di lato 1 con angolo in posizione coord e colore col *)
 GenRect[rect_, col_] := Module[{},
 	Style[Rectangle[rect],{col,EdgeForm[Thick]}]
 ];
@@ -176,12 +182,12 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
 		Left  = 23,
 		Right = 29	
 	*)
-	points[[5]][[2]] =colors[[1]];  (* Up *)
-	points[[26]][[2]] =colors[[2]]; (* Front *)
-	points[[23]][[2]] =colors[[3]]; (* Left *)
-	points[[29]][[2]] =colors[[4]]; (* Right *)
-	points[[32]][[2]] =colors[[5]]; (* Back *)
-	points[[50]][[2]] =colors[[6]]; (* Down *)
+	points[[5]][[2]] =colors[["W"]];  (* Up *)
+	points[[26]][[2]] =colors[["B"]]; (* Front *)
+	points[[23]][[2]] =colors[["R"]]; (* Left *)
+	points[[29]][[2]] =colors[["O"]]; (* Right *)
+	points[[32]][[2]] =colors[["G"]]; (* Back *)
+	points[[50]][[2]] =colors[["Y"]]; (* Down *)
 	Return[points];
 ];
 
@@ -190,7 +196,7 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
 (*Visualizzazione*)
 
 
-(* Visualizzo il cubo 2D di input *)
+(* Visualizzazione del cubo 2D di input *)
 VisualizeInput2DCube[] := Module[{background = LightGray},
 	(* Genero la struttura di base. cube \[EGrave] una variabile globale al modulo *)
 	cube = GenerateBaseCubeStruct[];
@@ -204,7 +210,7 @@ VisualizeInput2DCube[] := Module[{background = LightGray},
 
 
 (*
-	Valido il cubo salvato nella variabile cube.
+	Validazione del cubo salvato nella variabile cube.
 	Per validare il cubo, confronto le triple di colori ordinate del cubo da validare con quelle del cubo risolto.
 	Questa validazione non copre tutti i casi, controlla solo la correttezza dei singoli sotto cubi.
 	I casi restanti vengono identificati tramite l'inabilit\[AGrave] di risolvere il cubo in un numero fissato di mosse massime.
@@ -232,7 +238,7 @@ ValidateCubeInput[] := Module[{solvedCube, solvedCubeSorted, cube, cubeSorted},
 (*Conversione da Cubo 2D a stringa*)
 
 
-(* Converto il cubo2D in una stringa rappresentante il cubo *)
+(* Conversione del cubo2D in una stringa *)
 Cube2DToString[] := Module[{cubeCols = {}, cubeString = ""},
 (* Genero la stringa rappresentante il cubo *)
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,8}][[1,1]],2]],{x,3,5}]];

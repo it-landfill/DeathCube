@@ -8,6 +8,7 @@ ColorToChar::usage = ""
 
 
 CubeStringToColorList::usage = ""
+GetCurrentColorScheme::usage = ""
 
 
 Begin["`Private`"]
@@ -19,6 +20,13 @@ Begin["`Private`"]
 
 colorScheme1 = <| "R" -> Red, "O" -> Orange, "G" -> Green, "B"-> Blue, "W" -> White, "Y" -> Yellow, "T" -> Transparent|>;
 currentColorScheme = colorScheme1;
+
+
+(* ::Section:: *)
+(*Getter e Setter*)
+
+
+GetCurrentColorScheme[] := Return[currentColorScheme];
 
 
 (* ::Section:: *)
@@ -56,6 +64,10 @@ ColorToChar[col_] := Module[{},
 
 CubeStringToColorList[cube_] :=
 	Table[CharToColor[c], {c, Characters[cube]}];
+
+
+(* ::Section:: *)
+(*End Package*)
 
 
 End[]
