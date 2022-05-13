@@ -3,15 +3,15 @@
 BeginPackage["CubeAcquire`"]
 
 
-sampleStrings::usage = ""
+(* Metodi *)
 VerifyCubeColorNumber::usage = ""
-FindMatchingCubeCode::usage = ""
-
-
 VisualizeColorPickerBox::usage = ""
 VisualizeInput2DCube::usage = ""
 Cube2DToString::usage = ""
 ValidateCubeInput::usage = ""
+
+(* Variabili *)
+sampleStrings::usage = ""
 
 
 (* ::Section:: *)
@@ -19,7 +19,7 @@ ValidateCubeInput::usage = ""
 
 
 Begin["`Private`"]
-Get["CubeSolver.wl"]
+Get["CubeColors.wl"]
 Get["CubeCore.wl"]
 
 
@@ -27,10 +27,13 @@ Get["CubeCore.wl"]
 (*Variabili*)
 
 
-colors = {White, Green, Orange, Red, Blue, Yellow};
-currentColor = Transparent;
-cube;
+(* Set di colori per il cubo *)
 (* TODO: Replace con blind mode *)
+colors = {White, Green, Orange, Red, Blue, Yellow};
+(* Colore attualmente selezionato tramite color picker *)
+currentColor = Transparent;
+(* Rappresentazione del cubo 2D *)
+cube;
 
 
 (* ::Section:: *)
@@ -49,8 +52,7 @@ sampleStrings = <|"solved" -> "WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYY
 (*Verifica validit\[AGrave] della stringa*)
 
 
-VerifyCubeColorNumber[cube_] :=
-	Module[{characterList},
+VerifyCubeColorNumber[cube_] := Module[{characterList},
 		characterList = CharacterCounts[cube];
 		Max[characterList] == Min[characterList] == 9
 	];
@@ -61,61 +63,11 @@ VerifyCubeColorNumber[cube_] :=
 
 
 (* ::Subsection:: *)
-(*Data una lista di colori, ritorno il blocco corrispondente*)
-
-
-(* ::Text:: *)
-(*TODO: Mappare indici a quelli definiti su funzioni Get**)
-(*TODO2: Mi serve a qualcosa?*)
-
-
-FindMatchingCubeCode[cols_] := Module[{},
-   (*Angoli*)
-   corners = Association[{
-		Sort[{White, Blue, Red}] -> 1,
-		Sort[{White, Green, Red}] -> 2,
-		Sort[{White, Blue, Orange}] -> 3,
-		Sort[{White, Green, Orange}] -> 4,
-		Sort[{Blue, Red, Yellow}] -> 5,
-		Sort[{Green, Red, Yellow}] -> 6,
-		Sort[{Yellow, Orange, Green}] -> 7,
-		Sort[{Blue, Orange, Yellow}] -> 8
-   }];
-	(*Lati*)
-	sides = Association[{
-		Sort[{White, Blue}] -> 9,
-		Sort[{White, Red}] -> 10,
-		Sort[{White, Green}] -> 11,
-		Sort[{White, Orange}] -> 12,
-		Sort[{Red, Blue}] -> 13,
-		Sort[{Red, Green}] -> 14,
-		Sort[{Orange, Blue}] -> 15,
-		Sort[{Orange, Green}] -> 16,
-		Sort[{Green, Yellow}] -> 17,
-		Sort[{Blue, Yellow}] -> 18,
-		Sort[{Red, Yellow}] -> 19,
-		Sort[{Yellow, Orange}] -> 20
-	}];
-	(*Centri*)
-	centers = Association[{
-		{White} -> 21,
-		{Red} -> 22,
-		{Orange} -> 23,
-		{Blue} -> 24,
-		{Yellow} -> 25,
-		{Green} -> 26
-	}];
-
-	Switch[Length[cols], 1, centers[Sort[cols]], 2, sides[Sort[cols]], 3, corners[Sort[cols]], _, -1]
-];
-
-
-(* ::Subsection:: *)
-(*Acquisizione con color picker*)
+(*Color picker*)
 
 
 (* ::Subsubsection:: *)
-(*Generazione color picker*)
+(*Generazione*)
 
 
 (* Genera i singoli bottoni con rettangolo di colore specificato *)
@@ -127,67 +79,85 @@ GenColorPickerColBox[coord_, color_] :=
 	];
 
 
-(* Genera il selettore di colori *)
-GenColorPickerBox[colors] := Module[{colorBox = {}},
-AppendTo[colorBox,GenColorPickerColBox[{0,0},colors[[1]]]];
-AppendTo[colorBox,GenColorPickerColBox[{1,0},colors[[2]]]];
-AppendTo[colorBox,GenColorPickerColBox[{2,0},colors[[3]]]];
-AppendTo[colorBox,GenColorPickerColBox[{0,1},colors[[4]]]];
-AppendTo[colorBox,GenColorPickerColBox[{1,1},colors[[5]]]];
-AppendTo[colorBox,GenColorPickerColBox[{2,1},colors[[6]]]];
-colorBox
-];
+(* Genera il selettore di colori, ovvero il rettangolo contenente i colori tra cui scegliere *)
+GenColorPickerBox[colors] :=
+	Module[{colorBox = {}},
+		AppendTo[colorBox, GenColorPickerColBox[{0, 0}, colors[[1]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{1, 0}, colors[[2]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{2, 0}, colors[[3]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{0, 1}, colors[[4]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{1, 1}, colors[[5]]]];
+		AppendTo[colorBox, GenColorPickerColBox[{2, 1}, colors[[6]]]];
+		Return[colorBox]
+	];
+
+
+(* ::Subsubsection:: *)
+(*Visualizzazione*)
 
 
 (* Genero il visualizzatore del selettore *)
 VisualizeColorPickerBox[] :=
 	Module[{picker, pickerTitle, current, currentTitle, col1, col2},
-		currentColor = Transparent;
+		(* Genero la colonna del color picker *)
 		pickerTitle = "Color Picker";
 		picker = GenColorPickerBox[colors];
 		col1 = Column[{Style[pickerTitle, {25, Red, Bold}], Graphics[picker,
 			 ImageSize -> Medium]}];
+			 
+		(* Genero la colonna del current color *)
 		currentTitle = "Current Color";
 		current = {Dynamic[currentColor], EdgeForm[Thick], Rectangle[]};
 		col2 = Column[{Style[currentTitle, {25, Red, Bold}], Graphics[current,
 			 ImageSize -> Tiny]}];
+			 
+		(* Stampo il panel composto dalle 2 colonne generate sopra *)
 		Print[Panel[Row[{col1, col2}]]]
 	];
 
 
+(* ::Subsection:: *)
+(*Cubo 2D*)
+
+
 (* ::Subsubsection:: *)
-(*Generazione del cubo 2D*)
-
-
-ClickHandler[coord_] := Module[{}, 
-(* Trovo l'idice dell'elemento con coordinate specificate nella lista cube *)
-ind = Position[cube,coord][[1]][[1]];
-(* Se il cubo \[EGrave] un centro, non lo modifico, altrimenti aggiorno il colore del centro *)
-If[ContainsAny[{5,23,26,29,32,50},{ind}]==False,
-cube[[ind]][[2]] = currentColor;
-]
-];
+(*Generazione*)
 
 
 (* Genero un rettangolo di lato 1 con angolo in posizione coord e colore col *)
 GenRect[rect_, col_] := Module[{},
-Style[Rectangle[rect],{col,EdgeForm[Thick]}]
+	Style[Rectangle[rect],{col,EdgeForm[Thick]}]
+];
+
+
+(* 
+	Funzione che verr\[AGrave] richiamata quando l'utente preme su uno dei cubi.
+	La funzione su occupa di aggiornare il colore del cubo selezionato, ponendolo uguale al currentColor 
+ *)
+ClickHandler[coord_] := Module[{ind}, 
+	(* Trovo l'indice dell'elemento con coordinate coord nella lista cube *)
+	ind = Position[cube,coord][[1]][[1]];
+	(* Se il cubo \[EGrave] un centro, non lo modifico, altrimenti aggiorno il colore del centro *)
+	If[ContainsAny[{5,23,26,29,32,50},{ind}]==False,
+		cube[[ind]][[2]] = currentColor;
+	]
 ];
 
 
 (* Genero il bottone wrapper al rettangolo. Quando premuto chiama ClickHandler con le coordinate del rettangolo *) 
-GenBtn[rectStr_] := Module[{coord, col},
-coord = rectStr[[1]];
-col = rectStr[[2]];
-(* Genero il rettangolo *)
-r = GenRect[coord,col];
-Button[r,ClickHandler[coord]]
+GenBtn[rectStr_] := Module[{coord, col, r},
+	coord = rectStr[[1]];
+	col = rectStr[[2]];
+	(* Genero il rettangolo *)
+	r = GenRect[coord,col];
+	(* Genero il bottone *)
+	Button[r,ClickHandler[coord]]
 ];
 
 
-(* Genero la lista di rettangoli composta da coordinate, colore *)
+(* Genero la lista di rettangoli composta da coordinata, colore *)
 GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
-	(* Genero i rettangoli del mio cubo aperto *)
+	(* Genero una lista di rettangoli rappresentante il cubo aperto e di colore defaultColor *)
 	points=Join[points,Table[{{x,8},defaultColor},{x,3,5}]];
 	points=Join[points,Table[{{x,7},defaultColor},{x,3,5}]];
 	points=Join[points,Table[{{x,6},defaultColor},{x,3,5}]];
@@ -198,52 +168,73 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
 	points=Join[points,Table[{{x,1},defaultColor},{x,3,5}]];
 	points=Join[points,Table[{{x,0},defaultColor},{x,3,5}]];
 
-(* Imposto manualmente i colori dei centri:
- F = 26,
-	B= 32,
-	U = 5,
-	D = 50,
-	L = 23,
-	R = 29	
- *)
-points[[5]][[2]] =colors[[1]]; (* Up *)
-points[[26]][[2]] =colors[[2]]; (* Front *)
-points[[23]][[2]] =colors[[3]]; (* Left *)
-points[[29]][[2]] =colors[[4]]; (* Right *)
-points[[32]][[2]] =colors[[5]]; (* Back *)
-points[[50]][[2]] =colors[[6]];(* Down *)
-points
-];
-
-
-(* Visualizzo il cubo 2D di input *)
-VisualizeInput2DCube[] := Module[{},
-	(* Genero la struttura di base *)
-	cube = GenerateBaseCubeStruct[];
-	(* Stampo il cubo 2D *)
-	Graphics[Dynamic[Map[GenBtn,cube]], Background->LightGray]
+	(* Imposto manualmente i colori dei centri:
+		Front = 26,
+		Back  = 32,
+		Up    = 5,
+		Down  = 50,
+		Left  = 23,
+		Right = 29	
+	*)
+	points[[5]][[2]] =colors[[1]];  (* Up *)
+	points[[26]][[2]] =colors[[2]]; (* Front *)
+	points[[23]][[2]] =colors[[3]]; (* Left *)
+	points[[29]][[2]] =colors[[4]]; (* Right *)
+	points[[32]][[2]] =colors[[5]]; (* Back *)
+	points[[50]][[2]] =colors[[6]]; (* Down *)
+	Return[points];
 ];
 
 
 (* ::Subsubsection:: *)
-(*Validazione del cube*)
+(*Visualizzazione*)
 
 
-ValidateCubeInput[] := Module[{ solvedCube, solvedCubeSorted, cube, cubeSorted},
+(* Visualizzo il cubo 2D di input *)
+VisualizeInput2DCube[] := Module[{background = LightGray},
+	(* Genero la struttura di base. cube \[EGrave] una variabile globale al modulo *)
+	cube = GenerateBaseCubeStruct[];
+	(* Stampo il cubo 2D *)
+	Graphics[Dynamic[Map[GenBtn,cube]], Background->background]
+];
+
+
+(* ::Subsubsection:: *)
+(*Validazione*)
+
+
+(*
+	Valido il cubo salvato nella variabile cube.
+	Per validare il cubo, confronto le triple di colori ordinate del cubo da validare con quelle del cubo risolto.
+	Questa validazione non copre tutti i casi, controlla solo la correttezza dei singoli sotto cubi.
+	I casi restanti vengono identificati tramite l'inabilit\[AGrave] di risolvere il cubo in un numero fissato di mosse massime.
+*)
+ValidateCubeInput[] := Module[{solvedCube, solvedCubeSorted, cube, cubeSorted},
+	(* Cubo risolto di riferimento per la validazione *)
 	solvedCube = GetPieces[sampleStrings[["solved"]]];
+	(* Genero una lista ordinata contenente le triple contenenti i colori ordinati del cubo risolto *)
 	solvedCubeSorted = Sort[Map[Sort[#[["colors"]]]&,solvedCube]];
+	(* Cubo da validare *)
 	cube = GetPieces[Cube2DToString[]];
-	cubeSorted = Sort[Map[Sort[#[["colors"]]]&,cube]];az
-
+	(* Genero una lista ordinata contenente le triple contenenti i colori ordinati del cubo da validare *)
+	cubeSorted = Sort[Map[Sort[#[["colors"]]]&,cube]];
+	
+	(* Se le liste di triple corrispondono, allora il cubo \[EGrave] valido e ritorno True *)
 	Return[SameQ[solvedCubeSorted,cubeSorted]];
 ];
 
 
-(* ::Subsubsection:: *)
+(* ::Section:: *)
+(*Utilities*)
+
+
+(* ::Subsection:: *)
 (*Conversione da Cubo 2D a stringa*)
 
 
+(* Converto il cubo2D in una stringa rappresentante il cubo *)
 Cube2DToString[] := Module[{cubeCols = {}, cubeString = ""},
+(* Genero la stringa rappresentante il cubo *)
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,8}][[1,1]],2]],{x,3,5}]];
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,7}][[1,1]],2]],{x,3,5}]];
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,6}][[1,1]],2]],{x,3,5}]];
@@ -254,13 +245,10 @@ Cube2DToString[] := Module[{cubeCols = {}, cubeString = ""},
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,1}][[1,1]],2]],{x,3,5}]];
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,0}][[1,1]],2]],{x,3,5}]];
 	cubeCols = Flatten[cubeCols];
+	(* Converto i colori nelle corrispettive lettere rappresentative *)
 	cubeString = Map[ColorToChar, cubeCols];
 	cubeString = StringJoin[cubeString];
 	Return[cubeString];
-];
-(*TODO: Rimpiazzare con funzione texture*)
-ColorToChar[col_] := Module[{cols = <| "R" -> Red, "O" -> Orange, "G" -> Green, "B"-> Blue, "W" -> White, "Y" -> Yellow, "T" -> Transparent|>},
-	Return[Position[cols,col][[1,1,1]]]
 ];
 
 
