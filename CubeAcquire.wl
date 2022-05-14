@@ -145,9 +145,9 @@ GenRect[rect_, col_] := Module[{},
 	Funzione che verr\[AGrave] richiamata quando l'utente preme su uno dei cubi.
 	La funzione su occupa di aggiornare il colore del cubo selezionato, ponendolo uguale al currentColor 
  *)
-ClickHandler[coord_] := Module[{ind}, 
+ClickHandler[coord_] := Module[{ind},
 	(* Trovo l'indice dell'elemento con coordinate coord nella lista cube *)
-	ind = Position[cube,coord][[1]][[1]];
+	Quiet[ind = Position[cube,coord][[1]][[1]]];
 	(* Se il cubo \[EGrave] un centro, non lo modifico, altrimenti aggiorno il colore del centro *)
 	If[ContainsAny[{5,23,26,29,32,50},{ind}]==False,
 		cube[[ind]][[2]] = currentColor;
@@ -160,9 +160,9 @@ GenBtn[rectStr_] := Module[{coord, col, r},
 	coord = rectStr[[1]];
 	col = rectStr[[2]];
 	(* Genero il rettangolo *)
-	r = GenRect[coord,col];
+	r = GenRect[coord, col];
 	(* Genero il bottone *)
-	Button[r,ClickHandler[coord]]
+	Button[r, ClickHandler[coord]]
 ];
 
 
@@ -206,7 +206,7 @@ VisualizeInput2DCube[] := Module[{background = LightGray},
 	(* Genero la struttura di base. cube \[EGrave] una variabile globale al modulo *)
 	cube = GenerateBaseCubeStruct[];
 	(* Stampo il cubo 2D *)
-	Graphics[Dynamic[Map[GenBtn,cube]], Background->background]
+	Graphics[Dynamic[Map[GenBtn, cube]], Background->background]
 ];
 
 
