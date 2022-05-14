@@ -3,6 +3,10 @@
 BeginPackage["CubeAcquire`"]
 
 
+(* ::Section:: *)
+(*Definizione usage*)
+
+
 (* Metodi *)
 VerifyStringColorNumber::usage = "Verifica che il numero di caratteri uguali nella stringa sia pari a 9, ovvero che nella stringa ogni colore sia riportato esattamente 9 volte."
 VisualizeColorPickerBox::usage = "Generazione del panel che contiene il selettore per il colore che l'utente vuole inserire."
@@ -25,8 +29,9 @@ Begin["`Private`"]
 (*Import dei package utilizzati*)
 
 
-Get["CubeColors.wl"]
+AppendTo[$Path, NotebookDirectory[]];
 Get["CubeCore.wl"]
+Get["CubeColors.wl"]
 
 
 (* ::Section:: *)
