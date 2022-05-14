@@ -87,6 +87,7 @@ Visualize2DCube[cube_] := Module[
 	(* 
 		Generazione delle label e delle loro coordinate che saranno inserite nel cubo 2D in modo da aiutare l'utente 
 		a comprendere la corrispondenza tra faccia e nominativo per le mosse.
+		TODO: Controllare che siano corrette le etichette confrontando con funzione di orientamento/input.
 	*)
 	{cubeLabels = Style[{
 		Text["F",{4.5,4.5}], 
@@ -110,13 +111,12 @@ Visualize2DCube[cube_] := Module[
 
 
 (* 
-	La funzione GetGraphicPiece permette di generare i singoli sotto cubi del cubo di Rubik 3D.
+	La funzione GetGraphicPiece permette di generare graficamente i singoli sotto cubi del cubo di Rubik 3D.
 *)
 GetGraphicPiece[piece_, mat_:None] := Module[
-	{pos, col},
+	{pos, col, polygons = {}, tmp, polyVert, offset},
 	pos = piece["pos"];
 	col = piece["colors"];
-	polygons = {};
 	
 	(* Generazione dei poligoni dei sotto cubi sul piano YZ *)
 	If[SameQ[col[[1]],None],
@@ -124,12 +124,16 @@ GetGraphicPiece[piece_, mat_:None] := Module[
 		Null,
 		offset = pos[[1]]/2;
 		(* Generazione dei vertici che compongono ogni poligono *)
-		polyVert = {pos+{offset,-1/2,-1/2},pos+{offset,-1/2,1/2},pos+{offset,1/2,1/2},pos+{offset,1/2,-1/2}};
+		polyVert = {pos+{offset,-1/2,-1/2}, pos+{offset,-1/2,1/2}, pos+{offset,1/2,1/2}, pos+{offset,1/2,-1/2}};
+		(* 
+			If utilizzato per l'animazione delle rotazioni delle facce.
+			Se il campo mat in input non \[EGrave] None, allora viene applicata la matrice di rotazione mat ai vertici calcolati. 
+		*)
 		If[SameQ[mat,None],
 			Null,
 			polyVert=Map[mat . #&,polyVert];
 		];
-		(* Assegnamento a tmp dei poligoni creati e dello stile grafico (colore e bordo) da applicare *)
+		(* Assegnamento a tmp del poligono creato e dello stile grafico (colore e bordo) da applicare *)
 		tmp = Polygon[polyVert];
 		tmp = Style[tmp,{CharToColor[col[[1]]],EdgeForm[{Thick,Black}]}];
 		AppendTo[polygons, tmp];
@@ -137,36 +141,30 @@ GetGraphicPiece[piece_, mat_:None] := Module[
 	
 	(* Generazione dei poligoni dei sotto cubi sul piano XZ *)
 	If[SameQ[col[[2]],None],
-		(*Se \[EGrave] null non faccio nulla*)
 		Null,
 		offset = pos[[2]]/2;
-		(* Generazione dei vertici che compongono ogni poligono *)
 		polyVert = {pos+{-1/2,offset,-1/2},pos+{-1/2,offset,1/2},pos+{1/2,offset,1/2},pos+{1/2,offset,-1/2}};
 		If[SameQ[mat,None],
 			Null,
 			polyVert=Map[mat . #&,polyVert];
 		];
-		(* Assegnamento a tmp dei poligoni creati e dello stile grafico (colore e bordo) da applicare *)
 		tmp = Polygon[polyVert];
 		tmp = Style[tmp, {CharToColor[col[[2]]],EdgeForm[{Thick,Black}]}];
-		AppendTo[polygons, Style[tmp, CharToColor[col[[2]]]]];
+		AppendTo[polygons, tmp];
 	];
 	
 	(* Generazione dei poligoni dei sotto cubi sul piano XY *)
 	If[SameQ[col[[3]],None],
-		(*Se \[EGrave] null non faccio nulla*)
 		Null,
 		offset = pos[[3]]/2;
-		(* Generazione dei vertici che compongono ogni poligono *)
 		polyVert = {pos+{-1/2,-1/2,offset},pos+{-1/2,1/2,offset},pos+{1/2,1/2,offset},pos+{1/2,-1/2,offset}};
 		If[SameQ[mat,None],
 			Null,
 			polyVert=Map[mat . #&,polyVert];
 		];
-		(* Assegnamento a tmp dei poligoni creati e dello stile grafico (colore e bordo) da applicare *)
 		tmp = Polygon[polyVert];
 		tmp = Style[tmp,CharToColor[col[[3]]]];
-		AppendTo[polygons, Style[tmp,{CharToColor[col[[3]]],EdgeForm[{Thick,Black}]}]];
+		AppendTo[polygons, tmp];
 	];
 	
 	polygons
@@ -174,8 +172,8 @@ GetGraphicPiece[piece_, mat_:None] := Module[
 
 
 (* 
-	La funzione Generate3DCube ricevendo il cubo, l'indicatore della faccia e una matrice permette di applicare 
-	la matrice ai cubi appartenenti alla faccia selezionata.
+	La funzione Generate3DCube ricevendo il cubo, (potenzialmente) l'indicatore della faccia e (potenzialmente) una matrice 
+	permette di generare graficamente il cubo 3D allo stato specificato dai parametri.
 *)
 Generate3DCube[cube_, face_:None, matrix_:None] := Module[
 	{f, nF, fC, nFC},
@@ -185,8 +183,8 @@ Generate3DCube[cube_, face_:None, matrix_:None] := Module[
 	*)
 	If[SameQ[face, None],
 		(* 
-			Se non \[EGrave] associata alcuna matrice di rotazione viene ritornato il cubo attuale, altrimenti viene tornato il cubo a 
-			cui \[EGrave] stata applicata la matrice di rotazione passata in input 
+			Se non \[EGrave] associata alcuna matrice di rotazione viene generato il cubo attuale, altrimenti viene generato il cubo a 
+			cui \[EGrave] stata applicata la matrice di rotazione passata in input.
 		*)
 		If[SameQ[matrix, None],
 			Return[Map[GetGraphicPiece, cube]];,
@@ -213,7 +211,7 @@ Generate3DCube[cube_, face_:None, matrix_:None] := Module[
 
 
 (* 
-	La funzione Visualize2DCube permette di visualizzare il cubo 3D.
+	La funzione Visualize3DCube permette di visualizzare il cubo 3D.
 *)
 Visualize3DCube[cube_] := Module[
 	(* 
