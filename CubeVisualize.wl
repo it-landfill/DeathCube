@@ -163,7 +163,7 @@ GetGraphicPiece[piece_, mat_:None] := Module[
 			polyVert=Map[mat . #&,polyVert];
 		];
 		tmp = Polygon[polyVert];
-		tmp = Style[tmp,CharToColor[col[[3]]]];
+		tmp = Style[tmp, {CharToColor[col[[3]]],EdgeForm[{Thick,Black}]}];
 		AppendTo[polygons, tmp];
 	];
 	
