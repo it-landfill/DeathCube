@@ -4,11 +4,11 @@ BeginPackage["CubeColors`"]
 
 
 (* Metodi *)
-CharToColor::usage = ""
-ColorToChar::usage = ""
-CubeStringToColorList::usage = ""
-GetCurrentColorScheme::usage = ""
-VisualizeColorSchemePicker::usage=""
+CharToColor::usage = "Map da char a colore."
+ColorToChar::usage = "Map de char a lista di colori."
+CubeStringToColorList::usage = "Map da stringa a lista di colori."
+GetCurrentColorScheme::usage = "Get della variabile contenente l'attuale schema colori."
+VisualizeColorSchemePicker::usage = "Permette di visualizzare i diversi schemi colori e richiamare, in caso di conferma, la funzione per applicare il nuovo schema colori al cubo di Rubik."
 
 
 (* ::Section:: *)
@@ -103,7 +103,7 @@ ColorToChar[col_] := Module[{},
 ];
 
 
-(* Map della stringa a lista di colori *)
+(* Map da stringa a lista di colori *)
 CubeStringToColorList[cube_] :=
 	Table[CharToColor[c], {c, Characters[cube]}];
 

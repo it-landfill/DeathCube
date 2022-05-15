@@ -8,11 +8,11 @@ BeginPackage["CubeAnimate`"]
 
 
 (* Metodi *)
-SetResolutionMoves::usage = ""
-RubikNext::usage = ""
-RubikPrev::usage = ""
-HasPrevMove::usage = ""
-HasNextMove::usage = ""
+SetResolutionMoves::usage = "Permette di caricare nella variabile privata resolutionMoves le mosse necessarie a risolvere il cubo di Rubik e resettare il contatore della mossa da eseguire."
+RubikNext::usage = "Permette di eseguire la mossa M+1 per la risoluzione del cubo di Rubik. La funzione prima di eseguire la mossa verifica che ve ne siano."
+RubikPrev::usage = "Permette di eseguire la mossa M-1 per la risoluzione del cubo di Rubik. La funzione prima di eseguire la mossa verifica che ve ne siano."
+HasPrevMove::usage = "Permette di verificare se allo stato attuale vi sono ancora mosse da eseguire."
+HasNextMove::usage = "Permette di verificare se allo stato attuale vi sono mosse precedenti."
 
 
 (* ::Section:: *)
