@@ -39,8 +39,6 @@ Get["CubeColors.wl"]
 (*Definizione variabili*)
 
 
-(* Set di colori per il cubo *)
-colors = GetCurrentColorScheme[];
 (* Colore attualmente selezionato tramite color picker *)
 currentColor = Transparent;
 (* Rappresentazione del cubo 2D *)
@@ -101,7 +99,7 @@ GenColorPickerColBox[coord_, color_] :=
 	La funzione GenColorPickerColBox permette di generare il selettore di colori, ovvero il rettangolo 
 	contenente i colori tra cui scegliere.
 *)
-GenColorPickerBox[colors] :=
+GenColorPickerBox[colors_] :=
 	Module[{colorBox = {}},
 		AppendTo[colorBox, GenColorPickerColBox[{0, 0}, colors[["R"]]]];
 		AppendTo[colorBox, GenColorPickerColBox[{1, 0}, colors[["O"]]]];
@@ -126,7 +124,7 @@ VisualizeColorPickerBox[fontSize_:25] :=
 	Module[{picker, pickerTitle, current, currentTitle, col1, col2},
 		(* Generazione della colonna del color picker *)
 		pickerTitle = "Color Picker";
-		picker = GenColorPickerBox[colors];
+		picker = GenColorPickerBox[GetCurrentColorScheme[]];
 		col1 = Column[{Style[pickerTitle, {fontSize, Red, Bold}], Graphics[picker,
 			 ImageSize -> Medium]}];
 			 
@@ -181,7 +179,7 @@ GenBtn[rectStr_] := Module[{coord, col, r},
 
 
 (* Genero la lista di rettangoli composta da coordinata, colore *)
-GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
+GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent, colors},
 	(* Genero una lista di rettangoli rappresentante il cubo aperto e di colore defaultColor *)
 	points=Join[points,Table[{{x,8},defaultColor},{x,3,5}]];
 	points=Join[points,Table[{{x,7},defaultColor},{x,3,5}]];
@@ -201,6 +199,7 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
 		Left  = 23,
 		Right = 29	
 	*)
+	colors = GetCurrentColorScheme[];
 	points[[5]][[2]] =colors[["W"]];  (* Up *)
 	points[[26]][[2]] =colors[["B"]]; (* Front *)
 	points[[23]][[2]] =colors[["R"]]; (* Left *)
