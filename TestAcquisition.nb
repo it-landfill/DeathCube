@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[     15024,        404]
-NotebookOptionsPosition[     12474,        346]
-NotebookOutlinePosition[     12912,        363]
-CellTagsIndexPosition[     12869,        360]
+NotebookDataLength[      8340,        217]
+NotebookOptionsPosition[      6441,        174]
+NotebookOutlinePosition[      6879,        191]
+CellTagsIndexPosition[      6836,        188]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -17,7 +17,7 @@ Cell[BoxData[
    RowBox[{"$Path", ",", " ", 
     RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.861072845621793*^9, 3.861072883267323*^9}},
- CellLabel->"In[39]:=",ExpressionUUID->"d6b78b98-9533-45dd-bc56-3f8d0f8cce5e"],
+ CellLabel->"In[86]:=",ExpressionUUID->"d6b78b98-9533-45dd-bc56-3f8d0f8cce5e"],
 
 Cell[BoxData[{
  RowBox[{"Get", "[", "\"\<CubeAcquire.wl\>\"", "]"}], "\[IndentingNewLine]", 
@@ -30,7 +30,13 @@ Cell[BoxData[{
    3.8611676344556847`*^9, 3.861167639052351*^9}, 3.861168667551352*^9, {
    3.861414765465705*^9, 3.861414770344058*^9}, {3.8616112554578037`*^9, 
    3.861611259011965*^9}},
- CellLabel->"In[40]:=",ExpressionUUID->"0d15be85-e22b-494c-8319-16cf89a3903a"],
+ CellLabel->"In[87]:=",ExpressionUUID->"0d15be85-e22b-494c-8319-16cf89a3903a"],
+
+Cell[BoxData[
+ RowBox[{"VisualizeColorSchemePicker", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.86168384328752*^9, 3.861683851975198*^9}},
+ CellLabel->
+  "In[101]:=",ExpressionUUID->"202d47c4-7707-4b43-98ed-ae06a882f394"],
 
 Cell[CellGroupData[{
 
@@ -39,135 +45,19 @@ Cell["Acquisition", "Section",
   3.861072910108498*^9}},ExpressionUUID->"981d9bac-75ba-4f5e-9900-\
 92565ed7b37d"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"VisualizeColorPickerBox", "[", "]"}]], "Input",
  CellChangeTimes->{{3.8610729124535923`*^9, 3.8610729148372803`*^9}},
- CellLabel->"In[45]:=",ExpressionUUID->"20b9e061-2368-468b-a036-c38cbd04245b"],
+ CellLabel->"In[92]:=",ExpressionUUID->"20b9e061-2368-468b-a036-c38cbd04245b"],
 
 Cell[BoxData[
- PanelBox[
-  TemplateBox[{
-    TagBox[
-     GridBox[{{
-        StyleBox["\"Color Picker\"", {25, 
-          RGBColor[1, 0, 0], Bold}, StripOnInput -> False]}, {
-        GraphicsBox[{
-          TagBox[
-           StyleBox[
-            RectangleBox[{0, 0}], {{
-              RGBColor[1, 0, 0], 
-              EdgeForm[
-               Thickness[Large]]}}, StripOnInput -> False], 
-           
-           EventHandlerTag[{
-            "MouseClicked" :> (CubeAcquire`Private`currentColor = 
-              RGBColor[1, 0, 0]), Method -> "Preemptive", PassEventsDown -> 
-             Automatic, PassEventsUp -> True}]], 
-          TagBox[
-           StyleBox[
-            RectangleBox[{1, 0}], {{
-              RGBColor[1, 0.5, 0], 
-              EdgeForm[
-               Thickness[Large]]}}, StripOnInput -> False], 
-           
-           EventHandlerTag[{
-            "MouseClicked" :> (CubeAcquire`Private`currentColor = 
-              RGBColor[1, 0.5, 0]), Method -> "Preemptive", PassEventsDown -> 
-             Automatic, PassEventsUp -> True}]], 
-          TagBox[
-           StyleBox[
-            RectangleBox[{2, 0}], {{
-              RGBColor[0, 1, 0], 
-              EdgeForm[
-               Thickness[Large]]}}, StripOnInput -> False], 
-           
-           EventHandlerTag[{
-            "MouseClicked" :> (CubeAcquire`Private`currentColor = 
-              RGBColor[0, 1, 0]), Method -> "Preemptive", PassEventsDown -> 
-             Automatic, PassEventsUp -> True}]], 
-          TagBox[
-           StyleBox[
-            RectangleBox[{0, 1}], {{
-              RGBColor[0, 0, 1], 
-              EdgeForm[
-               Thickness[Large]]}}, StripOnInput -> False], 
-           
-           EventHandlerTag[{
-            "MouseClicked" :> (CubeAcquire`Private`currentColor = 
-              RGBColor[0, 0, 1]), Method -> "Preemptive", PassEventsDown -> 
-             Automatic, PassEventsUp -> True}]], 
-          TagBox[
-           StyleBox[
-            RectangleBox[{1, 1}], {{
-              GrayLevel[1], 
-              EdgeForm[
-               Thickness[Large]]}}, StripOnInput -> False], 
-           EventHandlerTag[{
-            "MouseClicked" :> (CubeAcquire`Private`currentColor = 
-              GrayLevel[1]), Method -> "Preemptive", PassEventsDown -> 
-             Automatic, PassEventsUp -> True}]], 
-          TagBox[
-           StyleBox[
-            RectangleBox[{2, 1}], {{
-              RGBColor[1, 1, 0], 
-              EdgeForm[
-               Thickness[Large]]}}, StripOnInput -> False], 
-           
-           EventHandlerTag[{
-            "MouseClicked" :> (CubeAcquire`Private`currentColor = 
-              RGBColor[1, 1, 0]), Method -> "Preemptive", PassEventsDown -> 
-             Automatic, PassEventsUp -> True}]]}, ImageSize -> Medium]}}, 
-      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-      "Column", 
-      GridBoxItemSize -> {
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
-    TagBox[
-     GridBox[{{
-        StyleBox["\"Current Color\"", {25, 
-          RGBColor[1, 0, 0], Bold}, StripOnInput -> False]}, {
-        GraphicsBox[{
-          DynamicBox[
-           Typeset`ToBoxes[
-           CubeAcquire`Private`currentColor, StandardForm, Graphics]], 
-          EdgeForm[
-           Thickness[Large]], 
-          RectangleBox[{0, 0}]}, ImageSize -> Tiny]}}, 
-      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-      "Column", 
-      GridBoxItemSize -> {
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]},
-   "RowDefault"]]], "Print",
- CellChangeTimes->{3.861680428323226*^9, 3.861680940510872*^9, 
-  3.861680992885317*^9},
- CellLabel->
-  "During evaluation of \
-In[45]:=",ExpressionUUID->"3f585308-6d22-4166-89cb-5a484731e81f"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"VisualizeInput2DCube", "[", "]"}]], "Input",
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"VisualizeInput2DCube", "[", "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.8610729536600637`*^9, 3.861072956364427*^9}, {
-   3.861073150443297*^9, 3.861073152953074*^9}, 3.861073187469758*^9},
- CellLabel->"In[46]:=",ExpressionUUID->"823ab216-f153-4abe-bf20-7bc8a2461f71"],
-
-Cell[BoxData[
- GraphicsBox[
-  DynamicBox[Typeset`ToBoxes[
-    Map[CubeAcquire`Private`GenBtn, CubeAcquire`Private`cube], StandardForm, 
-    Graphics],
-   ImageSizeCache->{{6.18, 352.82}, {-133.10719999999998`, 
-    127.37280000000004`}}],
-  Background->GrayLevel[0.85]]], "Output",
- CellChangeTimes->{3.861680428336371*^9, 3.861680940571947*^9, 
-  3.8616809928992023`*^9},
- CellLabel->"Out[46]=",ExpressionUUID->"e8ef9a21-15aa-46f1-a8d0-4e4304d2d834"]
-}, Open  ]],
-
-Cell[CellGroupData[{
+   3.861073150443297*^9, 3.861073152953074*^9}, 3.861073187469758*^9, {
+   3.861683879977769*^9, 3.8616838836371593`*^9}},
+ CellLabel->
+  "In[102]:=",ExpressionUUID->"823ab216-f153-4abe-bf20-7bc8a2461f71"],
 
 Cell[BoxData[
  RowBox[{"Button", "[", 
@@ -176,23 +66,11 @@ Cell[BoxData[
     RowBox[{"ValidateCubeInput", "[", "]"}], "]"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.861417231349069*^9, 3.8614172361361217`*^9}, {
   3.861417298803049*^9, 3.861417330636467*^9}},
- CellLabel->"In[47]:=",ExpressionUUID->"e5efca9e-2936-433a-83cb-1c6b95a0db49"],
-
-Cell[BoxData[
- ButtonBox["\<\"Validate Cube\"\>",
-  Appearance->Automatic,
-  ButtonFunction:>Print[
-    CubeAcquire`ValidateCubeInput[]],
-  Evaluator->Automatic,
-  Method->"Preemptive"]], "Output",
- CellChangeTimes->{3.861680428428432*^9, 3.8616809406503353`*^9, 
-  3.861680992994257*^9},
- CellLabel->"Out[47]=",ExpressionUUID->"700e6c82-b676-4c88-ab39-77f73d9efe6b"]
-}, Open  ]],
+ CellLabel->"In[94]:=",ExpressionUUID->"e5efca9e-2936-433a-83cb-1c6b95a0db49"],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.8616125651443977`*^9, 3.861612567376503*^9}},
- CellLabel->"In[48]:=",ExpressionUUID->"706eee0b-ea18-43f0-9f70-371cb2c05463"]
+ CellLabel->"In[95]:=",ExpressionUUID->"706eee0b-ea18-43f0-9f70-371cb2c05463"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -213,7 +91,7 @@ Cell[BoxData[{
   "stringaInput", "=", 
    "\"\<WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYYYYYYY\>\""}], 
   ";"}]}], "Input",
- CellLabel->"In[59]:=",ExpressionUUID->"c2d3f643-36d3-4362-a180-884f069b8385"],
+ CellLabel->"In[96]:=",ExpressionUUID->"c2d3f643-36d3-4362-a180-884f069b8385"],
 
 Cell[CellGroupData[{
 
@@ -222,8 +100,6 @@ Cell["Export", "Subsection",
   3.861612702993689*^9, 
   3.861612703863781*^9}},ExpressionUUID->"838b4226-5d74-4437-82f9-\
 b5b922010bf6"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Button", "[", 
@@ -236,20 +112,7 @@ Cell[BoxData[
   3.861679515606924*^9}, {3.861679569575996*^9, 3.861679575166028*^9}, {
   3.861680172438595*^9, 3.8616801727396708`*^9}, {3.8616809989655657`*^9, 
   3.861681010906583*^9}},
- CellLabel->"In[58]:=",ExpressionUUID->"b1c77615-69eb-4bf5-ae05-1024d57e0d4d"],
-
-Cell[BoxData[
- ButtonBox["\<\"Salva la stringa cubo\"\>",
-  Appearance->Automatic,
-  ButtonFunction:>($CellContext`stringaInput = 
-   CubeAcquire`Cube3DToString[CubeCore`cube3DPieces]),
-  Evaluator->Automatic,
-  Method->"Preemptive"]], "Output",
- CellChangeTimes->{
-  3.8616804285011587`*^9, 3.861680940697742*^9, {3.861680993059658*^9, 
-   3.861681011714115*^9}},
- CellLabel->"Out[58]=",ExpressionUUID->"c33a765e-0887-4825-8296-9a5a5fae87c7"]
-}, Open  ]],
+ CellLabel->"In[98]:=",ExpressionUUID->"b1c77615-69eb-4bf5-ae05-1024d57e0d4d"],
 
 Cell[CellGroupData[{
 
@@ -257,8 +120,6 @@ Cell["Import", "Subsubsection",
  CellChangeTimes->{{3.861612903638727*^9, 
   3.861612916764241*^9}},ExpressionUUID->"2ba2d059-5683-4e39-bcf3-\
 2ccf9ef0b865"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -306,46 +167,13 @@ caratteri)\>\""}], "]"}]}], "]"}]}], "]"}]}], ";"}], "\n",
  CellChangeTimes->{{3.861613111984922*^9, 3.861613149283842*^9}, {
   3.861613181597556*^9, 3.8616131950665197`*^9}, {3.861679470872109*^9, 
   3.8616794716985292`*^9}},
- CellLabel->"In[52]:=",ExpressionUUID->"391a311f-1e60-47c6-8a40-9fdc87cd2063"],
-
-Cell[BoxData[
- TagBox[GridBox[{
-    {
-     InputFieldBox[Dynamic[$CellContext`stringaInput], String,
-      ImageSize->UpTo[1000]], 
-     ButtonBox["\<\"Check\"\>",
-      Appearance->Automatic,
-      ButtonFunction:>$CellContext`checkLength[$CellContext`stringaInput],
-      Evaluator->Automatic,
-      ImageSize->UpTo[100],
-      Method->"Preemptive"]}
-   },
-   AutoDelete->False,
-   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-  "Grid"]], "Output",
- CellChangeTimes->{3.861680428549402*^9, 3.8616809407461348`*^9, 
-  3.861680993137971*^9},
- CellLabel->"Out[53]=",ExpressionUUID->"8209067a-581d-4203-aaf2-0c776fe0c01f"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"La stringa \"\>", "\[InvisibleSpace]", "\<\"\"\>", 
-   "\[InvisibleSpace]", "\<\" non \[EGrave] un input accettabile (troppo \
-corta, richiesti 54 caratteri)\"\>"}],
-  SequenceForm[
-  "La stringa ", "", 
-   " non \[EGrave] un input accettabile (troppo corta, richiesti 54 \
-caratteri)"],
-  Editable->False]], "Print",
- CellChangeTimes->{3.861681206366434*^9},
- CellLabel->"",ExpressionUUID->"28ce4614-41cf-400a-8ea6-1714fbe5be03"]
-}, Open  ]]
+ CellLabel->"In[99]:=",ExpressionUUID->"391a311f-1e60-47c6-8a40-9fdc87cd2063"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1280, 1301},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1280, 1387},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
 StyleDefinitions->"Default.nb",
@@ -364,38 +192,23 @@ CellTagsIndex->{}
 Notebook[{
 Cell[400, 13, 298, 6, 30, "Input",ExpressionUUID->"d6b78b98-9533-45dd-bc56-3f8d0f8cce5e"],
 Cell[701, 21, 744, 11, 115, "Input",ExpressionUUID->"0d15be85-e22b-494c-8319-16cf89a3903a"],
+Cell[1448, 34, 222, 4, 30, "Input",ExpressionUUID->"202d47c4-7707-4b43-98ed-ae06a882f394"],
 Cell[CellGroupData[{
-Cell[1470, 36, 156, 3, 67, "Section",ExpressionUUID->"981d9bac-75ba-4f5e-9900-92565ed7b37d"],
-Cell[CellGroupData[{
-Cell[1651, 43, 220, 3, 30, "Input",ExpressionUUID->"20b9e061-2368-468b-a036-c38cbd04245b"],
-Cell[1874, 48, 3772, 97, 299, "Print",ExpressionUUID->"3f585308-6d22-4166-89cb-5a484731e81f"]
+Cell[1695, 42, 156, 3, 67, "Section",ExpressionUUID->"981d9bac-75ba-4f5e-9900-92565ed7b37d"],
+Cell[1854, 47, 220, 3, 30, "Input",ExpressionUUID->"20b9e061-2368-468b-a036-c38cbd04245b"],
+Cell[2077, 52, 377, 7, 30, "Input",ExpressionUUID->"823ab216-f153-4abe-bf20-7bc8a2461f71"],
+Cell[2457, 61, 372, 7, 30, "Input",ExpressionUUID->"e5efca9e-2936-433a-83cb-1c6b95a0db49"],
+Cell[2832, 70, 173, 2, 30, "Input",ExpressionUUID->"706eee0b-ea18-43f0-9f70-371cb2c05463"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5683, 150, 287, 4, 30, "Input",ExpressionUUID->"823ab216-f153-4abe-bf20-7bc8a2461f71"],
-Cell[5973, 156, 451, 10, 290, "Output",ExpressionUUID->"e8ef9a21-15aa-46f1-a8d0-4e4304d2d834"]
-}, Open  ]],
+Cell[3042, 77, 155, 3, 67, "Section",ExpressionUUID->"1523f259-6e49-41f9-a3d5-c870e5181b0d"],
+Cell[3200, 82, 397, 11, 52, "Input",ExpressionUUID->"c2d3f643-36d3-4362-a180-884f069b8385"],
 Cell[CellGroupData[{
-Cell[6461, 171, 372, 7, 30, "Input",ExpressionUUID->"e5efca9e-2936-433a-83cb-1c6b95a0db49"],
-Cell[6836, 180, 367, 9, 46, "Output",ExpressionUUID->"700e6c82-b676-4c88-ab39-77f73d9efe6b"]
-}, Open  ]],
-Cell[7218, 192, 173, 2, 30, "Input",ExpressionUUID->"706eee0b-ea18-43f0-9f70-371cb2c05463"]
-}, Open  ]],
+Cell[3622, 97, 203, 4, 54, "Subsection",ExpressionUUID->"838b4226-5d74-4437-82f9-b5b922010bf6"],
+Cell[3828, 103, 602, 11, 30, "Input",ExpressionUUID->"b1c77615-69eb-4bf5-ae05-1024d57e0d4d"],
 Cell[CellGroupData[{
-Cell[7428, 199, 155, 3, 67, "Section",ExpressionUUID->"1523f259-6e49-41f9-a3d5-c870e5181b0d"],
-Cell[7586, 204, 397, 11, 107, "Input",ExpressionUUID->"c2d3f643-36d3-4362-a180-884f069b8385"],
-Cell[CellGroupData[{
-Cell[8008, 219, 203, 4, 54, "Subsection",ExpressionUUID->"838b4226-5d74-4437-82f9-b5b922010bf6"],
-Cell[CellGroupData[{
-Cell[8236, 227, 602, 11, 30, "Input",ExpressionUUID->"b1c77615-69eb-4bf5-ae05-1024d57e0d4d"],
-Cell[8841, 240, 443, 10, 46, "Output",ExpressionUUID->"c33a765e-0887-4825-8296-9a5a5fae87c7"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[9321, 255, 157, 3, 45, "Subsubsection",ExpressionUUID->"2ba2d059-5683-4e39-bcf3-2ccf9ef0b865"],
-Cell[CellGroupData[{
-Cell[9503, 262, 1786, 46, 94, "Input",ExpressionUUID->"391a311f-1e60-47c6-8a40-9fdc87cd2063"],
-Cell[11292, 310, 648, 17, 47, "Output",ExpressionUUID->"8209067a-581d-4203-aaf2-0c776fe0c01f"],
-Cell[11943, 329, 479, 11, 24, "Print",ExpressionUUID->"28ce4614-41cf-400a-8ea6-1714fbe5be03"]
-}, Open  ]]
+Cell[4455, 118, 157, 3, 45, "Subsubsection",ExpressionUUID->"2ba2d059-5683-4e39-bcf3-2ccf9ef0b865"],
+Cell[4615, 123, 1786, 46, 94, "Input",ExpressionUUID->"391a311f-1e60-47c6-8a40-9fdc87cd2063"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

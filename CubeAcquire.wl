@@ -124,7 +124,7 @@ VisualizeColorPickerBox[fontSize_:25] :=
 	Module[{picker, pickerTitle, current, currentTitle, col1, col2},
 		(* Generazione della colonna del color picker *)
 		pickerTitle = "Color Picker";
-		picker = GenColorPickerBox[GetCurrentColorScheme[]];
+		picker = Dynamic[GenColorPickerBox[GetCurrentColorScheme[]]];
 		col1 = Column[{Style[pickerTitle, {fontSize, Red, Bold}], Graphics[picker,
 			 ImageSize -> Medium]}];
 			 
