@@ -13,6 +13,7 @@ VisualizeColorPickerBox::usage = "Generazione del panel che contiene il selettor
 VisualizeInput2DCube::usage = "Visualizzazione del cubo 2D di input."
 ValidateCubeInput::usage = "Validazione del cubo salvato nella variabile cube."
 Cube2DToString::usage = "Conversione del cubo2D in una stringa."
+Cube3DToString::usage = "Conversione del cubo3D in una stringa."
 
 (* Variabili *)
 sampleStrings::usage = "Stringhe di esempio"
@@ -62,7 +63,10 @@ sampleStrings = <|"solved" -> "WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYY
 (*Verifica validit\[AGrave] della stringa*)
 
 
-(* Verifica che il numero di caratteri uguali nella stringa sia pari a 9, ovvero che nella stringa ogni colore sia riportato esattamente 9 volte. *)
+(* 
+	La funzione VerifyStringColorNumber permette di verificare che il numero di caratteri uguali nella stringa 
+	sia pari a 9, ovvero che nella stringa ogni colore sia riportato esattamente 9 volte.
+*)
 VerifyStringColorNumber[cube_] := Module[{characterList},
 		characterList = CharacterCounts[cube];
 		Max[characterList] == Min[characterList] == 9
@@ -81,7 +85,10 @@ VerifyStringColorNumber[cube_] := Module[{characterList},
 (*Generazione*)
 
 
-(* Genera i singoli bottoni con rettangolo di colore specificato *)
+(* 
+	La funzione GenColorPickerColBox permette di generare i singoli bottoni con rettangolo di colore 
+	specificato.
+*)
 GenColorPickerColBox[coord_, color_] :=
 	Module[{r},
 		r = Rectangle[coord];
@@ -90,7 +97,10 @@ GenColorPickerColBox[coord_, color_] :=
 	];
 
 
-(* Genera il selettore di colori, ovvero il rettangolo contenente i colori tra cui scegliere *)
+(* 
+	La funzione GenColorPickerColBox permette di generare il selettore di colori, ovvero il rettangolo 
+	contenente i colori tra cui scegliere.
+*)
 GenColorPickerBox[colors] :=
 	Module[{colorBox = {}},
 		AppendTo[colorBox, GenColorPickerColBox[{0, 0}, colors[["R"]]]];
@@ -107,19 +117,23 @@ GenColorPickerBox[colors] :=
 (*Visualizzazione*)
 
 
+(* 
+	La funzione GenColorPickerColBox permette di generare il panel che contiene il selettore 
+	per il colore che l'utente vuole inserire.
+*)
+VisualizeColorPickerBox[fontSize_:25] :=
 (* Generazione del panel che contiene il selettore per il colore che l'utente vuole inserire *)
-VisualizeColorPickerBox[] :=
 	Module[{picker, pickerTitle, current, currentTitle, col1, col2},
 		(* Generazione della colonna del color picker *)
 		pickerTitle = "Color Picker";
 		picker = GenColorPickerBox[colors];
-		col1 = Column[{Style[pickerTitle, {25, Red, Bold}], Graphics[picker,
+		col1 = Column[{Style[pickerTitle, {fontSize, Red, Bold}], Graphics[picker,
 			 ImageSize -> Medium]}];
 			 
 		(* Generazione della colonna del current color *)
 		currentTitle = "Current Color";
 		current = {Dynamic[currentColor], EdgeForm[Thick], Rectangle[]};
-		col2 = Column[{Style[currentTitle, {25, Red, Bold}], Graphics[current,
+		col2 = Column[{Style[currentTitle, {fontSize, Red, Bold}], Graphics[current,
 			 ImageSize -> Tiny]}];
 			 
 		(* Stampa il panel composto dalle 2 colonne generate sopra *)
@@ -201,7 +215,9 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
 (*Visualizzazione*)
 
 
-(* Visualizzazione del cubo 2D di input *)
+(* 
+	La funzione Cube2DToString permette la visualizzazione del 2D di input.
+*)
 VisualizeInput2DCube[] := Module[{background = LightGray},
 	(* Genero la struttura di base. cube \[EGrave] una variabile globale al modulo *)
 	cube = GenerateBaseCubeStruct[];
@@ -220,7 +236,8 @@ VisualizeInput2DCube[] := Module[{background = LightGray},
 	Questa validazione non copre tutti i casi, controlla solo la correttezza dei singoli sotto cubi.
 	I casi restanti vengono identificati tramite l'inabilit\[AGrave] di risolvere il cubo in un numero fissato di mosse massime.
 *)
-ValidateCubeInput[] := Module[{solvedCube, solvedCubeSorted, cube, cubeSorted},
+ValidateCubeInput[] := Module[
+	{solvedCube, solvedCubeSorted, cube, cubeSorted},
 	(* Cubo risolto di riferimento per la validazione *)
 	solvedCube = GetPieces[sampleStrings[["solved"]]];
 	(* Genero una lista ordinata contenente le triple contenenti i colori ordinati del cubo risolto *)
@@ -243,9 +260,13 @@ ValidateCubeInput[] := Module[{solvedCube, solvedCubeSorted, cube, cubeSorted},
 (*Conversione da Cubo 2D a stringa*)
 
 
-(* Conversione del cubo2D in una stringa *)
-Cube2DToString[] := Module[{cubeCols = {}, cubeString = ""},
-(* Genero la stringa rappresentante il cubo *)
+(* 
+	La funzione Cube2DToString permette la conversione del cubo2D 
+	in una stringa.
+*)
+Cube2DToString[] := Module[
+	{cubeCols = {}, cubeString = ""},
+	(* Genero la stringa rappresentante il cubo *)
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,8}][[1,1]],2]],{x,3,5}]];
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,7}][[1,1]],2]],{x,3,5}]];
 	AppendTo[cubeCols, Table[cube[[Position[cube,{x,6}][[1,1]],2]],{x,3,5}]];
@@ -261,6 +282,102 @@ Cube2DToString[] := Module[{cubeCols = {}, cubeString = ""},
 	cubeString = StringJoin[cubeString];
 	Return[cubeString];
 ];
+
+(* 
+	La funzione Cube3DToString permette la conversione del cubo3D 
+	in una stringa.
+*)
+Cube3DToString[cubePieces_] :=
+	Module[
+		{str = "", cols}
+		,
+		(*Generazione stringa vuota di lunghezza 54*) 
+		Table[str = StringJoin[str, "-"], {i, 54}];
+		(*Fill delle facce*)
+		cols = ExtractCube[cubePieces, RIGHT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {29, 29}];
+		cols = ExtractCube[cubePieces, LEFT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {23, 23}];
+		cols = ExtractCube[cubePieces, UP][["colors"]];
+		str = StringReplacePart[str, cols[[2]], {5, 5}];
+		cols = ExtractCube[cubePieces, DOWN][["colors"]];
+		str = StringReplacePart[str, cols[[2]], {50, 50}];
+		cols = ExtractCube[cubePieces, FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[3]], {26, 26}];
+		cols = ExtractCube[cubePieces, BACK][["colors"]];
+		str = StringReplacePart[str, cols[[3]], {32, 32}];
+		(*Fill dei lati*)
+		cols = ExtractCube[cubePieces, RIGHT + UP][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {17, 17}];
+		str = StringReplacePart[str, cols[[2]], {6, 6}];
+		cols = ExtractCube[cubePieces, RIGHT + DOWN][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {41, 41}];
+		str = StringReplacePart[str, cols[[2]], {51, 51}];
+		cols = ExtractCube[cubePieces, RIGHT + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {28, 28}];
+		str = StringReplacePart[str, cols[[3]], {27, 27}];
+		cols = ExtractCube[cubePieces, RIGHT + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {30, 30}];
+		str = StringReplacePart[str, cols[[3]], {31, 31}];
+		cols = ExtractCube[cubePieces, LEFT + UP][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {11, 11}];
+		str = StringReplacePart[str, cols[[2]], {4, 4}];
+		cols = ExtractCube[cubePieces, LEFT + DOWN][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {35, 35}];
+		str = StringReplacePart[str, cols[[2]], {49, 49}];
+		cols = ExtractCube[cubePieces, LEFT + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {24, 24}];
+		str = StringReplacePart[str, cols[[3]], {25, 25}];
+		cols = ExtractCube[cubePieces, LEFT + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {22, 22}];
+		str = StringReplacePart[str, cols[[3]], {33, 33}];
+		cols = ExtractCube[cubePieces, UP + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[2]], {8, 8}];
+		str = StringReplacePart[str, cols[[3]], {14, 14}];
+		cols = ExtractCube[cubePieces, UP + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[2]], {2, 2}];
+		str = StringReplacePart[str, cols[[3]], {20, 20}];
+		cols = ExtractCube[cubePieces, DOWN + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[2]], {47, 47}];
+		str = StringReplacePart[str, cols[[3]], {38, 38}];
+		cols = ExtractCube[cubePieces, DOWN + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[2]], {53, 53}];
+		str = StringReplacePart[str, cols[[3]], {44, 44}];
+		(*Fill degli angoli*)
+		cols = ExtractCube[cubePieces, RIGHT + UP + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {16, 16}];
+		str = StringReplacePart[str, cols[[2]], {9, 9}];
+		str = StringReplacePart[str, cols[[3]], {15, 15}];
+		cols = ExtractCube[cubePieces, RIGHT + UP + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {18, 18}];
+		str = StringReplacePart[str, cols[[2]], {3, 3}];
+		str = StringReplacePart[str, cols[[3]], {19, 19}];
+		cols = ExtractCube[cubePieces, RIGHT + DOWN + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {40, 40}];
+		str = StringReplacePart[str, cols[[2]], {48, 48}];
+		str = StringReplacePart[str, cols[[3]], {39, 39}];
+		cols = ExtractCube[cubePieces, RIGHT + DOWN + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {42, 42}];
+		str = StringReplacePart[str, cols[[2]], {54, 54}];
+		str = StringReplacePart[str, cols[[3]], {43, 43}];
+		cols = ExtractCube[cubePieces, LEFT + UP + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {12, 12}];
+		str = StringReplacePart[str, cols[[2]], {7, 7}];
+		str = StringReplacePart[str, cols[[3]], {13, 13}];
+		cols = ExtractCube[cubePieces, LEFT + UP + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {10, 10}];
+		str = StringReplacePart[str, cols[[2]], {1, 1}];
+		str = StringReplacePart[str, cols[[3]], {21, 21}];
+		cols = ExtractCube[cubePieces, LEFT + DOWN + FRONT][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {36, 36}];
+		str = StringReplacePart[str, cols[[2]], {46, 46}];
+		str = StringReplacePart[str, cols[[3]], {37, 37}];
+		cols = ExtractCube[cubePieces, LEFT + DOWN + BACK][["colors"]];
+		str = StringReplacePart[str, cols[[1]], {34, 34}];
+		str = StringReplacePart[str, cols[[2]], {52, 52}];
+		str = StringReplacePart[str, cols[[3]], {45, 45}];
+		Return[str]
+	];
 
 
 (* ::Section:: *)

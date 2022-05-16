@@ -8,14 +8,11 @@ BeginPackage["CubeVisualize`"]
 
 
 (* Metodi *)
-Generate2DCube::usage = ""
-Visualize2DCube::usage = ""
-Generate3DCube::usage = ""
-Visualize3DCube::usage = ""
-ControlsGlobal::usage = ""
-ControlsRotation::usage = ""
-ControlsMoves::usage = ""
-GetGraphicPiece::usage = ""
+Generate2DCube::usage = "Permette di generare una lista di oggetti 2D."
+Visualize2DCube::usage = "Permette di visualizzare il cubo 2D."
+Generate3DCube::usage = "Ricevendo il cubo, (potenzialmente) l'indicatore della faccia e (potenzialmente) una matrice permette di generare graficamente il cubo 3D allo stato specificato dai parametri."
+Visualize3DCube::usage = "Permette di visualizzare il cubo 3D."
+GetGraphicPiece::usage = "Permette di generare graficamente i singoli sotto cubi del cubo di Rubik 3D."
 
 (* Variabili *)
 vp = Options[Plot3D, ViewPoint][[1,2]];
