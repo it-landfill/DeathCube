@@ -75,10 +75,9 @@ ChangeColorScheme[colScheme_] := Module[
 	VisualizeColorSchemePicker permette di visualizzare i diversi schemi colori e richiamare, in caso di conferma, la funzione per applicare
 	il nuovo schema colori al cubo di Rubik.
 *)
-VisualizeColorSchemePicker[] := DynamicModule[
-	{row1, row2, title, colorSchemeNames={"Default", "Protanopia", "Deuteranopia", "Tritanopia"}, cScheme="Default"},
-	row1 = Row[{Style["Color Scheme",20]}];
-	row2 = Row[{PopupMenu[Dynamic[cScheme],colorSchemeNames],Button["Confirm", ChangeColorScheme[cScheme]]}];
+VisualizeColorSchemePicker[fontSize_:15] := DynamicModule[{row1,row2, title, colorSchemeNames={"Default","Protanopia","Deuteranopia","Tritanopia"},cScheme="Default"},
+	row1 = Row[{Style["Color Scheme",fontSize+10]}];
+	row2 = Row[{PopupMenu[Dynamic[cScheme],colorSchemeNames,MenuStyle->fontSize],Button[Style["Confirm",fontSize], ChangeColorScheme[cScheme]]}];
 	Panel[Column[{row1,row2}]]
 ];
 
