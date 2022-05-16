@@ -58,6 +58,7 @@ BACK::usage = ""
 
 ExtractFace::usage = ""
 ExtractNotFace::usage = ""
+ExtractCube::usage = ""
 
 
 DelOut::usage = ""
@@ -243,6 +244,9 @@ ExtractNotFace[cube_, face_] :=
 	Module[{},
 		Select[cube, Dot[#["pos"], face] <= 0&]
 	];
+
+
+ExtractCube[cube_, pos_] := Select[cube, #["pos"]===pos&][[1]]
 
 
 (* ::Section:: *)
