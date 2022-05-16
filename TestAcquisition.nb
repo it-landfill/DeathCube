@@ -172,8 +172,8 @@ caratteri)\>\""}], "]"}]}], "]"}]}], "]"}]}], ";"}], "\n",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1280, 1387},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowSize->{1280, 1302},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
 StyleDefinitions->"Default.nb",
