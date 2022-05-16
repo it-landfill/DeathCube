@@ -63,7 +63,10 @@ sampleStrings = <|"solved" -> "WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYY
 (*Verifica validit\[AGrave] della stringa*)
 
 
-(* Verifica che il numero di caratteri uguali nella stringa sia pari a 9, ovvero che nella stringa ogni colore sia riportato esattamente 9 volte. *)
+(* 
+	La funzione VerifyStringColorNumber permette di verificare che il numero di caratteri uguali nella stringa 
+	sia pari a 9, ovvero che nella stringa ogni colore sia riportato esattamente 9 volte.
+*)
 VerifyStringColorNumber[cube_] := Module[{characterList},
 		characterList = CharacterCounts[cube];
 		Max[characterList] == Min[characterList] == 9
@@ -82,7 +85,10 @@ VerifyStringColorNumber[cube_] := Module[{characterList},
 (*Generazione*)
 
 
-(* Genera i singoli bottoni con rettangolo di colore specificato *)
+(* 
+	La funzione GenColorPickerColBox permette di generare i singoli bottoni con rettangolo di colore 
+	specificato.
+*)
 GenColorPickerColBox[coord_, color_] :=
 	Module[{r},
 		r = Rectangle[coord];
@@ -91,7 +97,10 @@ GenColorPickerColBox[coord_, color_] :=
 	];
 
 
-(* Genera il selettore di colori, ovvero il rettangolo contenente i colori tra cui scegliere *)
+(* 
+	La funzione GenColorPickerColBox permette di generare il selettore di colori, ovvero il rettangolo 
+	contenente i colori tra cui scegliere.
+*)
 GenColorPickerBox[colors] :=
 	Module[{colorBox = {}},
 		AppendTo[colorBox, GenColorPickerColBox[{0, 0}, colors[["R"]]]];
@@ -108,8 +117,12 @@ GenColorPickerBox[colors] :=
 (*Visualizzazione*)
 
 
-(* Generazione del panel che contiene il selettore per il colore che l'utente vuole inserire *)
+(* 
+	La funzione GenColorPickerColBox permette di generare il panel che contiene il selettore 
+	per il colore che l'utente vuole inserire.
+*)
 VisualizeColorPickerBox[fontSize_:25] :=
+(* Generazione del panel che contiene il selettore per il colore che l'utente vuole inserire *)
 	Module[{picker, pickerTitle, current, currentTitle, col1, col2},
 		(* Generazione della colonna del color picker *)
 		pickerTitle = "Color Picker";
@@ -202,7 +215,9 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent},
 (*Visualizzazione*)
 
 
-(* Visualizzazione del cubo 2D di input *)
+(* 
+	La funzione Cube2DToString permette la visualizzazione del 2D di input.
+*)
 VisualizeInput2DCube[] := Module[{background = LightGray},
 	(* Genero la struttura di base. cube \[EGrave] una variabile globale al modulo *)
 	cube = GenerateBaseCubeStruct[];
@@ -221,7 +236,8 @@ VisualizeInput2DCube[] := Module[{background = LightGray},
 	Questa validazione non copre tutti i casi, controlla solo la correttezza dei singoli sotto cubi.
 	I casi restanti vengono identificati tramite l'inabilit\[AGrave] di risolvere il cubo in un numero fissato di mosse massime.
 *)
-ValidateCubeInput[] := Module[{solvedCube, solvedCubeSorted, cube, cubeSorted},
+ValidateCubeInput[] := Module[
+	{solvedCube, solvedCubeSorted, cube, cubeSorted},
 	(* Cubo risolto di riferimento per la validazione *)
 	solvedCube = GetPieces[sampleStrings[["solved"]]];
 	(* Genero una lista ordinata contenente le triple contenenti i colori ordinati del cubo risolto *)
@@ -244,39 +260,33 @@ ValidateCubeInput[] := Module[{solvedCube, solvedCubeSorted, cube, cubeSorted},
 (*Conversione da Cubo 2D a stringa*)
 
 
-(* Conversione del cubo2D in una stringa *)
+(* 
+	La funzione Cube2DToString permette la conversione del cubo2D 
+	in una stringa.
+*)
+Cube2DToString[] := Module[
+	{cubeCols = {}, cubeString = ""},
+	(* Genero la stringa rappresentante il cubo *)
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,8}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,7}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,6}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,5}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,4}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,3}][[1,1]],2]],{x,0,11}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,2}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,1}][[1,1]],2]],{x,3,5}]];
+	AppendTo[cubeCols, Table[cube[[Position[cube,{x,0}][[1,1]],2]],{x,3,5}]];
+	cubeCols = Flatten[cubeCols];
+	(* Converto i colori nelle corrispettive lettere rappresentative *)
+	cubeString = Map[ColorToChar, cubeCols];
+	cubeString = StringJoin[cubeString];
+	Return[cubeString];
+];
 
-Cube2DToString[] :=
-	Module[
-		{cubeCols = {}, cubeString = ""}
-		,
-		(* Genero la stringa rappresentante il cubo *)
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 8}][[1, 1]], 2]],
-			 {x, 3, 5}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 7}][[1, 1]], 2]],
-			 {x, 3, 5}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 6}][[1, 1]], 2]],
-			 {x, 3, 5}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 5}][[1, 1]], 2]],
-			 {x, 0, 11}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 4}][[1, 1]], 2]],
-			 {x, 0, 11}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 3}][[1, 1]], 2]],
-			 {x, 0, 11}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 2}][[1, 1]], 2]],
-			 {x, 3, 5}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 1}][[1, 1]], 2]],
-			 {x, 3, 5}]];
-		AppendTo[cubeCols, Table[cube[[Position[cube, {x, 0}][[1, 1]], 2]],
-			 {x, 3, 5}]];
-		cubeCols = Flatten[cubeCols];
-		(* Converto i colori nelle corrispettive lettere rappresentative *)
-			
-		cubeString = Map[ColorToChar, cubeCols];
-		cubeString = StringJoin[cubeString];
-		Return[cubeString];
-	];
-
+(* 
+	La funzione Cube3DToString permette la conversione del cubo3D 
+	in una stringa.
+*)
 Cube3DToString[cubePieces_] :=
 	Module[
 		{str = "", cols}
