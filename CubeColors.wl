@@ -45,9 +45,9 @@ ChangeColorScheme[colScheme_] := Module[{},
 ];
 
 
-VisualizeColorSchemePicker[] := DynamicModule[{row1,row2, title, colorSchemeNames={"Default","Protanopia","Deuteranopia","Tritanopia"},cScheme="Default"},
-	row1 = Row[{Style["Color Scheme",20]}];
-	row2 = Row[{PopupMenu[Dynamic[cScheme],colorSchemeNames],Button["Confirm", ChangeColorScheme[cScheme]]}];
+VisualizeColorSchemePicker[fontSize_:15] := DynamicModule[{row1,row2, title, colorSchemeNames={"Default","Protanopia","Deuteranopia","Tritanopia"},cScheme="Default"},
+	row1 = Row[{Style["Color Scheme",fontSize+10]}];
+	row2 = Row[{PopupMenu[Dynamic[cScheme],colorSchemeNames,MenuStyle->fontSize],Button[Style["Confirm",fontSize], ChangeColorScheme[cScheme]]}];
 	Panel[Column[{row1,row2}]]
 ];
 
