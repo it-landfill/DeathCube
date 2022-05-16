@@ -104,18 +104,18 @@ GenColorPickerBox[colors] :=
 
 
 (* Generazione del panel che contiene il selettore per il colore che l'utente vuole inserire *)
-VisualizeColorPickerBox[] :=
+VisualizeColorPickerBox[fontSize_:25] :=
 	Module[{picker, pickerTitle, current, currentTitle, col1, col2},
 		(* Generazione della colonna del color picker *)
 		pickerTitle = "Color Picker";
 		picker = GenColorPickerBox[colors];
-		col1 = Column[{Style[pickerTitle, {25, Red, Bold}], Graphics[picker,
+		col1 = Column[{Style[pickerTitle, {fontSize, Red, Bold}], Graphics[picker,
 			 ImageSize -> Medium]}];
 			 
 		(* Generazione della colonna del current color *)
 		currentTitle = "Current Color";
 		current = {Dynamic[currentColor], EdgeForm[Thick], Rectangle[]};
-		col2 = Column[{Style[currentTitle, {25, Red, Bold}], Graphics[current,
+		col2 = Column[{Style[currentTitle, {fontSize, Red, Bold}], Graphics[current,
 			 ImageSize -> Tiny]}];
 			 
 		(* Stampa il panel composto dalle 2 colonne generate sopra *)
