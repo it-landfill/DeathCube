@@ -179,19 +179,24 @@ GenBtn[rectStr_] := Module[{coord, col, r},
 
 
 (* Genero la lista di rettangoli composta da coordinata, colore *)
-GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent, colors},
-	(* Genero una lista di rettangoli rappresentante il cubo aperto e di colore defaultColor *)
-	points=Join[points,Table[{{x,8},defaultColor},{x,3,5}]];
-	points=Join[points,Table[{{x,7},defaultColor},{x,3,5}]];
-	points=Join[points,Table[{{x,6},defaultColor},{x,3,5}]];
-	points=Join[points,Table[{{x,5},defaultColor},{x,0,11}]];
-	points=Join[points,Table[{{x,4},defaultColor},{x,0,11}]];
-	points=Join[points,Table[{{x,3},defaultColor},{x,0,11}]];
-	points=Join[points,Table[{{x,2},defaultColor},{x,3,5}]];
-	points=Join[points,Table[{{x,1},defaultColor},{x,3,5}]];
-	points=Join[points,Table[{{x,0},defaultColor},{x,3,5}]];
 
-	(* Imposto manualmente i colori dei centri:
+GenerateBaseCubeStruct[cubeString_:""] :=
+	Module[{points = {}, defaultColor = Transparent, colors},
+		colors = GetCurrentColorScheme[];
+		If[SameQ[cubeString, ""],
+			(* Se la stringa \[EGrave] vuota genero un cubo con solo i centri *)
+			(* Genero una lista di rettangoli rappresentante il cubo aperto e 
+				di colore defaultColor *)
+			points = Join[points, Table[{{x, 8}, defaultColor}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 7}, defaultColor}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 6}, defaultColor}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 5}, defaultColor}, {x, 0, 11}]];
+			points = Join[points, Table[{{x, 4}, defaultColor}, {x, 0, 11}]];
+			points = Join[points, Table[{{x, 3}, defaultColor}, {x, 0, 11}]];
+			points = Join[points, Table[{{x, 2}, defaultColor}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 1}, defaultColor}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 0}, defaultColor}, {x, 3, 5}]];
+			(* Imposto manualmente i colori dei centri:
 		Front = 26,
 		Back  = 32,
 		Up    = 5,
@@ -199,15 +204,34 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent, col
 		Left  = 23,
 		Right = 29	
 	*)
-	colors = GetCurrentColorScheme[];
-	points[[5]][[2]] =colors[["W"]];  (* Up *)
-	points[[26]][[2]] =colors[["B"]]; (* Front *)
-	points[[23]][[2]] =colors[["R"]]; (* Left *)
-	points[[29]][[2]] =colors[["O"]]; (* Right *)
-	points[[32]][[2]] =colors[["G"]]; (* Back *)
-	points[[50]][[2]] =colors[["Y"]]; (* Down *)
-	Return[points];
-];
+			points[[5]][[2]] = colors[["W"]];(* Up *)
+			points[[26]][[2]] = colors[["B"]];(* Front *)
+			points[[23]][[2]] = colors[["R"]];(* Left *)
+			points[[29]][[2]] = colors[["O"]];(* Right *)
+			points[[32]][[2]] = colors[["G"]];(* Back *)
+			points[[50]][[2]] = colors[["Y"]]; (* Down *) ,
+			(* Se la stringa non \[EGrave] vuota genero il cubo completo *)
+			points = Join[points, Table[{{x, 8}, colors[[StringPart[cubeString,
+				 x - 2]]]}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 7}, colors[[StringPart[cubeString,
+				 x + 1]]]}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 6}, colors[[StringPart[cubeString,
+				 x + 4]]]}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 5}, colors[[StringPart[cubeString,
+				 x + 10]]]}, {x, 0, 11}]];
+			points = Join[points, Table[{{x, 4}, colors[[StringPart[cubeString,
+				 x + 22]]]}, {x, 0, 11}]];
+			points = Join[points, Table[{{x, 3}, colors[[StringPart[cubeString,
+				 x + 34]]]}, {x, 0, 11}]];
+			points = Join[points, Table[{{x, 2}, colors[[StringPart[cubeString,
+				 x + 43]]]}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 1}, colors[[StringPart[cubeString,
+				 x + 46]]]}, {x, 3, 5}]];
+			points = Join[points, Table[{{x, 0}, colors[[StringPart[cubeString,
+				 x + 49]]]}, {x, 3, 5}]];
+		];
+		Return[points];
+	];
 
 
 (* ::Subsubsection:: *)
@@ -217,9 +241,9 @@ GenerateBaseCubeStruct[] := Module[{points = {}, defaultColor = Transparent, col
 (* 
 	La funzione Cube2DToString permette la visualizzazione del 2D di input.
 *)
-VisualizeInput2DCube[] := Module[{background = LightGray},
+VisualizeInput2DCube[cubeString_ : ""] := Module[{background = LightGray},
 	(* Genero la struttura di base. cube \[EGrave] una variabile globale al modulo *)
-	cube = GenerateBaseCubeStruct[];
+	cube = GenerateBaseCubeStruct[cubeString];
 	(* Stampo il cubo 2D *)
 	Graphics[Dynamic[Map[GenBtn, cube]], Background->background]
 ];
@@ -235,16 +259,20 @@ VisualizeInput2DCube[] := Module[{background = LightGray},
 	Questa validazione non copre tutti i casi, controlla solo la correttezza dei singoli sotto cubi.
 	I casi restanti vengono identificati tramite l'inabilit\[AGrave] di risolvere il cubo in un numero fissato di mosse massime.
 *)
-ValidateCubeInput[] := Module[
+ValidateCubeInput[str_:""] := Module[
 	{solvedCube, solvedCubeSorted, cube, cubeSorted},
+	If[SameQ[str,""],
+	(* Cubo da validare *)
+	cube = GetPieces[Cube2DToString[]];,
+	cube = GetPieces[str];
+	];
+	(* Genero una lista ordinata contenente le triple contenenti i colori ordinati del cubo da validare *)
+	cubeSorted = Sort[Map[Sort[#[["colors"]]]&,cube]];
+	
 	(* Cubo risolto di riferimento per la validazione *)
 	solvedCube = GetPieces[sampleStrings[["solved"]]];
 	(* Genero una lista ordinata contenente le triple contenenti i colori ordinati del cubo risolto *)
 	solvedCubeSorted = Sort[Map[Sort[#[["colors"]]]&,solvedCube]];
-	(* Cubo da validare *)
-	cube = GetPieces[Cube2DToString[]];
-	(* Genero una lista ordinata contenente le triple contenenti i colori ordinati del cubo da validare *)
-	cubeSorted = Sort[Map[Sort[#[["colors"]]]&,cube]];
 	
 	(* Se le liste di triple corrispondono, allora il cubo \[EGrave] valido e ritorno True *)
 	Return[SameQ[solvedCubeSorted,cubeSorted]];
