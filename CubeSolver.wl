@@ -106,7 +106,7 @@ backFaceColor := First[cube3DPieces[[getPos[cube3DPieces,cube3DPieces,{0,0,-1}]]
 
 
 (* ::Subsubsection:: *)
-(*Orientazione corretta del cubo*)
+(*Orientazione corretta del cubo (Giallo sopra, Blu davanti)*)
 
 
 OrientCube[] :=
@@ -156,6 +156,8 @@ rightPetali := cube3DPieces[[getCol[cube3DPieces,petali,{_,"W",_}]]];
 (*Controllo della destinazione di un white edge*)
 
 
+(* La funzione restituisce il cubo che dovr\[AGrave] essere sostituito da un white edge a seconda della posizione di questo *)
+
 getWTop[element_] := Switch[element["pos"][[2]],
 	1,  element, (*devo trasformarlo in un 2F ma il top \[EGrave] lui *)
 	0, If[ MatchQ[element["colors"],{_,_,"W"}], (* Faccia bianca o su Front-Back o su Left-Right *)
@@ -172,6 +174,8 @@ getWTop[element_] := Switch[element["pos"][[2]],
 (* ::Subsubsection:: *)
 (*Trasformazione di un edge in un second floor edge*)
 
+
+(* Esegue la mossa corretta per trasformare un edge in un second floor edge a partire dalla posizione x, ed eventualmente z del cubo di riferimento *) 
 
 makeSF[element_] := (
 	While[getWTop[element]["colors"][[2]] == "W", cube3DPieces = RotateU[cube3DPieces]];
@@ -194,8 +198,11 @@ leftEdges := Complement[whiteEdges, rightPetali];
 (*Inserimento dei second floor white edges *)
 
 
+(* A seconda della posizione del second floor edge (4 possibilit\[AGrave]) e dalla posizione della faccia bianca su esso (2 possibilit\[AGrave]) 
+viene eseguita la mossa corretta per posizionare tale edge sulla margherita *)
+
 setSFDaisy[SFWhiteEdge_]:=(
-	checkW=SFWhiteEdge["colors"][[1]]=="W"; 
+	checkW=SFWhiteEdge["colors"][[1]]=="W"; (* True se la faccia bianca \[EGrave] sulla leftFace o sulla rightFace, False se \[EGrave] sulla backFace o frontFace *)
 	Switch[SFWhiteEdge["pos"],
 		{1,0,1},(If[checkW,cube3DPieces=RotateFi[cube3DPieces],cube3DPieces=RotateR[cube3DPieces]]),
 		{1,0,-1},(If[checkW,cube3DPieces=RotateB[cube3DPieces],cube3DPieces=RotateRi[cube3DPieces]]),
@@ -206,13 +213,15 @@ setSFDaisy[SFWhiteEdge_]:=(
 
 
 (* ::Subsubsection:: *)
-(*Creazione della margherita*)
+(*Creazione della margherita e della croce bianca*)
 
 
 (* 
-	 Finch\[EAcute] ci sono dei leftEdges, mi salvo i colori del cubetto che sto considerando cos\[IGrave] gli assegno un cubetto senza che cambi in continuazione. 
+	 Finch\[EAcute] ci sono dei leftEdges, mi salvo i colori del cubetto che sto considerando, per assegnargli un cubetto fisso. 
 	 Poi, finch\[EAcute] questo cubetto non fa parte dei rightPetali, lo rendo un second floor, libero il cubo in alto da una faccia bianca facendo 
-	 quante UP servono e faccio la mossa giusta per portarlo in alto con setSFDaisy
+	 il numero necessario di RotateUp e faccio la mossa giusta per portarlo in alto (calcolata da setSFDaisy)
+	 
+	 Poi porto i petali correttamente sulla faccia bianca per ottenere la croce.
 *)
 WhiteCross[] := Module[{},
 	OrientCube[];
@@ -225,7 +234,7 @@ WhiteCross[] := Module[{},
 			setSFDaisy[edge];
 		];
 	];
-	(* Ottengo gli id dei centri su tutte le facce che non sono sopra e sotto *)
+	(* Ottengo gli id dei centri di tutte le facce, tranne la gialla e la bianca *)
 	idxCenters = Flatten[Position[numberOfNone,2]];
 	centers = cube3DPieces[[idxCenters]];
 	lateralCenters = Complement[centers, cube3DPieces[[getColSort[cube3DPieces,centers,None,None,"W"|"Y"]]]];
@@ -267,6 +276,9 @@ whiteCorners := cube3DPieces[[getCol[cube3DPieces, cube3DPieces[[Flatten[Positio
 rightTopCorner := cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,1,1}]]]];
 rightBottomCorner := cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,-1,1}]]]];
 topCorners := cube3DPieces[[getPos[cube3DPieces,corners,{_,1,_}]]];
+
+(* Il corner da posizionare \[EGrave] quello che deve finire in alto a destra, perci\[OGrave] ha i colori che corrispondono a quello davanti, in alto e a destra,
+in un ordine non conosciuto in partenza *)
 cornerToPlace := cube3DPieces[[First[getColSort[cube3DPieces,corners,frontFaceColor,rightFaceColor,topFaceColor]]]];
 
 
@@ -274,18 +286,23 @@ cornerToPlace := cube3DPieces[[First[getColSort[cube3DPieces,corners,frontFaceCo
 (*Posizionamento dei white corner*)
 
 
+(* \[EGrave] possibile posizionare un corner nel suo posto corretto, collocandolo inizialmente nella posizione in basso a sinistra rispetto alla faccia
+frontale e poi eseguendo ciclicamente le mosse R'D'RD finch\[EAcute] questo non sar\[AGrave] al posto giusto *)
+
 PlaceWhiteCorner[] := Module[{},
-	(*R'D'RD*)
 	For[i=1, i<5, i++, (
-		If[cornerToPlace["pos"][[2]]==1,
+		If[cornerToPlace["pos"][[2]]==1, (* Se il corner da posizionare \[EGrave] in alto, faccio le mosse esatte per portarlo in basso*)
 		Switch[cornerToPlace["pos"],
 			{1,1,-1},cube3DPieces = RotateB[RotateDi[RotateBi[cube3DPieces]]],
 			{1,1,1},cube3DPieces = RotateFi[RotateDi[RotateF[cube3DPieces]]],
 			{-1,1,1},cube3DPieces = RotateF[RotateDi[RotateFi[cube3DPieces]]],
 			{-1,1,-1}, cube3DPieces = RotateBi[RotateDi[RotateB[cube3DPieces]]]
 		]];
+		(* Ruoto poi la faccia in basso finch\[EAcute] il corner non \[EGrave] in basso a destra*)
 		While[cornerToPlace != rightBottomCorner, cube3DPieces = RotateD[cube3DPieces]];
+		(* Ed eseguo le mosse previste finch\[EAcute] non \[EGrave] in alto a destra con la faccia W rivolta verso l'alto *)
 		While[cornerToPlace != rightTopCorner || rightTopCorner["colors"][[2]]!="W", cube3DPieces = RotateD[RotateR[RotateDi[RotateRi[cube3DPieces]]]]];
+		(* Passo poi al corner successivo, girando il cubo *)
 		cube3DPieces=RotateY[cube3DPieces] 
 	)];
 	(* Visualizzazione della faccia gialla come top *)
@@ -306,7 +323,7 @@ edges := cube3DPieces[[idxOfEdges]];
 
 
 (* ::Subsubsection:: *)
-(*Restituzione del colore dell'edge non sulla faccia superiore*)
+(*Restituzione del colore dell'edge non sulla faccia superiore a partire da una lista di colori*)
 
 
 getSideColor[colors_] := If[colors[[1]] == None, colors[[3]],colors[[1]]];
@@ -323,6 +340,8 @@ rightEdge := cube3DPieces[[First[getColSort[cube3DPieces,edges,frontFaceColor,ri
 (* ::Subsubsection:: *)
 (*Definizione della condizione di uscita dell'algoritmo*)
 
+
+(* Lista di True False, basata sul posizionamento corretto di ogni "tripla" di cubetti per ogni faccia (centro-sx, centro-centro, centro-dx)*)
 
 checkSF := {
 	cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{0,0,1}]]]]["colors"][[3]] == 
@@ -405,16 +424,22 @@ nYellow := Length[cube3DPieces[[getCol[cube3DPieces,topFaceCross,{_,"Y",_}]]]];
 
 
 YellowCross[] := Module[{}, 
+	(* Caso singolo punto giallo *)
 	If[nYellow<3, cube3DPieces = RotateFi[RotateUi[RotateRi[RotateU[RotateR[RotateF[cube3DPieces]]]]]]];
+	(* Casi con 3 facce gialle, quindi o L o I *)
 	If[nYellow == 3,
+		(* Finch\[EAcute] non si arriva al caso della I orizzontale *)
 		While[cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,1,0}]]]]["colors"][[2]] != "Y" || cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{-1,1,0}]]]]["colors"][[2]] != "Y" ,
+			(* Se \[EGrave] verticale, \[EGrave] sufficiente ruotarla*)
 			If[cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{0,1,-1}]]]]["colors"][[2]] == "Y" && cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{0,1,1}]]]]["colors"][[2]] == "Y", 
-				cube3DPieces = RotateF[cube3DPieces],
+				cube3DPieces = RotateU[cube3DPieces], 
+				(* Altrimenti occorre ruotare la faccia superiore finch\[EAcute] non si ottiene la L nella posizione giusta e poi si esegue la mossa *)
 				While[cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{0,1,-1}]]]]["colors"][[2]] != "Y" || cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{-1,1,0}]]]]["colors"][[2]] != "Y",
-					cube3DPieces = RotateF[cube3DPieces] ];
+					cube3DPieces = RotateU[cube3DPieces] ];
 					cube3DPieces = RotateFi[RotateUi[RotateRi[RotateU[RotateR[RotateF[cube3DPieces]]]]]]
 			]
 		];
+		(* Poi \[EGrave] possibile effettuare la mossa finale per arrivare alla croce gialla *)
 		cube3DPieces = RotateFi[RotateUi[RotateRi[RotateU[RotateR[RotateF[cube3DPieces]]]]]];
 	];
 ];
@@ -428,6 +453,8 @@ YellowCross[] := Module[{},
 (*Definizione della condizione di uscita dell'algoritmo*)
 
 
+(* Lista di True o False basata sulla corrispondenza del colore in centro-alto e il centro-centro di ogni faccia *)
+
 checkY := {
 	cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{0,1,1}]]]]["colors"][[3]] == frontFaceColor,
 	cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,1,0}]]]]["colors"][[1]] == rightFaceColor,
@@ -439,6 +466,9 @@ checkY := {
 (* ::Subsubsection:: *)
 (*Algoritmo dei yellow edges*)
 
+
+(* Ruoto la faccia superiore finch\[EAcute] non ho due edge superiori nel posto giusto, poi quando ho a sinistra un edge sbagliato, faccio le mosse necessarie. 
+Potrebbe essere necessario svolgere questo passaggio due volte *)
 
 YellowEdges[] := Module[{},
 	While[Total[Boole[checkY]] != 4,
@@ -465,6 +495,8 @@ YellowEdges[] := Module[{},
 (*Definizione della condizione di uscita dell'algoritmo*)
 
 
+(* Lista di True o False basata sulla corrispondenza dei colori dei corner in alto, con i relativi colori delle facce toccate *)
+
 checkCorners := {
 	Sort[cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,1,1}]]]]["colors"]] == Sort[{frontFaceColor, rightFaceColor,"Y"}],
 	Sort[cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{-1,1,1}]]]]["colors"]] == Sort[{frontFaceColor, leftFaceColor,"Y"}],
@@ -477,16 +509,24 @@ checkCorners := {
 (*Algoritmo yellow corners*)
 
 
+(* La sequenza di mosse U R U' L' U R' U' L ruota fra loro gli angoli: davanti a sx, dietro a sx e dietro a dx. Questa va ripetuta finch\[EAcute] tutti e tre 
+non si trovano nel posto corretto. Perci\[OGrave] \[EGrave] opportuno avere l'angolo davanti a dx gi\[AGrave] nel posto corretto.
+Ripetiamo l'algoritmo quindi finch\[EAcute] non abbiamo 0 angoli nel posto corretto.*)
+
 YellowCorners[] := Module[{},
-	(* U R U' L' U R' U' L *)
+	
 	While[Total[Boole[checkCorners]] == 0,
 		cube3DPieces = RotateL[RotateUi[RotateRi[RotateU[RotateLi[RotateUi[RotateR[RotateU[cube3DPieces]]]]]]]]
 	];
+	
+	(* Dopodich\[EAcute] ruotiamo il cubo finch\[EAcute] non abbiamo un cubo corretto davanti a dx *)
 
 	While[
 		Sort[cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,1,1}]]]]["colors"]] != Sort[{frontFaceColor, rightFaceColor,"Y"}],
 		cube3DPieces = RotateY[cube3DPieces]
 	];
+	
+	(* Ed eseguiamo le mosse finch\[EAcute] non abbiamo tutti i cubi al posto giusto *)
 
 	While[Total[Boole[checkCorners]] == 1,
 		cube3DPieces = RotateL[RotateUi[RotateRi[RotateU[RotateLi[RotateUi[RotateR[RotateU[cube3DPieces]]]]]]]]
@@ -502,6 +542,8 @@ YellowCorners[] := Module[{},
 (*Condizione di uscita dell'algoritmo*)
 
 
+(* Lista di True o False basata sul corretto orientamento dei corner della faccia superiore *)
+
 checkOrientation := {
 	cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,1,1}]]]]["colors"] == {rightFaceColor, "Y", frontFaceColor},
 	cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{-1,1,1}]]]]["colors"] == {leftFaceColor, "Y", frontFaceColor},
@@ -514,8 +556,10 @@ checkOrientation := {
 (*Algoritmo orientamento yellow corner*)
 
 
+(* La sequenza di mosse R' D' R D viene ripetuta su ogni top corner finch\[EAcute] questi non sono al posto esatto. Questo porter\[AGrave] il cubo ad essere 
+completamente risolto *)
+
 YellowCornersOrientation[] := Module[{},
-	(* R' D' R D *)
 	While[Total[Boole[checkOrientation]] != 4,
 		While[
 			cube3DPieces[[First[getPos[cube3DPieces,cube3DPieces,{1,1,1}]]]]["colors"] != {_, "Y", _},
