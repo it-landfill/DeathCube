@@ -3,7 +3,7 @@
 </p>
 
 # DeathCube
-![DeathCube](Images/DeathCube_Logo.jpg)
+![DeathCube](Images/deathcube_logo.jpeg)
 Balugani Lorenzo - Benetton Alessandro - Cosenza Alessandra - Crespan Lorenzo - Li Zhiguang - Mazzocato Luca
 
 ## Progetto per il corso di Matematica Computazionale A.A 2021/2022
