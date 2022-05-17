@@ -1,12 +1,11 @@
-<p align="center">
-  <img src="https://www.unibo.it/it/immagini/1_UNIBO_Ateneo_vert_pos.jpg/@@images/51c830e4-97ca-4516-bdf8-64ea327bdab3.jpeg" alt="Logo Università degli Studi di Bologna"/>
-</p>
-
 # DeathCube
 ![DeathCube](Images/deathcube_logo.jpeg)
 Balugani Lorenzo - Benetton Alessandro - Cosenza Alessandra - Crespan Lorenzo - Li Zhiguang - Mazzocato Luca
 
-## Progetto per il corso di Matematica Computazionale A.A 2021/2022
+## Progetto per il corso di Matematica Computazionale A.A 2021/2022 Università degli Studi di Bologna.
+
+### Known Bugs
+- [ ] On most linux based platforms, the 3D cube does not render. To fix this run _Mathematica_ with the `--mesa` rendering option: ```mathematica --mesa```
 
 ## The Rubik Cube
 The Rubik's Cube is a classic puzzle game in which the player is tasked to un-scramble a scrambled cube, composed of 26 smaller cubes (cubelets) that have colored faces, in such a way that every face is made by cubelets of the same color. These cubelets will be referred, according to their classification, as:
