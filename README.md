@@ -2,7 +2,7 @@
 ![DeathCube](Images/deathcube_logo.jpeg)
 Balugani Lorenzo - Benetton Alessandro - Cosenza Alessandra - Crespan Lorenzo - Li Zhiguang - Mazzocato Luca
 
-## Progetto per il corso di Matematica Computazionale A.A 2021/2022
+## Progetto per il corso di Matematica Computazionale A.A 2021/2022 Università degli Studi di Bologna.
 
 ### Known Bugs
 - [ ] On most linux based platforms, the 3D cube does not render. To fix this run _Mathematica_ with the `--mesa` rendering option: ```mathematica --mesa```
