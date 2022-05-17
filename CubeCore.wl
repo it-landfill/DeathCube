@@ -1,5 +1,17 @@
 (* ::Package:: *)
 
+(*:Title: DeathCube*)
+(*:Context: DeathCubePackage*)
+(*:Authors: Balugani Lorenzo - Benetton Alessandro - Cosenza Alessandra - Crespan Lorenzo -  Li Zhiguang - Mazzocato Luca*)
+(*:Summary: Rubik's cube solver*)
+(*:Copyright: None, GPLv3 License*)
+(*:Package Version: 1.1*)
+(*:Mathematica Version: 13.0*)
+(*:History:*)
+(*:Keywords: Rubik, Solver, 3D Visualization*)
+(*:Sources:*)
+(*:Discussion:*)
+
 BeginPackage["CubeCore`"]
 
 
