@@ -4,6 +4,9 @@ Balugani Lorenzo - Benetton Alessandro - Cosenza Alessandra - Crespan Lorenzo - 
 
 ## Progetto per il corso di Matematica Computazionale A.A 2021/2022
 
+### Known Bugs
+- On most linux based platforms, the 3D cube does not render. To fix this run _Mathematica_ with the `--mesa` rendering option: ```mathematica --mesa```
+
 ## The Rubik Cube
 The Rubik's Cube is a classic puzzle game in which the player is tasked to un-scramble a scrambled cube, composed of 26 smaller cubes (cubelets) that have colored faces, in such a way that every face is made by cubelets of the same color. These cubelets will be referred, according to their classification, as:
 - **Centers**: centers only have a single visible face, and they are in a fixed position.
