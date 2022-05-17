@@ -5,7 +5,7 @@ BeginPackage["CubeColors`"]
 
 (* Metodi *)
 CharToColor::usage = "Map da char a colore."
-ColorToChar::usage = "Map de char a lista di colori."
+ColorToChar::usage = "Map da colore a char."
 CubeStringToColorList::usage = "Map da stringa a lista di colori."
 GetCurrentColorScheme::usage = "Get della variabile contenente l'attuale schema colori."
 VisualizeColorSchemePicker::usage = "Permette di visualizzare i diversi schemi colori e richiamare, in caso di conferma, la funzione per applicare il nuovo schema colori al cubo di Rubik."
@@ -22,7 +22,16 @@ Begin["`Private`"]
 (*Definizione schemi colori*)
 
 
-(* Di seguito sono riportati gli schemi colori. *)
+(* 
+	Di seguito sono riportati gli schemi colori. 
+
+	Gli schemi colori sono una mappa key->val in cui key \[EGrave] il carattere rappresentante il colore e val \[EGrave] il colore corrispondente.
+	Tutti gli schemi colore hanno le stesse key ma hanno val differenti.
+
+	Da notare che tutti gli schemi hanno un colore aggiuntivo, "T"-> Transparent.
+	Questo colore viene usato per rappresentare le celle vuote nell'interfaccia di input.
+*)
+
 (* defaultColorScheme permette di visualizzare lo schema colori ufficiale del cubo di Rubik *)
 defaultColorScheme = <| "R" -> Red, "O" -> Orange, "G" -> Green, "B"-> Blue, "W" -> White, "Y" -> Yellow, "T" -> Transparent|>;
 (* 
